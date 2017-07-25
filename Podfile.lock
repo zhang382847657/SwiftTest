@@ -1,0 +1,37 @@
+PODS:
+  - Alamofire (4.4.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
+  - DGElasticPullToRefresh (1.1)
+  - Kingfisher (3.5.1)
+  - LLCycleScrollView (1.2.5):
+    - Kingfisher
+  - PKHUD (4.2.0)
+  - SnapKit (3.2.0)
+  - SwiftyJSON (3.1.4)
+  - TBEmptyDataSet (2.5)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - AlamofireImage (~> 3.1)
+  - DGElasticPullToRefresh
+  - LLCycleScrollView
+  - PKHUD (~> 4.0)
+  - SnapKit (~> 3.2.0)
+  - SwiftyJSON
+  - TBEmptyDataSet
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
+  Kingfisher: 12eeffeef42ea45b68c5e5acfe8ba9005b713ab4
+  LLCycleScrollView: b5e61ca51863e8508a2d26d11093bd5520f7b655
+  PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TBEmptyDataSet: 4527a34cba692e29964b2a07d0ffc46b20946bca
+
+PODFILE CHECKSUM: bd62ce479a5c9ed15c8ceb7441925eb263e2a04f
+
+COCOAPODS: 1.2.0

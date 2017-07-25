@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BMNearestStoreCellView" customModule="SwiftTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop_default" translatesAutoresizingMaskIntoConstraints="NO" id="buD-a0-2bt">
+                    <rect key="frame" x="10" y="10" width="69" height="69"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="69" id="Ili-uU-vAG"/>
+                        <constraint firstAttribute="width" secondItem="buD-a0-2bt" secondAttribute="height" multiplier="1:1" id="rbd-S2-hzG"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="门店名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9C-nz-zpw">
+                    <rect key="frame" x="89" y="10" width="276" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="RJy-YX-wlP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="门店Solgan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgR-rU-zr6">
+                    <rect key="frame" x="89" y="34" width="276" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="a7U-XO-wt7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0KM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18d-PI-H3S">
+                    <rect key="frame" x="89" y="58" width="30" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Gho-TZ-zMa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="1" green="0.72549019607843135" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="616-GD-7zJ">
+                    <rect key="frame" x="127" y="58" width="238" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="enM-Mu-2x8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                    <state key="normal" title="13234567780" image="phone">
+                        <color key="titleColor" red="0.0" green="0.69019607843137254" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="phoneClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Pow-CN-lDB"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tgR-rU-zr6" firstAttribute="height" secondItem="d9C-nz-zpw" secondAttribute="height" id="8h6-1O-MU8"/>
+                <constraint firstItem="tgR-rU-zr6" firstAttribute="leading" secondItem="buD-a0-2bt" secondAttribute="trailing" constant="10" id="HSe-cr-urc"/>
+                <constraint firstAttribute="trailing" secondItem="616-GD-7zJ" secondAttribute="trailing" constant="10" id="KPQ-2M-0aO"/>
+                <constraint firstItem="d9C-nz-zpw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="MEa-QU-P9z"/>
+                <constraint firstItem="d9C-nz-zpw" firstAttribute="leading" secondItem="buD-a0-2bt" secondAttribute="trailing" constant="10" id="PDA-mq-Ci6"/>
+                <constraint firstAttribute="bottom" secondItem="buD-a0-2bt" secondAttribute="bottom" constant="10" id="RzP-qb-oT5"/>
+                <constraint firstItem="buD-a0-2bt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="S1G-hA-YZ4"/>
+                <constraint firstItem="18d-PI-H3S" firstAttribute="leading" secondItem="buD-a0-2bt" secondAttribute="trailing" constant="10" id="UQg-qJ-GOE"/>
+                <constraint firstItem="buD-a0-2bt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="VI7-qU-OiM"/>
+                <constraint firstItem="616-GD-7zJ" firstAttribute="leading" secondItem="18d-PI-H3S" secondAttribute="trailing" constant="8" id="YUI-0L-h3k"/>
+                <constraint firstAttribute="bottom" secondItem="18d-PI-H3S" secondAttribute="bottom" constant="10" id="oRR-1X-CRz"/>
+                <constraint firstAttribute="trailing" secondItem="d9C-nz-zpw" secondAttribute="trailing" constant="10" id="tAB-jy-mqC"/>
+                <constraint firstAttribute="bottom" secondItem="616-GD-7zJ" secondAttribute="bottom" constant="10" id="vUQ-Ux-j4g"/>
+                <constraint firstItem="tgR-rU-zr6" firstAttribute="top" secondItem="d9C-nz-zpw" secondAttribute="bottom" constant="3" id="xa4-Ip-AQG"/>
+                <constraint firstAttribute="trailing" secondItem="tgR-rU-zr6" secondAttribute="trailing" constant="10" id="ymp-O4-dlq"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="distanceLabel" destination="18d-PI-H3S" id="bei-Ib-Ci6"/>
+                <outlet property="imageView" destination="buD-a0-2bt" id="8yi-r0-Ak7"/>
+                <outlet property="phoneBtn" destination="616-GD-7zJ" id="zID-sW-tCm"/>
+                <outlet property="storeNameLabel" destination="d9C-nz-zpw" id="dzg-aA-KSi"/>
+                <outlet property="storeSolganLabel" destination="tgR-rU-zr6" id="RdT-Qq-Rct"/>
+            </connections>
+            <point key="canvasLocation" x="-30.5" y="-311.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="phone" width="16" height="16"/>
+        <image name="shop_default" width="76" height="76"/>
+    </resources>
+</document>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="gTV-IL-0wX" customClass="BMStoreCardRecommendCell" customModule="SwiftTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="125" height="71"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="125" height="71"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_czk" translatesAutoresizingMaskIntoConstraints="NO" id="OPw-mJ-fj7">
+                        <rect key="frame" x="0.0" y="0.0" width="125" height="71"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="储值卡名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chR-j6-CwC">
+                        <rect key="frame" x="10" y="10" width="105" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="9pz-qD-eq6"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpQ-fa-lM8">
+                        <rect key="frame" x="10" y="40" width="105" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="XsW-5n-GlZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="OPw-mJ-fj7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1Nj-7a-ite"/>
+                <constraint firstAttribute="bottom" secondItem="OPw-mJ-fj7" secondAttribute="bottom" id="4Ii-rm-hna"/>
+                <constraint firstItem="chR-j6-CwC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="6sn-BF-IrW"/>
+                <constraint firstAttribute="trailing" secondItem="tpQ-fa-lM8" secondAttribute="trailing" constant="10" id="OXG-Fh-nxh"/>
+                <constraint firstItem="OPw-mJ-fj7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZPr-tr-8aK"/>
+                <constraint firstAttribute="trailing" secondItem="chR-j6-CwC" secondAttribute="trailing" constant="10" id="Zfr-kB-bWf"/>
+                <constraint firstItem="chR-j6-CwC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="b9V-xj-vvt"/>
+                <constraint firstAttribute="bottom" secondItem="tpQ-fa-lM8" secondAttribute="bottom" constant="10" id="bSE-OV-nxD"/>
+                <constraint firstItem="tpQ-fa-lM8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="cVh-Uh-aTk"/>
+                <constraint firstAttribute="trailing" secondItem="OPw-mJ-fj7" secondAttribute="trailing" id="l4g-aE-ywv"/>
+            </constraints>
+            <size key="customSize" width="163" height="137"/>
+            <connections>
+                <outlet property="storeCardName" destination="chR-j6-CwC" id="AdI-wV-4o2"/>
+                <outlet property="storeCardPrice" destination="tpQ-fa-lM8" id="axP-XZ-MFu"/>
+            </connections>
+            <point key="canvasLocation" x="74.5" y="18.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="bg_czk" width="125" height="71"/>
+    </resources>
+</document>

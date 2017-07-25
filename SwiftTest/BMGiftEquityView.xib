@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BMGiftEquityView" customModule="SwiftTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="315" height="279"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赠送权益" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgr-D5-D6Q">
+                    <rect key="frame" x="0.0" y="0.0" width="315" height="54"/>
+                    <color key="backgroundColor" red="1" green="0.44313725490196076" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zgr-D5-D6Q" secondAttribute="height" multiplier="35:6" id="07H-AN-Cfm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lO-Lh-XBt">
+                    <rect key="frame" x="0.0" y="54" width="315" height="225"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsR-S3-J15">
+                    <rect key="frame" x="268" y="232" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="7yT-I8-zAz"/>
+                        <constraint firstAttribute="width" constant="32" id="tua-U9-Po0"/>
+                    </constraints>
+                    <state key="normal" image="back"/>
+                    <connections>
+                        <action selector="backClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="DBD-mG-GMU"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="0lO-Lh-XBt" firstAttribute="top" secondItem="zgr-D5-D6Q" secondAttribute="bottom" id="3ff-cp-KvH"/>
+                <constraint firstAttribute="bottom" secondItem="CsR-S3-J15" secondAttribute="bottom" constant="15" id="9Kr-oz-vnc"/>
+                <constraint firstAttribute="trailing" secondItem="0lO-Lh-XBt" secondAttribute="trailing" id="9q9-gy-GqN"/>
+                <constraint firstItem="zgr-D5-D6Q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MMf-9G-zbC"/>
+                <constraint firstAttribute="trailing" secondItem="CsR-S3-J15" secondAttribute="trailing" constant="15" id="PV2-EC-Omc"/>
+                <constraint firstItem="0lO-Lh-XBt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cRs-OG-ET6"/>
+                <constraint firstItem="zgr-D5-D6Q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hec-Ui-hDg"/>
+                <constraint firstAttribute="bottom" secondItem="0lO-Lh-XBt" secondAttribute="bottom" id="kB1-bt-T4v"/>
+                <constraint firstAttribute="trailing" secondItem="zgr-D5-D6Q" secondAttribute="trailing" id="ogq-Wm-A0B"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="scrollView" destination="0lO-Lh-XBt" id="1Cf-1W-3dl"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="79.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back" width="20" height="20"/>
+    </resources>
+</document>
