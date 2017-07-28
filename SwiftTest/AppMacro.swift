@@ -17,7 +17,8 @@ let BMDUSERCODE = "D00017"             //D用户编号
 
 
 
-let BMThemeColor = "#00B4FF" //斑马主题颜色
+let BMThemeColor = "#00B4FF" //斑马主题颜色——蓝色
+let BMThemeColorOrange = "#FF7140" //斑马主题颜色——橘色
 let BMBacgroundColor = "#F5F6F5"  //斑马背景色
 let BMBorderColor = "#dcdcdc"  //斑马边框颜色
 

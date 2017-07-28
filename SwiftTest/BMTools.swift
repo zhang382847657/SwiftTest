@@ -38,11 +38,11 @@ func getAttributeStringWithString(_ string: String,lineSpace:CGFloat) -> NSAttri
  * param: format  格式  YYMMDD
  * return: String  格式化好的时间字符串
  */
-func timeFormattingWithStamp(timeStamp:String,format:String) -> String{
+func timeFormattingWithStamp(timeStamp:Int,format:String) -> String{
     
+
     //转换为时间
-    let timeInterval:TimeInterval = TimeInterval(timeStamp)!
-    let date = NSDate(timeIntervalSince1970: timeInterval)
+    let date = NSDate(timeIntervalSince1970: TimeInterval(timeStamp/1000))
     
     //格式化输出
     let dformatter = DateFormatter()

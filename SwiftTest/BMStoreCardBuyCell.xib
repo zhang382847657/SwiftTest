@@ -103,6 +103,7 @@
                 <outlet property="namePriceLabel" destination="TBh-6D-FyV" id="CTL-WK-45G"/>
                 <outlet property="priceLabel" destination="CA7-iS-68e" id="t1b-3v-ZQv"/>
                 <outlet property="primeCostLabel" destination="4Pb-sw-Tem" id="ouu-D3-EF4"/>
+                <outlet property="sendBtn" destination="kbQ-Pc-PNi" id="BDL-gf-WrI"/>
             </connections>
             <point key="canvasLocation" x="-6.5" y="43.5"/>
         </collectionViewCell>

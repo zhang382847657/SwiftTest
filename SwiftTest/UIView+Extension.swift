@@ -47,7 +47,7 @@ extension UIView{
      * param: size  边框大小
      * param: borderTypes 边框方向数组  用枚举值表示子元素
      */
-    func addBorder(color: UIColor?, size: CGFloat, borderTypes:NSArray){
+    func addBorder(color: UIColor?, size: CGFloat, borderTypes:Array<Int>){
         
         var currentColor:UIColor?
         
@@ -58,8 +58,8 @@ extension UIView{
         }
         
         for borderType in borderTypes{
-            let bt: NSNumber = borderType as! NSNumber
-            self.addBorderLayer(color: currentColor!, size: size, boderType: BorderType(rawValue: bt.intValue)!)
+            let bt = borderType
+            self.addBorderLayer(color: currentColor!, size: size, boderType: BorderType(rawValue: bt)!)
         }
         
     }

@@ -9,6 +9,7 @@ PODS:
   - PKHUD (4.2.0)
   - SnapKit (3.2.0)
   - SwiftyJSON (3.1.4)
+  - SwiftyUserDefaults (3.0.0)
   - TBEmptyDataSet (2.5)
 
 DEPENDENCIES:
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - PKHUD (~> 4.0)
   - SnapKit (~> 3.2.0)
   - SwiftyJSON
+  - SwiftyUserDefaults
   - TBEmptyDataSet
 
 SPEC CHECKSUMS:
@@ -30,8 +32,9 @@ SPEC CHECKSUMS:
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
   TBEmptyDataSet: 4527a34cba692e29964b2a07d0ffc46b20946bca
 
-PODFILE CHECKSUM: bd62ce479a5c9ed15c8ceb7441925eb263e2a04f
+PODFILE CHECKSUM: a92297c909cbfd1f796789942f30d3d7526f9b12
 
 COCOAPODS: 1.2.0

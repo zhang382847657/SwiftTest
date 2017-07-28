@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 typealias GiftEquityBackClickClosure = () -> Void
 
@@ -38,5 +39,74 @@ class BMGiftEquityView: UIView {
         if let _ = self.giftEquityBackClickClosure {
             self.giftEquityBackClickClosure!()
         }
+    }
+    
+    func updatUIWithCoupons(coupons:JSON){
+        
+        for view in self.contentView.subviews{
+            view.removeFromSuperview()
+        }
+        
+        let dataList:Array? = coupons.array
+        
+        if let dataList = dataList{
+            
+            var lastView:UIView? = nil
+            
+            for (_,value) in dataList.enumerated(){
+                
+                let cellView:BMGiftEquityCellView = UIView.loadViewFromNib(nibName: "BMGiftEquityCellView") as! BMGiftEquityCellView
+                cellView.updataUIWithCoupon(coupon: value)
+                self.contentView.addSubview(cellView)
+                
+                if let lastView = lastView{
+                    
+                    cellView.snp.makeConstraints({ (make) in
+                        make.top.equalTo(lastView.snp.bottom).offset(10)
+                        make.left.equalTo(self.contentView).offset(20)
+                        make.right.equalTo(self.contentView).offset(-20)
+                        make.height.equalTo(61)
+                    })
+                    
+                }else{
+                    cellView.snp.makeConstraints({ (make) in
+                        make.top.equalTo(self.contentView.snp.top)
+                        make.left.equalTo(self.contentView).offset(20)
+                        make.right.equalTo(self.contentView).offset(-20)
+                        make.height.equalTo(61)
+                    })
+                }
+                
+                lastView = cellView
+                
+            }
+            
+            if self.contentView.subviews.count > 0 {
+                
+                if self.contentView.subviews.count == 1 {
+                    
+                    lastView?.snp.remakeConstraints({ (make) in
+                        make.top.equalTo(self.contentView.snp.top)
+                        make.left.equalTo(self.contentView).offset(20)
+                        make.right.equalTo(self.contentView).offset(-20)
+                        make.bottom.equalTo(self.contentView.snp.bottom).offset(-10)
+                        make.height.equalTo(61)
+                        
+                    })
+                    
+                }else {
+                    let view:BMGiftEquityCellView = self.contentView.subviews[self.contentView.subviews.count-2] as! BMGiftEquityCellView
+                    
+                    lastView?.snp.remakeConstraints({ (make) in
+                        make.top.equalTo(view.snp.bottom).offset(10)
+                        make.left.equalTo(self.contentView).offset(20)
+                        make.right.equalTo(self.contentView).offset(-20)
+                        make.bottom.equalTo(self.contentView.snp.bottom).offset(-10)
+                        make.height.equalTo(61)
+                    })
+                }
+            }
+        }
+        
     }
 }

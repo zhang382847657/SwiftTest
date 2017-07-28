@@ -142,38 +142,16 @@
         <!--我的-->
         <scene sceneID="Yze-DY-OFV">
             <objects>
-                <navigationController id="54i-l8-E0z" customClass="BMBaseNavigationController" customModule="SwiftTest" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="54i-l8-E0z" customClass="BMMeNavigationController" customModule="SwiftTest" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="user_grey" selectedImage="user_blue" id="T4d-wa-3U0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KPh-Uv-q5m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="hZY-XV-7nj" kind="relationship" relationship="rootViewController" id="HW5-bE-3Mh"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KsH-zB-TFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="212" y="1231"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="uiM-oY-9k3">
-            <objects>
-                <viewController id="hZY-XV-7nj" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pcI-Wq-Jfn"/>
-                        <viewControllerLayoutGuide type="bottom" id="grI-fY-VCg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3Ue-X0-g2Y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="zS6-CK-JbH"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Loe-21-6LM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="974" y="1230"/>
         </scene>
     </scenes>
     <resources>

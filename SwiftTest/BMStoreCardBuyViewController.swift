@@ -117,7 +117,7 @@ class BMStoreCardBuyViewController: UIViewController,UICollectionViewDelegate,UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BMStoreCardBuyCell", for: indexPath) as! BMStoreCardBuyCell
         cell.contentView.backgroundColor = UIColor.white
         cell.backgroundColor = UIColor.clear
-        cell.uploadUIWithStoreCard(storeCard: (dataList.array?[indexPath.row])!)
+        cell.uploadUIWithStoreCard(storeCard: (dataList.array?[indexPath.item])!)
         
         
         cell.giftEquityClickClosure = { //赠送权益点击回调
@@ -132,6 +132,8 @@ class BMStoreCardBuyViewController: UIViewController,UICollectionViewDelegate,UI
             }
             
             let giftEquityView:BMGiftEquityView! = UIView.loadViewFromNib(nibName: "BMGiftEquityView") as! BMGiftEquityView //初始化卡片背面的视图
+            giftEquityView.updatUIWithCoupons(coupons: (self.dataList.array?[indexPath.item]["cardCouponBoList"])!)
+            
             
             self.transition.subtype = kCATransitionFromRight //设置动画旋转方向
             cell.layer.add(self.transition, forKey: nil) //设置旋转动画

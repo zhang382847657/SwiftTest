@@ -49,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyUserDefaults.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TBEmptyDataSet.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,17 +62,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>11A66C86EED4EFA39CDA01247A4A2390</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>47D07B436D82BB983C8429FF84F919A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6E3623F8A8592C34C1DFEAF8C65224BA</key>
+		<key>6A34A6BE4841A8F91027C061F134950F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,7 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9EBE5781466D83471DD862B5174B63E9</key>
+		<key>90069796DA48B2D170F13DFDB6807E60</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A45087B431A0EE5EFE3B671E0505D09</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,7 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A7840CA260F1082833ACA5EFA49843C0</key>
+		<key>ADEF1E0C8E8957E802C3FB4257EBE0C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -98,6 +103,11 @@
 			<true/>
 		</dict>
 		<key>D7A75F149082140741FC1E0B5B2863C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E436F223D306FDB0E3EEB1E919F75D10</key>
 		<dict>
 			<key>primary</key>
 			<true/>

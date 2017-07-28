@@ -18,6 +18,7 @@ class BMStoreCardBuyCell: UICollectionViewCell {
     @IBOutlet weak var dataLabel: UILabel!   //有效期
     @IBOutlet weak var priceLabel: UILabel!  //现价
     @IBOutlet weak var primeCostLabel: UILabel! //原价
+    @IBOutlet weak var sendBtn: UIButton! //赠送权益按钮
     
     var giftEquityClickClosure: GiftEquityClickClosure? //赠送权益点击回调
     
@@ -39,6 +40,7 @@ class BMStoreCardBuyCell: UICollectionViewCell {
         let termEndTime = storeCard["termEndTime"].int
         let price = storeCard["price"].float //现价
         let parvalue = storeCard["parvalue"].float //原价
+        let cardCouponBoList = storeCard["cardCouponBoList"].array //优惠券数组
         
         if let name = name{
             nameLable.text = name
@@ -62,7 +64,7 @@ class BMStoreCardBuyCell: UICollectionViewCell {
             case 2:
                 dataLabel.text = "有效期 无限期"
             default:
-                dataLabel.text = "有效期 \(timeFormattingWithStamp(timeStamp: String(termStartTime!), format: "YYYY-MM-DD")) 至 \(timeFormattingWithStamp(timeStamp: String(termEndTime!), format: "YYYY-MM-DD"))"
+                dataLabel.text = "有效期 \(timeFormattingWithStamp(timeStamp: termStartTime!, format: "YYYY-MM-DD")) 至 \(timeFormattingWithStamp(timeStamp: termEndTime!, format: "YYYY-MM-DD"))"
             }
         }else{
             dataLabel.text = "有效期有误"
@@ -83,6 +85,16 @@ class BMStoreCardBuyCell: UICollectionViewCell {
             primeCostLabel.attributedText = lineStr
         }else{
             primeCostLabel.text = "暂无原价"
+        }
+        
+        if let cardCouponBoList = cardCouponBoList {
+            if cardCouponBoList.count <= 0 { //如果优惠券就不显示赠送权益
+              self.sendBtn.isHidden = true
+            }else{
+                self.sendBtn.isHidden = false
+            }
+        }else{
+            self.sendBtn.isHidden = true
         }
         
         
