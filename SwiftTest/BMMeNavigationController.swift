@@ -14,8 +14,9 @@ class BMMeNavigationController: BMBaseNavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
         
-        let vc:BMMeViewController = BMMeViewController(nibName: "BMMeViewController", bundle: nil)
+        let vc:BMMyViewController = BMMyViewController(nibName: "BMMyViewController", bundle: nil)
         self.pushViewController(vc, animated: true)
 
     }

@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BMLoginViewController" customModule="SwiftTest" customModuleProvider="target">
             <connections>
+                <outlet property="companyNameLabel" destination="Xkg-2I-Jk2" id="hEA-UD-Iet"/>
+                <outlet property="contentScrollView" destination="iHj-M1-geE" id="lTu-sO-UMM"/>
+                <outlet property="logoImageView" destination="kIj-Lx-PHb" id="bBo-E1-HAy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,10 +25,10 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="ZeS-FY-Gbw">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kl7-UV-ybm">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="kl7-UV-ybm">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="616"/>
                     <subviews>
-                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="616" translatesAutoresizingMaskIntoConstraints="NO" id="fub-sx-qYH">
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="616" translatesAutoresizingMaskIntoConstraints="NO" id="fub-sx-qYH" userLabel="内容视图">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="616"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvD-b8-fCT">
@@ -49,20 +52,9 @@
                                         </label>
                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHj-M1-geE">
                                             <rect key="frame" x="0.0" y="150" width="277" height="218"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="277" placeholderIntrinsicHeight="218" translatesAutoresizingMaskIntoConstraints="NO" id="sT6-nE-rX0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="218"/>
-                                                    <color key="backgroundColor" red="1" green="0.72549019609999998" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                </view>
-                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="218" id="3ac-YP-tYg"/>
-                                                <constraint firstItem="sT6-nE-rX0" firstAttribute="centerY" secondItem="iHj-M1-geE" secondAttribute="centerY" id="4Ca-CC-Urs"/>
-                                                <constraint firstAttribute="bottom" secondItem="sT6-nE-rX0" secondAttribute="bottom" id="R4C-6v-0k1"/>
-                                                <constraint firstItem="sT6-nE-rX0" firstAttribute="leading" secondItem="iHj-M1-geE" secondAttribute="leading" id="aLI-30-h0Y"/>
-                                                <constraint firstItem="sT6-nE-rX0" firstAttribute="height" secondItem="iHj-M1-geE" secondAttribute="height" id="cFV-6A-W6y"/>
-                                                <constraint firstItem="sT6-nE-rX0" firstAttribute="top" secondItem="iHj-M1-geE" secondAttribute="top" id="jpN-gY-fl7"/>
-                                                <constraint firstAttribute="trailing" secondItem="sT6-nE-rX0" secondAttribute="trailing" id="xe9-J1-oEF"/>
                                             </constraints>
                                         </scrollView>
                                     </subviews>
@@ -93,6 +85,9 @@
                                         <constraint firstAttribute="height" constant="44" id="mJm-ww-Gug"/>
                                     </constraints>
                                     <state key="normal" image="navigation_back"/>
+                                    <connections>
+                                        <action selector="backClick:" destination="-1" eventType="touchUpInside" id="R67-Wt-adh"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -126,6 +121,9 @@
                             <state key="normal" title="立即注册">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="registerClick:" destination="-1" eventType="touchUpInside" id="duI-co-XxS"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还没有账号？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4q-5i-fex">
                             <rect key="frame" x="0.0" y="18" width="74" height="14.5"/>

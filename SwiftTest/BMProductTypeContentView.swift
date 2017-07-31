@@ -83,7 +83,6 @@ class BMProductTypeContentView: UIView {
                 
                 if 4*i+y <= newArray.count-1 { //防止下标越界
                     
-                    dPrint(item: newArray[4*i+y])
                     
                     let name:String? = newArray[4*i+y]["name"].string  //商品名称
                     let url:String? = newArray[4*i+y]["icon"].string   //商品图标
