@@ -88,8 +88,8 @@ class BMLoginViewController: UIViewController {
     
     //立即注册点击事件
     @IBAction func registerClick(_ sender: UIButton) {
-        
-        
+        let vc:BMRegisterViewController = BMRegisterViewController(nibName: "BMRegisterViewController", bundle: nil)
+        self.present(vc, animated: true, completion: nil)
     }
     
     //返回点击事件

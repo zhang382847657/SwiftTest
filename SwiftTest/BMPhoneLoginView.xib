@@ -98,6 +98,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="codeTextField" destination="9dW-0C-BOa" id="Y09-xL-Dqt"/>
+                <outlet property="codeView" destination="JOT-Z3-nlS" id="e3y-VR-U4f"/>
                 <outlet property="loginBtn" destination="n5j-mE-CPL" id="s1a-u1-0Us"/>
                 <outlet property="phoneTextField" destination="FVl-Mh-ZdF" id="rBe-iP-pXK"/>
                 <outlet property="sendCodeBtn" destination="qUT-y5-p28" id="59Y-dL-x9D"/>

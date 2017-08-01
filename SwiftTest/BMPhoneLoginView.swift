@@ -14,7 +14,7 @@ class BMPhoneLoginView: UIView {
     @IBOutlet weak var phoneTextField: UITextField!  //手机
     @IBOutlet weak var codeTextField: UITextField!  //验证码
     @IBOutlet weak var sendCodeBtn: UIButton!  //发送验证码
-    
+    @IBOutlet weak var codeView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +24,15 @@ class BMPhoneLoginView: UIView {
         
         
         self.sendCodeBtn.addBorder(color: UIColor.white, size: BMBorderSize, borderTypes: [BorderType.top.rawValue,BorderType.left.rawValue,BorderType.right.rawValue,BorderType.bottom.rawValue])
+        
+        self.phoneTextField.attributedPlaceholder = NSAttributedString.init(string:"请输入手机号", attributes: [NSFontAttributeName:UIFont.systemFont(ofSize:BMTitleFontSize),NSForegroundColorAttributeName:UIColor.white])
+        
+        self.codeTextField.attributedPlaceholder = NSAttributedString.init(string:"请输入验证码", attributes: [NSFontAttributeName:UIFont.systemFont(ofSize:BMTitleFontSize),NSForegroundColorAttributeName:UIColor.white])
+        
+        self.phoneTextField.addBorderLayer(color: UIColor.white, size: BMBorderSize, boderType: .bottom)
+        
+        self.codeView.addBorderLayer(color: UIColor.white, size: BMBorderSize, boderType: .bottom)
+        
 
     }
     
