@@ -23,6 +23,8 @@
 		633704A31F21F01800F769B4 /* BMProductCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633704A21F21F01800F769B4 /* BMProductCircleView.swift */; };
 		633704A51F21F02400F769B4 /* BMProductCircleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633704A41F21F02400F769B4 /* BMProductCircleView.xib */; };
 		633704A91F21F20800F769B4 /* BMCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633704A81F21F20800F769B4 /* BMCircleView.swift */; };
+		633BB4551F33197F00A4D498 /* BMGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633BB4541F33197F00A4D498 /* BMGradeView.swift */; };
+		633BB4571F331BAE00A4D498 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633BB4561F331BAE00A4D498 /* UIImage+Extension.swift */; };
 		633C10EF1F306CC80036F85B /* CodeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C10EE1F306CC80036F85B /* CodeButton.swift */; };
 		633C10F21F3079010036F85B /* BMShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C10F01F3079010036F85B /* BMShopViewController.swift */; };
 		633C10F51F3085470036F85B /* BMShopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C10F41F3085470036F85B /* BMShopHeaderView.swift */; };
@@ -51,6 +53,10 @@
 		6367CAFE1EFCBE7F00B90202 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6367CAFD1EFCBE7F00B90202 /* SnapKit.framework */; };
 		636F957A1F27128500F62C44 /* BMGiftEquityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F95791F27128500F62C44 /* BMGiftEquityCellView.swift */; };
 		636F957C1F27129000F62C44 /* BMGiftEquityCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636F957B1F27129000F62C44 /* BMGiftEquityCellView.xib */; };
+		6378C1811F32BAA10070E81F /* BMShopRecommendCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378C1801F32BAA10070E81F /* BMShopRecommendCommentView.swift */; };
+		6378C1831F32BAAD0070E81F /* BMShopRecommendCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6378C1821F32BAAD0070E81F /* BMShopRecommendCommentView.xib */; };
+		6378C1851F32BDC50070E81F /* BMShopCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378C1841F32BDC50070E81F /* BMShopCommentView.swift */; };
+		6378C1871F32BDCF0070E81F /* BMShopCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6378C1861F32BDCF0070E81F /* BMShopCommentView.xib */; };
 		638CE6C21F25F66100BCC95C /* BMGiftEquityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638CE6C11F25F66100BCC95C /* BMGiftEquityView.swift */; };
 		638CE6C41F25F67A00BCC95C /* BMGiftEquityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638CE6C31F25F67A00BCC95C /* BMGiftEquityView.xib */; };
 		638D7AEF1F00E1F300A15311 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638D7AEE1F00E1F300A15311 /* UIImageView+Extension.swift */; };
@@ -134,6 +140,8 @@
 		633704A21F21F01800F769B4 /* BMProductCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMProductCircleView.swift; sourceTree = "<group>"; };
 		633704A41F21F02400F769B4 /* BMProductCircleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMProductCircleView.xib; sourceTree = "<group>"; };
 		633704A81F21F20800F769B4 /* BMCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCircleView.swift; sourceTree = "<group>"; };
+		633BB4541F33197F00A4D498 /* BMGradeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMGradeView.swift; sourceTree = "<group>"; };
+		633BB4561F331BAE00A4D498 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		633C10EE1F306CC80036F85B /* CodeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeButton.swift; sourceTree = "<group>"; };
 		633C10F01F3079010036F85B /* BMShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMShopViewController.swift; sourceTree = "<group>"; };
 		633C10F41F3085470036F85B /* BMShopHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMShopHeaderView.swift; sourceTree = "<group>"; };
@@ -168,6 +176,10 @@
 		6367CAFD1EFCBE7F00B90202 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftTest-dmbmwckjgrvcykccrwbkrasjrzkg/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		636F95791F27128500F62C44 /* BMGiftEquityCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMGiftEquityCellView.swift; sourceTree = "<group>"; };
 		636F957B1F27129000F62C44 /* BMGiftEquityCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMGiftEquityCellView.xib; sourceTree = "<group>"; };
+		6378C1801F32BAA10070E81F /* BMShopRecommendCommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMShopRecommendCommentView.swift; sourceTree = "<group>"; };
+		6378C1821F32BAAD0070E81F /* BMShopRecommendCommentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMShopRecommendCommentView.xib; sourceTree = "<group>"; };
+		6378C1841F32BDC50070E81F /* BMShopCommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMShopCommentView.swift; sourceTree = "<group>"; };
+		6378C1861F32BDCF0070E81F /* BMShopCommentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMShopCommentView.xib; sourceTree = "<group>"; };
 		638CE6C11F25F66100BCC95C /* BMGiftEquityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMGiftEquityView.swift; sourceTree = "<group>"; };
 		638CE6C31F25F67A00BCC95C /* BMGiftEquityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMGiftEquityView.xib; sourceTree = "<group>"; };
 		638D7AEE1F00E1F300A15311 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -317,6 +329,7 @@
 		63015C111EFBAB9500A9C8AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				633BB4531F33192E00A4D498 /* 打分星星 */,
 				633C10ED1F306CA30036F85B /* 验证码按钮 */,
 				63A950EB1F2AD0C10052F6C6 /* InfoCell */,
 				635489741F233CDF00CCA117 /* 卡片左右切换 */,
@@ -345,6 +358,7 @@
 				6397B6B31F1EF0A300C77BDC /* UIButton+Extension.swift */,
 				633704991F219F1000F769B4 /* UILabel+Extension.swift */,
 				63A950FD1F2B1CC10052F6C6 /* BMDefaults.swift */,
+				633BB4561F331BAE00A4D498 /* UIImage+Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -397,6 +411,14 @@
 				633704A81F21F20800F769B4 /* BMCircleView.swift */,
 			);
 			name = "圆环";
+			sourceTree = "<group>";
+		};
+		633BB4531F33192E00A4D498 /* 打分星星 */ = {
+			isa = PBXGroup;
+			children = (
+				633BB4541F33197F00A4D498 /* BMGradeView.swift */,
+			);
+			name = "打分星星";
 			sourceTree = "<group>";
 		};
 		633C10ED1F306CA30036F85B /* 验证码按钮 */ = {
@@ -473,6 +495,46 @@
 			path = SwiftTestUITests;
 			sourceTree = "<group>";
 		};
+		6378C1881F32FE4A0070E81F /* 门店头部 */ = {
+			isa = PBXGroup;
+			children = (
+				633C10F41F3085470036F85B /* BMShopHeaderView.swift */,
+				633C10F61F3086BB0036F85B /* BMShopHeaderView.xib */,
+			);
+			name = "门店头部";
+			sourceTree = "<group>";
+		};
+		6378C1891F32FE5C0070E81F /* 推荐阿姨 */ = {
+			isa = PBXGroup;
+			children = (
+				6346B8631F31D4BB00721963 /* BMShopRecommendAuntView.swift */,
+				6346B8651F31D4C600721963 /* BMShopRecommendAuntView.xib */,
+				6346B8671F31D66600721963 /* BMShopAuntView.swift */,
+				6346B8691F31D67500721963 /* BMShopAuntView.xib */,
+			);
+			name = "推荐阿姨";
+			sourceTree = "<group>";
+		};
+		6378C18A1F32FE6F0070E81F /* 用户评价 */ = {
+			isa = PBXGroup;
+			children = (
+				6378C1801F32BAA10070E81F /* BMShopRecommendCommentView.swift */,
+				6378C1821F32BAAD0070E81F /* BMShopRecommendCommentView.xib */,
+				6378C1841F32BDC50070E81F /* BMShopCommentView.swift */,
+				6378C1861F32BDCF0070E81F /* BMShopCommentView.xib */,
+			);
+			name = "用户评价";
+			sourceTree = "<group>";
+		};
+		6378C18B1F32FE860070E81F /* 地址+电话+手机 */ = {
+			isa = PBXGroup;
+			children = (
+				6346B85F1F31D0FE00721963 /* BMShopToolsView.swift */,
+				6346B8611F31D10900721963 /* BMShopToolsView.xib */,
+			);
+			name = "地址+电话+手机";
+			sourceTree = "<group>";
+		};
 		638F10231F035BEA004251EA /* JTLoadMoreControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,14 +571,10 @@
 			isa = PBXGroup;
 			children = (
 				633C10F01F3079010036F85B /* BMShopViewController.swift */,
-				633C10F41F3085470036F85B /* BMShopHeaderView.swift */,
-				633C10F61F3086BB0036F85B /* BMShopHeaderView.xib */,
-				6346B85F1F31D0FE00721963 /* BMShopToolsView.swift */,
-				6346B8611F31D10900721963 /* BMShopToolsView.xib */,
-				6346B8631F31D4BB00721963 /* BMShopRecommendAuntView.swift */,
-				6346B8651F31D4C600721963 /* BMShopRecommendAuntView.xib */,
-				6346B8671F31D66600721963 /* BMShopAuntView.swift */,
-				6346B8691F31D67500721963 /* BMShopAuntView.xib */,
+				6378C18B1F32FE860070E81F /* 地址+电话+手机 */,
+				6378C18A1F32FE6F0070E81F /* 用户评价 */,
+				6378C1891F32FE5C0070E81F /* 推荐阿姨 */,
+				6378C1881F32FE4A0070E81F /* 门店头部 */,
 			);
 			name = "门店";
 			sourceTree = "<group>";
@@ -855,6 +913,8 @@
 				633704A51F21F02400F769B4 /* BMProductCircleView.xib in Resources */,
 				63DD17941F2F0A6300ED3AB6 /* BMMyViewController.xib in Resources */,
 				6359B0931EF1074700D6DF5E /* LaunchScreen.storyboard in Resources */,
+				6378C1831F32BAAD0070E81F /* BMShopRecommendCommentView.xib in Resources */,
+				6378C1871F32BDCF0070E81F /* BMShopCommentView.xib in Resources */,
 				6397B6D71F1F5E6800C77BDC /* BMNearestStoreCellView.xib in Resources */,
 				6346B8661F31D4C600721963 /* BMShopRecommendAuntView.xib in Resources */,
 				638CE6C41F25F67A00BCC95C /* BMGiftEquityView.xib in Resources */,
@@ -947,6 +1007,7 @@
 				63DD17931F2F0A6300ED3AB6 /* BMMyViewController.swift in Sources */,
 				638F102B1F0398AB004251EA /* BMWebViewController.swift in Sources */,
 				6346B8681F31D66600721963 /* BMShopAuntView.swift in Sources */,
+				633BB4551F33197F00A4D498 /* BMGradeView.swift in Sources */,
 				63015C181EFBAFF000A9C8AC /* BMNetworkTools.swift in Sources */,
 				6397B6F51F1F5FBA00C77BDC /* BMProductTypeView.swift in Sources */,
 				6346B8601F31D0FE00721963 /* BMShopToolsView.swift in Sources */,
@@ -954,6 +1015,7 @@
 				63015C151EFBABE600A9C8AC /* UIColor+Extension.swift in Sources */,
 				633C10EF1F306CC80036F85B /* CodeButton.swift in Sources */,
 				6337049A1F219F1000F769B4 /* UILabel+Extension.swift in Sources */,
+				6378C1851F32BDC50070E81F /* BMShopCommentView.swift in Sources */,
 				635489761F233D0E00CCA117 /* CardSwitchLayout.swift in Sources */,
 				633704A91F21F20800F769B4 /* BMCircleView.swift in Sources */,
 				6337049F1F21E8BC00F769B4 /* BMProductSymbolsView.swift in Sources */,
@@ -967,6 +1029,7 @@
 				6397B6D11F1F5E4D00C77BDC /* BMHomePageViewController.swift in Sources */,
 				633704981F219DC600F769B4 /* BMTools.swift in Sources */,
 				6397B7001F1F62F400C77BDC /* BMProductViewController.swift in Sources */,
+				6378C1811F32BAA10070E81F /* BMShopRecommendCommentView.swift in Sources */,
 				63A950FE1F2B1CC10052F6C6 /* BMDefaults.swift in Sources */,
 				633704A31F21F01800F769B4 /* BMProductCircleView.swift in Sources */,
 				63A951021F2B21F20052F6C6 /* BMLoginViewController.swift in Sources */,
@@ -983,6 +1046,7 @@
 				63A950F31F2AD2570052F6C6 /* InforCellView.swift in Sources */,
 				6397B6EF1F1F5F9200C77BDC /* BMStoreListTableViewController.swift in Sources */,
 				633C10F51F3085470036F85B /* BMShopHeaderView.swift in Sources */,
+				633BB4571F331BAE00A4D498 /* UIImage+Extension.swift in Sources */,
 				63A951051F2B42780052F6C6 /* BMMeNavigationController.swift in Sources */,
 				63FF33671F1DFB4A002072B2 /* Config.swift in Sources */,
 				6397B6F41F1F5FBA00C77BDC /* BMProductTypeContentView.swift in Sources */,

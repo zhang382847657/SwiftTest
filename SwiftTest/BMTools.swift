@@ -40,9 +40,11 @@ func getAttributeStringWithString(_ string: String,lineSpace:CGFloat) -> NSAttri
  */
 func timeFormattingWithStamp(timeStamp:Int,format:String) -> String{
     
-
+    
+    let finalTimeStamp:Double = Double(timeStamp/1000) //因为服务器给的是精确到毫米的，这里转成秒
+   
     //转换为时间
-    let date = NSDate(timeIntervalSince1970: TimeInterval(timeStamp/1000))
+    let date = NSDate(timeIntervalSince1970: TimeInterval(finalTimeStamp))
     
     //格式化输出
     let dformatter = DateFormatter()

@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BMLoginViewController" customModule="SwiftTest" customModuleProvider="target">
             <connections>
                 <outlet property="companyNameLabel" destination="Xkg-2I-Jk2" id="hEA-UD-Iet"/>
-                <outlet property="contentScrollView" destination="iHj-M1-geE" id="lTu-sO-UMM"/>
+                <outlet property="contentScrollView" destination="iHj-M1-geE" id="eYO-ZR-7SX"/>
                 <outlet property="logoImageView" destination="kIj-Lx-PHb" id="bBo-E1-HAy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

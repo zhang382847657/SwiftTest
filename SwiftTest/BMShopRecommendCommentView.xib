@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BMShopRecommendCommentView" customModule="SwiftTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="204"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tau-eQ-r5p">
+                    <rect key="frame" x="0.0" y="0.0" width="355" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户评价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoE-ae-mIE">
+                            <rect key="frame" x="10" y="0.0" width="65.5" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="GU1-KS-Zcg"/>
+                        <constraint firstItem="EoE-ae-mIE" firstAttribute="leading" secondItem="Tau-eQ-r5p" secondAttribute="leading" constant="10" id="auk-Q6-pZR"/>
+                        <constraint firstAttribute="bottom" secondItem="EoE-ae-mIE" secondAttribute="bottom" id="f8z-Mt-gdd"/>
+                        <constraint firstItem="EoE-ae-mIE" firstAttribute="top" secondItem="Tau-eQ-r5p" secondAttribute="top" id="tRW-Yk-dg0"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KlC-NI-TSB">
+                    <rect key="frame" x="0.0" y="40" width="355" height="164"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KlC-NI-TSB" firstAttribute="top" secondItem="Tau-eQ-r5p" secondAttribute="bottom" id="L6Q-cd-mq4"/>
+                <constraint firstAttribute="bottom" secondItem="KlC-NI-TSB" secondAttribute="bottom" id="Uay-AK-ELs"/>
+                <constraint firstItem="Tau-eQ-r5p" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cHT-Ul-kgS"/>
+                <constraint firstItem="Tau-eQ-r5p" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fLE-HS-Hhh"/>
+                <constraint firstAttribute="trailing" secondItem="Tau-eQ-r5p" secondAttribute="trailing" id="gAc-ON-2nP"/>
+                <constraint firstAttribute="trailing" secondItem="KlC-NI-TSB" secondAttribute="trailing" id="k9i-k2-DWa"/>
+                <constraint firstItem="KlC-NI-TSB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="riA-rl-pYW"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentView" destination="KlC-NI-TSB" id="O7Y-JB-Vsy"/>
+                <outlet property="headerView" destination="Tau-eQ-r5p" id="xOv-u8-yFa"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="-204"/>
+        </view>
+    </objects>
+</document>

@@ -42,6 +42,10 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="auntImageBtn" destination="XVp-RZ-hkx" id="IuX-9m-5xL"/>
+                <outlet property="nameLabel" destination="0dC-nB-llD" id="FlR-Gm-ZN1"/>
+            </connections>
         </view>
     </objects>
     <resources>

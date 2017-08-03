@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class BMShopHeaderView: UIView {
 
@@ -24,9 +25,39 @@ class BMShopHeaderView: UIView {
         self.headerImageBackgroundView.layer.masksToBounds = true
         self.headerImageBackgroundView.layer.cornerRadius = self.headerImageBackgroundView.bounds.size.height/2.0
     }
+    
+    
+    func updateWithCompany(company:JSON){
+        
+        let icon: String? = company["logoUrl"].string
+        let companyName: String? = company["company"].string
+        let slogan: String? = company["slogan"].string
+        
+        if let icon = icon , icon != ""{
+            self.imageView.af_setImage(withURL: URL(string: icon)!, placeholderImage: UIImage(named: "pic_load")!)
+            
+        }else{
+            self.imageView.image = UIImage(named: "shop_default")
+        }
+        
+        if let companyName = companyName{
+            self.companyNameLabel.text = companyName
+        }else{
+            self.companyNameLabel.text = "暂无公司名称"
+        }
+        
+        if let slogan = slogan{
+            self.companySolganLabel.text = slogan
+        }else{
+            self.companySolganLabel.text = "暂无公司标语"
+        }
+    }
 
     
     //查看门店点击事件
     @IBAction func shopClick(_ sender: UIButton) {
+        
+        
+        
     }
 }

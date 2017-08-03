@@ -10,8 +10,12 @@ import UIKit
 
 class BMShopViewController: UIViewController {
     
-    var scrollView:UIScrollView! = nil
-    var contentView:UIView! = nil
+    var scrollView:UIScrollView!
+    var contentView:UIView!
+    var headerView:BMShopHeaderView!
+    var recommentAuntView:BMShopRecommendAuntView!
+    var recommentCommentView:BMShopRecommendCommentView!
+    
     
 
     override func viewDidLoad() {
@@ -19,7 +23,33 @@ class BMShopViewController: UIViewController {
         
         self.automaticallyAdjustsScrollViewInsets = false //这样可以防止scrollview没有置顶
         
+        self.loadUI() //加载UI
+        self.loadData() //加载网络数据
         
+        
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)  //隐藏导航栏
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true) //显示导航栏
+    }
+    
+    
+    //加载UI
+    private func loadUI(){
         //////////////UIScrollView//////////
         self.scrollView = UIScrollView(frame: CGRect.zero)
         self.view.addSubview(self.scrollView)
@@ -38,9 +68,9 @@ class BMShopViewController: UIViewController {
         
         
         /////////////头部视图///////////
-        let headerView:BMShopHeaderView = UIView.loadViewFromNib(nibName: "BMShopHeaderView") as! BMShopHeaderView
+        self.headerView = UIView.loadViewFromNib(nibName: "BMShopHeaderView") as! BMShopHeaderView
         self.contentView.addSubview(headerView)
-        headerView.snp.makeConstraints { (make) in
+        self.headerView.snp.makeConstraints { (make) in
             make.left.top.right.equalTo(self.contentView)
             make.height.equalTo(215)
         }
@@ -50,7 +80,7 @@ class BMShopViewController: UIViewController {
         let toolsView:BMShopToolsView = UIView.loadViewFromNib(nibName: "BMShopToolsView") as! BMShopToolsView
         self.contentView.addSubview(toolsView)
         toolsView.snp.makeConstraints { (make) in
-            make.top.equalTo(headerView.snp.bottom).offset(-8)
+            make.top.equalTo(self.headerView.snp.bottom).offset(-8)
             make.left.equalTo(self.contentView).offset(10)
             make.right.equalTo(self.contentView).offset(-10)
             make.height.equalTo(40)
@@ -58,32 +88,65 @@ class BMShopViewController: UIViewController {
         
         
         /////////////店铺推荐阿姨/////////
-        let recommentAuntView:BMShopRecommendAuntView = UIView.loadViewFromNib(nibName: "BMShopRecommendAuntView") as! BMShopRecommendAuntView
-        self.contentView.addSubview(recommentAuntView)
+        self.recommentAuntView = UIView.loadViewFromNib(nibName: "BMShopRecommendAuntView") as! BMShopRecommendAuntView
+        self.contentView.addSubview(self.recommentAuntView)
         recommentAuntView.snp.makeConstraints { (make) in
             make.top.equalTo(toolsView.snp.bottom).offset(5)
             make.left.right.equalTo(toolsView)
         }
         
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        /////////////用户评价////////////
+        self.recommentCommentView = UIView.loadViewFromNib(nibName: "BMShopRecommendCommentView") as! BMShopRecommendCommentView
+        self.contentView.addSubview(self.recommentCommentView)
+        recommentCommentView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.recommentAuntView.snp.bottom).offset(5)
+            make.left.right.equalTo(toolsView)
+            make.bottom.equalTo(self.contentView.snp.bottom).offset(-20)
+        }
     }
     
-
-    override func viewWillAppear(_ animated: Bool) {
+    
+    //加载数据
+    private func loadData(){
         
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)  //隐藏导航栏
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: true) //显示导航栏
+        
+        ////////////查询总店信息////////////
+        let companyUrl = "\(BMHOST)/custom/getDuserInfo?duserCode=\(BMDUSERCODE)"
+        let params = ["":""]
+        NetworkRequest.sharedInstance.getRequest(urlString: companyUrl , params: params , success: { value in
+            
+            self.headerView.updateWithCompany(company: value)
+            
+
+        }) { error in
+            
+        }
+        
+        ////////////查询推荐阿姨////////////
+        let auntsUrl = "\(BMHOST)/c/aunt/auntOpenInfoList"
+        let auntsParams:Dictionary <String,Any> = ["jobStatus":0,"state":1,"relationState":1,"blackState":1,"pageNum":0,"pageSize":3,"sortInfos[0].field":"optTime","sortInfos[0].sort":"DESC","duserCode":"\(BMDUSERCODE)","relationUserCode":"\(BMDUSERCODE)"]
+        
+        NetworkRequest.sharedInstance.postRequest(urlString: auntsUrl, params: auntsParams, success: { (value) in
+            
+            self.recommentAuntView.updateWithRecommendAunts(aunts: value["dataList"])
+            
+        }) { (error) in
+            
+            
+        }
+        
+        
+        ////////////查询用户评价////////////
+        let commentUrl = "\(BMHOST)/c/evaluate/queryEvalList?duserCode=\(BMDUSERCODE)&pageSize=3&hasRemark=1&minScore=4&maxScore=5"
+        NetworkRequest.sharedInstance.getRequest(urlString: commentUrl , params: params , success: { value in
+            
+            self.recommentCommentView.updateWithRecommendComments(comments: value["dataList"])
+            
+            
+        }) { error in
+            
+        }
+
     }
 
 }

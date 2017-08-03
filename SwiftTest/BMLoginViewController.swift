@@ -28,8 +28,6 @@ class BMLoginViewController: UIViewController {
         self.loadUI()  //加载UI
         self.loadAppLogo()  //加载加载公司LOGO
         
-       
-        
 
     }
 
@@ -40,29 +38,45 @@ class BMLoginViewController: UIViewController {
     
     //加载UI
     func loadUI(){
+        
         ///////////内容视图///////////////
-        self.contentView = UIView(frame: CGRect(x: 0, y: 0, width: self.contentScrollView.bounds.size.width*2, height: self.contentScrollView.bounds.size.height))
-        //self.contentView.backgroundColor = UIColor.green
+        self.contentView = UIView(frame: CGRect.zero)
         self.contentScrollView.addSubview(contentView)
+        self.contentView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.contentScrollView)
+            make.height.equalTo(self.contentScrollView.snp.height)
+            make.width.greaterThanOrEqualTo(0)
+        }
         
         ////////////手机登录///////////////
         let phoneLoginView:BMPhoneLoginView = UIView.loadViewFromNib(nibName: "BMPhoneLoginView") as! BMPhoneLoginView
-        phoneLoginView.frame = CGRect(x: 0, y: 0, width: self.contentScrollView.bounds.size.width, height: self.contentView.bounds.size.height)
         self.contentView.addSubview(phoneLoginView)
+        phoneLoginView.snp.makeConstraints { (make) in
+            make.top.bottom.equalTo(self.contentView)
+            make.left.equalTo(self.contentView)
+            make.width.equalTo(self.contentScrollView.bounds.size)
+        }
         
         ////////////密码登录///////////////
         let pwdLoginView:BMPhoneLoginView = UIView.loadViewFromNib(nibName: "BMPhoneLoginView") as! BMPhoneLoginView
-        pwdLoginView.frame = CGRect(x: self.contentScrollView.bounds.size.width, y: 0, width: self.contentScrollView.bounds.size.width, height: self.contentView.bounds.size.height)
         self.contentView.addSubview(pwdLoginView)
+        
+        pwdLoginView.snp.makeConstraints { (make) in
+            make.top.bottom.equalTo(self.contentView)
+            make.left.equalTo(phoneLoginView.snp.right)
+            make.right.equalTo(self.contentView.snp.right)
+            make.width.equalTo(self.contentScrollView.bounds.size)
+        }
+        
     }
     
     //加载App图标
     func loadAppLogo(){
-        //////////////请求轮播图///////////////////
         
-        let bannerURL = "\(BMHOST)/custom/share?duserCode=\(BMDUSERCODE)"
+        
+        let url = "\(BMHOST)/custom/share?duserCode=\(BMDUSERCODE)"
         let params = ["":""]
-        NetworkRequest.sharedInstance.getRequest(urlString: bannerURL , params: params , success: { value in
+        NetworkRequest.sharedInstance.getRequest(urlString: url , params: params , success: { value in
             let icon: String? = value["icon"].string
             let company: String? = value["company"].string
             
