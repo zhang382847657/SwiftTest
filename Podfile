@@ -14,6 +14,7 @@ pod 'TBEmptyDataSet'  #可以显示空的UITableView或者UICollectionView
 pod 'DGElasticPullToRefresh'  #刷新组件
 pod 'PKHUD', '~> 4.0'  #HUD
 pod 'SwiftyUserDefaults'  #缓存
+pod 'SKPhotoBrowser' #图片浏览器
 
 
 end

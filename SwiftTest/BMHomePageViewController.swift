@@ -163,7 +163,7 @@ class BMHomePageViewController: UIViewController {
         self.storeCardView.storeCardRecommendClickClosure = { //cell点击回调
             (index:Int) -> Void in
             self.hidesBottomBarWhenPushed = true
-           self.navigationController?.pushViewController(BMStoreCardBuyViewController(scrollToIndex: index), animated: true)
+            self.navigationController?.pushViewController(BMStoreCardBuyViewController(scrollToIndex: index), animated: true)
             self.hidesBottomBarWhenPushed = false
             
         }
@@ -238,8 +238,7 @@ class BMHomePageViewController: UIViewController {
         }
         
         
-        
-        
+
         //////////////请求商品类目///////////////////
         let productTypeURL = "\(BMHOST)/product/queryProductList?duserCode=\(BMDUSERCODE)&state=1&pageNum=0&pageSize=100"
         NetworkRequest.sharedInstance.getRequest(urlString: productTypeURL , params: params , success: { value in

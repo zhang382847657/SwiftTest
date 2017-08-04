@@ -33,6 +33,9 @@
                             <state key="normal" title="所有阿姨 &gt;">
                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="allAuntsClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="9sH-fA-Tod"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

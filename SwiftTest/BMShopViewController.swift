@@ -1,12 +1,13 @@
 //
 //  BMShopViewController.swift
 //  SwiftTest
-//
+//  门店首页
 //  Created by 张琳 on 2017/8/1.
 //  Copyright © 2017年 张琳. All rights reserved.
 //
 
 import UIKit
+import SKPhotoBrowser
 
 class BMShopViewController: UIViewController {
     
@@ -32,7 +33,6 @@ class BMShopViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -89,6 +89,14 @@ class BMShopViewController: UIViewController {
         
         /////////////店铺推荐阿姨/////////
         self.recommentAuntView = UIView.loadViewFromNib(nibName: "BMShopRecommendAuntView") as! BMShopRecommendAuntView
+        self.recommentAuntView.lookAllAuntsClickClosure = {  //返回按钮的回调
+            () -> Void in
+            
+            let vc:BMAuntListViewController = BMAuntListViewController(style: .plain)
+            self.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.hidesBottomBarWhenPushed = false
+        }
         self.contentView.addSubview(self.recommentAuntView)
         recommentAuntView.snp.makeConstraints { (make) in
             make.top.equalTo(toolsView.snp.bottom).offset(5)
@@ -126,7 +134,7 @@ class BMShopViewController: UIViewController {
         let auntsUrl = "\(BMHOST)/c/aunt/auntOpenInfoList"
         let auntsParams:Dictionary <String,Any> = ["jobStatus":0,"state":1,"relationState":1,"blackState":1,"pageNum":0,"pageSize":3,"sortInfos[0].field":"optTime","sortInfos[0].sort":"DESC","duserCode":"\(BMDUSERCODE)","relationUserCode":"\(BMDUSERCODE)"]
         
-        NetworkRequest.sharedInstance.postRequest(urlString: auntsUrl, params: auntsParams, success: { (value) in
+        NetworkRequest.sharedInstance.postRequest(urlString: auntsUrl, params: auntsParams, isLogin: true, success: { (value) in
             
             self.recommentAuntView.updateWithRecommendAunts(aunts: value["dataList"])
             

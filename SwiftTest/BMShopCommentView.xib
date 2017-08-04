@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BMShopCommentView" customModule="SwiftTest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_default" translatesAutoresizingMaskIntoConstraints="NO" id="iAA-fB-Mhg">
@@ -54,33 +54,45 @@
                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEl-Tn-8VD" customClass="BMShopCommentPicturesScrollView" customModule="SwiftTest" customModuleProvider="target">
+                    <rect key="frame" x="70" y="170" width="295" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="aUT-iv-rea"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="LaL-5J-WdI" firstAttribute="leading" secondItem="iAA-fB-Mhg" secondAttribute="trailing" constant="10" id="7Mh-nJ-k1q"/>
-                <constraint firstAttribute="bottom" secondItem="zHR-AO-ol8" secondAttribute="bottom" constant="20" id="9i5-KT-GZu"/>
                 <constraint firstItem="LaL-5J-WdI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="B5z-Xm-C2F"/>
                 <constraint firstItem="iAA-fB-Mhg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="BKc-ke-k5x"/>
+                <constraint firstAttribute="trailing" secondItem="VEl-Tn-8VD" secondAttribute="trailing" constant="10" id="Ed1-cz-ywZ"/>
                 <constraint firstAttribute="trailing" secondItem="Dbf-LK-Mry" secondAttribute="trailing" constant="10" id="Egn-yP-8tc"/>
-                <constraint firstItem="zHR-AO-ol8" firstAttribute="top" secondItem="IFT-vN-bM1" secondAttribute="bottom" constant="15" id="JE0-F7-ySP"/>
                 <constraint firstItem="iAA-fB-Mhg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="L4g-fa-AJh"/>
                 <constraint firstItem="IFT-vN-bM1" firstAttribute="leading" secondItem="iAA-fB-Mhg" secondAttribute="trailing" constant="10" id="LMW-qj-udn"/>
-                <constraint firstItem="zHR-AO-ol8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="Ofb-HF-RM5"/>
                 <constraint firstAttribute="trailing" secondItem="IFT-vN-bM1" secondAttribute="trailing" constant="10" id="R8f-ET-YFb"/>
-                <constraint firstAttribute="trailing" secondItem="zHR-AO-ol8" secondAttribute="trailing" constant="10" id="Zcx-re-EgR"/>
+                <constraint firstAttribute="bottom" secondItem="VEl-Tn-8VD" secondAttribute="bottom" constant="10" id="Sj5-ow-Sj2"/>
+                <constraint firstItem="zHR-AO-ol8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="UFC-Vw-19Y"/>
+                <constraint firstItem="VEl-Tn-8VD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="Xgd-G8-NgU"/>
+                <constraint firstItem="zHR-AO-ol8" firstAttribute="top" secondItem="IFT-vN-bM1" secondAttribute="bottom" constant="15" id="YTR-Sn-2cd"/>
+                <constraint firstItem="VEl-Tn-8VD" firstAttribute="top" secondItem="zHR-AO-ol8" secondAttribute="bottom" constant="10" id="gBy-v5-XiA"/>
                 <constraint firstItem="Dbf-LK-Mry" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="qUY-Vr-uFf"/>
                 <constraint firstItem="IFT-vN-bM1" firstAttribute="top" secondItem="Dbf-LK-Mry" secondAttribute="bottom" constant="14" id="uiC-5Z-YtM"/>
+                <constraint firstItem="VEl-Tn-8VD" firstAttribute="top" secondItem="zHR-AO-ol8" secondAttribute="bottom" constant="10" id="wKl-oD-jEf"/>
+                <constraint firstAttribute="trailing" secondItem="zHR-AO-ol8" secondAttribute="trailing" constant="10" id="ybd-tn-Ko8"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="commentPictureScrollView" destination="VEl-Tn-8VD" id="PSq-bc-Nr3"/>
                 <outlet property="contentLabel" destination="zHR-AO-ol8" id="aoW-AO-WA1"/>
                 <outlet property="gradeView" destination="IFT-vN-bM1" id="NIU-Ur-MXR"/>
                 <outlet property="imageView" destination="iAA-fB-Mhg" id="g16-q1-ZAP"/>
                 <outlet property="nameLabel" destination="LaL-5J-WdI" id="NNX-I5-jzw"/>
+                <outlet property="scrollViewHeightConstraints" destination="aUT-iv-rea" id="bNY-4y-6II"/>
                 <outlet property="timeLabel" destination="Dbf-LK-Mry" id="Tc7-SZ-O8i"/>
             </connections>
-            <point key="canvasLocation" x="23.5" y="-232"/>
+            <point key="canvasLocation" x="23.5" y="-199"/>
         </view>
     </objects>
     <resources>

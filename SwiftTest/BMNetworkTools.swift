@@ -47,9 +47,16 @@ extension NetworkRequest {
         
     }
     //MARK: - POST 请求
-    func postRequest(urlString : String, params : [String : Any], success : @escaping (_ response : JSON)->(), failture : @escaping (_ error : Error)->()) {
+    func postRequest(urlString : String, params : [String : Any], isLogin : Bool, success : @escaping (_ response : JSON)->(), failture : @escaping (_ error : Error)->()) {
         
-        Alamofire.request(urlString, method: HTTPMethod.post, parameters: params).responseJSON { (response) in
+        let headers: HTTPHeaders = [
+            "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDMDAwMzYwNSIsImV4cCI6MTUwMjY4MzI1Miwibmlja05hbWUiOiIxODU1MTYyNDgxNCIsInVzZXJUeXBlIjoxLCJzb3VyY2UiOjIsImR1c2VyQ29kZSI6IkQwMDAxNyJ9.V9jWdz_OR1RILS6MFOruE4C-MHps-UPgN-VZvwD3D0g",
+            "Accept": "application/json",
+            "Content-Type":"application/x-www-form-urlencoded"
+        ]
+        
+    
+        Alamofire.request(urlString, method: HTTPMethod.post, parameters: params,headers:headers).responseJSON { (response) in
             switch response.result{
             case .success (let value):
                 
@@ -64,6 +71,9 @@ extension NetworkRequest {
             }
             
         }
+        
+        
+       
     }
     
     //MARK: - 照片上传

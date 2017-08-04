@@ -71,7 +71,7 @@ class BMProductsView: UIView {
             self.abstractLabel.text = "暂无商品描述"
         }
         
-        if let bgUrl = bgUrl{
+        if let bgUrl = bgUrl , bgUrl != ""{
             self.bgImageView.af_setImage(withURL: URL(string: bgUrl)!, placeholderImage: UIImage(named: "common_clean")!)
         }
         

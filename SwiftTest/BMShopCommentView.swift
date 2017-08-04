@@ -16,6 +16,8 @@ class BMShopCommentView: UIView {
     @IBOutlet weak var timeLabel: UILabel!  //评论时间
     @IBOutlet weak var gradeView: BMGradeView!  //评价等级
     @IBOutlet weak var contentLabel: UILabel!  //评论内容
+    @IBOutlet weak var scrollViewHeightConstraints: NSLayoutConstraint!  //评论图片的高度约束
+    @IBOutlet weak var commentPictureScrollView: BMShopCommentPicturesScrollView!  //评论图片滚动视图
 
     
     
@@ -45,6 +47,7 @@ class BMShopCommentView: UIView {
         let addTime:Int? = comment["addTime"].int
         let score:Int? = comment["score"].int
         let remark:String? = comment["remark"].string
+        let pictureList:Array? = comment["pictureList"].array
         
         
         if let cuserPortraitUrl = cuserPortraitUrl , cuserPortraitUrl != ""{
@@ -78,6 +81,12 @@ class BMShopCommentView: UIView {
             self.contentLabel.text = remark
         }else{
             self.contentLabel.text = "暂无评论"
+        }
+        
+        if let pictureList = pictureList{
+            self.commentPictureScrollView.updateWithImages(images: pictureList)
+        }else{
+            self.scrollViewHeightConstraints.constant = 0
         }
         
     

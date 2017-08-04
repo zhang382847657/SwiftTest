@@ -145,7 +145,7 @@ class BMProductViewController: UIViewController,WKNavigationDelegate {
         //////////////请求商品详情///////////////////
         let productTypeURL = "\(BMHOST)/product/queryProductDetail"
         
-        NetworkRequest.sharedInstance.postRequest(urlString: productTypeURL, params: parmas, success: { (value) in
+        NetworkRequest.sharedInstance.postRequest(urlString: productTypeURL, params: parmas, isLogin: false, success: { (value) in
             
             self.product = value
             self.productView.updateUIWithProduct(product: self.product!)

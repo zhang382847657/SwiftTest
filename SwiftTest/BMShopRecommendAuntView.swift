@@ -9,11 +9,15 @@
 import UIKit
 import SwiftyJSON
 
+//查看所有阿姨闭包
+typealias LookAllAuntsClickClosure = () -> Void
+
 class BMShopRecommendAuntView: UIView {
 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var headerView: UIView!
 
+    var lookAllAuntsClickClosure: LookAllAuntsClickClosure? //查看所有阿姨点击回调
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -72,4 +76,12 @@ class BMShopRecommendAuntView: UIView {
     
     }
 
+    //所有阿姨点击事件
+    @IBAction func allAuntsClick(_ sender: UIButton) {
+        
+        if let lookAllAuntsClickClosure = self.lookAllAuntsClickClosure{
+            lookAllAuntsClickClosure()
+        }
+        
+    }
 }

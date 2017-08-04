@@ -109,4 +109,20 @@ extension UIView{
         }
         return nil
     }
+    
+    /**
+     * 得到视图所在的ViewController
+     * param:view  当前的view
+     * return UIViewController
+     */
+    func getViewController() -> UIViewController? {
+        var next:UIView? = self
+        repeat{
+            if let nextResponder = next?.next , nextResponder.isKind(of: UIViewController.self){
+                return nextResponder as? UIViewController
+            }
+            next = next?.superview
+        }while next != nil
+        return nil
+    }
 }
