@@ -29,7 +29,7 @@ class BMHotServiceCellView: UIView {
         
         let name:String? = products["name"].string
         let itemId:Int? = products["itemId"].int
-        let productDic:Dictionary<String,String> =  productByItemId(itemId: itemId!)
+        let productDic:Dictionary<String,String> =  Config.productByItemId(itemId: itemId!)
         
     
         if let name = name{

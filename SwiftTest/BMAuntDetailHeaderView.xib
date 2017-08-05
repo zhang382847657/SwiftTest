@@ -62,6 +62,9 @@
                     <state key="normal" title="阿姨证书 &gt;">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="auntCerClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="DVB-3C-t9Y"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,6 +79,13 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="auntCerBtn" destination="KFC-S8-QcE" id="g1T-4y-KGp"/>
+                <outlet property="headImageView" destination="KDl-Gd-iSs" id="MC3-13-N7l"/>
+                <outlet property="imageBackgroundView" destination="LdU-qj-XJh" id="613-WN-PDS"/>
+                <outlet property="nameLabel" destination="kN8-zU-GW2" id="pry-cl-kSM"/>
+                <outlet property="sexImageView" destination="9HP-6x-dRs" id="UCR-D7-PWF"/>
+            </connections>
             <point key="canvasLocation" x="-39.5" y="-86"/>
         </view>
     </objects>

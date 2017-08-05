@@ -14,7 +14,10 @@ class BMAuntDetailViewController: UIViewController {
     var scrollView:UIScrollView!
     var contentView:UIView!
     
+    var headerView:BMAuntDetailHeaderView!
     var servicesTypeView:BMAuntServicesTypeScrollView!
+    var basicView:BMAuntBasicView!
+    var picturesScrollView:BMAuntPicturesScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +54,9 @@ class BMAuntDetailViewController: UIViewController {
         
         
         //////////阿姨头部视图//////////////
-        let headerView:BMAuntDetailHeaderView = UIView.loadViewFromNib(nibName: "BMAuntDetailHeaderView") as! BMAuntDetailHeaderView
+        self.headerView = UIView.loadViewFromNib(nibName: "BMAuntDetailHeaderView") as! BMAuntDetailHeaderView
         self.contentView.addSubview(headerView)
-        headerView.snp.makeConstraints { (make) in
+        self.headerView.snp.makeConstraints { (make) in
             make.top.left.right.equalTo(self.contentView)
             make.height.equalTo(210)
         }
@@ -63,12 +66,34 @@ class BMAuntDetailViewController: UIViewController {
         self.servicesTypeView = BMAuntServicesTypeScrollView(frame: CGRect.zero)
         self.contentView.addSubview(self.servicesTypeView)
         self.servicesTypeView.snp.makeConstraints { (make) in
-            make.top.equalTo(headerView.snp.bottom).offset(-10)
+            make.top.equalTo(self.headerView.snp.bottom).offset(-10)
             make.left.equalTo(self.contentView.snp.left).offset(10)
             make.right.equalTo(self.contentView.snp.right).offset(-10)
             make.height.equalTo(100)
-            make.bottom.equalTo(self.contentView)
         }
+        
+        
+        ///////////阿姨基本信息//////////////
+        self.basicView = BMAuntBasicView(frame: CGRect.zero)
+        self.contentView.addSubview(self.basicView)
+        self.basicView.snp.makeConstraints { (make) in
+            make.left.right.equalTo(self.servicesTypeView)
+            make.top.equalTo(self.servicesTypeView.snp.bottom).offset(10)
+            //make.height.equalTo(200)
+        }
+        
+        
+        ////////////阿姨图片////////////////
+        self.picturesScrollView = BMAuntPicturesScrollView(frame: CGRect.zero)
+        self.contentView.addSubview(self.picturesScrollView)
+        self.picturesScrollView.snp.makeConstraints { (make) in
+            make.left.right.equalTo(self.servicesTypeView)
+            make.top.equalTo(self.basicView.snp.bottom).offset(10)
+            make.height.equalTo(220)
+            make.bottom.equalTo(self.contentView.snp.bottom).offset(-30)
+        }
+        
+        
     }
     
     
@@ -77,17 +102,88 @@ class BMAuntDetailViewController: UIViewController {
         
         //////////////请求轮播图///////////////////
         
-        let bannerURL = "\(BMHOST)/c/aunt/queryAuntItem?auntId=A0016984"
+        let bannerURL = "\(BMHOST)/c/aunt/queryAuntItem?auntId=A0044038"
         let params = ["":""]
         
         NetworkRequest.sharedInstance.postRequest(urlString: bannerURL, params: params, isLogin: true, success: { (value) in
             
+            self.headerView.updateWithAunt(aunt: value)
             self.servicesTypeView.updateWithServiceType(serviceType: value)
-            
+            self.compositeBasics(aunt: value)
+            self.picturesScrollView.updateWithImages(images: value["imgUrls"].array)
+
         }) { (error) in
             
             
         }
+        
+    }
+    
+    //阿姨基本信息
+    private func compositeBasics(aunt:JSON){
+        
+        var basicsArray:Array<Dictionary<String,String>> = []
+        
+        let nativePlace:String? = aunt["nativePlace"].string   //籍贯
+        let province:String? = aunt["province"].string  //省
+        let city:String? = aunt["city"].string  //城市
+        let district:String? = aunt["district"].string  //区域
+        let address:String? = aunt["address"].string  //地址
+        let language:String? = aunt["language"].string  //语言
+        let cuisine:String? = aunt["cuisine"].string //菜系
+        let education:Int? = aunt["education"].int //学历
+        
+        
+        if let nativePlace = nativePlace{
+            basicsArray.append(["text":"籍贯：","value":nativePlace])
+        }
+        
+        var finalAddress:String = ""
+        if let province = province , province.trimmingCharacters(in: .whitespaces) != ""{
+            finalAddress = finalAddress + province
+        }
+        
+        if let city = city , city.trimmingCharacters(in: .whitespaces) != ""{
+            finalAddress = finalAddress + city
+        }
+        
+        if let district = district , district.trimmingCharacters(in: .whitespaces) != ""{
+            finalAddress = finalAddress + district
+        }
+        
+        if let address = address , address.trimmingCharacters(in: .whitespaces) != ""{
+            finalAddress = finalAddress + address
+        }
+        
+        if finalAddress != "" {
+            basicsArray.append(["text":"现居：","value":finalAddress])
+        }
+        
+        if let language = language {
+        
+            let finalLanguage:String = language.characters.split(separator: ",").map(String.init).map({ (value) -> String in
+                return Config.language(id: Int(value)!)
+            }).joined(separator: "、")
+            
+            basicsArray.append(["text":"语言：","value":finalLanguage])
+        }
+        
+        if let cuisine = cuisine {
+            
+            let finalCuisine:String = cuisine.characters.split(separator: ",").map(String.init).map({ (value) -> String in
+                return Config.cuisine(id: Int(value)!)
+            }).joined(separator: "、")
+            
+            basicsArray.append(["text":"菜系：","value":finalCuisine])
+        }
+        
+        if let education = education {
+            basicsArray.append(["text":"学历","value":Config.education(id: education)])
+        }
+        
+        self.basicView.updateWithBasics(basics: basicsArray)
+        
+        
         
     }
     

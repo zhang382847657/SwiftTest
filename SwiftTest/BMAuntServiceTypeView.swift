@@ -18,7 +18,4 @@ class BMAuntServiceTypeView: UIView {
     }
     */
 
-    @IBAction func click(_ sender: Any) {
-        dPrint(item: "aaaaaa")
-    }
 }

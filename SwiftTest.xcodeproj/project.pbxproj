@@ -104,6 +104,10 @@
 		63A951051F2B42780052F6C6 /* BMMeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A951041F2B42780052F6C6 /* BMMeNavigationController.swift */; };
 		63B3AE3F1F025F7500137D7C /* TBEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B3AE3E1F025F7500137D7C /* TBEmptyDataSet.framework */; };
 		63B3AE411F02791F00137D7C /* DGElasticPullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B3AE401F02791F00137D7C /* DGElasticPullToRefresh.framework */; };
+		63B826D61F355F7C00F7C5A1 /* BMAuntBasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B826D51F355F7C00F7C5A1 /* BMAuntBasicView.swift */; };
+		63B826D81F35611700F7C5A1 /* BMAuntBasicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B826D71F35611700F7C5A1 /* BMAuntBasicCellView.swift */; };
+		63B826DA1F35612200F7C5A1 /* BMAuntBasicCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B826D91F35612200F7C5A1 /* BMAuntBasicCellView.xib */; };
+		63B826DD1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B826DC1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift */; };
 		63DD17931F2F0A6300ED3AB6 /* BMMyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD17911F2F0A6300ED3AB6 /* BMMyViewController.swift */; };
 		63DD17941F2F0A6300ED3AB6 /* BMMyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DD17921F2F0A6300ED3AB6 /* BMMyViewController.xib */; };
 		63DD17961F2F0EDA00ED3AB6 /* BMPhoneLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD17951F2F0EDA00ED3AB6 /* BMPhoneLoginView.swift */; };
@@ -241,6 +245,10 @@
 		63A951041F2B42780052F6C6 /* BMMeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMMeNavigationController.swift; sourceTree = "<group>"; };
 		63B3AE3E1F025F7500137D7C /* TBEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TBEmptyDataSet.framework; path = "Pods/../build/Debug-iphoneos/TBEmptyDataSet/TBEmptyDataSet.framework"; sourceTree = "<group>"; };
 		63B3AE401F02791F00137D7C /* DGElasticPullToRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DGElasticPullToRefresh.framework; path = "Pods/../build/Debug-iphoneos/DGElasticPullToRefresh/DGElasticPullToRefresh.framework"; sourceTree = "<group>"; };
+		63B826D51F355F7C00F7C5A1 /* BMAuntBasicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAuntBasicView.swift; sourceTree = "<group>"; };
+		63B826D71F35611700F7C5A1 /* BMAuntBasicCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAuntBasicCellView.swift; sourceTree = "<group>"; };
+		63B826D91F35612200F7C5A1 /* BMAuntBasicCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMAuntBasicCellView.xib; sourceTree = "<group>"; };
+		63B826DC1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAuntPicturesScrollView.swift; sourceTree = "<group>"; };
 		63DD17911F2F0A6300ED3AB6 /* BMMyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMMyViewController.swift; sourceTree = "<group>"; };
 		63DD17921F2F0A6300ED3AB6 /* BMMyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMMyViewController.xib; sourceTree = "<group>"; };
 		63DD17951F2F0EDA00ED3AB6 /* BMPhoneLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMPhoneLoginView.swift; sourceTree = "<group>"; };
@@ -574,6 +582,8 @@
 			isa = PBXGroup;
 			children = (
 				6388BCC41F345C3B00165D3A /* BMAuntDetailViewController.swift */,
+				63B826DB1F359B2900F7C5A1 /* 阿姨照片 */,
+				63B826D41F355F5400F7C5A1 /* 基本信息 */,
 				6388BCCF1F34629D00165D3A /* 服务类型 */,
 				6388BCCE1F34628B00165D3A /* 阿姨头部 */,
 			);
@@ -808,6 +818,24 @@
 			name = "登录/注册";
 			sourceTree = "<group>";
 		};
+		63B826D41F355F5400F7C5A1 /* 基本信息 */ = {
+			isa = PBXGroup;
+			children = (
+				63B826D51F355F7C00F7C5A1 /* BMAuntBasicView.swift */,
+				63B826D71F35611700F7C5A1 /* BMAuntBasicCellView.swift */,
+				63B826D91F35612200F7C5A1 /* BMAuntBasicCellView.xib */,
+			);
+			name = "基本信息";
+			sourceTree = "<group>";
+		};
+		63B826DB1F359B2900F7C5A1 /* 阿姨照片 */ = {
+			isa = PBXGroup;
+			children = (
+				63B826DC1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift */,
+			);
+			name = "阿姨照片";
+			sourceTree = "<group>";
+		};
 		63DD17991F2F280F00ED3AB6 /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
@@ -991,6 +1019,7 @@
 				633C10F71F3086BB0036F85B /* BMShopHeaderView.xib in Resources */,
 				6354897A1F233EB400CCA117 /* BMStoreCardBuyCell.xib in Resources */,
 				6346B86A1F31D67500721963 /* BMShopAuntView.xib in Resources */,
+				63B826DA1F35612200F7C5A1 /* BMAuntBasicCellView.xib in Resources */,
 				63015C051EFBA62900A9C8AC /* Images.xcassets in Resources */,
 				635489731F2335F200CCA117 /* BMStoreCardBuyViewController.xib in Resources */,
 				6359B0901EF1074700D6DF5E /* Assets.xcassets in Resources */,
@@ -1092,6 +1121,7 @@
 				6337049F1F21E8BC00F769B4 /* BMProductSymbolsView.swift in Sources */,
 				6397B6E31F1F5F3500C77BDC /* BMHotServiceView.swift in Sources */,
 				633C10F21F3079010036F85B /* BMShopViewController.swift in Sources */,
+				63B826D61F355F7C00F7C5A1 /* BMAuntBasicView.swift in Sources */,
 				6397B6F81F1F601000C77BDC /* BMComboCardRecommendView.swift in Sources */,
 				6397B6D61F1F5E6800C77BDC /* BMNearestStoreCellView.swift in Sources */,
 				6388BCC71F345D2D00165D3A /* BMAuntDetailHeaderView.swift in Sources */,
@@ -1120,6 +1150,7 @@
 				63A950F31F2AD2570052F6C6 /* InforCellView.swift in Sources */,
 				6397B6EF1F1F5F9200C77BDC /* BMStoreListTableViewController.swift in Sources */,
 				633C10F51F3085470036F85B /* BMShopHeaderView.swift in Sources */,
+				63B826DD1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift in Sources */,
 				633BB4571F331BAE00A4D498 /* UIImage+Extension.swift in Sources */,
 				6388BCBE1F34292D00165D3A /* BMAuntListViewController.swift in Sources */,
 				63A951051F2B42780052F6C6 /* BMMeNavigationController.swift in Sources */,
@@ -1132,6 +1163,7 @@
 				635489791F233EB400CCA117 /* BMStoreCardBuyCell.swift in Sources */,
 				63A950F61F2B0FD30052F6C6 /* BMCache.swift in Sources */,
 				63DD17961F2F0EDA00ED3AB6 /* BMPhoneLoginView.swift in Sources */,
+				63B826D81F35611700F7C5A1 /* BMAuntBasicCellView.swift in Sources */,
 				6397B6DC1F1F5ED300C77BDC /* BMFriendsBargainView.swift in Sources */,
 				638F10251F035C0B004251EA /* JTLoadMoreControl.swift in Sources */,
 				638CE6C21F25F66100BCC95C /* BMGiftEquityView.swift in Sources */,

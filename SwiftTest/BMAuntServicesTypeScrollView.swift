@@ -76,7 +76,7 @@ class BMAuntServicesTypeScrollView: UIScrollView {
                         make.left.equalTo(self.contentView)   //labelGapX为固定值
                     }
                     
-                    if i == array.count {
+                    if i == array.count-1 {
                         self.contentView.snp.makeConstraints({ (make) in
                             make.right.equalTo(serviceTypeView.snp.right)
                         })
