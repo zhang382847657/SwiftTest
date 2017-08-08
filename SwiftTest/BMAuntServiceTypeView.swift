@@ -7,15 +7,41 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class BMAuntServiceTypeView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var serviceImageView: UIImageView!
+    @IBOutlet weak var serviceTypeLabel: UILabel!
+    @IBOutlet weak var levelBtn: UIButton!
+    
+    
+    
+    func updateWithServiceType(serviceType:JSON,levelName:JSON){
+        let text:String? = serviceType["text"].string
+        let levelName:String? = levelName.string
+        let itemId:Int? = serviceType["itemId"].int
+        
+        
+        if let itemId = itemId{
+            self.serviceImageView.image = UIImage(named: Config.productByItemId(itemId: itemId)["icon"]!)
+        }else{
+            self.serviceImageView.image = UIImage(named: "tybj")
+        }
+        
+        if let text = text{
+            self.serviceTypeLabel.text = text
+        
+        }else{
+            self.serviceTypeLabel.text = "暂无服务类型"
+        }
+        
+        if let levelName = levelName{
+            self.levelBtn.setTitle(levelName, for: .normal)
+        }else{
+            self.levelBtn.setTitle("暂无级别", for: .normal)
+        }
+    
     }
-    */
 
 }

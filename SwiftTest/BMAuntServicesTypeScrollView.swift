@@ -26,11 +26,11 @@ class BMAuntServicesTypeScrollView: UIScrollView {
     
     private func loadConfig(){
         
+        self.showsHorizontalScrollIndicator = false
         self.backgroundColor = UIColor.white
         self.isPagingEnabled = true
         
         self.contentView = UIView(frame: CGRect.zero)
-        self.contentView.backgroundColor = UIColor.green
         self.addSubview(self.contentView)
         self.contentView.snp.makeConstraints { (make) in
             make.edges.equalTo(self)
@@ -42,7 +42,7 @@ class BMAuntServicesTypeScrollView: UIScrollView {
         self.pageControl.numberOfPages = 5
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = UIColor.purple
-        self.pageControl.backgroundColor = UIColor.black
+//        self.pageControl.backgroundColor = UIColor.black
         self.addSubview(self.pageControl)
         self.pageControl.snp.makeConstraints { (make) in
             make.left.right.equalTo(self)
@@ -53,16 +53,17 @@ class BMAuntServicesTypeScrollView: UIScrollView {
     }
     
     
-    func updateWithServiceType(serviceType:JSON) {
+    func updateWithServiceType(aunt:JSON) {
         
         
-        let array:Array? = serviceType.array
+        let array:Array? = aunt["serviceItemBOs"].array
         
         if let array = array{
         
 
             for i in 0..<array.count{
                 let serviceTypeView:BMAuntServiceTypeView = UIView.loadViewFromNib(nibName: "BMAuntServiceTypeView") as! BMAuntServiceTypeView
+                serviceTypeView.updateWithServiceType(serviceType: array[i], levelName: aunt["levelName"])
                 self.contentView.addSubview(serviceTypeView)
                 
                 
@@ -73,7 +74,7 @@ class BMAuntServicesTypeScrollView: UIScrollView {
                     if i > 0, let lastView = self.contentView.subviews[i - 1] as? BMAuntServiceTypeView {
                         make.left.equalTo(lastView.snp.right)
                     } else {
-                        make.left.equalTo(self.contentView)   //labelGapX为固定值
+                        make.left.equalTo(self.contentView)
                     }
                     
                     if i == array.count-1 {

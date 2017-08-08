@@ -18,6 +18,8 @@ class BMAuntDetailViewController: UIViewController {
     var servicesTypeView:BMAuntServicesTypeScrollView!
     var basicView:BMAuntBasicView!
     var picturesScrollView:BMAuntPicturesScrollView!
+    var cerListView:BMAuntCerListView? = nil
+    var aunt:JSON? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,10 @@ class BMAuntDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    deinit {
+        self.cerListView?.removeFromSuperview()
     }
     
     
@@ -55,6 +61,28 @@ class BMAuntDetailViewController: UIViewController {
         
         //////////阿姨头部视图//////////////
         self.headerView = UIView.loadViewFromNib(nibName: "BMAuntDetailHeaderView") as! BMAuntDetailHeaderView
+        self.headerView.auntCerClickClosureType = {  //返回按钮的回调
+            () -> Void in
+            
+            if let cerListView = self.cerListView{
+                cerListView.show()
+                
+            }else{
+                if let aunt = self.aunt{
+                    self.cerListView = BMAuntCerListView(cerList: aunt["auntCertList"])
+                    UIApplication.shared.keyWindow?.addSubview(self.cerListView!)
+                    self.cerListView?.snp.makeConstraints({ (make) in
+                        make.edges.equalTo(UIApplication.shared.keyWindow!)
+                    })
+                    
+                    //延时1秒执行
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+                        self.cerListView?.show()
+                    }
+                }
+            }
+            
+        }
         self.contentView.addSubview(headerView)
         self.headerView.snp.makeConstraints { (make) in
             make.top.left.right.equalTo(self.contentView)
@@ -107,8 +135,9 @@ class BMAuntDetailViewController: UIViewController {
         
         NetworkRequest.sharedInstance.postRequest(urlString: bannerURL, params: params, isLogin: true, success: { (value) in
             
+            self.aunt = value
             self.headerView.updateWithAunt(aunt: value)
-            self.servicesTypeView.updateWithServiceType(serviceType: value)
+            self.servicesTypeView.updateWithServiceType(aunt: value)
             self.compositeBasics(aunt: value)
             self.picturesScrollView.updateWithImages(images: value["imgUrls"].array)
 
