@@ -28,6 +28,7 @@ class BMAuntDetailHeaderView: UIView {
         self.headImageView.layer.masksToBounds = true
         self.headImageView.layer.cornerRadius = self.headImageView.bounds.size.height/2.0
         
+        self.auntCerBtn.corner(byRoundingCorners: [.bottomLeft,.topLeft], radii: self.auntCerBtn.bounds.size.height/2)
     }
     
     
@@ -36,8 +37,9 @@ class BMAuntDetailHeaderView: UIView {
         let photoUrl:String? = aunt["photoUrl"].string
         let name:String? = aunt["name"].string
         let sex:Int? = aunt["sex"].int
+        let cers:Array? = aunt["auntCertList"].array
         
-        if let photoUrl = photoUrl{
+        if let photoUrl = photoUrl , photoUrl != ""{
             self.headImageView.af_setImage(withURL: URL(string: photoUrl)!, placeholderImage: UIImage(named: "pic_load")!)
         }else{
             self.headImageView.image = UIImage(named: "aunt_default")
@@ -54,6 +56,12 @@ class BMAuntDetailHeaderView: UIView {
             self.sexImageView.image = sex == 0 ? UIImage(named:"female") : UIImage(named:"male")
         }else{
             self.sexImageView.image = nil
+        }
+        
+        if let _ = cers{
+            self.auntCerBtn.isHidden = false
+        }else{
+            self.auntCerBtn.isHidden = true
         }
     }
    

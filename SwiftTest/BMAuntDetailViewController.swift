@@ -20,6 +20,7 @@ class BMAuntDetailViewController: UIViewController {
     var picturesScrollView:BMAuntPicturesScrollView!
     var cerListView:BMAuntCerListView? = nil
     var aunt:JSON? = nil
+    var auntId:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,19 @@ class BMAuntDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    /**
+     *  页面初始化
+     *  @param auntId  阿姨ID
+     */
+    init(auntId:String) {
+        self.auntId = auntId
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     deinit {
@@ -130,7 +144,7 @@ class BMAuntDetailViewController: UIViewController {
         
         //////////////请求轮播图///////////////////
         
-        let bannerURL = "\(BMHOST)/c/aunt/queryAuntItem?auntId=A0044038"
+        let bannerURL = "\(BMHOST)/c/aunt/queryAuntItem?auntId=\(self.auntId!)"
         let params = ["":""]
         
         NetworkRequest.sharedInstance.postRequest(urlString: bannerURL, params: params, isLogin: true, success: { (value) in
@@ -188,7 +202,7 @@ class BMAuntDetailViewController: UIViewController {
             basicsArray.append(["text":"现居：","value":finalAddress])
         }
         
-        if let language = language {
+        if let language = language , language != "" {
         
             let finalLanguage:String = language.characters.split(separator: ",").map(String.init).map({ (value) -> String in
                 return Config.language(id: Int(value)!)
@@ -197,7 +211,7 @@ class BMAuntDetailViewController: UIViewController {
             basicsArray.append(["text":"语言：","value":finalLanguage])
         }
         
-        if let cuisine = cuisine {
+        if let cuisine = cuisine, cuisine != "" {
             
             let finalCuisine:String = cuisine.characters.split(separator: ",").map(String.init).map({ (value) -> String in
                 return Config.cuisine(id: Int(value)!)

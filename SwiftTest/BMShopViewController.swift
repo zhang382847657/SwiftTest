@@ -69,6 +69,12 @@ class BMShopViewController: UIViewController {
         
         /////////////头部视图///////////
         self.headerView = UIView.loadViewFromNib(nibName: "BMShopHeaderView") as! BMShopHeaderView
+        self.headerView.lookAllShopClickClosure = {  //查看所有门店点击回调
+            () -> Void in
+            self.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(BMStoreListTableViewController(style: .plain), animated: true)
+            self.hidesBottomBarWhenPushed = false
+        }
         self.contentView.addSubview(headerView)
         self.headerView.snp.makeConstraints { (make) in
             make.left.top.right.equalTo(self.contentView)
@@ -89,7 +95,7 @@ class BMShopViewController: UIViewController {
         
         /////////////店铺推荐阿姨/////////
         self.recommentAuntView = UIView.loadViewFromNib(nibName: "BMShopRecommendAuntView") as! BMShopRecommendAuntView
-        self.recommentAuntView.lookAllAuntsClickClosure = {  //返回按钮的回调
+        self.recommentAuntView.lookAllAuntsClickClosure = {  //查看所有阿姨按钮回调
             () -> Void in
             
             let vc:BMAuntListViewController = BMAuntListViewController(style: .plain)

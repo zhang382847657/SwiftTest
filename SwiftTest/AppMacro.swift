@@ -14,6 +14,7 @@ let kScreenHeight = UIScreen.main.bounds.size.height  //屏幕高度
 let kScreenWidth = UIScreen.main.bounds.size.width    //屏幕宽度
 let BMHOST = "https://jz.qianmi.com"   //斑马请求地址
 let BMDUSERCODE = "D00017"             //D用户编号
+let VERSION = "3.3.3"                  //版本号
 
 
 

@@ -16,7 +16,7 @@ class BMShopCommentPicturesScrollView: UIScrollView {
     var contentView:UIView!
     var imageViewer = [SKPhoto]() //浏览图片的数组
     var browser:SKPhotoBrowser! //图片浏览器
-    var viewController:UIViewController? = nil //当前视图所对应的viewcontroller
+    var vc:UIViewController? = nil //当前视图所对应的viewcontroller
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -130,12 +130,16 @@ class BMShopCommentPicturesScrollView: UIScrollView {
         let imageView = sender.view!
         
         
-        if self.viewController == nil{
-            self.viewController = imageView.getViewController() //得到viewcontroller
+        if let vc = self.vc{
+            self.browser.initializePageIndex(imageView.tag-50) //设置浏览器默认显示的位置
+            vc.present(self.browser, animated: true, completion: nil)
+        }else{
+            self.vc = imageView.getViewController() //得到viewcontroller
+            self.browser.initializePageIndex(imageView.tag-50) //设置浏览器默认显示的位置
+            self.vc!.present(self.browser, animated: true, completion: nil)
         }
         
-        self.browser.initializePageIndex(imageView.tag-50) //设置浏览器默认显示的位置
-        viewController?.present(self.browser, animated: true, completion: nil)
+        
         
    
     }

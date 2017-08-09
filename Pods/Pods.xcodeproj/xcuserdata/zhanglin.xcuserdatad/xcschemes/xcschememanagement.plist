@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,7 +72,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04B2C6319E60EF3C0E177DEE08C535D2</key>
+		<key>156FAB5CCF4F1F7E269FA89542A8DE65</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4602684CABA050448571DDBCBD4B70F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>48758F33134917322307D39B3D43F8E6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5D3728A90C899C290F9CA8509F60B500</key>
+		<key>4DC059E04CBA98AEDDB5C34E02D551E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9A079BAFDCCEC9641807081748E7B629</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9EFE4C70245EE2857D336B8B9FA4E825</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFD9267297257890F3C3AF169AADF9F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B606C61DDF7DE2E62A0F32E43596236F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,22 +122,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C643F49A77D1652EA37BA408C4230ED7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>D7A75F149082140741FC1E0B5B2863C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D910381CC80973EAEC47C4B20EFC1402</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ED0E87B0154BB9D0B8FBD0F03D5A30B5</key>
+		<key>F52B30EFCE971F908B97284CF46A1C00</key>
 		<dict>
 			<key>primary</key>
 			<true/>

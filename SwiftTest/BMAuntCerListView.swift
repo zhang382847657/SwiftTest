@@ -12,8 +12,10 @@ import SwiftyJSON
 class BMAuntCerListView: UIView,UICollectionViewDelegate,UICollectionViewDataSource {
     
     var topView:UIView!
+    var headerView:BMAuntCerHeaderView!
+    var collectionView:UICollectionView!
     var bottomView:UIButton!
-    var dataSource:Array<JSON>? = nil
+    var dataSource:Array<JSON>!
     
     let headerViewHeight = 53 //头部标题视图的高度
     let collectionViewHeight = 196  //collectionView的高度
@@ -40,9 +42,10 @@ class BMAuntCerListView: UIView,UICollectionViewDelegate,UICollectionViewDataSou
         }
         
         ////头部视图///
-        let headerView:BMAuntCerHeaderView = UIView.loadViewFromNib(nibName: "BMAuntCerHeaderView") as! BMAuntCerHeaderView
-        self.topView.addSubview(headerView)
-        headerView.snp.makeConstraints { (make) in
+        self.headerView = UIView.loadViewFromNib(nibName: "BMAuntCerHeaderView") as! BMAuntCerHeaderView
+        self.headerView.updateNumber(currentNum: 1, totalNum: self.dataSource.count)
+        self.topView.addSubview(self.headerView)
+        self.headerView.snp.makeConstraints { (make) in
             make.top.left.right.equalTo(self.topView)
             make.height.equalTo(headerViewHeight)
         }
@@ -50,15 +53,15 @@ class BMAuntCerListView: UIView,UICollectionViewDelegate,UICollectionViewDataSou
         ///证书视图////
         let layout:CardSwitchLayout = CardSwitchLayout()
         layout.itemSize = CGSize(width: 197, height: 124)
-        let collectionView:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.white
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "BMAuntCerCell", bundle: nil), forCellWithReuseIdentifier: "BMAuntCerCell")
-        self.topView.addSubview(collectionView)
+        self.collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        self.collectionView.backgroundColor = UIColor.white
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.register(UINib(nibName: "BMAuntCerCell", bundle: nil), forCellWithReuseIdentifier: "BMAuntCerCell")
+        self.topView.addSubview(self.collectionView)
         
-        collectionView.snp.makeConstraints { (make) in
-            make.top.equalTo(headerView.snp.bottom)
+        self.collectionView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.headerView.snp.bottom)
             make.left.right.equalTo(self.topView)
             make.height.equalTo(collectionViewHeight)
         }
@@ -90,16 +93,18 @@ class BMAuntCerListView: UIView,UICollectionViewDelegate,UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if let dataSource = self.dataSource{
-            return dataSource.count
-        }else{
-            return 0
-        }
+        return dataSource.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BMAuntCerCell", for: indexPath) as! BMAuntCerCell
-        cell.updateWithCer(cer: self.dataSource![indexPath.item])
+        cell.updateWithCer(cer: self.dataSource[indexPath.item])
         return cell
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        let pointInView = self.convert(self.collectionView.center, to: self.collectionView)
+        let indexPath:IndexPath = collectionView.indexPathForItem(at: pointInView)!
+        self.headerView.updateNumber(currentNum: indexPath.item+1, totalNum: self.dataSource.count)
     }
     
     

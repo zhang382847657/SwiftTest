@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="303" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tybj" translatesAutoresizingMaskIntoConstraints="NO" id="eO7-Y7-bWG">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baomu" translatesAutoresizingMaskIntoConstraints="NO" id="eO7-Y7-bWG">
                     <rect key="frame" x="20" y="20" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="9YO-4K-oj3"/>
@@ -67,6 +67,6 @@
     </objects>
     <resources>
         <image name="aunt_level" width="21" height="20"/>
-        <image name="tybj" width="25" height="25"/>
+        <image name="baomu" width="16" height="26"/>
     </resources>
 </document>

@@ -15,6 +15,11 @@ class BMAuntServiceTypeView: UIView {
     @IBOutlet weak var serviceTypeLabel: UILabel!
     @IBOutlet weak var levelBtn: UIButton!
     
+    override func awakeFromNib() {
+        
+        self.serviceImageView.layer.masksToBounds = true
+    }
+    
     
     
     func updateWithServiceType(serviceType:JSON,levelName:JSON){

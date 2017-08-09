@@ -15,7 +15,7 @@ class BMAuntPicturesScrollView: UIScrollView {
     var contentView:UIView!
     var imageViewer = [SKPhoto]() //浏览图片的数组
     var browser:SKPhotoBrowser! //图片浏览器
-    var viewController:UIViewController? = nil //当前视图所对应的viewcontroller
+    var vc:UIViewController? = nil //当前视图所对应的viewcontroller
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,15 +66,26 @@ class BMAuntPicturesScrollView: UIScrollView {
                 self.contentView.addSubview(imageView)
                 
                 
-                if let enclosureType = enclosureType , let url = url{
+                if let url = url{
                     
-                    if enclosureType == 1 {  //如果是视频类型
+                    if let enclosureType = enclosureType{  //如果照片类型存在
                         
-                        imageView.image = UIImage(named: "video")
-                        imageView.backgroundColor = UIColor.gray
+                        if enclosureType == 1 {  //如果是视频类型
+                            
+                            imageView.image = UIImage(named: "video")
+                            imageView.backgroundColor = UIColor.gray
+                            
+                        }else{  //如果是其他类型
+                            
+                            imageView.af_setImage(withURL: URL(string: "\(url)?x-oss-process=image/resize,p_50")!, placeholderImage: UIImage(named: "pic_load")!)
+                            
+                            ////图片浏览器数组里塞值
+                            let photo = SKPhoto.photoWithImageURL(url)
+                            photo.shouldCachePhotoURLImage = true
+                            imageViewer.append(photo)
+                        }
                         
-                    }else{
-                        
+                    }else{  //如果照片类型不存在  默认都是图片
                         imageView.af_setImage(withURL: URL(string: "\(url)?x-oss-process=image/resize,p_50")!, placeholderImage: UIImage(named: "pic_load")!)
                         
                         ////图片浏览器数组里塞值
@@ -84,7 +95,7 @@ class BMAuntPicturesScrollView: UIScrollView {
                     }
                     
                 }else{
-                    imageView.image = UIImage(named: "aunt_default")
+                    imageView.image = nil
                 }
                 
                 imageView.snp.makeConstraints({ (make) in
@@ -119,14 +130,14 @@ class BMAuntPicturesScrollView: UIScrollView {
         let imageView = sender.view!
         
         
-        if self.viewController == nil{
-            self.viewController = imageView.getViewController() //得到viewcontroller
+        if let vc = self.vc{
+            self.browser.initializePageIndex(imageView.tag-50) //设置浏览器默认显示的位置
+            vc.present(self.browser, animated: true, completion: nil)
+        }else{
+            self.vc = imageView.getViewController() //得到viewcontroller
+            self.browser.initializePageIndex(imageView.tag-50) //设置浏览器默认显示的位置
+            vc!.present(self.browser, animated: true, completion: nil)
         }
-        
-        self.browser.initializePageIndex(imageView.tag-50) //设置浏览器默认显示的位置
-        viewController?.present(self.browser, animated: true, completion: nil)
-        
-        
     }
 
 

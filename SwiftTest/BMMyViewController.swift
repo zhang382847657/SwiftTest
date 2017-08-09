@@ -19,31 +19,20 @@ class BMMyViewController: UIViewController {
     @IBOutlet weak var checkUpdateView: InforCellView!  //检查更新
     
     @IBOutlet weak var phoneLabel: UILabel! //手机号
-    
     @IBOutlet weak var headBackgroundView: UIView! //头像背景视图
     @IBOutlet weak var headBtn: UIButton! //头像按钮
-
     @IBOutlet weak var loginBtn: UIButton! //登录按钮
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.automaticallyAdjustsScrollViewInsets = false //这样可以防止scrollview没有置顶
-        
-        self.contentView.backgroundColor = UIColor.colorWithHexString(hex: BMBacgroundColor)
-        self.headBackgroundView.layer.cornerRadius = self.headBackgroundView.bounds.size.height/2.0
-        self.headBackgroundView.isHidden = true
-        self.phoneLabel.isHidden = true
-        self.loginBtn.addBorder(color: UIColor.white, size: BMBorderSize, borderTypes: [BorderType.top.rawValue,BorderType.left.rawValue,BorderType.right.rawValue,BorderType.bottom.rawValue])
-        
-        self.inviteFriendView.titleLabel.text = "邀请好友注册"
-        self.feedBackView.titleLabel.text = "意见反馈"
-        self.checkUpdateView.titleLabel.text = "检查更新"
+        self.initUI()
+       
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +46,35 @@ class BMMyViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true) //显示导航栏
     }
     
+    
+    private func initUI(){
+        
+        self.contentView.backgroundColor = UIColor.colorWithHexString(hex: BMBacgroundColor)
+        self.headBackgroundView.layer.cornerRadius = self.headBackgroundView.bounds.size.height/2.0
+        self.headBackgroundView.isHidden = true
+        self.phoneLabel.isHidden = true
+        self.loginBtn.addBorder(color: UIColor.white, size: BMBorderSize, borderTypes: [BorderType.top.rawValue,BorderType.left.rawValue,BorderType.right.rawValue,BorderType.bottom.rawValue])
+    
+        self.myInfoView.leftTitleLabel.text = "我的信息"
+        self.inviteFriendView.leftTitleLabel.text = "邀请好友注册"
+        self.inviteFriendView.addBorderLayer(color: UIColor.colorWithHexString(hex: BMBorderColor), size: BMBorderSize, boderType: BorderType.bottom)
+        self.feedBackView.leftTitleLabel.text = "意见反馈"
+        self.feedBackView.infoCellClickClosure = {  //点击回调
+            () -> Void in
+            self.hidesBottomBarWhenPushed = true
+            let vc:BMFeedBackViewController = BMFeedBackViewController(nibName: "BMFeedBackViewController", bundle: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.hidesBottomBarWhenPushed = false
+        }
+        self.checkUpdateView.leftTitleLabel.text = "检查更新"
+        self.checkUpdateView.rightTitleLabel.text = VERSION
+        self.checkUpdateView.imageView.isHidden = true
+        self.checkUpdateView.infoCellClickClosure = {  //点击回调
+            () -> Void in
+            
+        }
+    }
+    
     //快速登录点击事件
     @IBAction func loginClick(_ sender: UIButton) {
         
@@ -68,18 +86,9 @@ class BMMyViewController: UIViewController {
     }
     
     
-    //快速登录点击事件
+    //退出登录点击事件
     @IBAction func exitClick(_ sender: UIButton) {
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

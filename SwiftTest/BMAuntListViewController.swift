@@ -16,7 +16,7 @@ class BMAuntListViewController: UITableViewController,TBEmptyDataSetDelegate,TBE
     var loadMoreControl = JTLoadMoreControl() //加载更多数据控制器
     let pageSize:Int = 10  //每页显示条数
     var pageNum:Int? = 0   //当前页
-    var dataList:Array<Any>?     //返回的数据数组
+    var dataList:Array<JSON>?     //返回的数据数组
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +84,7 @@ class BMAuntListViewController: UITableViewController,TBEmptyDataSetDelegate,TBE
             
             if let dataList = self.dataList{ //如果已经有数据了，就把新数据追到到数组最后面
                 
-                let array:Array<Any> = value["dataList"].arrayValue
+                let array:Array<JSON> = value["dataList"].arrayValue
                 self.dataList = dataList + array
                 
                 if array.count < self.pageSize{ //如果是最后一页数据
@@ -125,7 +125,7 @@ class BMAuntListViewController: UITableViewController,TBEmptyDataSetDelegate,TBE
        // cell.selectionStyle = .none //去掉点击效果
         
         if let dataList = self.dataList{
-            let json: JSON =  dataList[indexPath.row] as! JSON
+            let json: JSON =  dataList[indexPath.row] 
             cell.updateWithAunt(aunt: json)
         }
         
@@ -135,10 +135,15 @@ class BMAuntListViewController: UITableViewController,TBEmptyDataSetDelegate,TBE
     // MARK: - TabelViewDelegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
-        let cell = tableView.cellForRow(at: indexPath)
-        let vc:BMAuntDetailViewController = BMAuntDetailViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    
+        let aunt:JSON = self.dataList![indexPath.row]
+        let auntId:String? = aunt["auntId"].string
+        if let auntId = auntId{
+            let vc:BMAuntDetailViewController = BMAuntDetailViewController(auntId: auntId)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            dPrint(item: "没有阿姨ID")
+        }
+        
     }
     
   

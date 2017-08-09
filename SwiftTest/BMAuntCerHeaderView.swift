@@ -13,5 +13,8 @@ class BMAuntCerHeaderView: UIView {
     @IBOutlet weak var numberLabel: UILabel!
 
 
+    func updateNumber(currentNum:Int , totalNum:Int) {
+        self.numberLabel.text = "(\(currentNum)/\(totalNum))"
+    }
 
 }

@@ -100,7 +100,10 @@
 		6397B7001F1F62F400C77BDC /* BMProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397B6FF1F1F62F400C77BDC /* BMProductViewController.swift */; };
 		6397B7081F1F7E1A00C77BDC /* BMProductsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6397B7071F1F7E1A00C77BDC /* BMProductsView.xib */; };
 		6397B70A1F1F7E7300C77BDC /* BMProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397B7091F1F7E7300C77BDC /* BMProductsView.swift */; };
-		63A950F11F2AD23A0052F6C6 /* InforCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A950F01F2AD23A0052F6C6 /* InforCellView.xib */; };
+		63A8110A1F3ADF79001A0707 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A811091F3ADF79001A0707 /* IQKeyboardManagerSwift.framework */; };
+		63A8110D1F3AE372001A0707 /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A8110C1F3AE372001A0707 /* InputTextView.swift */; };
+		63A811111F3AE6DF001A0707 /* BMFeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A8110F1F3AE6DF001A0707 /* BMFeedBackViewController.swift */; };
+		63A811121F3AE6DF001A0707 /* BMFeedBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A811101F3AE6DF001A0707 /* BMFeedBackViewController.xib */; };
 		63A950F31F2AD2570052F6C6 /* InforCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A950F21F2AD2570052F6C6 /* InforCellView.swift */; };
 		63A950F61F2B0FD30052F6C6 /* BMCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A950F51F2B0FD30052F6C6 /* BMCache.swift */; };
 		63A950FE1F2B1CC10052F6C6 /* BMDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A950FD1F2B1CC10052F6C6 /* BMDefaults.swift */; };
@@ -244,7 +247,10 @@
 		6397B6FF1F1F62F400C77BDC /* BMProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMProductViewController.swift; sourceTree = "<group>"; };
 		6397B7071F1F7E1A00C77BDC /* BMProductsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMProductsView.xib; sourceTree = "<group>"; };
 		6397B7091F1F7E7300C77BDC /* BMProductsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMProductsView.swift; sourceTree = "<group>"; };
-		63A950F01F2AD23A0052F6C6 /* InforCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InforCellView.xib; sourceTree = "<group>"; };
+		63A811091F3ADF79001A0707 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = "Pods/../build/Debug-iphoneos/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"; sourceTree = "<group>"; };
+		63A8110C1F3AE372001A0707 /* InputTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
+		63A8110F1F3AE6DF001A0707 /* BMFeedBackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMFeedBackViewController.swift; sourceTree = "<group>"; };
+		63A811101F3AE6DF001A0707 /* BMFeedBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMFeedBackViewController.xib; sourceTree = "<group>"; };
 		63A950F21F2AD2570052F6C6 /* InforCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InforCellView.swift; sourceTree = "<group>"; };
 		63A950F51F2B0FD30052F6C6 /* BMCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCache.swift; sourceTree = "<group>"; };
 		63A950F71F2B130F0052F6C6 /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftTest-fgpblrjzczquxxhhesthbehoqagg/Build/Products/Debug-iphonesimulator/Cache/Cache.framework"; sourceTree = "<group>"; };
@@ -274,6 +280,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63A8110A1F3ADF79001A0707 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				6388BCBB1F34179700165D3A /* SKPhotoBrowser.framework in Frameworks */,
 				638F102E1F03A518004251EA /* PKHUD.framework in Frameworks */,
 				63B3AE411F02791F00137D7C /* DGElasticPullToRefresh.framework in Frameworks */,
@@ -370,6 +377,7 @@
 		63015C111EFBAB9500A9C8AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63A8110B1F3AE348001A0707 /* 文本域 */,
 				633BB4531F33192E00A4D498 /* 打分星星 */,
 				633C10ED1F306CA30036F85B /* 验证码按钮 */,
 				63A950EB1F2AD0C10052F6C6 /* InfoCell */,
@@ -661,6 +669,7 @@
 				63A951041F2B42780052F6C6 /* BMMeNavigationController.swift */,
 				63DD17911F2F0A6300ED3AB6 /* BMMyViewController.swift */,
 				63DD17921F2F0A6300ED3AB6 /* BMMyViewController.xib */,
+				63A8110E1F3AE6B6001A0707 /* 意见反馈 */,
 			);
 			name = "我的";
 			sourceTree = "<group>";
@@ -669,6 +678,7 @@
 			isa = PBXGroup;
 			children = (
 				633C10F01F3079010036F85B /* BMShopViewController.swift */,
+				63A811081F3ADC29001A0707 /* 门店列表 */,
 				6378C18B1F32FE860070E81F /* 地址+电话+手机 */,
 				6378C18A1F32FE6F0070E81F /* 用户评价 */,
 				6378C1891F32FE5C0070E81F /* 推荐阿姨 */,
@@ -786,7 +796,6 @@
 				6397B6E71F1F5F9200C77BDC /* BMStoreCardRecommendCell.xib */,
 				6397B6E81F1F5F9200C77BDC /* BMStoreCardRecommendView.swift */,
 				6397B6E91F1F5F9200C77BDC /* BMStoreCardRecommendView.xib */,
-				6397B6EA1F1F5F9200C77BDC /* BMStoreListTableViewController.swift */,
 			);
 			name = "推荐";
 			sourceTree = "<group>";
@@ -815,10 +824,34 @@
 			name = "商品类目";
 			sourceTree = "<group>";
 		};
+		63A811081F3ADC29001A0707 /* 门店列表 */ = {
+			isa = PBXGroup;
+			children = (
+				6397B6EA1F1F5F9200C77BDC /* BMStoreListTableViewController.swift */,
+			);
+			name = "门店列表";
+			sourceTree = "<group>";
+		};
+		63A8110B1F3AE348001A0707 /* 文本域 */ = {
+			isa = PBXGroup;
+			children = (
+				63A8110C1F3AE372001A0707 /* InputTextView.swift */,
+			);
+			name = "文本域";
+			sourceTree = "<group>";
+		};
+		63A8110E1F3AE6B6001A0707 /* 意见反馈 */ = {
+			isa = PBXGroup;
+			children = (
+				63A8110F1F3AE6DF001A0707 /* BMFeedBackViewController.swift */,
+				63A811101F3AE6DF001A0707 /* BMFeedBackViewController.xib */,
+			);
+			name = "意见反馈";
+			sourceTree = "<group>";
+		};
 		63A950EB1F2AD0C10052F6C6 /* InfoCell */ = {
 			isa = PBXGroup;
 			children = (
-				63A950F01F2AD23A0052F6C6 /* InforCellView.xib */,
 				63A950F21F2AD2570052F6C6 /* InforCellView.swift */,
 			);
 			name = InfoCell;
@@ -882,6 +915,7 @@
 		E3FA39882CC02EC1B408F53D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63A811091F3ADF79001A0707 /* IQKeyboardManagerSwift.framework */,
 				6388BCBA1F34179700165D3A /* SKPhotoBrowser.framework */,
 				63A950F71F2B130F0052F6C6 /* Cache.framework */,
 				63A950F81F2B130F0052F6C6 /* CryptoSwift.framework */,
@@ -1022,6 +1056,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63A811121F3AE6DF001A0707 /* BMFeedBackViewController.xib in Resources */,
 				6397B6EE1F1F5F9200C77BDC /* BMStoreCardRecommendView.xib in Resources */,
 				6397B7081F1F7E1A00C77BDC /* BMProductsView.xib in Resources */,
 				6397B6EC1F1F5F9200C77BDC /* BMStoreCardRecommendCell.xib in Resources */,
@@ -1048,7 +1083,6 @@
 				635489731F2335F200CCA117 /* BMStoreCardBuyViewController.xib in Resources */,
 				6359B0901EF1074700D6DF5E /* Assets.xcassets in Resources */,
 				6359B08E1EF1074700D6DF5E /* Main.storyboard in Resources */,
-				63A950F11F2AD23A0052F6C6 /* InforCellView.xib in Resources */,
 				6346B8621F31D10900721963 /* BMShopToolsView.xib in Resources */,
 				634C27281F39C2C100D1043D /* BMAuntCerHeaderView.xib in Resources */,
 				6388BCD31F3465DB00165D3A /* BMAuntServiceTypeView.xib in Resources */,
@@ -1161,6 +1195,7 @@
 				6378C1811F32BAA10070E81F /* BMShopRecommendCommentView.swift in Sources */,
 				63A950FE1F2B1CC10052F6C6 /* BMDefaults.swift in Sources */,
 				633704A31F21F01800F769B4 /* BMProductCircleView.swift in Sources */,
+				63A811111F3AE6DF001A0707 /* BMFeedBackViewController.swift in Sources */,
 				63A951021F2B21F20052F6C6 /* BMLoginViewController.swift in Sources */,
 				634799061EFE3E8400ADC512 /* UIView+Extension.swift in Sources */,
 				6397B6D51F1F5E6800C77BDC /* BMNearesStoreView.swift in Sources */,
@@ -1182,6 +1217,7 @@
 				633BB4571F331BAE00A4D498 /* UIImage+Extension.swift in Sources */,
 				6388BCBE1F34292D00165D3A /* BMAuntListViewController.swift in Sources */,
 				63A951051F2B42780052F6C6 /* BMMeNavigationController.swift in Sources */,
+				63A8110D1F3AE372001A0707 /* InputTextView.swift in Sources */,
 				63FF33671F1DFB4A002072B2 /* Config.swift in Sources */,
 				6397B6F41F1F5FBA00C77BDC /* BMProductTypeContentView.swift in Sources */,
 				6388BCCD1F34628600165D3A /* BMAuntServicesTypeScrollView.swift in Sources */,
@@ -1354,6 +1390,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/TBEmptyDataSet",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/DGElasticPullToRefresh",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/IQKeyboardManagerSwift",
 				);
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1376,6 +1413,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/TBEmptyDataSet",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/DGElasticPullToRefresh",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/IQKeyboardManagerSwift",
 				);
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

@@ -8,48 +8,86 @@
 
 import UIKit
 
+//点击的闭包
+typealias InfoCellClickClosure = () -> Void
+
 class InforCellView: UIView {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    var contentView:UIView!
-    var singleTap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapClick))  //点击手势
+    var leftTitleLabel:UILabel!
+    var rightTitleLabel:UILabel!
+    var imageView:UIImageView!
+    
+    var infoCellClickClosure: InfoCellClickClosure? //点击回调
+    
 
-    /*** 下面的几个方法都是为了让这个自定义类能将xib里的view加载进来。这个是通用的，我们不需修改。 ****/
     //初始化时将xib中的view添加进来
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView = loadViewFromNib()
-        addSubview(contentView)
-        self.initialSetup()
+        self.loadConfig()
     }
     
     //初始化时将xib中的view添加进来
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        contentView = loadViewFromNib()
-        addSubview(contentView)
-        self.initialSetup()
-    }
-    //加载xib
-    func loadViewFromNib() -> UIView {
-        
-        let className = type(of: self)
-        let bundle = Bundle(for: className)
-        let name = NSStringFromClass(className).components(separatedBy: ".").last
-        let nib = UINib(nibName: name!, bundle: bundle)
-        let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
-        return view
+        self.loadConfig()
     }
     
     //初始化默认属性配置
-    func initialSetup(){
-       self.addGestureRecognizer(self.singleTap) //给每一个视图添加一个点击的事件
+    private func loadConfig(){
+        
+        
+        ///////////////左侧标题/////////////
+        self.leftTitleLabel = UILabel(frame: CGRect.zero)
+        self.leftTitleLabel.font = UIFont.systemFont(ofSize: BMTitleFontSize)
+        self.leftTitleLabel.textColor = UIColor.colorWithHexString(hex: BMTitleColor)
+        self.addSubview(self.leftTitleLabel)
+        
+        self.leftTitleLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self).offset(12)
+            make.centerY.equalTo(self.snp.centerY)
+        }
+        
+        
+        ///////////////右侧箭头/////////////
+        self.imageView = UIImageView(frame: CGRect.zero)
+        self.imageView.image = UIImage(named: "infor")
+        self.addSubview(self.imageView)
+        
+        self.imageView.snp.makeConstraints { (make) in
+            make.right.equalTo(self.snp.right).offset(-12)
+            make.width.equalTo(7)
+            make.height.equalTo(12)
+            make.centerY.equalTo(self.snp.centerY)
+        }
+        
+        
+        ///////////////右侧文字//////////////
+        self.rightTitleLabel = UILabel(frame: CGRect.zero)
+        self.rightTitleLabel.font = UIFont.systemFont(ofSize: BMSmallTitleFontSize)
+        self.rightTitleLabel.textColor = UIColor.colorWithHexString(hex: BMSmallTitleColor)
+
+        self.addSubview(self.rightTitleLabel)
+        
+        self.rightTitleLabel.snp.makeConstraints { (make) in
+            make.right.equalTo(self.imageView.snp.left).offset(-5)
+            make.centerY.equalTo(self.snp.centerY)
+        }
+        
+        
+        ///////////////添加点击手势////////////
+        let singleTap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapClick))
+        self.addGestureRecognizer(singleTap)
+        
     }
     
     
-    
     func tapClick(sender:UITapGestureRecognizer){
-        self.backgroundColor = UIColor.groupTableViewBackground
+        
+        dPrint(item: "我被点击了")
+        
+        if let infoCellClickClosure = self.infoCellClickClosure{
+            infoCellClickClosure()
+        }
         
     }
 

@@ -9,6 +9,9 @@
 import UIKit
 import SwiftyJSON
 
+//查看所有门店闭包
+typealias LookAllShopClickClosure = () -> Void
+
 class BMShopHeaderView: UIView {
 
     @IBOutlet weak var imageView: UIImageView!  //家政公司头像
@@ -17,11 +20,13 @@ class BMShopHeaderView: UIView {
     @IBOutlet weak var headerImageBackgroundView: UIView!  //家政公司头像背景视图
     @IBOutlet weak var shopBtn: UIButton! //查看门店按钮
     
+    var lookAllShopClickClosure: LookAllShopClickClosure? //查看所有阿姨点击回调
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.shopBtn.layer.cornerRadius = self.shopBtn.bounds.size.height/2.0
+        self.shopBtn.corner(byRoundingCorners: [.bottomLeft,.topLeft], radii: self.shopBtn.bounds.size.height/2)
         self.headerImageBackgroundView.layer.masksToBounds = true
         self.headerImageBackgroundView.layer.cornerRadius = self.headerImageBackgroundView.bounds.size.height/2.0
     }
@@ -57,7 +62,9 @@ class BMShopHeaderView: UIView {
     //查看门店点击事件
     @IBAction func shopClick(_ sender: UIButton) {
         
-        
+        if let lookAllShopClickClosure = self.lookAllShopClickClosure{
+            lookAllShopClickClosure()
+        }
         
     }
 }
