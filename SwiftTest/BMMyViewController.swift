@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class BMMyViewController: UIViewController {
     
@@ -22,6 +23,10 @@ class BMMyViewController: UIViewController {
     @IBOutlet weak var headBackgroundView: UIView! //头像背景视图
     @IBOutlet weak var headBtn: UIButton! //头像按钮
     @IBOutlet weak var loginBtn: UIButton! //登录按钮
+    
+    var url:String? = nil //版本升级的url地址
+    
+    var alertController:UIAlertController! //提示框
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +59,27 @@ class BMMyViewController: UIViewController {
         self.headBackgroundView.isHidden = true
         self.phoneLabel.isHidden = true
         self.loginBtn.addBorder(color: UIColor.white, size: BMBorderSize, borderTypes: [BorderType.top.rawValue,BorderType.left.rawValue,BorderType.right.rawValue,BorderType.bottom.rawValue])
+        
+        
+        ///////////设置提示框////////////////////
+        self.alertController = UIAlertController(title: "有新版本，请升级", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        self.alertController.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        self.alertController.addAction(UIAlertAction(title: "确定", style: .default, handler: { (action) in
+            
+            if let url = self.url{
+                //根据iOS系统版本，分别处理
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(URL(string: url)!, options: [:],
+                                              completionHandler: {
+                                                (success) in
+                    })
+                } else {
+                    UIApplication.shared.openURL(URL(string: url)!)
+                }
+            }else{
+                dPrint(item: "更新的url为空")
+            }
+        }))
     
         self.myInfoView.leftTitleLabel.text = "我的信息"
         self.inviteFriendView.leftTitleLabel.text = "邀请好友注册"
@@ -67,22 +93,53 @@ class BMMyViewController: UIViewController {
             self.hidesBottomBarWhenPushed = false
         }
         self.checkUpdateView.leftTitleLabel.text = "检查更新"
-        self.checkUpdateView.rightTitleLabel.text = VERSION
+        self.checkUpdateView.rightTitleLabel.text = "当前版本: \(VERSION)"
         self.checkUpdateView.imageView.isHidden = true
         self.checkUpdateView.infoCellClickClosure = {  //点击回调
             () -> Void in
             
+            ////////////查询版本更新////////////
+            let url = "\(BMHOST)/appgen/updateVersion"
+            let params:Dictionary<String,Any> = ["osType":1,"duserCode":BMDUSERCODE,"appVersion":VERSION]
+            NetworkRequest.sharedInstance.getRequest(urlString: url , params: params , success: { value in
+                
+                let releaseVersion:String? = value["releaseVersion"].string
+                let canUpgrade:Bool? = value["canUpgrade"].bool
+                self.url = value["url"].string
+                
+                if let releaseVersion = releaseVersion, let canUpgrade = canUpgrade{
+                    
+                    if releaseVersion > VERSION && canUpgrade == true {
+                        self.present(self.alertController, animated: true, completion: nil)
+                    }
+                    
+                }else{
+                    
+                    HUD.flash(.label("已是最新版本"), delay: 1.0)
+                }
+                
+                
+            }) { error in
+                
+            }
+
+            
         }
+    }
+    
+    //卡包点击事件
+    @IBAction func cardsClick(_ sender: UITapGestureRecognizer) {
+        let vc:BMCardsViewController = BMCardsViewController(style: .grouped)
+        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
     
     //快速登录点击事件
     @IBAction func loginClick(_ sender: UIButton) {
         
         let loginVC:BMLoginViewController = BMLoginViewController(nibName: "BMLoginViewController", bundle: nil)
-        self.navigationController?.present(loginVC, animated: true, completion: {
-            
-            
-        })
+        self.navigationController?.present(loginVC, animated: true, completion: nil)
     }
     
     
