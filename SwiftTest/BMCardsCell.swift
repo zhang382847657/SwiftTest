@@ -36,7 +36,7 @@ class BMCardsCell: UITableViewCell {
     //套餐卡
     func updateWithComboCard(comboCard:JSON){
         
-        self.cardView.backgroundColor = UIColor.colorWithHexString(hex: BMThemeColorOrange)
+        self.cardView.backgroundColor = UIColor.colorWithHexString(hex: BMThemeColor)
         self.backgroundImageView.image = UIImage(named:"tckbj_kb")
         
         let name:String? = comboCard["name"].string
@@ -59,7 +59,7 @@ class BMCardsCell: UITableViewCell {
     //储值卡
     func updateWithStoreCard(storeCard:JSON){
         
-        self.cardView.backgroundColor = UIColor.colorWithHexString(hex: BMThemeColor)
+        self.cardView.backgroundColor = UIColor.colorWithHexString(hex: BMThemeColorOrange)
         self.backgroundImageView.image = UIImage(named:"czkbj_kb")
         
         let kindName:String? = storeCard["kindName"].string
@@ -102,7 +102,6 @@ class BMCardsCell: UITableViewCell {
     //会员卡
     func updateWithMemberCard(memberCard:JSON){
         
-        self.cardView.backgroundColor = UIColor.red
         self.backgroundImageView.image = UIImage(named:"hykbj_kb")
         
         let typeName:String? = memberCard["typeName"].string
@@ -117,7 +116,7 @@ class BMCardsCell: UITableViewCell {
         }
         
         if let _ = beginTime, let expTime = expTime{
-            self.nameLabel.text = "有效期 至 \(timeFormattingWithStamp(timeStamp: expTime, format: "YYYY-MM-DD"))"
+            self.timeLabel.text = "有效期 至 \(timeFormattingWithStamp(timeStamp: expTime, format: "YYYY-MM-DD"))"
         }else{
             self.timeLabel.text = "有效期 无限期"
         }

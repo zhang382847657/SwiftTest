@@ -55,6 +55,10 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
         
     }
     
+    deinit {
+        self.tableView.dg_removePullToRefresh() //移除头部刷新视图
+    }
+    
     
     /**
      * 请求数据
@@ -76,7 +80,7 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
             
         }) { (error) in
             
-            
+
         }
         
     }
@@ -156,7 +160,6 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 44))
-        //view.backgroundColor = UIColor.white
         
         let titleLabel:UILabel = UILabel(frame: CGRect.zero)
         titleLabel.textColor = UIColor.colorWithHexString(hex: BMSubTitleColor)
@@ -181,6 +184,36 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
         default:
             return nil
         }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        
+        if indexPath.section == 2{  //如果点击的是会员卡
+            
+        }else if indexPath.section == 1 { //如果点击的是储值卡
+            let cardNo:String? = self.prepaidCardList![indexPath.row]["cardNo"].string
+            
+            if let cardNo = cardNo{
+                let vc = BMCardDetailViewController(cardNo: cardNo, cardType: 2, expireDescription: "", cardName:self.prepaidCardList![indexPath.row]["kindName"].string!)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                dPrint(item: "套餐卡没有cardNo")
+            }
+            
+        }else{  //如果点击的是套餐卡
+            
+            let cardNo:Int? = self.acctCardList![indexPath.row]["id"].int
+            
+            if let cardNo = cardNo{
+                let vc = BMCardDetailViewController(cardNo: String(cardNo), cardType: 1, expireDescription:"", cardName:self.acctCardList![indexPath.row]["name"].string!)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                dPrint(item: "套餐卡没有cardNo")
+            }
+            
+        }
+        
         
     }
     

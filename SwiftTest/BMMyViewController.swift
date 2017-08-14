@@ -127,12 +127,19 @@ class BMMyViewController: UIViewController {
         }
     }
     
+    
+    //优惠券点击事件
+    @IBAction func couponClick(_ sender: UITapGestureRecognizer) {
+        let vc:BMCouponListView = BMCouponListView(sourceFrom: CouponListFrom.me)
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     //卡包点击事件
     @IBAction func cardsClick(_ sender: UITapGestureRecognizer) {
         let vc:BMCardsViewController = BMCardsViewController(style: .grouped)
-        self.hidesBottomBarWhenPushed = true
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
-        self.hidesBottomBarWhenPushed = false
     }
     
     //快速登录点击事件

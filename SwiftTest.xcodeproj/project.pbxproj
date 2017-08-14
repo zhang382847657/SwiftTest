@@ -65,6 +65,15 @@
 		6383306B1F3BF4EE00F48CF6 /* BMCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383306A1F3BF4EE00F48CF6 /* BMCardsViewController.swift */; };
 		6383306E1F3BFD3E00F48CF6 /* BMCardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383306C1F3BFD3E00F48CF6 /* BMCardsCell.swift */; };
 		6383306F1F3BFD3E00F48CF6 /* BMCardsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6383306D1F3BFD3E00F48CF6 /* BMCardsCell.xib */; };
+		638330991F3C583F00F48CF6 /* BMCardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638330981F3C583F00F48CF6 /* BMCardHeaderView.swift */; };
+		6383309B1F3C588E00F48CF6 /* BMCardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6383309A1F3C588E00F48CF6 /* BMCardHeaderView.xib */; };
+		6383309D1F3C5F6F00F48CF6 /* BMCardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383309C1F3C5F6F00F48CF6 /* BMCardDetailViewController.swift */; };
+		638330A01F3C7E3100F48CF6 /* BMCardServicePlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6383309F1F3C7E3100F48CF6 /* BMCardServicePlanView.swift */; };
+		638330A21F3C7E4100F48CF6 /* BMCardServicePlanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638330A11F3C7E4100F48CF6 /* BMCardServicePlanView.xib */; };
+		6384693F1F3D8D060014DA82 /* BMCardElaborate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6384693E1F3D8D060014DA82 /* BMCardElaborate.swift */; };
+		638469411F3D8D0F0014DA82 /* BMCardElaborate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638469401F3D8D0F0014DA82 /* BMCardElaborate.xib */; };
+		638469441F3D936B0014DA82 /* BMCardUsageLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638469431F3D936B0014DA82 /* BMCardUsageLogView.swift */; };
+		638469461F3D93990014DA82 /* BMCardUsageLogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638469451F3D93990014DA82 /* BMCardUsageLogView.xib */; };
 		6388BCB91F34063400165D3A /* BMShopCommentPicturesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6388BCB81F34063400165D3A /* BMShopCommentPicturesScrollView.swift */; };
 		6388BCBB1F34179700165D3A /* SKPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6388BCBA1F34179700165D3A /* SKPhotoBrowser.framework */; };
 		6388BCBE1F34292D00165D3A /* BMAuntListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6388BCBD1F34292D00165D3A /* BMAuntListViewController.swift */; };
@@ -119,6 +128,13 @@
 		63B826D81F35611700F7C5A1 /* BMAuntBasicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B826D71F35611700F7C5A1 /* BMAuntBasicCellView.swift */; };
 		63B826DA1F35612200F7C5A1 /* BMAuntBasicCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B826D91F35612200F7C5A1 /* BMAuntBasicCellView.xib */; };
 		63B826DD1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B826DC1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift */; };
+		63D815351F41389D00B331B4 /* BMCardUsageLogCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D815341F41389D00B331B4 /* BMCardUsageLogCellView.swift */; };
+		63D815371F4138A600B331B4 /* BMCardUsageLogCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D815361F4138A600B331B4 /* BMCardUsageLogCellView.xib */; };
+		63D8153A1F416ECB00B331B4 /* BMCouponListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D815391F416ECB00B331B4 /* BMCouponListView.swift */; };
+		63D8153C1F417A5D00B331B4 /* BMCardServicePlanCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8153B1F417A5D00B331B4 /* BMCardServicePlanCellView.swift */; };
+		63D8153E1F417A6600B331B4 /* BMCardServicePlanCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D8153D1F417A6600B331B4 /* BMCardServicePlanCellView.xib */; };
+		63D815411F41975C00B331B4 /* BMCouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8153F1F41975C00B331B4 /* BMCouponCell.swift */; };
+		63D815421F41975C00B331B4 /* BMCouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D815401F41975C00B331B4 /* BMCouponCell.xib */; };
 		63DD17931F2F0A6300ED3AB6 /* BMMyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD17911F2F0A6300ED3AB6 /* BMMyViewController.swift */; };
 		63DD17941F2F0A6300ED3AB6 /* BMMyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DD17921F2F0A6300ED3AB6 /* BMMyViewController.xib */; };
 		63DD17961F2F0EDA00ED3AB6 /* BMPhoneLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DD17951F2F0EDA00ED3AB6 /* BMPhoneLoginView.swift */; };
@@ -214,6 +230,15 @@
 		6383306A1F3BF4EE00F48CF6 /* BMCardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCardsViewController.swift; sourceTree = "<group>"; };
 		6383306C1F3BFD3E00F48CF6 /* BMCardsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCardsCell.swift; sourceTree = "<group>"; };
 		6383306D1F3BFD3E00F48CF6 /* BMCardsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMCardsCell.xib; sourceTree = "<group>"; };
+		638330981F3C583F00F48CF6 /* BMCardHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCardHeaderView.swift; sourceTree = "<group>"; };
+		6383309A1F3C588E00F48CF6 /* BMCardHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMCardHeaderView.xib; sourceTree = "<group>"; };
+		6383309C1F3C5F6F00F48CF6 /* BMCardDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCardDetailViewController.swift; sourceTree = "<group>"; };
+		6383309F1F3C7E3100F48CF6 /* BMCardServicePlanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCardServicePlanView.swift; sourceTree = "<group>"; };
+		638330A11F3C7E4100F48CF6 /* BMCardServicePlanView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMCardServicePlanView.xib; sourceTree = "<group>"; };
+		6384693E1F3D8D060014DA82 /* BMCardElaborate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCardElaborate.swift; sourceTree = "<group>"; };
+		638469401F3D8D0F0014DA82 /* BMCardElaborate.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMCardElaborate.xib; sourceTree = "<group>"; };
+		638469431F3D936B0014DA82 /* BMCardUsageLogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCardUsageLogView.swift; sourceTree = "<group>"; };
+		638469451F3D93990014DA82 /* BMCardUsageLogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMCardUsageLogView.xib; sourceTree = "<group>"; };
 		6388BCB81F34063400165D3A /* BMShopCommentPicturesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMShopCommentPicturesScrollView.swift; sourceTree = "<group>"; };
 		6388BCBA1F34179700165D3A /* SKPhotoBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKPhotoBrowser.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftTest-fgpblrjzczquxxhhesthbehoqagg/Build/Products/Debug-iphonesimulator/SKPhotoBrowser/SKPhotoBrowser.framework"; sourceTree = "<group>"; };
 		6388BCBD1F34292D00165D3A /* BMAuntListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAuntListViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +296,13 @@
 		63B826D71F35611700F7C5A1 /* BMAuntBasicCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAuntBasicCellView.swift; sourceTree = "<group>"; };
 		63B826D91F35612200F7C5A1 /* BMAuntBasicCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMAuntBasicCellView.xib; sourceTree = "<group>"; };
 		63B826DC1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAuntPicturesScrollView.swift; sourceTree = "<group>"; };
+		63D815341F41389D00B331B4 /* BMCardUsageLogCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCardUsageLogCellView.swift; sourceTree = "<group>"; };
+		63D815361F4138A600B331B4 /* BMCardUsageLogCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMCardUsageLogCellView.xib; sourceTree = "<group>"; };
+		63D815391F416ECB00B331B4 /* BMCouponListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCouponListView.swift; sourceTree = "<group>"; };
+		63D8153B1F417A5D00B331B4 /* BMCardServicePlanCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCardServicePlanCellView.swift; sourceTree = "<group>"; };
+		63D8153D1F417A6600B331B4 /* BMCardServicePlanCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMCardServicePlanCellView.xib; sourceTree = "<group>"; };
+		63D8153F1F41975C00B331B4 /* BMCouponCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCouponCell.swift; sourceTree = "<group>"; };
+		63D815401F41975C00B331B4 /* BMCouponCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMCouponCell.xib; sourceTree = "<group>"; };
 		63DD17911F2F0A6300ED3AB6 /* BMMyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMMyViewController.swift; sourceTree = "<group>"; };
 		63DD17921F2F0A6300ED3AB6 /* BMMyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMMyViewController.xib; sourceTree = "<group>"; };
 		63DD17951F2F0EDA00ED3AB6 /* BMPhoneLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMPhoneLoginView.swift; sourceTree = "<group>"; };
@@ -609,8 +641,61 @@
 				6383306A1F3BF4EE00F48CF6 /* BMCardsViewController.swift */,
 				6383306C1F3BFD3E00F48CF6 /* BMCardsCell.swift */,
 				6383306D1F3BFD3E00F48CF6 /* BMCardsCell.xib */,
+				638330961F3C581600F48CF6 /* 卡包详情 */,
 			);
 			name = "卡包";
+			sourceTree = "<group>";
+		};
+		638330961F3C581600F48CF6 /* 卡包详情 */ = {
+			isa = PBXGroup;
+			children = (
+				6383309C1F3C5F6F00F48CF6 /* BMCardDetailViewController.swift */,
+				638469421F3D93370014DA82 /* 使用记录 */,
+				638469101F3D45430014DA82 /* 详细描述 */,
+				6383309E1F3C7E0B00F48CF6 /* 服务计划 */,
+				638330971F3C582200F48CF6 /* 卡包头部 */,
+			);
+			name = "卡包详情";
+			sourceTree = "<group>";
+		};
+		638330971F3C582200F48CF6 /* 卡包头部 */ = {
+			isa = PBXGroup;
+			children = (
+				638330981F3C583F00F48CF6 /* BMCardHeaderView.swift */,
+				6383309A1F3C588E00F48CF6 /* BMCardHeaderView.xib */,
+			);
+			name = "卡包头部";
+			sourceTree = "<group>";
+		};
+		6383309E1F3C7E0B00F48CF6 /* 服务计划 */ = {
+			isa = PBXGroup;
+			children = (
+				6383309F1F3C7E3100F48CF6 /* BMCardServicePlanView.swift */,
+				638330A11F3C7E4100F48CF6 /* BMCardServicePlanView.xib */,
+				63D8153B1F417A5D00B331B4 /* BMCardServicePlanCellView.swift */,
+				63D8153D1F417A6600B331B4 /* BMCardServicePlanCellView.xib */,
+			);
+			name = "服务计划";
+			sourceTree = "<group>";
+		};
+		638469101F3D45430014DA82 /* 详细描述 */ = {
+			isa = PBXGroup;
+			children = (
+				6384693E1F3D8D060014DA82 /* BMCardElaborate.swift */,
+				638469401F3D8D0F0014DA82 /* BMCardElaborate.xib */,
+			);
+			name = "详细描述";
+			sourceTree = "<group>";
+		};
+		638469421F3D93370014DA82 /* 使用记录 */ = {
+			isa = PBXGroup;
+			children = (
+				638469431F3D936B0014DA82 /* BMCardUsageLogView.swift */,
+				638469451F3D93990014DA82 /* BMCardUsageLogView.xib */,
+				63D815341F41389D00B331B4 /* BMCardUsageLogCellView.swift */,
+				63D815361F4138A600B331B4 /* BMCardUsageLogCellView.xib */,
+			);
+			name = "使用记录";
 			sourceTree = "<group>";
 		};
 		6388BCBC1F3428C800165D3A /* 阿姨 */ = {
@@ -685,6 +770,7 @@
 				63A951041F2B42780052F6C6 /* BMMeNavigationController.swift */,
 				63DD17911F2F0A6300ED3AB6 /* BMMyViewController.swift */,
 				63DD17921F2F0A6300ED3AB6 /* BMMyViewController.xib */,
+				63D815381F416E9700B331B4 /* 优惠券 */,
 				638330691F3BF46800F48CF6 /* 卡包 */,
 				63A8110E1F3AE6B6001A0707 /* 意见反馈 */,
 			);
@@ -909,6 +995,24 @@
 			name = "阿姨照片";
 			sourceTree = "<group>";
 		};
+		63D815381F416E9700B331B4 /* 优惠券 */ = {
+			isa = PBXGroup;
+			children = (
+				63D815431F41A50700B331B4 /* 优惠券详情 */,
+				63D815391F416ECB00B331B4 /* BMCouponListView.swift */,
+				63D8153F1F41975C00B331B4 /* BMCouponCell.swift */,
+				63D815401F41975C00B331B4 /* BMCouponCell.xib */,
+			);
+			name = "优惠券";
+			sourceTree = "<group>";
+		};
+		63D815431F41A50700B331B4 /* 优惠券详情 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "\b优惠券详情";
+			sourceTree = "<group>";
+		};
 		63DD17991F2F280F00ED3AB6 /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1073,13 +1177,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638330A21F3C7E4100F48CF6 /* BMCardServicePlanView.xib in Resources */,
 				63A811121F3AE6DF001A0707 /* BMFeedBackViewController.xib in Resources */,
 				6397B6EE1F1F5F9200C77BDC /* BMStoreCardRecommendView.xib in Resources */,
 				6397B7081F1F7E1A00C77BDC /* BMProductsView.xib in Resources */,
 				6397B6EC1F1F5F9200C77BDC /* BMStoreCardRecommendCell.xib in Resources */,
 				63A951031F2B21F20052F6C6 /* BMLoginViewController.xib in Resources */,
+				638469461F3D93990014DA82 /* BMCardUsageLogView.xib in Resources */,
 				63DD179E1F2F283400ED3AB6 /* BMRegisterViewController.xib in Resources */,
 				6388BCC21F34463B00165D3A /* BMAuntListCell.xib in Resources */,
+				638469411F3D8D0F0014DA82 /* BMCardElaborate.xib in Resources */,
 				633704A51F21F02400F769B4 /* BMProductCircleView.xib in Resources */,
 				63DD17941F2F0A6300ED3AB6 /* BMMyViewController.xib in Resources */,
 				6359B0931EF1074700D6DF5E /* LaunchScreen.storyboard in Resources */,
@@ -1095,6 +1202,7 @@
 				633704A11F21E8CB00F769B4 /* BMProductSymbolsView.xib in Resources */,
 				633C10F71F3086BB0036F85B /* BMShopHeaderView.xib in Resources */,
 				6354897A1F233EB400CCA117 /* BMStoreCardBuyCell.xib in Resources */,
+				6383309B1F3C588E00F48CF6 /* BMCardHeaderView.xib in Resources */,
 				6346B86A1F31D67500721963 /* BMShopAuntView.xib in Resources */,
 				63B826DA1F35612200F7C5A1 /* BMAuntBasicCellView.xib in Resources */,
 				63015C051EFBA62900A9C8AC /* Images.xcassets in Resources */,
@@ -1105,7 +1213,10 @@
 				634C27281F39C2C100D1043D /* BMAuntCerHeaderView.xib in Resources */,
 				6388BCD31F3465DB00165D3A /* BMAuntServiceTypeView.xib in Resources */,
 				6397B6E21F1F5F3500C77BDC /* BMHotServiceCellView.xib in Resources */,
+				63D815421F41975C00B331B4 /* BMCouponCell.xib in Resources */,
+				63D815371F4138A600B331B4 /* BMCardUsageLogCellView.xib in Resources */,
 				63DD17981F2F0EE700ED3AB6 /* BMPhoneLoginView.xib in Resources */,
+				63D8153E1F417A6600B331B4 /* BMCardServicePlanCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1180,7 +1291,9 @@
 			files = (
 				6397B6D91F1F5E8400C77BDC /* BMQuickOrderTableViewController.swift in Sources */,
 				6388BCD11F3465CF00165D3A /* BMAuntServiceTypeView.swift in Sources */,
+				638330A01F3C7E3100F48CF6 /* BMCardServicePlanView.swift in Sources */,
 				6388BCB91F34063400165D3A /* BMShopCommentPicturesScrollView.swift in Sources */,
+				63D8153C1F417A5D00B331B4 /* BMCardServicePlanCellView.swift in Sources */,
 				63DD17931F2F0A6300ED3AB6 /* BMMyViewController.swift in Sources */,
 				638F102B1F0398AB004251EA /* BMWebViewController.swift in Sources */,
 				6346B8681F31D66600721963 /* BMShopAuntView.swift in Sources */,
@@ -1196,6 +1309,7 @@
 				633C10EF1F306CC80036F85B /* CodeButton.swift in Sources */,
 				6337049A1F219F1000F769B4 /* UILabel+Extension.swift in Sources */,
 				6378C1851F32BDC50070E81F /* BMShopCommentView.swift in Sources */,
+				63D815351F41389D00B331B4 /* BMCardUsageLogCellView.swift in Sources */,
 				635489761F233D0E00CCA117 /* CardSwitchLayout.swift in Sources */,
 				633704A91F21F20800F769B4 /* BMCircleView.swift in Sources */,
 				6337049F1F21E8BC00F769B4 /* BMProductSymbolsView.swift in Sources */,
@@ -1219,10 +1333,12 @@
 				63A951021F2B21F20052F6C6 /* BMLoginViewController.swift in Sources */,
 				634799061EFE3E8400ADC512 /* UIView+Extension.swift in Sources */,
 				6397B6D51F1F5E6800C77BDC /* BMNearesStoreView.swift in Sources */,
+				63D8153A1F416ECB00B331B4 /* BMCouponListView.swift in Sources */,
 				635489721F2335F200CCA117 /* BMStoreCardBuyViewController.swift in Sources */,
 				638D7AEF1F00E1F300A15311 /* UIImageView+Extension.swift in Sources */,
 				63015C101EFBA9E100A9C8AC /* AppMacro.swift in Sources */,
 				634C271A1F39940400D1043D /* BMAuntCerListView.swift in Sources */,
+				6384693F1F3D8D060014DA82 /* BMCardElaborate.swift in Sources */,
 				6388BCC51F345C3B00165D3A /* BMAuntDetailViewController.swift in Sources */,
 				6359B0891EF1074700D6DF5E /* AppDelegate.swift in Sources */,
 				6397B6E11F1F5F3500C77BDC /* BMHotServiceCellView.swift in Sources */,
@@ -1234,7 +1350,9 @@
 				6397B6EF1F1F5F9200C77BDC /* BMStoreListTableViewController.swift in Sources */,
 				633C10F51F3085470036F85B /* BMShopHeaderView.swift in Sources */,
 				63B826DD1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift in Sources */,
+				638330991F3C583F00F48CF6 /* BMCardHeaderView.swift in Sources */,
 				633BB4571F331BAE00A4D498 /* UIImage+Extension.swift in Sources */,
+				6383309D1F3C5F6F00F48CF6 /* BMCardDetailViewController.swift in Sources */,
 				6388BCBE1F34292D00165D3A /* BMAuntListViewController.swift in Sources */,
 				63A951051F2B42780052F6C6 /* BMMeNavigationController.swift in Sources */,
 				63A8110D1F3AE372001A0707 /* InputTextView.swift in Sources */,
@@ -1242,10 +1360,12 @@
 				6397B6F41F1F5FBA00C77BDC /* BMProductTypeContentView.swift in Sources */,
 				6388BCCD1F34628600165D3A /* BMAuntServicesTypeScrollView.swift in Sources */,
 				6346B8641F31D4BB00721963 /* BMShopRecommendAuntView.swift in Sources */,
+				638469441F3D936B0014DA82 /* BMCardUsageLogView.swift in Sources */,
 				6397B70A1F1F7E7300C77BDC /* BMProductsView.swift in Sources */,
 				633704921F2195EC00F769B4 /* BMBaseTabBarController.swift in Sources */,
 				635489791F233EB400CCA117 /* BMStoreCardBuyCell.swift in Sources */,
 				63A950F61F2B0FD30052F6C6 /* BMCache.swift in Sources */,
+				63D815411F41975C00B331B4 /* BMCouponCell.swift in Sources */,
 				63DD17961F2F0EDA00ED3AB6 /* BMPhoneLoginView.swift in Sources */,
 				63B826D81F35611700F7C5A1 /* BMAuntBasicCellView.swift in Sources */,
 				6397B6DC1F1F5ED300C77BDC /* BMFriendsBargainView.swift in Sources */,
