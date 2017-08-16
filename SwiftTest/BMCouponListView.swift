@@ -19,17 +19,20 @@ class BMCouponListView: UITableViewController,TBEmptyDataSetDelegate,TBEmptyData
 
     
     var sourceFrom:CouponListFrom!  //判断是从哪个页面跳转过来的
+    var filterData:Dictionary<String,Any>?  //订单页面带过来的数据，用来当请求的参数
     var dataList:Array<JSON>?  //数据源
     
     
     /**
      * 初始化页面
      * @param sourceFrom 是从哪个页面跳转过来的   枚举类型 
+     * @param filterData  订单页面需要带过来的有关查询优惠券的数据  订单页面需要穿的参数
      */
-    init(sourceFrom:CouponListFrom) {
+    init(sourceFrom:CouponListFrom!,filterData:Dictionary<String,Any>?) {
         
         self.sourceFrom = sourceFrom
-        super.init(style: .plain)
+        self.filterData = filterData
+        super.init(style: .grouped)
         
     }
     
@@ -82,18 +85,17 @@ class BMCouponListView: UITableViewController,TBEmptyDataSetDelegate,TBEmptyData
     func loadData() {
         
         
-        
-        
         //////////////请求优惠券///////////////////
         let url = "\(BMHOST)/c/coupon/queryList"
         var params:Dictionary<String,Any> = ["":""]
         
         
-        if self.sourceFrom == CouponListFrom.me{
+        if self.sourceFrom == CouponListFrom.me{  //如果是从我的页面跳转过来
             params = ["status":0,"expireFlag":0,"pageSize":10000,"pageNum":0]
             
-        }else if self.sourceFrom == CouponListFrom.order{
-            params = ["status":0,"expireFlag":0,"pageSize":10000,"pageNum":0]
+        }else if self.sourceFrom == CouponListFrom.order{  //如果是从订单页面跳转过来
+            
+//            params = ["serviceType":self.filterData!["serviceType"],"expireFlag":0,"pageSize":10000,"pageNum":0]
         }
         
         NetworkRequest.sharedInstance.postRequest(urlString: url, params: params, isLogin: true, success: { (value) in
@@ -122,6 +124,10 @@ class BMCouponListView: UITableViewController,TBEmptyDataSetDelegate,TBEmptyData
         }else{
             return 0
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
+        return 10
     }
 
     

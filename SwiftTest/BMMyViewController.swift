@@ -130,7 +130,7 @@ class BMMyViewController: UIViewController {
     
     //优惠券点击事件
     @IBAction func couponClick(_ sender: UITapGestureRecognizer) {
-        let vc:BMCouponListView = BMCouponListView(sourceFrom: CouponListFrom.me)
+        let vc:BMCouponListView = BMCouponListView(sourceFrom: CouponListFrom.me, filterData: nil)
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
