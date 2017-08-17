@@ -82,7 +82,6 @@ class BMHomePageViewController: UIViewController {
             self.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(webViewController, animated: true)
             self.hidesBottomBarWhenPushed = false
-           // dPrint(item: "Click \(self.webURLs[index])")
         }
         self.bannerView.imageViewContentMode = .scaleAspectFill
         self.bannerView.pageControlPosition = .center

@@ -112,6 +112,7 @@
 		6397B7001F1F62F400C77BDC /* BMProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397B6FF1F1F62F400C77BDC /* BMProductViewController.swift */; };
 		6397B7081F1F7E1A00C77BDC /* BMProductsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6397B7071F1F7E1A00C77BDC /* BMProductsView.xib */; };
 		6397B70A1F1F7E7300C77BDC /* BMProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397B7091F1F7E7300C77BDC /* BMProductsView.swift */; };
+		639ECB6B1F452B8C008AF2CE /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639ECB6A1F452B8C008AF2CE /* NSMutableAttributedString+Extension.swift */; };
 		63A8110A1F3ADF79001A0707 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A811091F3ADF79001A0707 /* IQKeyboardManagerSwift.framework */; };
 		63A8110D1F3AE372001A0707 /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A8110C1F3AE372001A0707 /* InputTextView.swift */; };
 		63A811111F3AE6DF001A0707 /* BMFeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A8110F1F3AE6DF001A0707 /* BMFeedBackViewController.swift */; };
@@ -280,6 +281,7 @@
 		6397B6FF1F1F62F400C77BDC /* BMProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMProductViewController.swift; sourceTree = "<group>"; };
 		6397B7071F1F7E1A00C77BDC /* BMProductsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMProductsView.xib; sourceTree = "<group>"; };
 		6397B7091F1F7E7300C77BDC /* BMProductsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMProductsView.swift; sourceTree = "<group>"; };
+		639ECB6A1F452B8C008AF2CE /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
 		63A811091F3ADF79001A0707 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = "Pods/../build/Debug-iphoneos/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"; sourceTree = "<group>"; };
 		63A8110C1F3AE372001A0707 /* InputTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
 		63A8110F1F3AE6DF001A0707 /* BMFeedBackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMFeedBackViewController.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				633704991F219F1000F769B4 /* UILabel+Extension.swift */,
 				63A950FD1F2B1CC10052F6C6 /* BMDefaults.swift */,
 				633BB4561F331BAE00A4D498 /* UIImage+Extension.swift */,
+				639ECB6A1F452B8C008AF2CE /* NSMutableAttributedString+Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -1002,10 +1005,10 @@
 		63D815381F416E9700B331B4 /* 优惠券 */ = {
 			isa = PBXGroup;
 			children = (
-				63D815431F41A50700B331B4 /* 优惠券详情 */,
 				63D815391F416ECB00B331B4 /* BMCouponListView.swift */,
 				63D8153F1F41975C00B331B4 /* BMCouponCell.swift */,
 				63D815401F41975C00B331B4 /* BMCouponCell.xib */,
+				63D815431F41A50700B331B4 /* 优惠券详情 */,
 			);
 			name = "优惠券";
 			sourceTree = "<group>";
@@ -1370,6 +1373,7 @@
 				6346B8641F31D4BB00721963 /* BMShopRecommendAuntView.swift in Sources */,
 				638469441F3D936B0014DA82 /* BMCardUsageLogView.swift in Sources */,
 				6397B70A1F1F7E7300C77BDC /* BMProductsView.swift in Sources */,
+				639ECB6B1F452B8C008AF2CE /* NSMutableAttributedString+Extension.swift in Sources */,
 				633704921F2195EC00F769B4 /* BMBaseTabBarController.swift in Sources */,
 				635489791F233EB400CCA117 /* BMStoreCardBuyCell.swift in Sources */,
 				63A950F61F2B0FD30052F6C6 /* BMCache.swift in Sources */,
