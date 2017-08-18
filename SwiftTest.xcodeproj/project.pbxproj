@@ -37,6 +37,10 @@
 		6346B86A1F31D67500721963 /* BMShopAuntView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6346B8691F31D67500721963 /* BMShopAuntView.xib */; };
 		634799031EFE372900ADC512 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634799021EFE372900ADC512 /* AlamofireImage.framework */; };
 		634799061EFE3E8400ADC512 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634799051EFE3E8400ADC512 /* UIView+Extension.swift */; };
+		634BF0C71F46EA3500FA04F8 /* BMCardsStoreEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BF0C51F46EA3500FA04F8 /* BMCardsStoreEmptyCell.swift */; };
+		634BF0C81F46EA3500FA04F8 /* BMCardsStoreEmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634BF0C61F46EA3500FA04F8 /* BMCardsStoreEmptyCell.xib */; };
+		634BF0CC1F46F40A00FA04F8 /* BMConvertStoreCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634BF0CA1F46F40A00FA04F8 /* BMConvertStoreCardViewController.swift */; };
+		634BF0CD1F46F40A00FA04F8 /* BMConvertStoreCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634BF0CB1F46F40A00FA04F8 /* BMConvertStoreCardViewController.xib */; };
 		634C271A1F39940400D1043D /* BMAuntCerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634C27191F39940400D1043D /* BMAuntCerListView.swift */; };
 		634C271D1F39B5ED00D1043D /* BMAuntCerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634C271B1F39B5ED00D1043D /* BMAuntCerCell.swift */; };
 		634C271E1F39B5ED00D1043D /* BMAuntCerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634C271C1F39B5ED00D1043D /* BMAuntCerCell.xib */; };
@@ -199,6 +203,10 @@
 		6346B8691F31D67500721963 /* BMShopAuntView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMShopAuntView.xib; sourceTree = "<group>"; };
 		634799021EFE372900ADC512 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftTest-dmbmwckjgrvcykccrwbkrasjrzkg/Build/Products/Debug-iphonesimulator/AlamofireImage/AlamofireImage.framework"; sourceTree = "<group>"; };
 		634799051EFE3E8400ADC512 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		634BF0C51F46EA3500FA04F8 /* BMCardsStoreEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCardsStoreEmptyCell.swift; sourceTree = "<group>"; };
+		634BF0C61F46EA3500FA04F8 /* BMCardsStoreEmptyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMCardsStoreEmptyCell.xib; sourceTree = "<group>"; };
+		634BF0CA1F46F40A00FA04F8 /* BMConvertStoreCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMConvertStoreCardViewController.swift; sourceTree = "<group>"; };
+		634BF0CB1F46F40A00FA04F8 /* BMConvertStoreCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMConvertStoreCardViewController.xib; sourceTree = "<group>"; };
 		634C27191F39940400D1043D /* BMAuntCerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAuntCerListView.swift; sourceTree = "<group>"; };
 		634C271B1F39B5ED00D1043D /* BMAuntCerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAuntCerCell.swift; sourceTree = "<group>"; };
 		634C271C1F39B5ED00D1043D /* BMAuntCerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMAuntCerCell.xib; sourceTree = "<group>"; };
@@ -523,6 +531,15 @@
 			name = "验证码按钮";
 			sourceTree = "<group>";
 		};
+		634BF0C91F46F3B000FA04F8 /* 兑换储值卡 */ = {
+			isa = PBXGroup;
+			children = (
+				634BF0CA1F46F40A00FA04F8 /* BMConvertStoreCardViewController.swift */,
+				634BF0CB1F46F40A00FA04F8 /* BMConvertStoreCardViewController.xib */,
+			);
+			name = "兑换储值卡";
+			sourceTree = "<group>";
+		};
 		634C27141F398B5200D1043D /* 阿姨证书 */ = {
 			isa = PBXGroup;
 			children = (
@@ -648,6 +665,9 @@
 				6383306A1F3BF4EE00F48CF6 /* BMCardsViewController.swift */,
 				6383306C1F3BFD3E00F48CF6 /* BMCardsCell.swift */,
 				6383306D1F3BFD3E00F48CF6 /* BMCardsCell.xib */,
+				634BF0C51F46EA3500FA04F8 /* BMCardsStoreEmptyCell.swift */,
+				634BF0C61F46EA3500FA04F8 /* BMCardsStoreEmptyCell.xib */,
+				634BF0C91F46F3B000FA04F8 /* 兑换储值卡 */,
 				638330961F3C581600F48CF6 /* 卡包详情 */,
 			);
 			name = "卡包";
@@ -1208,9 +1228,11 @@
 				6388BCC91F345D3600165D3A /* BMAuntDetailHeaderView.xib in Resources */,
 				638CE6C41F25F67A00BCC95C /* BMGiftEquityView.xib in Resources */,
 				636F957C1F27129000F62C44 /* BMGiftEquityCellView.xib in Resources */,
+				634BF0C81F46EA3500FA04F8 /* BMCardsStoreEmptyCell.xib in Resources */,
 				633704A11F21E8CB00F769B4 /* BMProductSymbolsView.xib in Resources */,
 				633C10F71F3086BB0036F85B /* BMShopHeaderView.xib in Resources */,
 				6354897A1F233EB400CCA117 /* BMStoreCardBuyCell.xib in Resources */,
+				634BF0CD1F46F40A00FA04F8 /* BMConvertStoreCardViewController.xib in Resources */,
 				6383309B1F3C588E00F48CF6 /* BMCardHeaderView.xib in Resources */,
 				6346B86A1F31D67500721963 /* BMShopAuntView.xib in Resources */,
 				63B826DA1F35612200F7C5A1 /* BMAuntBasicCellView.xib in Resources */,
@@ -1304,6 +1326,7 @@
 				638330A01F3C7E3100F48CF6 /* BMCardServicePlanView.swift in Sources */,
 				6388BCB91F34063400165D3A /* BMShopCommentPicturesScrollView.swift in Sources */,
 				63D8153C1F417A5D00B331B4 /* BMCardServicePlanCellView.swift in Sources */,
+				634BF0C71F46EA3500FA04F8 /* BMCardsStoreEmptyCell.swift in Sources */,
 				63DD17931F2F0A6300ED3AB6 /* BMMyViewController.swift in Sources */,
 				638F102B1F0398AB004251EA /* BMWebViewController.swift in Sources */,
 				6346B8681F31D66600721963 /* BMShopAuntView.swift in Sources */,
@@ -1375,6 +1398,7 @@
 				6397B70A1F1F7E7300C77BDC /* BMProductsView.swift in Sources */,
 				639ECB6B1F452B8C008AF2CE /* NSMutableAttributedString+Extension.swift in Sources */,
 				633704921F2195EC00F769B4 /* BMBaseTabBarController.swift in Sources */,
+				634BF0CC1F46F40A00FA04F8 /* BMConvertStoreCardViewController.swift in Sources */,
 				635489791F233EB400CCA117 /* BMStoreCardBuyCell.swift in Sources */,
 				63A950F61F2B0FD30052F6C6 /* BMCache.swift in Sources */,
 				63D815411F41975C00B331B4 /* BMCouponCell.swift in Sources */,

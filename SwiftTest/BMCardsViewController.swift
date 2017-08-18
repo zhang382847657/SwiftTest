@@ -30,6 +30,7 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
         self.tableView.rowHeight = 75
         self.tableView.tableFooterView = UIView()
         self.tableView.register(UINib(nibName: "BMCardsCell", bundle: nil), forCellReuseIdentifier: "BMCardsCell")
+        self.tableView.register(UINib(nibName: "BMCardsStoreEmptyCell", bundle: nil), forCellReuseIdentifier: "BMCardsStoreEmptyCell")
         self.tableView.emptyDataSetDelegate = self  //设置空数据的代理
         self.tableView.emptyDataSetDataSource = self  //设置空数据的数据源
         
@@ -72,7 +73,7 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
         NetworkRequest.sharedInstance.postRequest(urlString: url, params: params, isLogin: true, success: { (value) in
             
             self.tableView.dg_stopLoading()  //停止刷新动画
-            self.prepaidCardList = value["prepaidCard"].array //储值卡
+            self.prepaidCardList = [];//value["prepaidCard"].array //储值卡
             self.memberCard = value["card"]  //会员卡
             self.acctCardList = value["acctCard"].array //套餐卡
             self.tableView.reloadData()  //刷新数据源
@@ -112,8 +113,10 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
                 return acctCardList.count
             }
         case 1:
-            if let prepaidCardList = self.prepaidCardList{  //储值卡
+            if let prepaidCardList = self.prepaidCardList , prepaidCardList.count > 0{  //储值卡
                 return prepaidCardList.count
+            }else{
+                return 1
             }
         case 2:
             if let _ = self.memberCard{  //会员卡
@@ -135,26 +138,45 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:BMCardsCell = tableView.dequeueReusableCell(withIdentifier: "BMCardsCell", for: indexPath) as! BMCardsCell
         
-        
-        switch indexPath.section {
-        case 0:
-            if let acctCardList = self.acctCardList{
-                cell.updateWithComboCard(comboCard: acctCardList[indexPath.row])  //套餐卡
+
+        if indexPath.section == 1{ //储值卡
+            
+            if let prepaidCardList = self.prepaidCardList , prepaidCardList.count > 0{ //如果存在储值卡
+                let cell:BMCardsCell = tableView.dequeueReusableCell(withIdentifier: "BMCardsCell", for: indexPath) as! BMCardsCell
+                cell.updateWithStoreCard(storeCard: prepaidCardList[indexPath.row])
+                return cell
+            }else{ //不存在就显示兑换视图
+                let cell:BMCardsStoreEmptyCell = tableView.dequeueReusableCell(withIdentifier: "BMCardsStoreEmptyCell", for: indexPath) as! BMCardsStoreEmptyCell
+                return cell
             }
-        case 1:
-            if let prepaidCardList = self.prepaidCardList{
-                cell.updateWithStoreCard(storeCard: prepaidCardList[indexPath.row])  //储值卡
+            
+        }else{
+            
+            let cell:BMCardsCell = tableView.dequeueReusableCell(withIdentifier: "BMCardsCell", for: indexPath) as! BMCardsCell
+            
+            switch indexPath.section {
+            case 0:
+                if let acctCardList = self.acctCardList{
+                    cell.updateWithComboCard(comboCard: acctCardList[indexPath.row])  //套餐卡
+                }
+            case 2:
+                if let memberCard = self.memberCard{
+                    cell.updateWithMemberCard(memberCard: memberCard)  //会员卡
+                }
+            default: break
             }
-        case 2:
-            if let memberCard = self.memberCard{
-                cell.updateWithMemberCard(memberCard: memberCard)  //会员卡
-            }
-        default: break
+            
+            return cell
+            
         }
         
-        return cell
+        
+        
+        
+        
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -192,13 +214,18 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
         if indexPath.section == 2{  //如果点击的是会员卡
             
         }else if indexPath.section == 1 { //如果点击的是储值卡
-            let cardNo:String? = self.prepaidCardList![indexPath.row]["cardNo"].string
             
-            if let cardNo = cardNo{
-                let vc = BMCardDetailViewController(cardNo: cardNo, cardType: 2, expireDescription: "", cardName:self.prepaidCardList![indexPath.row]["kindName"].string!)
-                self.navigationController?.pushViewController(vc, animated: true)
-            }else{
-                dPrint(item: "套餐卡没有cardNo")
+            if let prepaidCardList = self.prepaidCardList , prepaidCardList.count > 0 { //如果有储值卡的话，就跳转到详情页
+                let cardNo:String? = prepaidCardList[indexPath.row]["cardNo"].string
+                
+                if let cardNo = cardNo{
+                    let vc = BMCardDetailViewController(cardNo: cardNo, cardType: 2, expireDescription: "", cardName:prepaidCardList[indexPath.row]["kindName"].string!)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }else{
+                    dPrint(item: "套餐卡没有cardNo")
+                }
+            }else{ //否则跳转到储值卡兑换页面
+                
             }
             
         }else{  //如果点击的是套餐卡

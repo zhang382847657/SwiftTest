@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BMConvertStoreCardViewController" customModule="SwiftTest" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dM8-Ie-9yY">
+                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="atU-no-lmH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="兑换">
+                        <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbW-OA-SIk">
+                    <rect key="frame" x="20" y="15" width="335" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入卡密" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bos-e2-2tf">
+                            <rect key="frame" x="10" y="10" width="67" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="67" id="vg7-fG-Q7m"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="F123123123123" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UFe-EE-3fK">
+                            <rect key="frame" x="87" y="0.0" width="228" height="40"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="UFe-EE-3fK" firstAttribute="leading" secondItem="Bos-e2-2tf" secondAttribute="trailing" constant="10" id="1Iv-4a-HM3"/>
+                        <constraint firstAttribute="bottom" secondItem="Bos-e2-2tf" secondAttribute="bottom" constant="10" id="2ss-OC-UBA"/>
+                        <constraint firstAttribute="bottom" secondItem="UFe-EE-3fK" secondAttribute="bottom" id="DmC-BG-uYI"/>
+                        <constraint firstAttribute="trailing" secondItem="UFe-EE-3fK" secondAttribute="trailing" constant="20" id="Z98-6S-pIJ"/>
+                        <constraint firstItem="UFe-EE-3fK" firstAttribute="top" secondItem="DbW-OA-SIk" secondAttribute="top" id="bsw-hB-JaP"/>
+                        <constraint firstAttribute="height" constant="40" id="hqL-Xz-Pge"/>
+                        <constraint firstItem="Bos-e2-2tf" firstAttribute="top" secondItem="DbW-OA-SIk" secondAttribute="top" constant="10" id="hwo-Z0-OvB"/>
+                        <constraint firstItem="Bos-e2-2tf" firstAttribute="leading" secondItem="DbW-OA-SIk" secondAttribute="leading" constant="10" id="kHW-3E-LlE"/>
+                        <constraint firstItem="UFe-EE-3fK" firstAttribute="leading" secondItem="Bos-e2-2tf" secondAttribute="trailing" constant="10" id="ztt-L9-Nt0"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMN-lR-IFl">
+                    <rect key="frame" x="0.0" y="63" width="375" height="220"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="220" id="t76-ey-9l6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="请输入卡密兑换储值卡" image="add_stored_card_default">
+                        <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DbW-OA-SIk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="IO3-O9-coy"/>
+                <constraint firstItem="DbW-OA-SIk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="M9a-Cq-uEw"/>
+                <constraint firstAttribute="bottom" secondItem="dM8-Ie-9yY" secondAttribute="bottom" id="Tym-c3-Ea1"/>
+                <constraint firstItem="BMN-lR-IFl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lmy-yb-LaM"/>
+                <constraint firstItem="BMN-lR-IFl" firstAttribute="top" secondItem="DbW-OA-SIk" secondAttribute="bottom" constant="8" id="piz-S9-wyE"/>
+                <constraint firstAttribute="trailing" secondItem="dM8-Ie-9yY" secondAttribute="trailing" id="rKa-GV-HUq"/>
+                <constraint firstAttribute="trailing" secondItem="DbW-OA-SIk" secondAttribute="trailing" constant="20" id="ukW-bA-utZ"/>
+                <constraint firstItem="dM8-Ie-9yY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="w6Z-n2-eLx"/>
+                <constraint firstAttribute="trailing" secondItem="BMN-lR-IFl" secondAttribute="trailing" id="zt3-wV-tbr"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="34.5" y="81.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add_stored_card_default" width="91" height="103"/>
+    </resources>
+</document>

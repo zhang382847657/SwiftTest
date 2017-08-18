@@ -212,32 +212,34 @@ class BMQuickOrderTableViewController: UITableViewController,TBEmptyDataSetDeleg
         
         let cell = tableView.cellForRow(at: indexPath)
         
-        //动画
-        UIView.animate(withDuration: 0.6, animations: {
-            
-            var leftView:BMHotServiceCellView? = nil
-            var rightView:UIButton? = nil
-            for view in (cell?.contentView.subviews)!{
-                if view.tag == 10 {
-                    leftView = view as? BMHotServiceCellView
-                }else if view.tag == 11 {
-                    rightView = view as? UIButton
+        if let cell = cell{
+            //动画
+            UIView.animate(withDuration: 0.6, animations: {
+                
+                var leftView:BMHotServiceCellView? = nil
+                var rightView:UIButton? = nil
+                for view in cell.contentView.subviews{
+                    if view.tag == 10 {
+                        leftView = view as? BMHotServiceCellView
+                    }else if view.tag == 11 {
+                        rightView = view as? UIButton
+                    }
                 }
-            }
-            
-            leftView?.snp.updateConstraints({ (make) in
-                make.left.equalTo((cell?.contentView)!).offset(10)
+                
+                leftView?.snp.updateConstraints({ (make) in
+                    make.left.equalTo(cell.contentView).offset(10)
+                })
+                
+                rightView?.snp.updateConstraints({ (make) in
+                    make.width.equalTo(0)
+                })
+                
+                //用来立即刷新布局（不写无法实现动画移动，会变成瞬间移动）
+                self.view.layoutIfNeeded()
+                
+                rightView?.set(image: UIImage(named:""), title: "预约", titlePosition: .bottom, additionalSpacing: 10, state: .normal)
             })
-            
-            rightView?.snp.updateConstraints({ (make) in
-                make.width.equalTo(0)
-            })
-            
-            //用来立即刷新布局（不写无法实现动画移动，会变成瞬间移动）
-            self.view.layoutIfNeeded()
-            
-            rightView?.set(image: UIImage(named:""), title: "预约", titlePosition: .bottom, additionalSpacing: 10, state: .normal)
-        })
+        }
         
     }
     

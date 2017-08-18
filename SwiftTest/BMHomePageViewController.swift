@@ -262,6 +262,20 @@ class BMHomePageViewController: UIViewController {
             
         }
         
+        
+        //////////////请求推荐的套餐卡///////////////////
+        let comboCardRecommendURL = "\(BMHOST)/c/packagecard/queryList?duserCode=\(BMDUSERCODE)&pageSize=2&pageNum=0&state=1"
+        NetworkRequest.sharedInstance.getRequest(urlString: comboCardRecommendURL , params: params , success: { value in
+            
+            let dataList: JSON = value["dataList"]
+            self.comboCardView.updateUIWithComboCards(comboCards: dataList)//更新推荐的超值套餐卡内容
+            
+        }) { error in
+            
+            
+        }
+
+        
         //////////////请求推荐的储值卡///////////////////
         let storeCardRecommendURL = "\(BMHOST)/cuserPcardKind/queryKindList?duserCode=\(BMDUSERCODE)&pageSize=10000&validState=0&state=1"
         NetworkRequest.sharedInstance.getRequest(urlString: storeCardRecommendURL , params: params , success: { value in
