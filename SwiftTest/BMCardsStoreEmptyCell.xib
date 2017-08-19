@@ -65,6 +65,7 @@
                     <constraint firstAttribute="trailing" secondItem="Sic-AN-yng" secondAttribute="trailing" constant="10" id="ouH-fN-dWP"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="bgView" destination="Sic-AN-yng" id="RRO-5F-Bub"/>
             </connections>

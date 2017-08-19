@@ -11,6 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BMConvertStoreCardViewController" customModule="SwiftTest" customModuleProvider="target">
             <connections>
+                <outlet property="convertBtn" destination="dM8-Ie-9yY" id="qsp-7H-k2T"/>
+                <outlet property="emptyBtn" destination="BMN-lR-IFl" id="ray-Og-AfC"/>
+                <outlet property="inputBgView" destination="DbW-OA-SIk" id="nCr-nd-g0f"/>
+                <outlet property="inputLeftLabel" destination="Bos-e2-2tf" id="voO-BE-ap4"/>
+                <outlet property="inputTextField" destination="UFe-EE-3fK" id="VnU-EL-0PY"/>
+                <outlet property="storeCardNameLabel" destination="6mv-85-1bd" id="jUk-us-9vF"/>
+                <outlet property="storeCardPriceLabel" destination="s4A-2X-7na" id="xU0-Z2-JAr"/>
+                <outlet property="storeCardTimeLabel" destination="qiK-P3-VIF" id="VE3-MK-GLF"/>
+                <outlet property="storeCardView" destination="8Vh-AZ-ZIJ" id="TJj-gs-a3d"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,6 +38,9 @@
                     <state key="normal" title="兑换">
                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="convertClick:" destination="-1" eventType="touchUpInside" id="nTI-ZV-fay"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbW-OA-SIk">
                     <rect key="frame" x="20" y="15" width="335" height="40"/>
@@ -47,6 +59,9 @@
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="St9-1M-JQk"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,14 +87,71 @@
                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vh-AZ-ZIJ">
+                    <rect key="frame" x="30" y="85" width="315" height="153"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store_card_detail_watermark" translatesAutoresizingMaskIntoConstraints="NO" id="JLz-zJ-V5R">
+                            <rect key="frame" x="196" y="28" width="119" height="125"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="125" id="Sf7-XF-3bm"/>
+                                <constraint firstAttribute="width" constant="119" id="uuA-xT-bZr"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="面值￥200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4A-2X-7na">
+                            <rect key="frame" x="15" y="51" width="285" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="YSX-Cw-Aw8"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有效期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiK-P3-VIF">
+                            <rect key="frame" x="15" y="123" width="285" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="Zcs-Uf-9HV"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="储值卡名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mv-85-1bd">
+                            <rect key="frame" x="15" y="15" width="285" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="f93-d7-via"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="s4A-2X-7na" firstAttribute="leading" secondItem="8Vh-AZ-ZIJ" secondAttribute="leading" constant="15" id="0BX-yL-lq0"/>
+                        <constraint firstAttribute="trailing" secondItem="qiK-P3-VIF" secondAttribute="trailing" constant="15" id="BGe-Pu-hyO"/>
+                        <constraint firstItem="6mv-85-1bd" firstAttribute="leading" secondItem="8Vh-AZ-ZIJ" secondAttribute="leading" constant="15" id="BPo-mV-u27"/>
+                        <constraint firstAttribute="trailing" secondItem="s4A-2X-7na" secondAttribute="trailing" constant="15" id="Fdy-0R-jGm"/>
+                        <constraint firstAttribute="bottom" secondItem="JLz-zJ-V5R" secondAttribute="bottom" id="KjA-Qr-iwV"/>
+                        <constraint firstAttribute="height" constant="153" id="RjJ-d3-PgF"/>
+                        <constraint firstAttribute="trailing" secondItem="JLz-zJ-V5R" secondAttribute="trailing" id="S5g-Av-RRA"/>
+                        <constraint firstItem="qiK-P3-VIF" firstAttribute="leading" secondItem="8Vh-AZ-ZIJ" secondAttribute="leading" constant="15" id="Tck-ND-htQ"/>
+                        <constraint firstItem="s4A-2X-7na" firstAttribute="top" secondItem="6mv-85-1bd" secondAttribute="bottom" constant="15" id="YER-4S-cua"/>
+                        <constraint firstAttribute="trailing" secondItem="6mv-85-1bd" secondAttribute="trailing" constant="15" id="kWM-Gy-knC"/>
+                        <constraint firstItem="6mv-85-1bd" firstAttribute="top" secondItem="8Vh-AZ-ZIJ" secondAttribute="top" constant="15" id="nGh-I7-zys"/>
+                        <constraint firstAttribute="bottom" secondItem="qiK-P3-VIF" secondAttribute="bottom" constant="15" id="w9z-ZO-Wv6"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="8Vh-AZ-ZIJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="DYD-OK-wgo"/>
                 <constraint firstItem="DbW-OA-SIk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="IO3-O9-coy"/>
                 <constraint firstItem="DbW-OA-SIk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="M9a-Cq-uEw"/>
                 <constraint firstAttribute="bottom" secondItem="dM8-Ie-9yY" secondAttribute="bottom" id="Tym-c3-Ea1"/>
+                <constraint firstAttribute="trailing" secondItem="8Vh-AZ-ZIJ" secondAttribute="trailing" constant="30" id="aID-Z3-yvv"/>
                 <constraint firstItem="BMN-lR-IFl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lmy-yb-LaM"/>
                 <constraint firstItem="BMN-lR-IFl" firstAttribute="top" secondItem="DbW-OA-SIk" secondAttribute="bottom" constant="8" id="piz-S9-wyE"/>
+                <constraint firstItem="8Vh-AZ-ZIJ" firstAttribute="top" secondItem="DbW-OA-SIk" secondAttribute="bottom" constant="30" id="r0m-5f-TPc"/>
                 <constraint firstAttribute="trailing" secondItem="dM8-Ie-9yY" secondAttribute="trailing" id="rKa-GV-HUq"/>
                 <constraint firstAttribute="trailing" secondItem="DbW-OA-SIk" secondAttribute="trailing" constant="20" id="ukW-bA-utZ"/>
                 <constraint firstItem="dM8-Ie-9yY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="w6Z-n2-eLx"/>
@@ -91,5 +163,6 @@
     </objects>
     <resources>
         <image name="add_stored_card_default" width="91" height="103"/>
+        <image name="store_card_detail_watermark" width="124" height="150"/>
     </resources>
 </document>

@@ -73,7 +73,7 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
         NetworkRequest.sharedInstance.postRequest(urlString: url, params: params, isLogin: true, success: { (value) in
             
             self.tableView.dg_stopLoading()  //停止刷新动画
-            self.prepaidCardList = [];//value["prepaidCard"].array //储值卡
+            self.prepaidCardList = []//value["prepaidCard"].array //储值卡
             self.memberCard = value["card"]  //会员卡
             self.acctCardList = value["acctCard"].array //套餐卡
             self.tableView.reloadData()  //刷新数据源
@@ -213,6 +213,8 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
         
         if indexPath.section == 2{  //如果点击的是会员卡
             
+            
+            
         }else if indexPath.section == 1 { //如果点击的是储值卡
             
             if let prepaidCardList = self.prepaidCardList , prepaidCardList.count > 0 { //如果有储值卡的话，就跳转到详情页
@@ -225,7 +227,8 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
                     dPrint(item: "套餐卡没有cardNo")
                 }
             }else{ //否则跳转到储值卡兑换页面
-                
+                let vc:BMConvertStoreCardViewController = BMConvertStoreCardViewController(nibName: "BMConvertStoreCardViewController", bundle: nil)
+                self.navigationController?.pushViewController(vc, animated: true)
             }
             
         }else{  //如果点击的是套餐卡
