@@ -89,7 +89,6 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         var count:Int = 0
         if let _ = self.acctCardList{
             count += 1

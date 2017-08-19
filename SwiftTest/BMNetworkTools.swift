@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import Alamofire
 import SwiftyJSON
+import PKHUD
 
 private let NetworkRequestShareInstance = NetworkRequest()
 
@@ -34,7 +35,27 @@ extension NetworkRequest {
                 case .success(let value):
                     
                     let jsonValue = JSON(value)
-                    success(jsonValue["data"])
+                    let result:String = jsonValue["result"].stringValue
+                    let rescode:Int = jsonValue["rescode"].intValue
+                    let msg:String = jsonValue["msg"].stringValue
+                    
+                    switch (result) {
+                        
+                    case "ok":
+                        success(jsonValue["data"])
+                    case "fail" :
+                        if rescode == 202 { //未登录
+                            HUD.flash(.label("您还没有登录"), delay: 2.0)
+                        }else{
+                            HUD.flash(.label(msg), delay: 2.0)
+                        }
+                    case "tokenInvalid":
+                        HUD.flash(.label("token失效"), delay: 2.0)
+                    default:
+                        HUD.flash(.label(msg), delay: 2.0)
+                        
+                    }
+                    
                     dPrint(item: JSON(value))
                 
                     
@@ -61,7 +82,27 @@ extension NetworkRequest {
             case .success (let value):
                 
                 let jsonValue = JSON(value)
-                success(jsonValue["data"])
+                let result:String = jsonValue["result"].stringValue
+                let rescode:Int = jsonValue["rescode"].intValue
+                let msg:String = jsonValue["msg"].stringValue
+                
+                switch (result) {
+                    
+                case "ok":
+                    success(jsonValue["data"])
+                case "fail" :
+                    if rescode == 202 { //未登录
+                        HUD.flash(.label("您还没有登录"), delay: 2.0)
+                    }else{
+                        HUD.flash(.label(msg), delay: 2.0)
+                    }
+                case "tokenInvalid":
+                    HUD.flash(.label("token失效"), delay: 2.0)
+                default:
+                    HUD.flash(.label(msg), delay: 2.0)
+                    
+                }
+                
                 dPrint(item: JSON(value))
                 
             case .failure(let error):
