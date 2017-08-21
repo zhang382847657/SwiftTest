@@ -11,6 +11,5 @@ import UIKit
 class BMCardElaborate: UIView {
 
     @IBOutlet weak var contentLabel: UILabel!
-    
 
 }

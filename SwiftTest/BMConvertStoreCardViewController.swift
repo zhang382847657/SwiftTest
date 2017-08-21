@@ -60,7 +60,12 @@ class BMConvertStoreCardViewController: UIViewController,UITextFieldDelegate {
                 
                 NetworkRequest.sharedInstance.postRequest(urlString: url, params: params, isLogin: true, success: { (value) in
                     
-                    HUD.flash(.label("兑换成功"), delay: 2.0)
+                    HUD.flash(.label("兑换成功"), onView:self.view, delay: 2.0, completion: { (BOOL) in
+                        
+                        //发送通知给卡包列表页，去请求刷新数据源
+                        NotificationCenter.default.post(name:notifyCardsMsgRecv, object: nil, userInfo: nil)
+                        
+                    })
                     
                 }) { (error) in
                     

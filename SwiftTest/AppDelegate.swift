@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.sharedManager().enable = true  //设置键盘遮挡问题
         
+        CatchCrash.share().installUncaughtExceptionHandler()  //开启异常捕捉，可以把异常信息保存到沙盒文件中
+        
         return true
     }
 

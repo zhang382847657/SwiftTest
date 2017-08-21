@@ -18,7 +18,7 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
     var memberCard:JSON? = nil //会员卡数据源
     var prepaidCardList:Array<JSON>? = nil //储值卡数据源
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +47,10 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
         self.tableView.dg_setPullToRefreshBackgroundColor(self.tableView.backgroundColor!) //设置头部刷新指示器的颜色
         
         self.loadData()//请求数据
+        
+        //接受通知监听
+        NotificationCenter.default.addObserver(self, selector:#selector(didMsgRecv(notification:)),
+                                               name: notifyCardsMsgRecv, object: nil)
 
        
     }
@@ -58,9 +62,11 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
     
     deinit {
         self.tableView.dg_removePullToRefresh() //移除头部刷新视图
+        NotificationCenter.default.removeObserver(self)  //移除监听
     }
     
     
+    // MARK: 请求数据
     /**
      * 请求数据
      */
@@ -85,8 +91,15 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
         }
         
     }
+    
+    // MARK: 监听通知处理函数
+    
+    @objc private func didMsgRecv(notification:NSNotification){
+        self.loadData() //请求数据(也代表重新刷新数据)
+    }
+    
 
-    // MARK: - Table view data source
+    // MARK: UITableView DataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         var count:Int = 0
@@ -127,6 +140,8 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
         
         return 0
     }
+    
+    // MARK:  UITableView Delegate
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
         return 44
@@ -170,12 +185,6 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
             
         }
         
-        
-        
-        
-        
-        
-        
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -212,7 +221,8 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
         
         if indexPath.section == 2{  //如果点击的是会员卡
             
-            
+            let vc:BMVipCardDetailViewController = BMVipCardDetailViewController(card: self.memberCard!)
+            self.navigationController?.pushViewController(vc, animated: true)
             
         }else if indexPath.section == 1 { //如果点击的是储值卡
             
@@ -247,7 +257,7 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
     }
     
     
-    // MARK: - TBEmptyDataSetDataSource
+    // MARK:  TBEmptyDataSetDataSource
     
     func imageForEmptyDataSet(in scrollView: UIScrollView) -> UIImage? {
         

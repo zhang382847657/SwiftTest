@@ -12,11 +12,16 @@ import UIKit
 
 let kScreenHeight = UIScreen.main.bounds.size.height  //屏幕高度
 let kScreenWidth = UIScreen.main.bounds.size.width    //屏幕宽度
+
+
+////////////请求url、版本、用户编号配置//////////
+
 let BMHOST = "https://jz.qianmi.com"   //斑马请求地址
 let BMDUSERCODE = "D00017"             //D用户编号
 let VERSION = "3.3.3"                  //版本号
 
 
+/////////////颜色、字体、边框的配置////////////
 
 let BMThemeColor = "#00B4FF" //斑马主题颜色——蓝色
 let BMThemeColorOrange = "#FF7140" //斑马主题颜色——橘色
@@ -36,7 +41,11 @@ let BMSmallTitleFontSize:CGFloat = 12.0 //斑马小标题字体大小
 let BMBorderSize:CGFloat = 0.5 //斑马边框大小
 
 
+////////////监听通知名字的配置//////////////
+let notifyCardsMsgRecv = NSNotification.Name(rawValue:"notifyCardsMsgRecv") //卡包列表页
 
+
+// MARK: 重写print方法
 /**
  * 重写print方法，提高性能，只在debug模式下在控制台输出
  */
