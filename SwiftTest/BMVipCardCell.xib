@@ -55,6 +55,10 @@
                 <constraint firstAttribute="trailing" secondItem="3tI-8e-biC" secondAttribute="trailing" id="rUw-ha-Sw8"/>
             </constraints>
             <size key="customSize" width="311" height="178"/>
+            <connections>
+                <outlet property="nameLabel" destination="jn2-Z7-LSD" id="lhk-rv-Qwd"/>
+                <outlet property="timeLabel" destination="UZQ-Ox-KWt" id="pH4-ZT-GE9"/>
+            </connections>
             <point key="canvasLocation" x="12.5" y="64"/>
         </collectionViewCell>
     </objects>

@@ -103,7 +103,7 @@ class BMAuntCerListView: UIView,UICollectionViewDelegate,UICollectionViewDataSou
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         let pointInView = self.convert(self.collectionView.center, to: self.collectionView)
-        let indexPath:IndexPath = collectionView.indexPathForItem(at: pointInView)!
+        let indexPath:IndexPath = self.collectionView.indexPathForItem(at: pointInView)!
         self.headerView.updateNumber(currentNum: indexPath.item+1, totalNum: self.dataSource.count)
     }
     

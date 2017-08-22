@@ -66,7 +66,7 @@
                                     <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥300.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ta2-DZ-6YB">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ta2-DZ-6YB">
                                     <rect key="frame" x="8" y="44" width="161" height="33"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                     <color key="textColor" red="0.0" green="0.70588235294117641" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
@@ -95,7 +95,7 @@
                                     <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥300.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05i-Y3-rTx">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05i-Y3-rTx">
                                     <rect key="frame" x="8" y="44" width="161" height="33"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                     <color key="textColor" red="0.0" green="0.70588235290000001" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
@@ -142,6 +142,14 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="leftPriceLable" destination="Ta2-DZ-6YB" id="d3y-58-UGZ"/>
+                <outlet property="leftTitleLabel" destination="QIF-sg-psS" id="Yhd-Jf-ZjQ"/>
+                <outlet property="nameLabel" destination="OX7-gY-2Te" id="gMB-CH-Clk"/>
+                <outlet property="rightPriceLabel" destination="05i-Y3-rTx" id="f87-Iw-1DD"/>
+                <outlet property="rightTitleLabel" destination="QRx-fJ-Cnd" id="IZY-Pc-Fk7"/>
+                <outlet property="subTitleLabel" destination="NNO-SS-T0C" id="EKb-4r-qMG"/>
+            </connections>
             <point key="canvasLocation" x="-8.5" y="-142"/>
         </view>
     </objects>

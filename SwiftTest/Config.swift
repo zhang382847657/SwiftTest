@@ -189,32 +189,38 @@ class Config: AnyObject {
      * 根据会员卡等级返回会员卡背景色
      * @param sort  会员卡级别
      */
-    static func vipBackgroundColor(sort:Int) ->String {
-        switch sort {
-        case 1:
-            return "#78b966"
-        case 2:
-            return "#3f9266"
-        case 3:
-            return "#5bb2db"
-        case 4:
-            return "#418bbb"
-        case 5:
-            return "#5e86d4"
-        case 6:
-            return "#6d5a9b"
-        case 7:
-            return "#bb3c59"
-        case 8:
-            return "#e76352"
-        case 9:
-            return "#f7a52b"
-        case 10:
-            return "#f5c814"
-        default:
+    static func vipBackgroundColor(sort:Int?) ->String {
+        
+        if let sort = sort{
+            
+            switch sort {
+            case 1:
+                return "#78b966"
+            case 2:
+                return "#3f9266"
+            case 3:
+                return "#5bb2db"
+            case 4:
+                return "#418bbb"
+            case 5:
+                return "#5e86d4"
+            case 6:
+                return "#6d5a9b"
+            case 7:
+                return "#bb3c59"
+            case 8:
+                return "#e76352"
+            case 9:
+                return "#f7a52b"
+            case 10:
+                return "#f5c814"
+            default:
+                return "#78b966"
+            }
+            
+        }else{
             return "#78b966"
         }
-        
     }
     
     
