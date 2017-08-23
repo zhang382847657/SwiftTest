@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="s5q-Cn-8UJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="s5q-Cn-8UJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -70,38 +70,16 @@
         <!--订单-->
         <scene sceneID="Jma-jm-ahx">
             <objects>
-                <navigationController id="moj-Cu-Aor" customClass="BMBaseNavigationController" customModule="SwiftTest" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="moj-Cu-Aor" customClass="BMOrderNavigationController" customModule="SwiftTest" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="订单" image="order_grey" selectedImage="order_blue" id="GZk-bM-Xmf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qei-Lf-uiP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="tbk-0D-hJe" kind="relationship" relationship="rootViewController" id="8bt-8o-7nW"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGU-NO-bfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="212" y="-128"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="k7X-4w-A91">
-            <objects>
-                <viewController id="tbk-0D-hJe" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JIE-AM-J5D"/>
-                        <viewControllerLayoutGuide type="bottom" id="uGc-d0-mbZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="503-ba-oAU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="9Ed-4X-lp3"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SyI-ox-wOG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="974" y="-128"/>
         </scene>
         <!--门店-->
         <scene sceneID="rEL-5E-4SK">

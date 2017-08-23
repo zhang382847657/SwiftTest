@@ -56,6 +56,7 @@ class BMShopCommentPicturesScrollView: UIScrollView {
                 ////////////评论图片///////////
                 let imageView = UIImageView(frame: CGRect.zero)
                 imageView.isUserInteractionEnabled = true
+                imageView.layer.masksToBounds = true
                 imageView.contentMode = .scaleAspectFill
                 imageView.tag = 50 + i
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction)) //给图片添加点击事件

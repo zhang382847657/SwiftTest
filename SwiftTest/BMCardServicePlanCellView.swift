@@ -43,7 +43,7 @@ class BMCardServicePlanCellView: UIView {
         }
     
         if let frequency = frequency{
-            self.topLabel.text = frequency == 1 ? "每周" : "每两周"
+            self.topLabel.text = frequency == 1 ? " 每周 " : " 每两周 "
         }else{
             self.topLabel.text = "--"
         }
