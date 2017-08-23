@@ -28,18 +28,7 @@ class BMVipCardEquityView: UIView {
         self.titleLabel.snp.makeConstraints { (make) in
             make.top.left.right.equalTo(self)
             make.height.equalTo(46)
-           // make.bottom.equalTo(self)
         }
-        
-//        
-//        let three:BMVipCardEquityCellView = BMVipCardEquityCellView(title: "赠送优惠券", content: "100元优惠券 1张、保洁类优惠券3张")
-//        self.addSubview(three)
-//        three.snp.makeConstraints { (make) in
-//            make.left.right.equalTo(self)
-//            make.top.equalTo(two.snp.bottom)
-//            make.bottom.equalTo(self)
-//        }
-        
         
     }
     
@@ -56,7 +45,7 @@ class BMVipCardEquityView: UIView {
             }
         }
         
-        if let priceOffList = priceOffList{
+        if let priceOffList = priceOffList, priceOffList.count > 0{
             
             for i in 0..<priceOffList.count{
                 
@@ -83,20 +72,23 @@ class BMVipCardEquityView: UIView {
                         make.top.equalTo(lastView!.snp.bottom)
                     }
                     
-                    
-                    if i == priceOffList.count - 1 {
-                        make.bottom.equalTo(self)
-                    }
-                    
                 }
             }
             
             
             let lastView = self.subviews.last
             
-            if let cardCouponBOList = cardCouponBOList{
+            if let cardCouponBOList = cardCouponBOList , cardCouponBOList.count > 0{
                 
-                let view:BMVipCardEquityCellView = BMVipCardEquityCellView(title: "赠送优惠券", content: "aaaaaa")
+                var couponNames:Array<String> = []
+                for coupon in cardCouponBOList{
+                    
+                    let titleString:String = coupon["couponPublishBo"]["title"].stringValue
+                    let num:Int = coupon["num"].intValue
+                    couponNames.append("\(titleString) \(num)张")
+                }
+                
+                let view:BMVipCardEquityCellView = BMVipCardEquityCellView(title: "赠送优惠券", content: couponNames.joined(separator: "、"))
                 self.addSubview(view)
                 
                 view.snp.makeConstraints({ (make) in
@@ -105,15 +97,27 @@ class BMVipCardEquityView: UIView {
                     make.bottom.equalTo(self)
                 })
                 
+            }else{
+                lastView?.snp.makeConstraints({ (make) in
+                    make.bottom.equalTo(self)
+                })
             }
             
             
             
         }else{
             
-            if let cardCouponBOList = cardCouponBOList{
+            if let cardCouponBOList = cardCouponBOList, cardCouponBOList.count > 0{
                 
-                let view:BMVipCardEquityCellView = BMVipCardEquityCellView(title: "赠送优惠券", content: "aaaaaa")
+                var couponNames:Array<String> = []
+                for coupon in cardCouponBOList{
+                    
+                    let titleString:String = coupon["couponPublishBo"]["title"].stringValue
+                    let num:Int = coupon["num"].intValue
+                    couponNames.append("\(titleString) \(num)张")
+                }
+                
+                let view:BMVipCardEquityCellView = BMVipCardEquityCellView(title: "赠送优惠券", content: couponNames.joined(separator: "、"))
                 self.addSubview(view)
                 
                 view.snp.makeConstraints({ (make) in
@@ -122,6 +126,12 @@ class BMVipCardEquityView: UIView {
                     make.bottom.equalTo(self)
                 })
                 
+            }else{
+                self.titleLabel.text = nil
+                self.titleLabel.snp.makeConstraints({ (make) in
+                    make.height.equalTo(0)
+                    make.bottom.equalTo(self)
+                })
             }
             
         }

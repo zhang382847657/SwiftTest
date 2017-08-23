@@ -221,19 +221,6 @@ class BMVipCardDetailViewController: UIViewController {
             let cardCouponBOList:Array<JSON>? = value["cardCouponBOList"].array  //优惠商品
             
             self.equityView.updateWithPriceOffList(priceOffList: priceOffList, cardCouponBOList: cardCouponBOList)
-//            if let priceOffList = priceOffList, priceOffList.count > 0{
-//                
-//            }else{
-//                
-//            }
-//            
-//            if let cardCouponBOList = cardCouponBOList, cardCouponBOList.count > 0{
-//                
-//            }else{
-//                
-//            }
-            
-            
             
         }
         
