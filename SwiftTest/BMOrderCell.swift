@@ -18,7 +18,7 @@ class BMOrderCell: UITableViewCell {
     @IBOutlet weak var orderStateImageView: UIImageView!  //订单状态
     @IBOutlet weak var orderTypeLabel: UILabel! //订单类型
     
-    @IBOutlet weak var bottomView: UIView! //底部视图
+    @IBOutlet weak var bottomView: BMOrderBottomView! //底部视图
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,15 +30,7 @@ class BMOrderCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        self.bottomView.addBorderLayer(color: UIColor.colorWithHexString(hex: BMBorderColor), size: BMBorderSize, boderType: BorderType.top)
-    }
-    
-    
+
     
     /**
      *  更新保洁和家政类型的单子
@@ -52,6 +44,9 @@ class BMOrderCell: UITableViewCell {
         let productName:String? = product["productName"].string  //商品名字
         let cmidFee:Float? = product["cmidFee"].float  //费用
         let ctime:Int? = product["ctime"].int  //创建时间
+        
+        var canPay:Bool = false  //是否显示付款
+        var canCancel:Bool = false  //是否显示申请取消
         
     
         self.productImageView?.image = UIImage(named:Config.productByItemId(itemId: serviceType)["icon"]!)
@@ -86,16 +81,21 @@ class BMOrderCell: UITableViewCell {
                     switch flowStatus {
                     case "pending_take_trade": //待接单
                         self.orderStateImageView.image = UIImage(named: "daijiedan")
+                        canCancel = true
                     case "pending_choice_aunt": //待选择阿姨
-                        self.orderStateImageView.image = UIImage(named: "")
+                        self.orderStateImageView.image = UIImage(named: "daimianshi")
+                        canCancel = true
                     case "pending_interview": //待面试
                         self.orderStateImageView.image = UIImage(named: "daimianshi")
+                        canCancel = true
                     case "pending_signed": //待签订合同
                         self.orderStateImageView.image = UIImage(named: "daiqianyue")
+                        canCancel = true
                     case "pending_pay:": //服务中
                         self.orderStateImageView.image = UIImage(named: "yipaigong")
+                        canPay = true
                     case "complete": //服务完成
-                        break
+                        canPay = true
                     default:
                         break
                     }
@@ -107,20 +107,30 @@ class BMOrderCell: UITableViewCell {
                     switch flowStatus {
                     case "pending_take_trade": //待接单
                         self.orderStateImageView.image = UIImage(named: "daijiedan")
+                        canCancel = true
                     case "pending_pay": //待付款
                         self.orderStateImageView.image = UIImage(named: "daifukuan")
+                        canCancel = true
+                        canPay = true
                     case "pending_choice_aunt": //已派工
                         self.orderStateImageView.image = UIImage(named: "yipaigong")
+                        canCancel = true
+                        canPay = true
                     case "pending_complete": //已完成
                         self.orderStateImageView.image = UIImage(named: "yiwancheng")
+                        canCancel = true
+                        canPay = true
                     case "complete": //服务完成
-                        break
+                        canCancel = true
                     default:  //其他都是已接单
                         self.orderStateImageView.image = UIImage(named: "daijiedan")
+                        canCancel = true
                     }
                 }
             }
         }
+        
+        self.bottomView.updateWithShowPay(showPay: canPay, showCancel: canCancel)
         
     }
     
@@ -144,7 +154,6 @@ class BMOrderCell: UITableViewCell {
         }
         
         self.priceLabel.text = nil //不显示合计
-        
         
         
         if let beginTime = beginTime{

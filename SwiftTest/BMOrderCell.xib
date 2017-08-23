@@ -108,7 +108,7 @@
                                     <constraint firstItem="Qip-Kj-4oy" firstAttribute="top" secondItem="SaQ-WJ-bmX" secondAttribute="top" constant="10" id="wBz-wE-JGs"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIo-Qf-vjm">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIo-Qf-vjm" customClass="BMOrderBottomView" customModule="SwiftTest" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="84" width="320" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>

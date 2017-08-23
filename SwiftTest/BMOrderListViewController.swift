@@ -80,7 +80,8 @@ class BMOrderListViewController: UIViewController,TBEmptyDataSetDelegate,TBEmpty
         
         ///////////全部TabelView///////////
         self.allTableView.separatorStyle = UITableViewCellSeparatorStyle.none  //去掉分割线
-        self.allTableView.rowHeight = 126
+        self.allTableView.rowHeight = UITableViewAutomaticDimension
+        self.allTableView.estimatedRowHeight = 126
         self.allTableView.tableFooterView = self.allLoadMoreControl
         self.allTableView.register(UINib(nibName: "BMOrderCell", bundle: nil), forCellReuseIdentifier: "BMOrderCell")
         self.allTableView.emptyDataSetDelegate = self  //设置空数据的代理
@@ -97,7 +98,8 @@ class BMOrderListViewController: UIViewController,TBEmptyDataSetDelegate,TBEmpty
         
         ///////////已完成TabelView///////////
         self.finishTableView.separatorStyle = UITableViewCellSeparatorStyle.none  //去掉分割线
-        self.finishTableView.rowHeight = 126
+        self.finishTableView.rowHeight = UITableViewAutomaticDimension
+        self.finishTableView.estimatedRowHeight = 126
         self.finishTableView.tableFooterView = self.finishLoadMoreControl
         self.finishTableView.register(UINib(nibName: "BMOrderCell", bundle: nil), forCellReuseIdentifier: "BMOrderCell")
         self.finishTableView.emptyDataSetDelegate = self  //设置空数据的代理
@@ -114,7 +116,8 @@ class BMOrderListViewController: UIViewController,TBEmptyDataSetDelegate,TBEmpty
         
         ///////////未完成TabelView///////////
         self.unFinishTableView.separatorStyle = UITableViewCellSeparatorStyle.none  //去掉分割线
-        self.unFinishTableView.rowHeight = 126
+        self.unFinishTableView.rowHeight = UITableViewAutomaticDimension
+        self.unFinishTableView.estimatedRowHeight = 126
         self.unFinishTableView.tableFooterView = self.unFinishLoadMoreControl
         self.unFinishTableView.register(UINib(nibName: "BMOrderCell", bundle: nil), forCellReuseIdentifier: "BMOrderCell")
         self.unFinishTableView.emptyDataSetDelegate = self  //设置空数据的代理
