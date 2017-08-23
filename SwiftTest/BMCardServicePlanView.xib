@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -45,25 +45,31 @@
                         <constraint firstItem="T2u-y4-NaS" firstAttribute="leading" secondItem="Ad1-lS-SFd" secondAttribute="trailing" constant="6.5" id="uNv-XN-0cE"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wV2-cP-haF">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV2-cP-haF">
                     <rect key="frame" x="30" y="60" width="295" height="128"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TX2-dk-B5f">
-                    <rect key="frame" x="0.0" y="104" width="22" height="22"/>
+                    <rect key="frame" x="0.0" y="100" width="30" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="22" id="avM-ZO-3lA"/>
-                        <constraint firstAttribute="height" constant="22" id="mvW-wm-ksi"/>
+                        <constraint firstAttribute="width" constant="30" id="Lbp-90-fRC"/>
+                        <constraint firstAttribute="height" constant="30" id="sdZ-YE-dyy"/>
                     </constraints>
                     <state key="normal" image="left_arrow"/>
+                    <connections>
+                        <action selector="leftClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="6Om-da-fcE"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxV-wZ-02J">
-                    <rect key="frame" x="333" y="104" width="22" height="22"/>
+                    <rect key="frame" x="325" y="100" width="30" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="22" id="upS-9P-Pay"/>
-                        <constraint firstAttribute="width" constant="22" id="zzg-tq-fay"/>
+                        <constraint firstAttribute="width" constant="30" id="SVW-kY-Kub"/>
+                        <constraint firstAttribute="height" constant="30" id="X70-XZ-NOp"/>
                     </constraints>
                     <state key="normal" image="right_arrow"/>
+                    <connections>
+                        <action selector="rightClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="N63-tm-1gG"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msa-dm-py9">
                     <rect key="frame" x="125" y="196" width="104" height="34"/>
@@ -75,22 +81,25 @@
                     <state key="normal" title="联系门店更改时间">
                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="callShopClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="RWs-qc-Z3S"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="XxV-wZ-02J" firstAttribute="leading" secondItem="wV2-cP-haF" secondAttribute="trailing" constant="8" id="2ov-hn-9Yk"/>
+                <constraint firstItem="TX2-dk-B5f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0d0-nD-wWL"/>
                 <constraint firstItem="Msa-dm-py9" firstAttribute="top" secondItem="wV2-cP-haF" secondAttribute="bottom" constant="8" id="436-br-pEa"/>
-                <constraint firstItem="TX2-dk-B5f" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4FH-4O-taS"/>
+                <constraint firstAttribute="trailing" secondItem="XxV-wZ-02J" secondAttribute="trailing" id="96S-Xr-wlI"/>
                 <constraint firstItem="2d1-hi-Dxo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="99S-Pf-Fy0"/>
+                <constraint firstItem="XxV-wZ-02J" firstAttribute="leading" secondItem="wV2-cP-haF" secondAttribute="trailing" id="9b1-MM-Ocq"/>
                 <constraint firstAttribute="trailing" secondItem="2d1-hi-Dxo" secondAttribute="trailing" id="FyD-6v-gin"/>
+                <constraint firstItem="wV2-cP-haF" firstAttribute="leading" secondItem="TX2-dk-B5f" secondAttribute="trailing" id="Gs2-ZK-dTf"/>
                 <constraint firstItem="wV2-cP-haF" firstAttribute="top" secondItem="2d1-hi-Dxo" secondAttribute="bottom" constant="14" id="GvO-N3-G2a"/>
-                <constraint firstItem="TX2-dk-B5f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Zde-rk-3Yi"/>
+                <constraint firstItem="TX2-dk-B5f" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="b1Y-sa-eI0"/>
                 <constraint firstItem="Msa-dm-py9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bBC-gW-0L1"/>
-                <constraint firstAttribute="trailing" secondItem="XxV-wZ-02J" secondAttribute="trailing" id="dNo-sV-KfS"/>
                 <constraint firstItem="2d1-hi-Dxo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gye-iW-Ry3"/>
-                <constraint firstItem="XxV-wZ-02J" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hWL-n1-fIe"/>
-                <constraint firstItem="wV2-cP-haF" firstAttribute="leading" secondItem="TX2-dk-B5f" secondAttribute="trailing" constant="8" id="w4m-Vc-aNM"/>
+                <constraint firstItem="XxV-wZ-02J" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="l5O-gs-0QY"/>
                 <constraint firstAttribute="bottom" secondItem="Msa-dm-py9" secondAttribute="bottom" id="ytF-7f-oth"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

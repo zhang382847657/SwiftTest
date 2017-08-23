@@ -79,7 +79,7 @@ class BMCardsViewController: UITableViewController,TBEmptyDataSetDelegate,TBEmpt
         NetworkRequest.sharedInstance.postRequest(urlString: url, params: params, isLogin: true, success: { (value) in
             
             self.tableView.dg_stopLoading()  //停止刷新动画
-            self.prepaidCardList = []//value["prepaidCard"].array //储值卡
+            self.prepaidCardList = value["prepaidCard"].array //储值卡
             self.memberCard = value["card"]  //会员卡
             self.acctCardList = value["acctCard"].array //套餐卡
             self.tableView.reloadData()  //刷新数据源

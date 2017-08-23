@@ -128,10 +128,7 @@ class BMCardDetailViewController: UIViewController {
                 make.bottom.equalTo(self.contentView).offset(-60)
             })
             
-        }else{
-            
         }
-        
         
         
     }
@@ -152,7 +149,18 @@ class BMCardDetailViewController: UIViewController {
             
             NetworkRequest.sharedInstance.postRequest(urlString: url, params: params, isLogin: true, success: { (value) in
                 
-                self.headerView.updateUIWithComboCard(card: value, expireDescription: self.expireDescription)
+                
+                let detail:String? = value["detail"].string
+                if let detail = detail{
+                    self.elaborate.contentLabel.text = detail
+                }else{
+                    self.elaborate.contentLabel.text = "暂无信息"
+                }
+                
+                self.headerView.updateUIWithComboCard(card: value, expireDescription: self.expireDescription)  //更新头部卡片信息
+                
+                
+                
                 
                 
                 //////////////请求套餐卡服务计划///////////////////

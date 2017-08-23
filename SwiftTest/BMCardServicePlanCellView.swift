@@ -25,8 +25,7 @@ class BMCardServicePlanCellView: UIView {
         
         if let time = time{
             
-            let prefix = time.substring(to: time.index(time.startIndex, offsetBy: 5))
-            let timeArray = prefix.characters.split(separator: ":")
+            let timeArray = time.components(separatedBy: ":")
             self.timeLabel.text = "\(timeArray[0]) : \(timeArray[1])"
             
             let prefix2 = time.substring(to: time.index(time.startIndex, offsetBy: 2))
