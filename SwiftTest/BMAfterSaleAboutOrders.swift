@@ -20,13 +20,14 @@ class BMAfterSaleAboutOrders: UIView {
     }
     
     
-    func updateWithAboutOrders(aboutOrders:JSON?){
+    func updateWithAboutOrders(aboutOrders:JSON){
         
-//        let array:Array<JSON> = aboutOrders.arrayValue
+        let array:Array<JSON> = aboutOrders.arrayValue
         
-        for i in 0..<10 {
+        for i in 0..<array.count {
             
             let cellView:BMAfterSaleAboutOrdersCellView = UIView.loadViewFromNib(nibName: "BMAfterSaleAboutOrdersCellView") as! BMAfterSaleAboutOrdersCellView!
+            cellView.updateWithAboutOrder(order: array[i])
             self.bottomView.addSubview(cellView)
             
             cellView.snp.makeConstraints({ (make) in
@@ -39,7 +40,7 @@ class BMAfterSaleAboutOrders: UIView {
                     make.top.equalTo(view.snp.bottom)
                 }
                 
-                if i == 9{
+                if i == array.count - 1{
                     make.bottom.equalTo(self.bottomView.snp.bottom)
                 }
             })

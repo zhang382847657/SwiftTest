@@ -89,6 +89,13 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="formatLabel" destination="PpA-ZH-1Ii" id="mhJ-Xi-Szm"/>
+                <outlet property="imageView" destination="v1c-JR-6IY" id="xnc-ST-Guj"/>
+                <outlet property="priceLabel" destination="HpC-rd-uNe" id="2Cb-YQ-8on"/>
+                <outlet property="productNameLabel" destination="Uzn-F4-Kb9" id="K32-iT-QA6"/>
+                <outlet property="timeLabel" destination="E0G-VT-NVR" id="jdg-17-e9s"/>
+            </connections>
             <point key="canvasLocation" x="12.5" y="-115.5"/>
         </view>
     </objects>

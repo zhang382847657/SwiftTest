@@ -76,6 +76,13 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bottomView" destination="FBG-oc-XlE" id="9x7-cp-HBd"/>
+                <outlet property="circleView" destination="xN4-9e-BU9" id="JeI-KZ-7mM"/>
+                <outlet property="lineView" destination="Rxw-St-5L8" id="k5N-4d-rkM"/>
+                <outlet property="serviceNoLabel" destination="Lsk-Ov-0HA" id="hHk-1x-uQc"/>
+                <outlet property="timeLabel" destination="iEd-H5-QQa" id="231-Lq-WD3"/>
+            </connections>
             <point key="canvasLocation" x="31.5" y="-111"/>
         </view>
     </objects>

@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MPs-wy-7C7">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aunt_default" translatesAutoresizingMaskIntoConstraints="NO" id="MPs-wy-7C7">
                     <rect key="frame" x="10" y="15" width="62" height="62"/>
                     <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -67,7 +67,16 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addressLabel" destination="nXw-GF-98f" id="gVw-Rn-bj5"/>
+                <outlet property="ageLabel" destination="Mq5-CN-3f0" id="qLk-A7-8cm"/>
+                <outlet property="imageView" destination="MPs-wy-7C7" id="ANF-xH-OQA"/>
+                <outlet property="nameLabel" destination="tGn-EM-fzu" id="hXL-3b-RXe"/>
+            </connections>
             <point key="canvasLocation" x="32.5" y="-33"/>
         </view>
     </objects>
+    <resources>
+        <image name="aunt_default" width="100" height="100"/>
+    </resources>
 </document>

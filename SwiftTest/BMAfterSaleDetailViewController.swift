@@ -110,7 +110,6 @@ class BMAfterSaleDetailViewController: UIViewController {
         
         ////////////相关订单///////////
         self.aboutOrders = UIView.loadViewFromNib(nibName: "BMAfterSaleAboutOrders") as! BMAfterSaleAboutOrders
-        self.aboutOrders.updateWithAboutOrders(aboutOrders: nil)
         self.contentView.addSubview(self.aboutOrders)
         self.aboutOrders.snp.makeConstraints { (make) in
             make.left.right.equalTo(self.userInfoView)
@@ -124,7 +123,8 @@ class BMAfterSaleDetailViewController: UIViewController {
      *  请求网络数据
      */
     private func loadData(){
-        ////////////查询用户评价////////////
+        
+        ////////////查询服务单质保单详情////////////
         let url = "\(BMHOST)/serviceorder/queryServiceorder"
         let params:Dictionary<String,Any> = ["serviceNo":self.serviceNo]
         
@@ -133,11 +133,43 @@ class BMAfterSaleDetailViewController: UIViewController {
             
             self.headerView.updateWithAfterSale(afterSale: value)
             self.userInfoView.updateWithAfterSale(afterSale: value)
+            self.productView.updateWithAfterSale(afterSale: value)
             
         }) { (error) in
             
             
         }
+        
+        
+        ////////////根据服务单编号查询所有服务阿姨////////////
+        let queryAuntByServiceUrl = "\(BMHOST)/serviceorder/queryAuntByService"
+        
+        
+        NetworkRequest.sharedInstance.postRequest(urlString: queryAuntByServiceUrl, params: params, isLogin: true, success: { (value) in
+            
+            self.auntView.updateWithAunts(aunts: value["dataList"].arrayValue)
+            
+        }) { (error) in
+            
+            
+        }
+        
+        
+        ////////////查询相关订单////////////
+        let queryRelatedOrderUrl = "\(BMHOST)/trade/queryList"
+        
+        
+        NetworkRequest.sharedInstance.postRequest(urlString: queryRelatedOrderUrl, params: params, isLogin: true, success: { (value) in
+            
+            self.aboutOrders.updateWithAboutOrders(aboutOrders: value["dataList"])
+            
+        }) { (error) in
+            
+            
+        }
+
+        
+        
     }
     
 
