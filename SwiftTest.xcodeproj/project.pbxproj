@@ -99,6 +99,19 @@
 		638CE6C21F25F66100BCC95C /* BMGiftEquityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638CE6C11F25F66100BCC95C /* BMGiftEquityView.swift */; };
 		638CE6C41F25F67A00BCC95C /* BMGiftEquityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638CE6C31F25F67A00BCC95C /* BMGiftEquityView.xib */; };
 		638D7AEF1F00E1F300A15311 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638D7AEE1F00E1F300A15311 /* UIImageView+Extension.swift */; };
+		638EE95B1F4E725200D0F34C /* BMAfterSaleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638EE95A1F4E725200D0F34C /* BMAfterSaleDetailViewController.swift */; };
+		638EE95E1F4E7AED00D0F34C /* BMAfterSaleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638EE95D1F4E7AED00D0F34C /* BMAfterSaleHeaderView.swift */; };
+		638EE9601F4E7AFA00D0F34C /* BMAfterSaleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638EE95F1F4E7AFA00D0F34C /* BMAfterSaleHeaderView.xib */; };
+		638EE9641F4E81F200D0F34C /* BMAfterSaleUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638EE9631F4E81F200D0F34C /* BMAfterSaleUserInfoView.swift */; };
+		638EE9661F4E81FD00D0F34C /* BMAfterSaleUserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638EE9651F4E81FD00D0F34C /* BMAfterSaleUserInfoView.xib */; };
+		638EE9691F4E843D00D0F34C /* BMAfterSaleProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638EE9681F4E843D00D0F34C /* BMAfterSaleProductView.swift */; };
+		638EE96B1F4E844600D0F34C /* BMAfterSaleProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638EE96A1F4E844600D0F34C /* BMAfterSaleProductView.xib */; };
+		638EE96E1F4EA20B00D0F34C /* BMAfterSaleAuntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638EE96D1F4EA20B00D0F34C /* BMAfterSaleAuntView.swift */; };
+		638EE9701F4EA21500D0F34C /* BMAfterSaleAuntView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638EE96F1F4EA21500D0F34C /* BMAfterSaleAuntView.xib */; };
+		638EE9731F4EA5DA00D0F34C /* BMAfterSaleAboutOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638EE9721F4EA5DA00D0F34C /* BMAfterSaleAboutOrders.swift */; };
+		638EE9751F4EA5E200D0F34C /* BMAfterSaleAboutOrders.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638EE9741F4EA5E200D0F34C /* BMAfterSaleAboutOrders.xib */; };
+		638EE9771F4EA93900D0F34C /* BMAfterSaleAboutOrdersCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638EE9761F4EA93900D0F34C /* BMAfterSaleAboutOrdersCellView.swift */; };
+		638EE9791F4EA94400D0F34C /* BMAfterSaleAboutOrdersCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638EE9781F4EA94400D0F34C /* BMAfterSaleAboutOrdersCellView.xib */; };
 		638F10251F035C0B004251EA /* JTLoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F10241F035C0B004251EA /* JTLoadMoreControl.swift */; };
 		638F102B1F0398AB004251EA /* BMWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F10291F0398AB004251EA /* BMWebViewController.swift */; };
 		638F102E1F03A518004251EA /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638F102D1F03A518004251EA /* PKHUD.framework */; };
@@ -288,6 +301,19 @@
 		638CE6C11F25F66100BCC95C /* BMGiftEquityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMGiftEquityView.swift; sourceTree = "<group>"; };
 		638CE6C31F25F67A00BCC95C /* BMGiftEquityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMGiftEquityView.xib; sourceTree = "<group>"; };
 		638D7AEE1F00E1F300A15311 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		638EE95A1F4E725200D0F34C /* BMAfterSaleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAfterSaleDetailViewController.swift; sourceTree = "<group>"; };
+		638EE95D1F4E7AED00D0F34C /* BMAfterSaleHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAfterSaleHeaderView.swift; sourceTree = "<group>"; };
+		638EE95F1F4E7AFA00D0F34C /* BMAfterSaleHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMAfterSaleHeaderView.xib; sourceTree = "<group>"; };
+		638EE9631F4E81F200D0F34C /* BMAfterSaleUserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAfterSaleUserInfoView.swift; sourceTree = "<group>"; };
+		638EE9651F4E81FD00D0F34C /* BMAfterSaleUserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMAfterSaleUserInfoView.xib; sourceTree = "<group>"; };
+		638EE9681F4E843D00D0F34C /* BMAfterSaleProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAfterSaleProductView.swift; sourceTree = "<group>"; };
+		638EE96A1F4E844600D0F34C /* BMAfterSaleProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMAfterSaleProductView.xib; sourceTree = "<group>"; };
+		638EE96D1F4EA20B00D0F34C /* BMAfterSaleAuntView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAfterSaleAuntView.swift; sourceTree = "<group>"; };
+		638EE96F1F4EA21500D0F34C /* BMAfterSaleAuntView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMAfterSaleAuntView.xib; sourceTree = "<group>"; };
+		638EE9721F4EA5DA00D0F34C /* BMAfterSaleAboutOrders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAfterSaleAboutOrders.swift; sourceTree = "<group>"; };
+		638EE9741F4EA5E200D0F34C /* BMAfterSaleAboutOrders.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMAfterSaleAboutOrders.xib; sourceTree = "<group>"; };
+		638EE9761F4EA93900D0F34C /* BMAfterSaleAboutOrdersCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAfterSaleAboutOrdersCellView.swift; sourceTree = "<group>"; };
+		638EE9781F4EA94400D0F34C /* BMAfterSaleAboutOrdersCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMAfterSaleAboutOrdersCellView.xib; sourceTree = "<group>"; };
 		638F10241F035C0B004251EA /* JTLoadMoreControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JTLoadMoreControl.swift; sourceTree = "<group>"; };
 		638F10261F035C42004251EA /* JTLoadMoreControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTLoadMoreControl.h; sourceTree = "<group>"; };
 		638F10291F0398AB004251EA /* BMWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMWebViewController.swift; sourceTree = "<group>"; };
@@ -803,6 +829,79 @@
 			name = "服务类型";
 			sourceTree = "<group>";
 		};
+		638EE9591F4E721400D0F34C /* 售后单详情 */ = {
+			isa = PBXGroup;
+			children = (
+				638EE95A1F4E725200D0F34C /* BMAfterSaleDetailViewController.swift */,
+				638EE9711F4EA5BA00D0F34C /* 相关订单 */,
+				638EE96C1F4EA1E900D0F34C /* 阿姨信息 */,
+				638EE9671F4E841C00D0F34C /* 商品信息 */,
+				638EE9621F4E81BD00D0F34C /* 雇主信息 */,
+				638EE9611F4E81B000D0F34C /* 头部视图 */,
+			);
+			name = "售后单详情";
+			sourceTree = "<group>";
+		};
+		638EE95C1F4E726400D0F34C /* 订单列表 */ = {
+			isa = PBXGroup;
+			children = (
+				6378C2441F4D5F4300405943 /* BMOrderNavigationController.swift */,
+				6378C23A1F4D214B00405943 /* BMOrderListViewController.swift */,
+				6378C23B1F4D214B00405943 /* BMOrderListViewController.xib */,
+				6378C23E1F4D2DF100405943 /* BMOrderCell.swift */,
+				6378C23F1F4D2DF100405943 /* BMOrderCell.xib */,
+				6378C2461F4D86FA00405943 /* BMOrderBottomView.swift */,
+			);
+			name = "订单列表";
+			sourceTree = "<group>";
+		};
+		638EE9611F4E81B000D0F34C /* 头部视图 */ = {
+			isa = PBXGroup;
+			children = (
+				638EE95D1F4E7AED00D0F34C /* BMAfterSaleHeaderView.swift */,
+				638EE95F1F4E7AFA00D0F34C /* BMAfterSaleHeaderView.xib */,
+			);
+			name = "头部视图";
+			sourceTree = "<group>";
+		};
+		638EE9621F4E81BD00D0F34C /* 雇主信息 */ = {
+			isa = PBXGroup;
+			children = (
+				638EE9631F4E81F200D0F34C /* BMAfterSaleUserInfoView.swift */,
+				638EE9651F4E81FD00D0F34C /* BMAfterSaleUserInfoView.xib */,
+			);
+			name = "雇主信息";
+			sourceTree = "<group>";
+		};
+		638EE9671F4E841C00D0F34C /* 商品信息 */ = {
+			isa = PBXGroup;
+			children = (
+				638EE9681F4E843D00D0F34C /* BMAfterSaleProductView.swift */,
+				638EE96A1F4E844600D0F34C /* BMAfterSaleProductView.xib */,
+			);
+			name = "商品信息";
+			sourceTree = "<group>";
+		};
+		638EE96C1F4EA1E900D0F34C /* 阿姨信息 */ = {
+			isa = PBXGroup;
+			children = (
+				638EE96D1F4EA20B00D0F34C /* BMAfterSaleAuntView.swift */,
+				638EE96F1F4EA21500D0F34C /* BMAfterSaleAuntView.xib */,
+			);
+			name = "阿姨信息";
+			sourceTree = "<group>";
+		};
+		638EE9711F4EA5BA00D0F34C /* 相关订单 */ = {
+			isa = PBXGroup;
+			children = (
+				638EE9721F4EA5DA00D0F34C /* BMAfterSaleAboutOrders.swift */,
+				638EE9741F4EA5E200D0F34C /* BMAfterSaleAboutOrders.xib */,
+				638EE9761F4EA93900D0F34C /* BMAfterSaleAboutOrdersCellView.swift */,
+				638EE9781F4EA94400D0F34C /* BMAfterSaleAboutOrdersCellView.xib */,
+			);
+			name = "相关订单";
+			sourceTree = "<group>";
+		};
 		638F10231F035BEA004251EA /* JTLoadMoreControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -904,12 +1003,8 @@
 		6397B6CA1F1F5D6D00C77BDC /* 订单 */ = {
 			isa = PBXGroup;
 			children = (
-				6378C2441F4D5F4300405943 /* BMOrderNavigationController.swift */,
-				6378C23A1F4D214B00405943 /* BMOrderListViewController.swift */,
-				6378C23B1F4D214B00405943 /* BMOrderListViewController.xib */,
-				6378C23E1F4D2DF100405943 /* BMOrderCell.swift */,
-				6378C23F1F4D2DF100405943 /* BMOrderCell.xib */,
-				6378C2461F4D86FA00405943 /* BMOrderBottomView.swift */,
+				638EE95C1F4E726400D0F34C /* 订单列表 */,
+				638EE9591F4E721400D0F34C /* 售后单详情 */,
 			);
 			name = "订单";
 			sourceTree = "<group>";
@@ -1317,9 +1412,11 @@
 				6397B7081F1F7E1A00C77BDC /* BMProductsView.xib in Resources */,
 				6397B6EC1F1F5F9200C77BDC /* BMStoreCardRecommendCell.xib in Resources */,
 				63A951031F2B21F20052F6C6 /* BMLoginViewController.xib in Resources */,
+				638EE9751F4EA5E200D0F34C /* BMAfterSaleAboutOrders.xib in Resources */,
 				638469461F3D93990014DA82 /* BMCardUsageLogView.xib in Resources */,
 				63DD179E1F2F283400ED3AB6 /* BMRegisterViewController.xib in Resources */,
 				63E2C2041F4ABC9B00E5A7AD /* BMVipCardConsumeView.xib in Resources */,
+				638EE9661F4E81FD00D0F34C /* BMAfterSaleUserInfoView.xib in Resources */,
 				6388BCC21F34463B00165D3A /* BMAuntListCell.xib in Resources */,
 				638469411F3D8D0F0014DA82 /* BMCardElaborate.xib in Resources */,
 				633704A51F21F02400F769B4 /* BMProductCircleView.xib in Resources */,
@@ -1327,6 +1424,7 @@
 				6359B0931EF1074700D6DF5E /* LaunchScreen.storyboard in Resources */,
 				6378C2411F4D2DF100405943 /* BMOrderCell.xib in Resources */,
 				6378C1831F32BAAD0070E81F /* BMShopRecommendCommentView.xib in Resources */,
+				638EE9701F4EA21500D0F34C /* BMAfterSaleAuntView.xib in Resources */,
 				6378C1871F32BDCF0070E81F /* BMShopCommentView.xib in Resources */,
 				634C271E1F39B5ED00D1043D /* BMAuntCerCell.xib in Resources */,
 				6383306F1F3BFD3E00F48CF6 /* BMCardsCell.xib in Resources */,
@@ -1334,10 +1432,12 @@
 				6346B8661F31D4C600721963 /* BMShopRecommendAuntView.xib in Resources */,
 				6388BCC91F345D3600165D3A /* BMAuntDetailHeaderView.xib in Resources */,
 				638CE6C41F25F67A00BCC95C /* BMGiftEquityView.xib in Resources */,
+				638EE96B1F4E844600D0F34C /* BMAfterSaleProductView.xib in Resources */,
 				636F957C1F27129000F62C44 /* BMGiftEquityCellView.xib in Resources */,
 				634BF0C81F46EA3500FA04F8 /* BMCardsStoreEmptyCell.xib in Resources */,
 				633704A11F21E8CB00F769B4 /* BMProductSymbolsView.xib in Resources */,
 				633C10F71F3086BB0036F85B /* BMShopHeaderView.xib in Resources */,
+				638EE9791F4EA94400D0F34C /* BMAfterSaleAboutOrdersCellView.xib in Resources */,
 				6354897A1F233EB400CCA117 /* BMStoreCardBuyCell.xib in Resources */,
 				634BF0CD1F46F40A00FA04F8 /* BMConvertStoreCardViewController.xib in Resources */,
 				6383309B1F3C588E00F48CF6 /* BMCardHeaderView.xib in Resources */,
@@ -1346,6 +1446,7 @@
 				63E2C1FF1F4AB55100E5A7AD /* BMVipCardCell.xib in Resources */,
 				63015C051EFBA62900A9C8AC /* Images.xcassets in Resources */,
 				635489731F2335F200CCA117 /* BMStoreCardBuyViewController.xib in Resources */,
+				638EE9601F4E7AFA00D0F34C /* BMAfterSaleHeaderView.xib in Resources */,
 				6359B0901EF1074700D6DF5E /* Assets.xcassets in Resources */,
 				6359B08E1EF1074700D6DF5E /* Main.storyboard in Resources */,
 				6346B8621F31D10900721963 /* BMShopToolsView.xib in Resources */,
@@ -1429,6 +1530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638EE95B1F4E725200D0F34C /* BMAfterSaleDetailViewController.swift in Sources */,
 				6397B6D91F1F5E8400C77BDC /* BMQuickOrderTableViewController.swift in Sources */,
 				63E2C2071F4ACAE700E5A7AD /* BMVipCardEquityView.swift in Sources */,
 				6388BCD11F3465CF00165D3A /* BMAuntServiceTypeView.swift in Sources */,
@@ -1465,6 +1567,7 @@
 				6397B6F81F1F601000C77BDC /* BMComboCardRecommendView.swift in Sources */,
 				6397B6D61F1F5E6800C77BDC /* BMNearestStoreCellView.swift in Sources */,
 				6388BCC71F345D2D00165D3A /* BMAuntDetailHeaderView.swift in Sources */,
+				638EE95E1F4E7AED00D0F34C /* BMAfterSaleHeaderView.swift in Sources */,
 				6397B6EB1F1F5F9200C77BDC /* BMStoreCardRecommendCell.swift in Sources */,
 				6397B6B41F1EF0A300C77BDC /* UIButton+Extension.swift in Sources */,
 				6337049D1F21A99600F769B4 /* BMProductBottomView.swift in Sources */,
@@ -1499,8 +1602,10 @@
 				636F957A1F27128500F62C44 /* BMGiftEquityCellView.swift in Sources */,
 				6388BCC11F34463B00165D3A /* BMAuntListCell.swift in Sources */,
 				63DD179D1F2F283400ED3AB6 /* BMRegisterViewController.swift in Sources */,
+				638EE9641F4E81F200D0F34C /* BMAfterSaleUserInfoView.swift in Sources */,
 				63A950F31F2AD2570052F6C6 /* InforCellView.swift in Sources */,
 				6397B6EF1F1F5F9200C77BDC /* BMStoreListTableViewController.swift in Sources */,
+				638EE9731F4EA5DA00D0F34C /* BMAfterSaleAboutOrders.swift in Sources */,
 				633C10F51F3085470036F85B /* BMShopHeaderView.swift in Sources */,
 				63B826DD1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift in Sources */,
 				638330991F3C583F00F48CF6 /* BMCardHeaderView.swift in Sources */,
@@ -1521,11 +1626,14 @@
 				634BF0CC1F46F40A00FA04F8 /* BMConvertStoreCardViewController.swift in Sources */,
 				635489791F233EB400CCA117 /* BMStoreCardBuyCell.swift in Sources */,
 				63A950F61F2B0FD30052F6C6 /* BMCache.swift in Sources */,
+				638EE9691F4E843D00D0F34C /* BMAfterSaleProductView.swift in Sources */,
 				63D815411F41975C00B331B4 /* BMCouponCell.swift in Sources */,
+				638EE9771F4EA93900D0F34C /* BMAfterSaleAboutOrdersCellView.swift in Sources */,
 				63DD17961F2F0EDA00ED3AB6 /* BMPhoneLoginView.swift in Sources */,
 				63B826D81F35611700F7C5A1 /* BMAuntBasicCellView.swift in Sources */,
 				6397B6DC1F1F5ED300C77BDC /* BMFriendsBargainView.swift in Sources */,
 				638F10251F035C0B004251EA /* JTLoadMoreControl.swift in Sources */,
+				638EE96E1F4EA20B00D0F34C /* BMAfterSaleAuntView.swift in Sources */,
 				6378C2431F4D5C3900405943 /* Dictionary+Extension.swift in Sources */,
 				638CE6C21F25F66100BCC95C /* BMGiftEquityView.swift in Sources */,
 			);

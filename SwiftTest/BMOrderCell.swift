@@ -93,9 +93,13 @@ class BMOrderCell: UITableViewCell {
                         canCancel = true
                     case "pending_pay:": //服务中
                         self.orderStateImageView.image = UIImage(named: "yipaigong")
-                        canPay = true
+                        if let cmidFee = cmidFee,cmidFee > 0 {
+                            canPay = true
+                        }
                     case "complete": //服务完成
-                        canPay = true
+                        if let cmidFee = cmidFee,cmidFee > 0 {
+                            canPay = true
+                        }
                     default:
                         break
                     }
@@ -111,15 +115,21 @@ class BMOrderCell: UITableViewCell {
                     case "pending_pay": //待付款
                         self.orderStateImageView.image = UIImage(named: "daifukuan")
                         canCancel = true
-                        canPay = true
+                        if let cmidFee = cmidFee,cmidFee > 0 {
+                            canPay = true
+                        }
                     case "pending_choice_aunt": //已派工
                         self.orderStateImageView.image = UIImage(named: "yipaigong")
                         canCancel = true
-                        canPay = true
+                        if let cmidFee = cmidFee,cmidFee > 0 {
+                            canPay = true
+                        }
                     case "pending_complete": //已完成
                         self.orderStateImageView.image = UIImage(named: "yiwancheng")
                         canCancel = true
-                        canPay = true
+                        if let cmidFee = cmidFee,cmidFee > 0 {
+                            canPay = true
+                        }
                     case "complete": //服务完成
                         canCancel = true
                     default:  //其他都是已接单

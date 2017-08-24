@@ -71,7 +71,7 @@ extension NetworkRequest {
     func postRequest(urlString : String, params : [String : Any], isLogin : Bool, success : @escaping (_ response : JSON)->(), failture : @escaping (_ error : Error)->()) {
         
         let headers: HTTPHeaders = [
-            "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDMDAwMzYwNSIsImV4cCI6MTUwMzUzODk4OSwibmlja05hbWUiOiIxODU1MTYyNDgxNCIsInVzZXJUeXBlIjoxLCJzb3VyY2UiOjIsImR1c2VyQ29kZSI6IkQwMDAxNyJ9.P2Byg44mlNfEA9ydy6OVczuquH58HbyvrLcz7yiHRQI",
+            "Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJDMDAwMzYwNSIsImV4cCI6MTUwNDE1OTg3Nywibmlja05hbWUiOiIxODU1MTYyNDgxNCIsInVzZXJUeXBlIjoxLCJzb3VyY2UiOjIsImR1c2VyQ29kZSI6IkQwMDAxNyJ9.QHAGsnYJuh1mhtEDmjIT7ii7nkhoz2o6PZ9uRHtg0nQ",
             "Accept": "application/json",
             "Content-Type":"application/x-www-form-urlencoded"
         ]

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BMAfterSaleHeaderView" customModule="SwiftTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="165"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dunpai" translatesAutoresizingMaskIntoConstraints="NO" id="mOt-b5-5GO">
+                    <rect key="frame" x="25" y="46" width="72" height="72"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="72" id="obg-6c-7VF"/>
+                        <constraint firstAttribute="height" constant="72" id="ovi-sL-pES"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQA-sV-D1Y">
+                    <rect key="frame" x="122" y="46" width="228" height="72"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="质保结束时间：2017-08-23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDJ-gs-LQZ">
+                            <rect key="frame" x="0.0" y="40" width="228" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Ugh-Le-eXS"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中介费：￥180" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yq-lX-KwU">
+                            <rect key="frame" x="0.0" y="8" width="228" height="27"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="27" id="Jrj-XY-7Rh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="1" green="0.89411764705882346" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="72" id="3ZQ-ZF-WF2"/>
+                        <constraint firstItem="2Yq-lX-KwU" firstAttribute="top" secondItem="eQA-sV-D1Y" secondAttribute="top" constant="8" id="Dm6-qD-E7Z"/>
+                        <constraint firstAttribute="trailing" secondItem="2Yq-lX-KwU" secondAttribute="trailing" id="JfG-gK-6NP"/>
+                        <constraint firstAttribute="trailing" secondItem="HDJ-gs-LQZ" secondAttribute="trailing" id="Pbp-85-ARN"/>
+                        <constraint firstItem="HDJ-gs-LQZ" firstAttribute="top" secondItem="2Yq-lX-KwU" secondAttribute="bottom" constant="5" id="SKF-fa-afc"/>
+                        <constraint firstItem="HDJ-gs-LQZ" firstAttribute="leading" secondItem="eQA-sV-D1Y" secondAttribute="leading" id="eeh-Kp-lNt"/>
+                        <constraint firstItem="2Yq-lX-KwU" firstAttribute="leading" secondItem="eQA-sV-D1Y" secondAttribute="leading" id="y3J-ZQ-u65"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="mOt-b5-5GO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="L3D-VQ-Pp8"/>
+                <constraint firstAttribute="trailing" secondItem="eQA-sV-D1Y" secondAttribute="trailing" constant="25" id="WfM-Hs-99c"/>
+                <constraint firstItem="eQA-sV-D1Y" firstAttribute="leading" secondItem="mOt-b5-5GO" secondAttribute="trailing" constant="25" id="nNj-j1-mZy"/>
+                <constraint firstItem="eQA-sV-D1Y" firstAttribute="top" secondItem="mOt-b5-5GO" secondAttribute="top" id="s3r-Cs-CRV"/>
+                <constraint firstItem="mOt-b5-5GO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="yvf-Vo-E7J"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="priceLabel" destination="2Yq-lX-KwU" id="SwN-dM-JSh"/>
+                <outlet property="timeLabel" destination="HDJ-gs-LQZ" id="fmB-Nu-KCW"/>
+            </connections>
+            <point key="canvasLocation" x="27.5" y="-211.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dunpai" width="72" height="72"/>
+    </resources>
+</document>

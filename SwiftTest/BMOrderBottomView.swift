@@ -86,12 +86,14 @@ class BMOrderBottomView: UIView {
             }
             
         }else{
-            self.payBtn.snp.makeConstraints { (make) in
-                make.width.equalTo(65)
-                make.height.equalTo(26)
-                make.top.equalTo(8)
-                make.bottom.equalTo(-8)
-                make.right.equalTo(self.snp.right).offset(-10)
+            if showPay == true{
+                self.payBtn.snp.makeConstraints { (make) in
+                    make.width.equalTo(65)
+                    make.height.equalTo(26)
+                    make.top.equalTo(8)
+                    make.bottom.equalTo(-8)
+                    make.right.equalTo(self.snp.right).offset(-10)
+                }
             }
         }
         

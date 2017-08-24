@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BMAfterSaleAuntView" customModule="SwiftTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MPs-wy-7C7">
+                    <rect key="frame" x="10" y="15" width="62" height="62"/>
+                    <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="Lba-3s-DhI"/>
+                        <constraint firstAttribute="height" constant="62" id="mRi-Ja-7vj"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阿姨姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGn-EM-fzu">
+                    <rect key="frame" x="87" y="28" width="57.5" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="Gbq-cf-jKx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25岁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mq5-CN-3f0">
+                    <rect key="frame" x="150" y="28" width="27" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="02g-hZ-RJ1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="工作地" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXw-GF-98f">
+                    <rect key="frame" x="87" y="52" width="278" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="XKg-F7-LVk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tGn-EM-fzu" firstAttribute="leading" secondItem="MPs-wy-7C7" secondAttribute="trailing" constant="15" id="8x4-sg-MqT"/>
+                <constraint firstItem="MPs-wy-7C7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="K5Q-Bx-kge"/>
+                <constraint firstAttribute="trailing" secondItem="nXw-GF-98f" secondAttribute="trailing" constant="10" id="N86-Sa-dwP"/>
+                <constraint firstAttribute="bottom" secondItem="nXw-GF-98f" secondAttribute="bottom" constant="28" id="OO7-oh-0iL"/>
+                <constraint firstItem="Mq5-CN-3f0" firstAttribute="leading" secondItem="tGn-EM-fzu" secondAttribute="trailing" constant="5.5" id="Pz9-dh-jMU"/>
+                <constraint firstAttribute="bottom" secondItem="MPs-wy-7C7" secondAttribute="bottom" constant="15" id="R6n-bw-e5d"/>
+                <constraint firstItem="nXw-GF-98f" firstAttribute="top" secondItem="Mq5-CN-3f0" secondAttribute="bottom" constant="10" id="RX0-eC-Zqw"/>
+                <constraint firstItem="Mq5-CN-3f0" firstAttribute="top" secondItem="tGn-EM-fzu" secondAttribute="top" id="VyD-rA-Sqk"/>
+                <constraint firstItem="tGn-EM-fzu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="28" id="hFI-ct-RTL"/>
+                <constraint firstItem="nXw-GF-98f" firstAttribute="leading" secondItem="MPs-wy-7C7" secondAttribute="trailing" constant="15" id="mYC-sl-iBR"/>
+                <constraint firstItem="MPs-wy-7C7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="yTb-M9-fGe"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="32.5" y="-33"/>
+        </view>
+    </objects>
+</document>

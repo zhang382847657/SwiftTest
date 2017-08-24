@@ -184,6 +184,11 @@ class BMOrderListViewController: UIViewController,TBEmptyDataSetDelegate,TBEmpty
                     }
                     
                     self.allDataList += value["dataList"].arrayValue  //数组合并
+                    
+                    if value["dataList"].arrayValue.count < self.pageSize{
+                        self.allLoadMoreControl.endLoadingDueToNoMoreData() //尾部显示没有更多数据
+                    }
+                    
                     self.allTableView.reloadData()  //刷新数据源
                 case .Finish:
                     self.finishLoadMoreControl.endLoading() //停止尾部加载数据动画
@@ -193,6 +198,10 @@ class BMOrderListViewController: UIViewController,TBEmptyDataSetDelegate,TBEmpty
                     }
                     
                     self.finishDataList += value["dataList"].arrayValue  //数组合并
+                    
+                    if value["dataList"].arrayValue.count < self.pageSize{
+                        self.finishLoadMoreControl.endLoadingDueToNoMoreData() //尾部显示没有更多数据
+                    }
                     self.finishTableView.reloadData()  //刷新数据源
                 case .UnFinish:
                     self.unFinishLoadMoreControl.endLoading() //停止尾部加载数据动画
@@ -202,6 +211,9 @@ class BMOrderListViewController: UIViewController,TBEmptyDataSetDelegate,TBEmpty
                     }
                     
                     self.unFinishDataList += value["dataList"].arrayValue  //数组合并
+                    if value["dataList"].arrayValue.count < self.pageSize{
+                        self.unFinishLoadMoreControl.endLoadingDueToNoMoreData() //尾部显示没有更多数据
+                    }
                     self.unFinishTableView.reloadData()  //刷新数据源
                 case .AfterSale:
                     self.afterSaleLoadMoreControl.endLoading() //停止尾部加载数据动画
@@ -211,6 +223,9 @@ class BMOrderListViewController: UIViewController,TBEmptyDataSetDelegate,TBEmpty
                     }
                     
                     self.afterSaleDataList += value["dataList"].arrayValue  //数组合并
+                    if value["dataList"].arrayValue.count < self.pageSize{
+                        self.afterSaleLoadMoreControl.endLoadingDueToNoMoreData() //尾部显示没有更多数据
+                    }
                     self.afterSaleTableView.reloadData()  //刷新数据源
             }
             
@@ -252,29 +267,13 @@ class BMOrderListViewController: UIViewController,TBEmptyDataSetDelegate,TBEmpty
         
         switch self.currentSelectType {
         case .All:
-            if self.allDataList.count % self.pageSize == 0{  //还不是最后一页
-                self.loadData(pageNumber: self.allDataList.count/self.pageSize+1, isRefresh: false)
-            }else{  //已经是最后一页了
-                self.allLoadMoreControl.endLoadingDueToNoMoreData() //尾部显示没有更多数据
-            }
+                self.loadData(pageNumber: self.allDataList.count/self.pageSize, isRefresh: false)
         case .Finish:
-            if self.finishDataList.count % self.pageSize == 0{  //还不是最后一页
-                self.loadData(pageNumber: self.finishDataList.count/self.pageSize+1, isRefresh: false)
-            }else{  //已经是最后一页了
-                self.finishLoadMoreControl.endLoadingDueToNoMoreData() //尾部显示没有更多数据
-            }
+                self.loadData(pageNumber: self.finishDataList.count/self.pageSize, isRefresh: false)
         case .UnFinish:
-            if self.unFinishDataList.count % self.pageSize == 0{  //还不是最后一页
-                self.loadData(pageNumber: self.unFinishDataList.count/self.pageSize+1, isRefresh: false)
-            }else{  //已经是最后一页了
-                self.unFinishLoadMoreControl.endLoadingDueToNoMoreData() //尾部显示没有更多数据
-            }
+                self.loadData(pageNumber: self.unFinishDataList.count/self.pageSize, isRefresh: false)
         case .AfterSale:
-            if self.afterSaleDataList.count % self.pageSize == 0{  //还不是最后一页
-                self.loadData(pageNumber: self.afterSaleDataList.count/self.pageSize+1, isRefresh: false)
-            }else{  //已经是最后一页了
-                self.afterSaleLoadMoreControl.endLoadingDueToNoMoreData() //尾部显示没有更多数据
-            }
+            self.loadData(pageNumber: self.afterSaleDataList.count/self.pageSize, isRefresh: false)
         }
     }
     
@@ -327,9 +326,26 @@ class BMOrderListViewController: UIViewController,TBEmptyDataSetDelegate,TBEmpty
     // MARK: - TabelViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
-//        let cell:BMOrderCell = tableView.cellForRow(at: indexPath) as! BMOrderCell
         
-       // return cell
+        if self.currentSelectType == .AfterSale { //如果是售后单类型，跳转到售后单详情页
+            
+            let serviceNo:String? = self.afterSaleDataList[indexPath.row]["serviceNo"].string
+            
+            if let serviceNo = serviceNo {
+                let vc:BMAfterSaleDetailViewController = BMAfterSaleDetailViewController(serviceNo: serviceNo)
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                dPrint(item: "没有serviceNo")
+            }
+            
+            
+        }else{  //如果是其他类型，就跳转到订单详情页
+            
+        }
+
+        
+        
         
     }
     

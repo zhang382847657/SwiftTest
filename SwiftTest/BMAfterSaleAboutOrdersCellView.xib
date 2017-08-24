@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BMAfterSaleAboutOrdersCellView" customModule="SwiftTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xN4-9e-BU9">
+                    <rect key="frame" x="10" y="0.0" width="10" height="10"/>
+                    <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="MsK-Y4-f6X"/>
+                        <constraint firstAttribute="width" constant="10" id="nhv-CF-rKQ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rxw-St-5L8">
+                    <rect key="frame" x="14" y="10" width="1" height="34"/>
+                    <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="UOt-EQ-b9g"/>
+                        <constraint firstAttribute="width" constant="1" id="tK5-sI-dcq"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单编号：J17082100006964" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsk-Ov-0HA">
+                    <rect key="frame" x="25" y="0.0" width="340" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="kL1-Ky-zCw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-08-21 20:01:47" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEd-H5-QQa">
+                    <rect key="frame" x="25" y="17" width="340" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="eK5-9i-Abi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBG-oc-XlE">
+                    <rect key="frame" x="25" y="37" width="340" height="7"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="7" id="Hon-my-JQU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="iEd-H5-QQa" firstAttribute="top" secondItem="Lsk-Ov-0HA" secondAttribute="bottom" constant="5" id="1LU-do-tHq"/>
+                <constraint firstAttribute="trailing" secondItem="iEd-H5-QQa" secondAttribute="trailing" constant="10" id="6eF-YL-aq5"/>
+                <constraint firstAttribute="trailing" secondItem="FBG-oc-XlE" secondAttribute="trailing" constant="10" id="ChK-jm-V3L"/>
+                <constraint firstAttribute="trailing" secondItem="Lsk-Ov-0HA" secondAttribute="trailing" constant="10" id="Ckf-6I-ekJ"/>
+                <constraint firstAttribute="bottom" secondItem="Rxw-St-5L8" secondAttribute="bottom" id="DZc-pv-okG"/>
+                <constraint firstItem="Lsk-Ov-0HA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HDg-Ek-6Y1"/>
+                <constraint firstItem="xN4-9e-BU9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WCM-gX-Rmx"/>
+                <constraint firstItem="xN4-9e-BU9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Y0N-HP-8mA"/>
+                <constraint firstItem="Rxw-St-5L8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="atJ-gX-zz0"/>
+                <constraint firstItem="Rxw-St-5L8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="dRo-eZ-uqc"/>
+                <constraint firstItem="Lsk-Ov-0HA" firstAttribute="leading" secondItem="xN4-9e-BU9" secondAttribute="trailing" constant="5" id="twD-LY-ClO"/>
+                <constraint firstItem="iEd-H5-QQa" firstAttribute="leading" secondItem="Rxw-St-5L8" secondAttribute="trailing" constant="10" id="uRY-Br-vZ0"/>
+                <constraint firstItem="FBG-oc-XlE" firstAttribute="leading" secondItem="Rxw-St-5L8" secondAttribute="trailing" constant="10" id="vM0-FI-aiF"/>
+                <constraint firstAttribute="bottom" secondItem="FBG-oc-XlE" secondAttribute="bottom" id="va4-Nv-pdR"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="31.5" y="-111"/>
+        </view>
+    </objects>
+</document>
