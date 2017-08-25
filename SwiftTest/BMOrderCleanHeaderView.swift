@@ -35,8 +35,8 @@ class BMOrderCleanHeaderView: UIView {
         self.oneTopView.layer.borderWidth = 1.0
         self.oneTopView.layer.cornerRadius = self.oneTopView.bounds.size.width/2.0
         self.oneTopView.layer.masksToBounds = true
-        self.oneLabel.isHidden = true
-        self.oneImageView.isHidden = false
+        self.oneLabel.isHidden = false
+        self.oneImageView.isHidden = true
         
         self.twoTopView.layer.borderColor = UIColor.white.cgColor
         self.twoTopView.layer.borderWidth = 1.0
@@ -75,55 +75,52 @@ class BMOrderCleanHeaderView: UIView {
     func updateWithOrder(order:JSON){
         
         let status:Int? = order["status"].int
-        let cateId:Int? = order["cateId"].int
         let flowStatus:String? = order["flowStatus"].string
         
         var statusText:Int = 1 //最终状态
         
-        if let status = status , status == 0, let cateId = cateId, let flowStatus = flowStatus{
-            
-            if cateId == 1{ //家政
-                
-                switch flowStatus {
-                case "pending_take_trade": //待接单
-                    statusText = 1
-                case "pending_choice_aunt": //待选择阿姨
-                    statusText = 2
-                case "pending_interview": //待面试
-                    statusText = 3
-                case "pending_signed": //待签约
-                    statusText = 4
-                case "pending_pay": //待付款
-                    statusText = 5
-                case "complete": //服务中及待完成
-                    statusText = 6
-                default:
-                    break
-                }
-                
-                
-            }else if cateId == 2{  //保洁
-                
-                switch flowStatus {
-                case "pending_take_trade": //待接单
-                    statusText = 1
-                case "pending_pay": //待付款
-                    statusText = 2
-                case "pending_choice_aunt": //待派工
-                    statusText = 3
-                case "pending_complete": //已派工待完成
-                    statusText = 4
-                case "complete": //已完成
-                    statusText = 5
-                default:
-                    break
-                }
+        if let status = status , status == 0, let flowStatus = flowStatus{
+            switch flowStatus {
+            case "pending_take_trade": //待接单
+                statusText = 1
+            case "pending_pay": //待付款
+                statusText = 2
+            case "pending_choice_aunt": //待派工
+                statusText = 3
+            case "pending_complete": //已派工待完成
+                statusText = 4
+            case "complete": //已完成
+                statusText = 5
+            default:
+                break
             }
-            
         }
         
         
+        if statusText >= 1{
+            self.oneLabel.isHidden = true
+            self.oneImageView.isHidden = false
+        }
         
+        if statusText >= 2{
+            self.twoLabel.isHidden = true
+            self.twoImageView.isHidden = false
+        }
+        
+        if statusText >= 3{
+            self.threeLabel.isHidden = true
+            self.threeImageView.isHidden = false
+        }
+        
+        if statusText >= 4{
+            self.fourLabel.isHidden = true
+            self.fourImageView.isHidden = false
+        }
+        
+        if statusText >= 5{
+            self.fiveLabel.isHidden = true
+            self.fiveImageVIew.isHidden = false
+        }
     }
 
 }

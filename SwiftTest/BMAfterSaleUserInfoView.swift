@@ -24,6 +24,7 @@ class BMAfterSaleUserInfoView: UIView {
         let serviceCity:String? = afterSale["serviceCity"].string
         let serviceDistrict:String? = afterSale["serviceDistrict"].string
         let serviceAddress:String? = afterSale["serviceAddress"].string
+        let serviceHouseNumber:String? = afterSale["serviceHouseNumber"].string
         
         if let cuserName = cuserName{
             self.nameLabel.text = cuserName
@@ -49,6 +50,9 @@ class BMAfterSaleUserInfoView: UIView {
         }
         if let serviceAddress = serviceAddress{  //街道
             address += serviceAddress
+        }
+        if let serviceHouseNumber = serviceHouseNumber{ //门牌号
+            address += serviceHouseNumber
         }
         self.addressLabel.text = "地址：\(address)"
     }

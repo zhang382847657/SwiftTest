@@ -149,6 +149,7 @@ class BMOrderDetailViewController: UIViewController {
             if cateId == 1{ //家政单
                 
                 self.houseKeepingHeaderView = UIView.loadViewFromNib(nibName: "BMOrderHouseKeepingHeaderView") as! BMOrderHouseKeepingHeaderView
+                self.houseKeepingHeaderView.updateWithOrder(order: value)
                 self.headerView.addSubview(self.houseKeepingHeaderView)
                 self.houseKeepingHeaderView.snp.makeConstraints { (make) in
                     make.edges.equalTo(self.headerView)
@@ -156,12 +157,17 @@ class BMOrderDetailViewController: UIViewController {
                 
             }else if cateId == 2{ //保洁单
                 self.cleanHeaderView = UIView.loadViewFromNib(nibName: "BMOrderCleanHeaderView") as! BMOrderCleanHeaderView
+                self.cleanHeaderView.updateWithOrder(order: value)
                 self.headerView.addSubview(self.cleanHeaderView)
                 self.cleanHeaderView.snp.makeConstraints { (make) in
                     make.edges.equalTo(self.headerView)
                 }
                 
+                
             }
+            
+            self.userInfoView.updateWithAfterSale(afterSale: value)
+            self.productView.updateWithAfterSale(afterSale: value)
             
             
            
