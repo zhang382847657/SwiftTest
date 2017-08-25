@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class BMOrderCleanHeaderView: UIView {
 
@@ -64,6 +65,65 @@ class BMOrderCleanHeaderView: UIView {
         self.fiveTopView.layer.masksToBounds = true
         self.fiveLabel.isHidden = false
         self.fiveImageVIew.isHidden = true
+    }
+    
+    
+    /**
+     *  根据订单状态显示头部信息
+     *  @params order 订单
+     */
+    func updateWithOrder(order:JSON){
+        
+        let status:Int? = order["status"].int
+        let cateId:Int? = order["cateId"].int
+        let flowStatus:String? = order["flowStatus"].string
+        
+        var statusText:Int = 1 //最终状态
+        
+        if let status = status , status == 0, let cateId = cateId, let flowStatus = flowStatus{
+            
+            if cateId == 1{ //家政
+                
+                switch flowStatus {
+                case "pending_take_trade": //待接单
+                    statusText = 1
+                case "pending_choice_aunt": //待选择阿姨
+                    statusText = 2
+                case "pending_interview": //待面试
+                    statusText = 3
+                case "pending_signed": //待签约
+                    statusText = 4
+                case "pending_pay": //待付款
+                    statusText = 5
+                case "complete": //服务中及待完成
+                    statusText = 6
+                default:
+                    break
+                }
+                
+                
+            }else if cateId == 2{  //保洁
+                
+                switch flowStatus {
+                case "pending_take_trade": //待接单
+                    statusText = 1
+                case "pending_pay": //待付款
+                    statusText = 2
+                case "pending_choice_aunt": //待派工
+                    statusText = 3
+                case "pending_complete": //已派工待完成
+                    statusText = 4
+                case "complete": //已完成
+                    statusText = 5
+                default:
+                    break
+                }
+            }
+            
+        }
+        
+        
+        
     }
 
 }

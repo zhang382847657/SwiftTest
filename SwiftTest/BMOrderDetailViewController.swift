@@ -13,6 +13,7 @@ class BMOrderDetailViewController: UIViewController {
     var scrollView:UIScrollView!
     var contentView:UIView!
     
+    var headerView:UIView! //头部视图
     var cleanHeaderView:BMOrderCleanHeaderView! //头部保洁单视图
     var houseKeepingHeaderView:BMOrderHouseKeepingHeaderView! //头部家政单视图
     var userInfoView:BMAfterSaleUserInfoView! //雇主信息视图
@@ -20,11 +21,42 @@ class BMOrderDetailViewController: UIViewController {
     var priceView:BMOrderPriceView! //价格视图
     var payRecordView:BMOrderPayRecordView! //支付记录
     var bottomView:BMOrderDetailBottomView!  //订单编号+创建时间视图
+    var tradeNo:String! //订单编号
+    
+    
+    /**
+     * 初始化视图控制器
+     * @params tradeNo 订单编号
+     */
+    init(tradeNo:String) {
+        self.tradeNo = tradeNo
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "订单详情"
         self.view.backgroundColor = UIColor.colorWithHexString(hex: BMBacgroundColor)
+        
+        
+        self.loadUI()
+        self.loadData()
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+    /**
+     *  加载页面布局
+     */
+    private func loadUI(){
         
         self.scrollView = UIScrollView(frame: CGRect.zero)
         self.view.addSubview(self.scrollView)
@@ -41,10 +73,11 @@ class BMOrderDetailViewController: UIViewController {
         }
         
         
-        //////////////头部保洁单视图////////////
-        self.cleanHeaderView = UIView.loadViewFromNib(nibName: "BMOrderCleanHeaderView") as! BMOrderCleanHeaderView
-        self.contentView.addSubview(self.cleanHeaderView)
-        self.cleanHeaderView.snp.makeConstraints { (make) in
+        //////头部视图(先用一个空白视图占位，等数据请求后再根据类型判断用哪个头部视图)/////
+        self.headerView = UIView(frame: CGRect.zero)
+        self.headerView.backgroundColor = UIColor.colorWithHexString(hex: BMThemeColor)
+        self.contentView.addSubview(self.headerView)
+        self.headerView.snp.makeConstraints { (make) in
             make.left.right.top.equalTo(self.contentView)
             make.height.equalTo(165)
         }
@@ -56,7 +89,7 @@ class BMOrderDetailViewController: UIViewController {
         self.userInfoView.snp.makeConstraints { (make) in
             make.left.equalTo(self.contentView).offset(10)
             make.right.equalTo(self.contentView).offset(-10)
-            make.top.equalTo(self.cleanHeaderView.snp.bottom).offset(-20)
+            make.top.equalTo(self.headerView.snp.bottom).offset(-20)
         }
         
         //////////////商品信息视图////////////
@@ -94,10 +127,50 @@ class BMOrderDetailViewController: UIViewController {
             make.top.equalTo(self.payRecordView.snp.bottom)
             make.bottom.equalTo(self.contentView)
         }
+        
     }
+    
+    
+    /**
+     *  加载网络数据
+     */
+    private func loadData(){
+        
+        ////////////查询订单详情////////////
+        let url = "\(BMHOST)/trade/queryDetail"
+        let params:Dictionary<String,Any> = ["tradeNo":self.tradeNo]
+        
+        
+        NetworkRequest.sharedInstance.postRequest(urlString: url, params: params, isLogin: true, success: { (value) in
+            
+            
+            let cateId:Int = value["cateId"].intValue
+            
+            if cateId == 1{ //家政单
+                
+                self.houseKeepingHeaderView = UIView.loadViewFromNib(nibName: "BMOrderHouseKeepingHeaderView") as! BMOrderHouseKeepingHeaderView
+                self.headerView.addSubview(self.houseKeepingHeaderView)
+                self.houseKeepingHeaderView.snp.makeConstraints { (make) in
+                    make.edges.equalTo(self.headerView)
+                }
+                
+            }else if cateId == 2{ //保洁单
+                self.cleanHeaderView = UIView.loadViewFromNib(nibName: "BMOrderCleanHeaderView") as! BMOrderCleanHeaderView
+                self.headerView.addSubview(self.cleanHeaderView)
+                self.cleanHeaderView.snp.makeConstraints { (make) in
+                    make.edges.equalTo(self.headerView)
+                }
+                
+            }
+            
+            
+           
+            
+        }) { (error) in
+            
+            
+        }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
 

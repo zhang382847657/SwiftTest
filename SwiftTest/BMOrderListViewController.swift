@@ -341,9 +341,29 @@ class BMOrderListViewController: UIViewController,TBEmptyDataSetDelegate,TBEmpty
             
             
         }else{  //如果是其他类型，就跳转到订单详情页
-            let vc:BMOrderDetailViewController = BMOrderDetailViewController()
-            vc.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(vc, animated: true)
+            
+            var tradeNo:String? = nil
+            
+            switch self.currentSelectType {
+            case .All:
+                tradeNo = self.allDataList[indexPath.row]["tradeNo"].string
+            case .Finish:
+                tradeNo = self.finishDataList[indexPath.row]["tradeNo"].string
+            case .UnFinish:
+                tradeNo = self.unFinishDataList[indexPath.row]["tradeNo"].string
+            default:
+                break
+            }
+            
+            if let tradeNo = tradeNo{
+                let vc:BMOrderDetailViewController = BMOrderDetailViewController(tradeNo: tradeNo)
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                dPrint(item: "没有tradeNo")
+            }
+            
+            
         }
 
         

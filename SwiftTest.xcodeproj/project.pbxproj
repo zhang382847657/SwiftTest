@@ -1166,12 +1166,9 @@
 		63A7E84C1F4FBFAF00AF68FB /* 头部视图 */ = {
 			isa = PBXGroup;
 			children = (
-				63A7E84D1F4FC03200AF68FB /* BMOrderCleanHeaderView.swift */,
-				63A7E84F1F4FC03A00AF68FB /* BMOrderCleanHeaderView.xib */,
-				63A7E8511F4FC06800AF68FB /* BMOrderHouseKeepingHeaderView.swift */,
-				63A7E8531F4FC08C00AF68FB /* BMOrderHouseKeepingHeaderView.xib */,
-				63A7E8641F4FF0F800AF68FB /* BMOrderCancelHeaderView.swift */,
-				63A7E8661F4FF11500AF68FB /* BMOrderCancelHeaderView.xib */,
+				63A7E8971F502A6600AF68FB /* 取消 */,
+				63A7E8961F502A5F00AF68FB /* 保洁类 */,
+				63A7E8951F502A5300AF68FB /* 家政类 */,
 			);
 			name = "头部视图";
 			sourceTree = "<group>";
@@ -1201,6 +1198,33 @@
 				63A7E8621F4FD3E500AF68FB /* BMOrderDetailBottomView.xib */,
 			);
 			name = "订单编号+创建时间";
+			sourceTree = "<group>";
+		};
+		63A7E8951F502A5300AF68FB /* 家政类 */ = {
+			isa = PBXGroup;
+			children = (
+				63A7E8511F4FC06800AF68FB /* BMOrderHouseKeepingHeaderView.swift */,
+				63A7E8531F4FC08C00AF68FB /* BMOrderHouseKeepingHeaderView.xib */,
+			);
+			name = "家政类";
+			sourceTree = "<group>";
+		};
+		63A7E8961F502A5F00AF68FB /* 保洁类 */ = {
+			isa = PBXGroup;
+			children = (
+				63A7E84D1F4FC03200AF68FB /* BMOrderCleanHeaderView.swift */,
+				63A7E84F1F4FC03A00AF68FB /* BMOrderCleanHeaderView.xib */,
+			);
+			name = "保洁类";
+			sourceTree = "<group>";
+		};
+		63A7E8971F502A6600AF68FB /* 取消 */ = {
+			isa = PBXGroup;
+			children = (
+				63A7E8641F4FF0F800AF68FB /* BMOrderCancelHeaderView.swift */,
+				63A7E8661F4FF11500AF68FB /* BMOrderCancelHeaderView.xib */,
+			);
+			name = "取消";
 			sourceTree = "<group>";
 		};
 		63A811081F3ADC29001A0707 /* 门店列表 */ = {
