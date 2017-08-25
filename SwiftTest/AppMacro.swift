@@ -23,7 +23,7 @@ let VERSION = "3.3.3"                  //版本号
 
 /////////////颜色、字体、边框的配置////////////
 
-let BMThemeColor = "#00B4FF" //斑马主题颜色——蓝色
+let BMThemeColor = "#00b4ff" //斑马主题颜色——蓝色
 let BMThemeColorOrange = "#FF7140" //斑马主题颜色——橘色
 let BMBacgroundColor = "#F5F6F5"  //斑马背景色
 let BMBorderColor = "#dcdcdc"  //斑马边框颜色

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -37,7 +37,7 @@
                             <rect key="frame" x="2" y="2" width="78" height="78"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="0.50196078431372548" green="0.85490196078431369" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.32667198777198792" green="0.84595060348510742" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="t8d-zI-Iac" secondAttribute="bottom" constant="2" id="CKi-At-mHj"/>
                         <constraint firstAttribute="trailing" secondItem="t8d-zI-Iac" secondAttribute="trailing" constant="2" id="Hlj-ox-V5w"/>
@@ -49,7 +49,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keE-wy-QwO">
                     <rect key="frame" x="293" y="92" width="82" height="30"/>
-                    <color key="backgroundColor" red="1" green="0.72549019609999998" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="0.67445522546768188" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="MBe-u0-0VG"/>
                         <constraint firstAttribute="width" constant="82" id="yyY-Kz-XCV"/>
@@ -64,7 +64,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="NeN-Dt-DP5" firstAttribute="top" secondItem="O2F-rF-J04" secondAttribute="bottom" constant="8.5" id="1Od-PX-LY6"/>
                 <constraint firstItem="p8S-sT-jHT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="IqJ-cj-9sB"/>

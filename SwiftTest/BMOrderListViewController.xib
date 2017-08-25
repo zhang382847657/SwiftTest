@@ -38,7 +38,7 @@
                         <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <state key="selected" title="全部">
-                        <color key="titleColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="orderTypeClick:" destination="-1" eventType="touchUpInside" id="mtE-Rm-fVn"/>
@@ -55,7 +55,7 @@
                         <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <state key="selected" title="未完成">
-                        <color key="titleColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="orderTypeClick:" destination="-1" eventType="touchUpInside" id="xEf-4Z-jaD"/>
@@ -72,7 +72,7 @@
                         <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <state key="selected" title="已完成">
-                        <color key="titleColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="orderTypeClick:" destination="-1" eventType="touchUpInside" id="Cls-AB-Ua2"/>
@@ -89,7 +89,7 @@
                         <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <state key="selected" title="售后">
-                        <color key="titleColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="orderTypeClick:" destination="-1" eventType="touchUpInside" id="7Vs-j6-567"/>

@@ -41,7 +41,7 @@
                     </label>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="1" green="0.4431372549" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="3tI-8e-biC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3hP-7A-rtK"/>
                 <constraint firstItem="jn2-Z7-LSD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="82y-lZ-l1B"/>

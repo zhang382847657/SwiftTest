@@ -27,7 +27,7 @@ class BMAfterSaleAboutOrders: UIView {
         for i in 0..<array.count {
             
             let cellView:BMAfterSaleAboutOrdersCellView = UIView.loadViewFromNib(nibName: "BMAfterSaleAboutOrdersCellView") as! BMAfterSaleAboutOrdersCellView!
-            cellView.updateWithAboutOrder(order: array[i])
+            cellView.updateWithAboutOrder(orders: array, index: i)
             self.bottomView.addSubview(cellView)
             
             cellView.snp.makeConstraints({ (make) in

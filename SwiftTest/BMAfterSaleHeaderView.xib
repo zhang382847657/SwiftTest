@@ -40,7 +40,7 @@
                                 <constraint firstAttribute="height" constant="27" id="Jrj-XY-7Rh"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <color key="textColor" red="1" green="0.89411764705882346" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="1" green="0.89411764705882346" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -56,7 +56,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="mOt-b5-5GO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="L3D-VQ-Pp8"/>
                 <constraint firstAttribute="trailing" secondItem="eQA-sV-D1Y" secondAttribute="trailing" constant="25" id="WfM-Hs-99c"/>

@@ -27,7 +27,7 @@
                             <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                             <state key="normal" title="会员卡名字" image="vip-card">
-                                <color key="titleColor" red="0.96470588235294119" green="0.65490196078431373" blue="0.1803921568627451" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.96470588235294119" green="0.65490196078431373" blue="0.1803921568627451" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恭喜，您已是尊贵的****会员" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNO-SS-T0C">
@@ -69,7 +69,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ta2-DZ-6YB">
                                     <rect key="frame" x="8" y="44" width="161" height="33"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                    <color key="textColor" red="0.0" green="0.70588235294117641" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -98,7 +98,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05i-Y3-rTx">
                                     <rect key="frame" x="8" y="44" width="161" height="33"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                    <color key="textColor" red="0.0" green="0.70588235290000001" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>

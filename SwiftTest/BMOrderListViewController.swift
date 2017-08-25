@@ -341,7 +341,9 @@ class BMOrderListViewController: UIViewController,TBEmptyDataSetDelegate,TBEmpty
             
             
         }else{  //如果是其他类型，就跳转到订单详情页
-            
+            let vc:BMOrderDetailViewController = BMOrderDetailViewController()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
         }
 
         
