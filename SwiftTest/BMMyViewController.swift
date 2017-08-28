@@ -82,15 +82,22 @@ class BMMyViewController: UIViewController {
         }))
     
         self.myInfoView.leftTitleLabel.text = "我的信息"
+        self.myInfoView.infoCellClickClosure = {
+            () -> Void in
+            
+            let vc:BMMyInfoViewController = BMMyInfoViewController(nibName: "BMMyInfoViewController", bundle: nil)
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
         self.inviteFriendView.leftTitleLabel.text = "邀请好友注册"
         self.inviteFriendView.addBorderLayer(color: UIColor.colorWithHexString(hex: BMBorderColor), size: BMBorderSize, boderType: BorderType.bottom)
         self.feedBackView.leftTitleLabel.text = "意见反馈"
         self.feedBackView.infoCellClickClosure = {  //点击回调
             () -> Void in
-            self.hidesBottomBarWhenPushed = true
             let vc:BMFeedBackViewController = BMFeedBackViewController(nibName: "BMFeedBackViewController", bundle: nil)
+            vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
-            self.hidesBottomBarWhenPushed = false
         }
         self.checkUpdateView.leftTitleLabel.text = "检查更新"
         self.checkUpdateView.rightTitleLabel.text = "当前版本: \(VERSION)"

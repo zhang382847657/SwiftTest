@@ -65,6 +65,8 @@
 		6374D41B1F540BE2007272A9 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6374D41A1F540BE2007272A9 /* InputView.swift */; };
 		6374D41F1F54140D007272A9 /* BMMyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6374D41D1F54140D007272A9 /* BMMyInfoViewController.swift */; };
 		6374D4201F54140D007272A9 /* BMMyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6374D41E1F54140D007272A9 /* BMMyInfoViewController.xib */; };
+		6374D4251F541D2C007272A9 /* BMMyBaseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6374D4241F541D2C007272A9 /* BMMyBaseInfoView.swift */; };
+		6374D4271F541D75007272A9 /* BMMyBaseInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6374D4261F541D75007272A9 /* BMMyBaseInfoView.xib */; };
 		6378C1811F32BAA10070E81F /* BMShopRecommendCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378C1801F32BAA10070E81F /* BMShopRecommendCommentView.swift */; };
 		6378C1831F32BAAD0070E81F /* BMShopRecommendCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6378C1821F32BAAD0070E81F /* BMShopRecommendCommentView.xib */; };
 		6378C1851F32BDC50070E81F /* BMShopCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378C1841F32BDC50070E81F /* BMShopCommentView.swift */; };
@@ -283,6 +285,8 @@
 		6374D41A1F540BE2007272A9 /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		6374D41D1F54140D007272A9 /* BMMyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMMyInfoViewController.swift; sourceTree = "<group>"; };
 		6374D41E1F54140D007272A9 /* BMMyInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMMyInfoViewController.xib; sourceTree = "<group>"; };
+		6374D4241F541D2C007272A9 /* BMMyBaseInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMMyBaseInfoView.swift; sourceTree = "<group>"; };
+		6374D4261F541D75007272A9 /* BMMyBaseInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMMyBaseInfoView.xib; sourceTree = "<group>"; };
 		6378C1801F32BAA10070E81F /* BMShopRecommendCommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMShopRecommendCommentView.swift; sourceTree = "<group>"; };
 		6378C1821F32BAAD0070E81F /* BMShopRecommendCommentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMShopRecommendCommentView.xib; sourceTree = "<group>"; };
 		6378C1841F32BDC50070E81F /* BMShopCommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMShopCommentView.swift; sourceTree = "<group>"; };
@@ -728,8 +732,34 @@
 			children = (
 				6374D41D1F54140D007272A9 /* BMMyInfoViewController.swift */,
 				6374D41E1F54140D007272A9 /* BMMyInfoViewController.xib */,
+				6374D4231F541AB8007272A9 /* 常用地址 */,
+				6374D4221F541AB1007272A9 /* 其他信息 */,
+				6374D4211F541AA2007272A9 /* 基本信息 */,
 			);
 			name = "我的信息";
+			sourceTree = "<group>";
+		};
+		6374D4211F541AA2007272A9 /* 基本信息 */ = {
+			isa = PBXGroup;
+			children = (
+				6374D4241F541D2C007272A9 /* BMMyBaseInfoView.swift */,
+				6374D4261F541D75007272A9 /* BMMyBaseInfoView.xib */,
+			);
+			name = "基本信息";
+			sourceTree = "<group>";
+		};
+		6374D4221F541AB1007272A9 /* 其他信息 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "其他信息";
+			sourceTree = "<group>";
+		};
+		6374D4231F541AB8007272A9 /* 常用地址 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "常用地址";
 			sourceTree = "<group>";
 		};
 		6378C1881F32FE4A0070E81F /* 门店头部 */ = {
@@ -1578,6 +1608,7 @@
 				6346B86A1F31D67500721963 /* BMShopAuntView.xib in Resources */,
 				63B826DA1F35612200F7C5A1 /* BMAuntBasicCellView.xib in Resources */,
 				63E2C1FF1F4AB55100E5A7AD /* BMVipCardCell.xib in Resources */,
+				6374D4271F541D75007272A9 /* BMMyBaseInfoView.xib in Resources */,
 				63015C051EFBA62900A9C8AC /* Images.xcassets in Resources */,
 				635489731F2335F200CCA117 /* BMStoreCardBuyViewController.xib in Resources */,
 				638EE9601F4E7AFA00D0F34C /* BMAfterSaleHeaderView.xib in Resources */,
@@ -1665,6 +1696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6374D4251F541D2C007272A9 /* BMMyBaseInfoView.swift in Sources */,
 				638EE95B1F4E725200D0F34C /* BMAfterSaleDetailViewController.swift in Sources */,
 				6397B6D91F1F5E8400C77BDC /* BMQuickOrderTableViewController.swift in Sources */,
 				63E2C2071F4ACAE700E5A7AD /* BMVipCardEquityView.swift in Sources */,

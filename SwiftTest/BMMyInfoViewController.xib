@@ -15,6 +15,7 @@
                 <outlet property="baseInfoBtn" destination="92g-E1-ay8" id="CT8-Ck-POs"/>
                 <outlet property="otherInfoBtn" destination="BJW-J4-PM2" id="FQM-J1-F6A"/>
                 <outlet property="scrollView" destination="2tj-8A-8wh" id="6fU-0u-Oyj"/>
+                <outlet property="topView" destination="Y0G-4K-q9j" id="UoO-VA-vKt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,6 +37,9 @@
                             <state key="selected" image="jibenxinxi_select" backgroundImage="tab_select">
                                 <color key="titleColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="infoTypeClick:" destination="-1" eventType="touchUpInside" id="xIb-0j-Y33"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJW-J4-PM2">
                             <rect key="frame" x="118.5" y="0.0" width="118" height="55"/>
@@ -47,6 +51,9 @@
                             <state key="selected" title="其他信息" image="qitaxinxi_select" backgroundImage="tab_select">
                                 <color key="titleColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="infoTypeClick:" destination="-1" eventType="touchUpInside" id="IQm-b9-Hsw"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flg-qE-GFL">
                             <rect key="frame" x="236.5" y="0.0" width="118.5" height="55"/>
@@ -58,6 +65,9 @@
                             <state key="selected" title="常用地址" image="changyongdizhi_select" backgroundImage="tab_select">
                                 <color key="titleColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="infoTypeClick:" destination="-1" eventType="touchUpInside" id="76p-YD-wxY"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
