@@ -41,6 +41,9 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleLabel" destination="hDn-UG-eGC" id="o2G-Ge-5Di"/>
+            </connections>
             <point key="canvasLocation" x="32.5" y="-158.5"/>
         </view>
     </objects>

@@ -46,6 +46,9 @@
                             <state key="normal" title="取消">
                                 <color key="titleColor" red="0.0" green="0.70588235290000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="cancelClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="mAb-fn-A1o"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -69,6 +72,11 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cancelBtn" destination="7vP-S9-xVR" id="dsB-z7-Xk6"/>
+                <outlet property="timeLabel" destination="k8K-eh-7vG" id="r7H-0K-tsM"/>
+                <outlet property="tradeNoLabel" destination="9jb-gv-LD8" id="bSa-RW-Sva"/>
+            </connections>
             <point key="canvasLocation" x="10.5" y="-156.5"/>
         </view>
     </objects>

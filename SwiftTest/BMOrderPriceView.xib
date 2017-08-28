@@ -27,8 +27,8 @@
                             <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyb-jM-N53">
-                            <rect key="frame" x="322" y="0.0" width="33" height="18"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyb-jM-N53">
+                            <rect key="frame" x="335" y="0.0" width="20" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="18" id="goP-bj-tyb"/>
                             </constraints>
@@ -96,12 +96,12 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="2ic-U2-nvL"/>
                     </constraints>
-                    <mutableString key="text">--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</mutableString>
+                    <string key="text">--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="需支付：￥100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UP-zY-qMz">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="需支付：￥0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UP-zY-qMz">
                     <rect key="frame" x="10" y="99" width="355" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="llC-93-vbP"/>
@@ -126,6 +126,12 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="couponLabel" destination="7co-5I-sql" id="63J-Oo-m1e"/>
+                <outlet property="memberPreferencesLabel" destination="TgD-qa-fFH" id="eLA-84-Cfb"/>
+                <outlet property="payPriceLabel" destination="8UP-zY-qMz" id="dkg-Ti-Rl7"/>
+                <outlet property="sumPriceLabel" destination="Zyb-jM-N53" id="r6t-eG-xWH"/>
+            </connections>
             <point key="canvasLocation" x="-20.5" y="-261"/>
         </view>
     </objects>

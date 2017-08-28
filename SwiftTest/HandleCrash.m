@@ -59,6 +59,8 @@ const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
     }
     free(strs);
     
+
     return backtrace;
+
 }
 @end

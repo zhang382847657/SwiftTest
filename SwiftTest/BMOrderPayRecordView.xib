@@ -78,6 +78,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="payBtnHeightConstraint" destination="8jM-Nm-lqS" id="Rb3-wt-x3K"/>
                 <outlet property="payButton" destination="DtK-6a-rgd" id="a8v-28-rpQ"/>
                 <outlet property="payPriceLabel" destination="MKH-Na-hRs" id="BJc-4j-7oq"/>
                 <outlet property="payRecordLabel" destination="cOo-pS-fvZ" id="9ZA-pi-lvt"/>

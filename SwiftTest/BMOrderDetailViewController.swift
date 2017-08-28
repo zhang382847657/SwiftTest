@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class BMOrderDetailViewController: UIViewController {
     
@@ -16,6 +17,7 @@ class BMOrderDetailViewController: UIViewController {
     var headerView:UIView! //头部视图
     var cleanHeaderView:BMOrderCleanHeaderView! //头部保洁单视图
     var houseKeepingHeaderView:BMOrderHouseKeepingHeaderView! //头部家政单视图
+    var cancelHeaderView:BMOrderCancelHeaderView! //头部订单取消视图
     var userInfoView:BMAfterSaleUserInfoView! //雇主信息视图
     var productView:BMAfterSaleProductView! //商品信息视图
     var priceView:BMOrderPriceView! //价格视图
@@ -121,6 +123,10 @@ class BMOrderDetailViewController: UIViewController {
         
         ///////////////订单编号+创建时间视图///////
         self.bottomView = UIView.loadViewFromNib(nibName: "BMOrderDetailBottomView") as! BMOrderDetailBottomView
+        self.bottomView.tradeCancelClosure = { //取消订单回调
+            () -> Void in
+           self.cancelTrade() //取消订单
+        }
         self.contentView.addSubview(self.bottomView)
         self.bottomView.snp.makeConstraints { (make) in
             make.left.right.equalTo(self.userInfoView)
@@ -137,46 +143,115 @@ class BMOrderDetailViewController: UIViewController {
     private func loadData(){
         
         ////////////查询订单详情////////////
-        let url = "\(BMHOST)/trade/queryDetail"
-        let params:Dictionary<String,Any> = ["tradeNo":self.tradeNo]
+        let tradeDetailUrl = "\(BMHOST)/trade/queryDetail"
+        let tradeDetailParams:Dictionary<String,Any> = ["tradeNo":self.tradeNo]
         
         
-        NetworkRequest.sharedInstance.postRequest(urlString: url, params: params, isLogin: true, success: { (value) in
+        NetworkRequest.sharedInstance.postRequest(urlString: tradeDetailUrl, params: tradeDetailParams, isLogin: true, success: { (value) in
             
             
-            let cateId:Int = value["cateId"].intValue
+            let cateId:Int = value["cateId"].intValue  //订单类型
+            let status:Int = value["status"].intValue  //订单状态
             
-            if cateId == 1{ //家政单
+            if status == 8 || status == 9{
                 
-                self.houseKeepingHeaderView = UIView.loadViewFromNib(nibName: "BMOrderHouseKeepingHeaderView") as! BMOrderHouseKeepingHeaderView
-                self.houseKeepingHeaderView.updateWithOrder(order: value)
-                self.headerView.addSubview(self.houseKeepingHeaderView)
-                self.houseKeepingHeaderView.snp.makeConstraints { (make) in
-                    make.edges.equalTo(self.headerView)
+                self.cancelHeaderView = UIView.loadViewFromNib(nibName: "BMOrderCancelHeaderView") as! BMOrderCancelHeaderView
+                self.cancelHeaderView.updateWithTitle(title: status == 8 ? "订单取消中" : "订单已取消")
+                self.headerView.addSubview(self.cancelHeaderView)
+                self.cancelHeaderView.snp.makeConstraints({ (make) in
+                     make.edges.equalTo(self.headerView)
+                })
+                
+            }else{
+                if cateId == 1{ //家政单
+                    
+                    self.houseKeepingHeaderView = UIView.loadViewFromNib(nibName: "BMOrderHouseKeepingHeaderView") as! BMOrderHouseKeepingHeaderView
+                    self.houseKeepingHeaderView.updateWithOrder(order: value)
+                    self.headerView.addSubview(self.houseKeepingHeaderView)
+                    self.houseKeepingHeaderView.snp.makeConstraints { (make) in
+                        make.edges.equalTo(self.headerView)
+                    }
+                    
+                }else if cateId == 2{ //保洁单
+                    self.cleanHeaderView = UIView.loadViewFromNib(nibName: "BMOrderCleanHeaderView") as! BMOrderCleanHeaderView
+                    self.cleanHeaderView.updateWithOrder(order: value)
+                    self.headerView.addSubview(self.cleanHeaderView)
+                    self.cleanHeaderView.snp.makeConstraints { (make) in
+                        make.edges.equalTo(self.headerView)
+                    }
+                    
+                    
                 }
-                
-            }else if cateId == 2{ //保洁单
-                self.cleanHeaderView = UIView.loadViewFromNib(nibName: "BMOrderCleanHeaderView") as! BMOrderCleanHeaderView
-                self.cleanHeaderView.updateWithOrder(order: value)
-                self.headerView.addSubview(self.cleanHeaderView)
-                self.cleanHeaderView.snp.makeConstraints { (make) in
-                    make.edges.equalTo(self.headerView)
-                }
-                
-                
             }
             
-            self.userInfoView.updateWithAfterSale(afterSale: value)
-            self.productView.updateWithAfterSale(afterSale: value)
             
             
+            self.userInfoView.updateWithAfterSale(afterSale: value) //更新雇主信息视图
+            self.productView.updateWithAfterSale(afterSale: value) //更新商品信息视图
+            self.priceView.updateSumPriceWithOrder(order: value) //更新价格视图
+            self.payRecordView.updateWithPayPrice(order: value)  //更新支付记录视图
+            self.bottomView.updateWithOrder(order: value)  //更新订单编号+创建时间视图
            
             
         }) { (error) in
             
             
         }
+        
+        
+        ////////////查询订单促销信息记录////////////
+        let recordByTradeUrl = "\(BMHOST)/trade/market/queryRecordByTrade"
+        let recordByTradeParams:Dictionary<String,Any> = ["tradeNo":self.tradeNo]
+        
+        
+        NetworkRequest.sharedInstance.postRequest(urlString: recordByTradeUrl, params: recordByTradeParams, isLogin: true, success: { (value) in
+            
+            self.priceView.updateMemberPreferences(data: value)  //更新会员优惠
+            
+        
+        }) { (error) in
+            
+            
+        }
+        
+        
+        ////////////查询支付记录////////////
+        let payRecordUrl = "\(BMHOST)/payrecord/queryList"
+        let payRecordParams:Dictionary<String,Any> = ["tradeNo":self.tradeNo]
+        
+        
+        NetworkRequest.sharedInstance.postRequest(urlString: payRecordUrl, params: payRecordParams, isLogin: true, success: { (value) in
+            
+            self.payRecordView.updateWithPayRecords(records: value["dataList"]) //更新支付记录
+            
+        }) { (error) in
+            
+            
+        }
 
+    }
+    
+    
+    /**
+     *  取消订单
+     */
+    private func cancelTrade(){
+        
+        ////////////取消订单////////////
+        let url = "\(BMHOST)/trade/applyClose"
+        let params:Dictionary<String,String> = ["tradeNo":self.tradeNo,"remark":"申请取消订单"]
+        
+        
+        NetworkRequest.sharedInstance.postRequest(urlString: url, params: params, isLogin: true, success: { (value) in
+            
+            HUD.flash(.label("申请取消成功"), delay: 2.0)
+            self.loadData() //重新刷新数据
+            
+        }) { (error) in
+            
+            
+        }
+        
     }
     
 
