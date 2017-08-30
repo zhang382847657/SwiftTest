@@ -175,6 +175,8 @@
 		63B826D81F35611700F7C5A1 /* BMAuntBasicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B826D71F35611700F7C5A1 /* BMAuntBasicCellView.swift */; };
 		63B826DA1F35612200F7C5A1 /* BMAuntBasicCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B826D91F35612200F7C5A1 /* BMAuntBasicCellView.xib */; };
 		63B826DD1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B826DC1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift */; };
+		63C4B1BA1F56AD10009167BC /* InforPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4B1B91F56AD10009167BC /* InforPickerView.swift */; };
+		63C4B1BC1F56D033009167BC /* BMPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4B1BB1F56D033009167BC /* BMPickerView.swift */; };
 		63D5ECBF1F442DEF0011C064 /* BMCouponDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D5ECBE1F442DEF0011C064 /* BMCouponDetailView.swift */; };
 		63D5ECC11F442DFA0011C064 /* BMCouponDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D5ECC01F442DFA0011C064 /* BMCouponDetailView.xib */; };
 		63D815351F41389D00B331B4 /* BMCardUsageLogCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D815341F41389D00B331B4 /* BMCardUsageLogCellView.swift */; };
@@ -400,6 +402,8 @@
 		63B826D71F35611700F7C5A1 /* BMAuntBasicCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAuntBasicCellView.swift; sourceTree = "<group>"; };
 		63B826D91F35612200F7C5A1 /* BMAuntBasicCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMAuntBasicCellView.xib; sourceTree = "<group>"; };
 		63B826DC1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAuntPicturesScrollView.swift; sourceTree = "<group>"; };
+		63C4B1B91F56AD10009167BC /* InforPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InforPickerView.swift; sourceTree = "<group>"; };
+		63C4B1BB1F56D033009167BC /* BMPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMPickerView.swift; sourceTree = "<group>"; };
 		63D5ECBE1F442DEF0011C064 /* BMCouponDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCouponDetailView.swift; sourceTree = "<group>"; };
 		63D5ECC01F442DFA0011C064 /* BMCouponDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMCouponDetailView.xib; sourceTree = "<group>"; };
 		63D815341F41389D00B331B4 /* BMCardUsageLogCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCardUsageLogCellView.swift; sourceTree = "<group>"; };
@@ -528,6 +532,8 @@
 		63015C111EFBAB9500A9C8AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63C4B1B81F56ACC3009167BC /* InforPickerView */,
+				63C4B1B71F56AC46009167BC /* 数据选择器 */,
 				6374D4191F540BC4007272A9 /* InputView */,
 				63A8110B1F3AE348001A0707 /* 文本域 */,
 				633BB4531F33192E00A4D498 /* 打分星星 */,
@@ -1350,6 +1356,22 @@
 			name = "阿姨照片";
 			sourceTree = "<group>";
 		};
+		63C4B1B71F56AC46009167BC /* 数据选择器 */ = {
+			isa = PBXGroup;
+			children = (
+				63C4B1BB1F56D033009167BC /* BMPickerView.swift */,
+			);
+			name = "数据选择器";
+			sourceTree = "<group>";
+		};
+		63C4B1B81F56ACC3009167BC /* InforPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				63C4B1B91F56AD10009167BC /* InforPickerView.swift */,
+			);
+			name = InforPickerView;
+			sourceTree = "<group>";
+		};
 		63D815381F416E9700B331B4 /* 优惠券 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1707,6 +1729,7 @@
 				63D8153C1F417A5D00B331B4 /* BMCardServicePlanCellView.swift in Sources */,
 				634BF0C71F46EA3500FA04F8 /* BMCardsStoreEmptyCell.swift in Sources */,
 				63DD17931F2F0A6300ED3AB6 /* BMMyViewController.swift in Sources */,
+				63C4B1BC1F56D033009167BC /* BMPickerView.swift in Sources */,
 				638F102B1F0398AB004251EA /* BMWebViewController.swift in Sources */,
 				6346B8681F31D66600721963 /* BMShopAuntView.swift in Sources */,
 				633BB4551F33197F00A4D498 /* BMGradeView.swift in Sources */,
@@ -1766,6 +1789,7 @@
 				6388BCC51F345C3B00165D3A /* BMAuntDetailViewController.swift in Sources */,
 				63A7E8651F4FF0F800AF68FB /* BMOrderCancelHeaderView.swift in Sources */,
 				6395BE301F4A82A500AAD8D0 /* HandleCrash.m in Sources */,
+				63C4B1BA1F56AD10009167BC /* InforPickerView.swift in Sources */,
 				6374D41B1F540BE2007272A9 /* InputView.swift in Sources */,
 				6359B0891EF1074700D6DF5E /* AppDelegate.swift in Sources */,
 				6397B6E11F1F5F3500C77BDC /* BMHotServiceCellView.swift in Sources */,

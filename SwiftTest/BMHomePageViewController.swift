@@ -79,9 +79,8 @@ class BMHomePageViewController: UIViewController {
         self.bannerView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kScreenWidth*0.56)){ (index) in
             
             let webViewController:BMWebViewController = BMWebViewController(url: self.webURLs[index])
-            self.hidesBottomBarWhenPushed = true
+            webViewController.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(webViewController, animated: true)
-            self.hidesBottomBarWhenPushed = false
         }
         self.bannerView.imageViewContentMode = .scaleAspectFill
         self.bannerView.pageControlPosition = .center
@@ -103,11 +102,9 @@ class BMHomePageViewController: UIViewController {
             let productID:Int? = product["id"].int
             
             if let productID = productID{
-                
-                
-                self.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(BMProductViewController(productId: productID), animated: true)
-                self.hidesBottomBarWhenPushed = false
+                let vc:BMProductViewController = BMProductViewController(productId: productID)
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
             }else{
                 dPrint(item: "商品ID为空")
             }
@@ -161,10 +158,9 @@ class BMHomePageViewController: UIViewController {
         self.storeCardView = UIView.loadViewFromNib(nibName: "BMStoreCardRecommendView") as! BMStoreCardRecommendView
         self.storeCardView.storeCardRecommendClickClosure = { //cell点击回调
             (index:Int) -> Void in
-            self.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(BMStoreCardBuyViewController(scrollToIndex: index), animated: true)
-            self.hidesBottomBarWhenPushed = false
-            
+            let vc:BMStoreCardBuyViewController = BMStoreCardBuyViewController(scrollToIndex: index)
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         self.contentView.addSubview(self.storeCardView)
         
@@ -190,9 +186,9 @@ class BMHomePageViewController: UIViewController {
         self.nearesStoreView = BMNearesStoreView(frame: CGRect.zero)
         self.nearesStoreView.storeClickClosure = {
             () -> Void in
-                self.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(BMStoreListTableViewController(style: .plain), animated: true)
-                self.hidesBottomBarWhenPushed = false
+            let vc:BMStoreListTableViewController = BMStoreListTableViewController(style: .plain)
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
             
         }
         self.contentView.addSubview(self.nearesStoreView)

@@ -249,9 +249,16 @@ class BMOrderListViewController: UIViewController,TBEmptyDataSetDelegate,TBEmpty
         case .All:
             params = ["":""]
         case .Finish:
-            params = ["statusList[0]":9]
+            params = ["flowStatus": "complete"]
         case .UnFinish:
-            params = ["statusList[0]":0,"statusList[1]":1]
+            params = ["flowStatusList[0]": "pending_take_trade",//2者通用
+                "flowStatusList[1]": "pending_choice_aunt",//家政单未取消订单状态
+                "flowStatusList[2]": "pending_interview",//家政单未取消订单状态
+                "flowStatusList[3]": "pending_signed",//家政单未取消订单状态
+                "flowStatusList[4]": "pending_pay",//家政单未取消订单状态
+                "flowStatusList[5]": "pending_choice_aunt",//保洁单未取消订单状态
+                "flowStatusList[6]": "pending_complete",//保洁单未取消订单状态
+            ]
         default:
             params = ["":""]
         }

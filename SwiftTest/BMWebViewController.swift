@@ -14,7 +14,7 @@ import PKHUD
 class BMWebViewController: UIViewController,WKUIDelegate,WKNavigationDelegate {
     
     var webView = WKWebView()
-    var url:String?
+    var url:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +27,13 @@ class BMWebViewController: UIViewController,WKUIDelegate,WKNavigationDelegate {
             make.edges.equalTo(self.view)
         }
         
-        if let url = self.url , url != "" {  //如果请求地址存在，就去加载地址
+        if url != "" {  //如果请求地址存在，就去加载地址
+            HUD.show(.progress) //一进入页面就显示hud
             let request:NSURLRequest = NSURLRequest(url: NSURL(string: url)! as URL)
             self.webView.load(request as URLRequest)
         }
         
-        HUD.show(.progress) //一进入页面就显示hud
+        
     }
 
     override func didReceiveMemoryWarning() {

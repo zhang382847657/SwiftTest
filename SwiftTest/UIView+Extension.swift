@@ -14,7 +14,10 @@ enum BorderType:NSInteger{
     case top,left,bottom,right
     
 }
+
+
 extension UIView{
+    
     
     // MARK: - 重写父类的方法
     
@@ -137,6 +140,18 @@ extension UIView{
         maskLayer.frame = self.bounds
         maskLayer.path = maskPath.cgPath
         self.layer.mask = maskLayer
+    }
+    
+    /**
+     *  添加点击事件
+     *  @param : target
+     *  @param : action    相应事件
+     */
+    func addClickListener(target:AnyObject, action: Selector) {
+        let tap = UITapGestureRecognizer(target: target, action:action)
+        tap.numberOfTapsRequired = 1
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(tap)
     }
     
 }

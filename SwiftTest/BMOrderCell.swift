@@ -47,6 +47,9 @@ class BMOrderCell: UITableViewCell {
         
         var canPay:Bool = false  //是否显示付款
         var canCancel:Bool = false  //是否显示申请取消
+        var showAunt:Bool = false //是否显示阿姨
+        var showEvaluate:Bool = false //是否显示评价
+        var showContract:Bool = false //是否显示查看合同
         
     
         self.productImageView?.image = UIImage(named:Config.productByItemId(itemId: serviceType)["icon"]!)
@@ -75,6 +78,15 @@ class BMOrderCell: UITableViewCell {
         
         if let cateId = cateId, let status = status, let flowStatus = flowStatus{
             if cateId == 1{  //家政单
+                
+                if flowStatus == "pending_interview" || flowStatus == "pending_signed"
+                    || flowStatus == "pending_pay"  || flowStatus == "complete" {
+                    showAunt = true
+                }
+                
+                if flowStatus == "pending_pay"  || flowStatus == "complete" {
+                    showContract = true
+                }
                 
                 if status != 9 && status != 8 { //订单未关闭
                     
@@ -106,6 +118,15 @@ class BMOrderCell: UITableViewCell {
                 }
                 
             }else if cateId == 2{ //保洁单
+                
+                if flowStatus == "pending_complete"  || flowStatus == "complete" {
+                    showAunt = true
+                }
+                
+                if flowStatus == "complete" {
+                    showEvaluate = true
+                }
+                
                 if status != 9 && status != 8 { //订单未关闭
                     
                     switch flowStatus {
@@ -140,7 +161,7 @@ class BMOrderCell: UITableViewCell {
             }
         }
         
-        self.bottomView.updateWithShowPay(showPay: canPay, showCancel: canCancel)
+        self.bottomView.updateWithShowPay(showCancel: canCancel, showAunt: showAunt, showContract: showContract, showEvaluate: showEvaluate, showPay: canPay, evaluateState: product["evaluateState"].int, tradeNo:product["tradeNo"].stringValue)
         
     }
     
