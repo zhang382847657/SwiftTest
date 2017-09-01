@@ -14,6 +14,8 @@
 		63015C1E1EFBBCA600A9C8AC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63015C1C1EFBBCA600A9C8AC /* SwiftyJSON.framework */; };
 		63015C1F1EFBBCF500A9C8AC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63015C1B1EFBBCA600A9C8AC /* Alamofire.framework */; };
 		63015C2B1EFBC58900A9C8AC /* BMBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63015C2A1EFBC58900A9C8AC /* BMBaseNavigationController.swift */; };
+		6301F5D71F5910250014D1EA /* BMMyOtherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301F5D61F5910250014D1EA /* BMMyOtherInfoView.swift */; };
+		6301F5D91F59102D0014D1EA /* BMMyOtherInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6301F5D81F59102D0014D1EA /* BMMyOtherInfoView.xib */; };
 		633704921F2195EC00F769B4 /* BMBaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633704911F2195EC00F769B4 /* BMBaseTabBarController.swift */; };
 		633704981F219DC600F769B4 /* BMTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633704971F219DC600F769B4 /* BMTools.swift */; };
 		6337049A1F219F1000F769B4 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633704991F219F1000F769B4 /* UILabel+Extension.swift */; };
@@ -230,6 +232,8 @@
 		63015C1B1EFBBCA600A9C8AC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftTest-dmbmwckjgrvcykccrwbkrasjrzkg/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		63015C1C1EFBBCA600A9C8AC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftTest-dmbmwckjgrvcykccrwbkrasjrzkg/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		63015C2A1EFBC58900A9C8AC /* BMBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMBaseNavigationController.swift; sourceTree = "<group>"; };
+		6301F5D61F5910250014D1EA /* BMMyOtherInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMMyOtherInfoView.swift; sourceTree = "<group>"; };
+		6301F5D81F59102D0014D1EA /* BMMyOtherInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMMyOtherInfoView.xib; sourceTree = "<group>"; };
 		633704911F2195EC00F769B4 /* BMBaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMBaseTabBarController.swift; sourceTree = "<group>"; };
 		633704971F219DC600F769B4 /* BMTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMTools.swift; sourceTree = "<group>"; };
 		633704991F219F1000F769B4 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -757,6 +761,8 @@
 		6374D4221F541AB1007272A9 /* 其他信息 */ = {
 			isa = PBXGroup;
 			children = (
+				6301F5D61F5910250014D1EA /* BMMyOtherInfoView.swift */,
+				6301F5D81F59102D0014D1EA /* BMMyOtherInfoView.xib */,
 			);
 			name = "其他信息";
 			sourceTree = "<group>";
@@ -1597,6 +1603,7 @@
 				63DD179E1F2F283400ED3AB6 /* BMRegisterViewController.xib in Resources */,
 				63E2C2041F4ABC9B00E5A7AD /* BMVipCardConsumeView.xib in Resources */,
 				6374D4201F54140D007272A9 /* BMMyInfoViewController.xib in Resources */,
+				6301F5D91F59102D0014D1EA /* BMMyOtherInfoView.xib in Resources */,
 				638EE9661F4E81FD00D0F34C /* BMAfterSaleUserInfoView.xib in Resources */,
 				6388BCC21F34463B00165D3A /* BMAuntListCell.xib in Resources */,
 				638469411F3D8D0F0014DA82 /* BMCardElaborate.xib in Resources */,
@@ -1800,6 +1807,7 @@
 				63DD179D1F2F283400ED3AB6 /* BMRegisterViewController.swift in Sources */,
 				638EE9641F4E81F200D0F34C /* BMAfterSaleUserInfoView.swift in Sources */,
 				63A950F31F2AD2570052F6C6 /* InforCellView.swift in Sources */,
+				6301F5D71F5910250014D1EA /* BMMyOtherInfoView.swift in Sources */,
 				6397B6EF1F1F5F9200C77BDC /* BMStoreListTableViewController.swift in Sources */,
 				638EE9731F4EA5DA00D0F34C /* BMAfterSaleAboutOrders.swift in Sources */,
 				633C10F51F3085470036F85B /* BMShopHeaderView.swift in Sources */,
