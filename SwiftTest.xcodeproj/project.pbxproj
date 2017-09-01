@@ -16,6 +16,7 @@
 		63015C2B1EFBC58900A9C8AC /* BMBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63015C2A1EFBC58900A9C8AC /* BMBaseNavigationController.swift */; };
 		6301F5D71F5910250014D1EA /* BMMyOtherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301F5D61F5910250014D1EA /* BMMyOtherInfoView.swift */; };
 		6301F5D91F59102D0014D1EA /* BMMyOtherInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6301F5D81F59102D0014D1EA /* BMMyOtherInfoView.xib */; };
+		6301F5DB1F5944C10014D1EA /* BMCommonAddressInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301F5DA1F5944C10014D1EA /* BMCommonAddressInfoView.swift */; };
 		633704921F2195EC00F769B4 /* BMBaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633704911F2195EC00F769B4 /* BMBaseTabBarController.swift */; };
 		633704981F219DC600F769B4 /* BMTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633704971F219DC600F769B4 /* BMTools.swift */; };
 		6337049A1F219F1000F769B4 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633704991F219F1000F769B4 /* UILabel+Extension.swift */; };
@@ -234,6 +235,7 @@
 		63015C2A1EFBC58900A9C8AC /* BMBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMBaseNavigationController.swift; sourceTree = "<group>"; };
 		6301F5D61F5910250014D1EA /* BMMyOtherInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMMyOtherInfoView.swift; sourceTree = "<group>"; };
 		6301F5D81F59102D0014D1EA /* BMMyOtherInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMMyOtherInfoView.xib; sourceTree = "<group>"; };
+		6301F5DA1F5944C10014D1EA /* BMCommonAddressInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCommonAddressInfoView.swift; sourceTree = "<group>"; };
 		633704911F2195EC00F769B4 /* BMBaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMBaseTabBarController.swift; sourceTree = "<group>"; };
 		633704971F219DC600F769B4 /* BMTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMTools.swift; sourceTree = "<group>"; };
 		633704991F219F1000F769B4 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -770,6 +772,7 @@
 		6374D4231F541AB8007272A9 /* 常用地址 */ = {
 			isa = PBXGroup;
 			children = (
+				6301F5DA1F5944C10014D1EA /* BMCommonAddressInfoView.swift */,
 			);
 			name = "常用地址";
 			sourceTree = "<group>";
@@ -1842,6 +1845,7 @@
 				6397B6DC1F1F5ED300C77BDC /* BMFriendsBargainView.swift in Sources */,
 				638F10251F035C0B004251EA /* JTLoadMoreControl.swift in Sources */,
 				638EE96E1F4EA20B00D0F34C /* BMAfterSaleAuntView.swift in Sources */,
+				6301F5DB1F5944C10014D1EA /* BMCommonAddressInfoView.swift in Sources */,
 				6378C2431F4D5C3900405943 /* Dictionary+Extension.swift in Sources */,
 				638CE6C21F25F66100BCC95C /* BMGiftEquityView.swift in Sources */,
 			);

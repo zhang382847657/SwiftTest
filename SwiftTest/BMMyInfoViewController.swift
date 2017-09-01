@@ -9,15 +9,17 @@
 import UIKit
 
 class BMMyInfoViewController: UIViewController {
+    
 
     @IBOutlet weak var topView: UIView!  //顶部视图
     @IBOutlet weak var baseInfoBtn: UIButton!  //基本信息按钮
     @IBOutlet weak var otherInfoBtn: UIButton!  //其他信息按钮
     @IBOutlet weak var addressBtn: UIButton!  //常用地址按钮
     @IBOutlet weak var scrollView: UIScrollView!  //滚动视图
+    @IBOutlet weak var commonAddressInfoView: BMCommonAddressInfoView! //常用地址视图
     
-    var contentView:UIView! //内容视图
     var baseInfoView:BMMyBaseInfoView! //基本信息视图
+    var otherInfoView:BMMyOtherInfoView! //其他信息视图
     
     
     
@@ -26,23 +28,28 @@ class BMMyInfoViewController: UIViewController {
 
         self.title = "我的信息"
         
-        
-        ///////////内容视图//////////////
-        self.contentView = UIView(frame: CGRect.zero)
-        self.scrollView.addSubview(self.contentView)
-        self.contentView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.scrollView)
-            make.width.equalTo(self.scrollView.snp.width)
-            make.height.greaterThanOrEqualTo(0)
-        }
-        
+
         
         ///////////基本信息视图//////////////
         self.baseInfoView = UIView.loadViewFromNib(nibName: "BMMyBaseInfoView") as! BMMyBaseInfoView
-        self.contentView.addSubview(self.baseInfoView)
+        self.baseInfoView.isHidden = false
+        self.scrollView.addSubview(self.baseInfoView)
         self.baseInfoView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.contentView)
+            make.top.left.right.equalTo(self.scrollView)
+            make.width.equalTo(self.scrollView.snp.width)
         }
+        
+        //////////其他信息基本视图////////////
+        self.otherInfoView = UIView.loadViewFromNib(nibName: "BMMyOtherInfoView") as! BMMyOtherInfoView
+        self.otherInfoView.isHidden = true
+        self.scrollView.addSubview(self.otherInfoView)
+        self.otherInfoView.snp.makeConstraints { (make) in
+            make.top.left.right.equalTo(self.scrollView)
+            make.width.equalTo(self.scrollView.snp.width)
+        }
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,16 +61,33 @@ class BMMyInfoViewController: UIViewController {
     //顶部按钮点击事件
     @IBAction func infoTypeClick(_ sender: UIButton) {
         
-        for view in self.topView.subviews{
+        for view in self.topView.subviews{  //做一个单选的效果
             if view is UIButton {
                 let btn:UIButton = view as! UIButton
-                
                 if btn == sender{
                     btn.isSelected = true
                 }else{
                     btn.isSelected = false
                 }
             }
+        }
+        
+        
+        switch sender {  //根据按钮的切换显示不同对应的内容视图
+        case self.baseInfoBtn:
+            self.baseInfoView.isHidden = false
+            self.otherInfoView.isHidden = true
+            self.commonAddressInfoView.isHidden = true
+        case self.otherInfoBtn:
+            self.baseInfoView.isHidden = true
+            self.otherInfoView.isHidden = false
+            self.commonAddressInfoView.isHidden = true
+        case self.addressBtn:
+            self.baseInfoView.isHidden = true
+            self.otherInfoView.isHidden = true
+            self.commonAddressInfoView.isHidden = false
+        default:
+            break
         }
         
     }

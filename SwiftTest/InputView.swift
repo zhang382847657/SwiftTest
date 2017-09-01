@@ -72,6 +72,7 @@ class InputView: UIView {
         
         /////////////左侧标题/////////////
         self.leftTitleLabel = UILabel(frame: CGRect.zero)
+        self.leftTitleLabel.text = self.titile
         self.leftTitleLabel.textColor = UIColor(hex: BMTitleColor)
         self.leftTitleLabel.font = UIFont.systemFont(ofSize: BMSubTitleFontSize)
         self.addSubview(self.leftTitleLabel)
@@ -84,6 +85,7 @@ class InputView: UIView {
         
         /////////////右侧单位的值//////////
         self.rightUnitLabel = UILabel(frame: CGRect.zero)
+        self.rightUnitLabel.text = self.unitText
         self.rightUnitLabel.textColor = UIColor(hex: BMSmallTitleColor)
         self.rightUnitLabel.font = UIFont.systemFont(ofSize: BMSubTitleFontSize)
         self.addSubview(self.rightUnitLabel)
@@ -94,6 +96,8 @@ class InputView: UIView {
         
         /////////////右侧输入框///////////
         self.rightTextField = UITextField(frame: CGRect.zero)
+        self.rightTextField.text = self.valueText
+        self.rightTextField.placeholder = self.placeholder
         self.rightTextField.textColor = UIColor(hex: BMTitleColor)
         self.rightTextField.textAlignment = .right
         self.rightTextField.font = UIFont.systemFont(ofSize: BMSubTitleFontSize)

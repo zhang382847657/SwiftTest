@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="addressBtn" destination="flg-qE-GFL" id="QXA-2h-qCg"/>
                 <outlet property="baseInfoBtn" destination="92g-E1-ay8" id="CT8-Ck-POs"/>
+                <outlet property="commonAddressInfoView" destination="hl5-CU-inX" id="WqR-Up-Ign"/>
                 <outlet property="otherInfoBtn" destination="BJW-J4-PM2" id="FQM-J1-F6A"/>
                 <outlet property="scrollView" destination="2tj-8A-8wh" id="6fU-0u-Oyj"/>
                 <outlet property="topView" destination="Y0G-4K-q9j" id="UoO-VA-vKt"/>
@@ -89,24 +90,32 @@
                         <constraint firstAttribute="bottom" secondItem="BJW-J4-PM2" secondAttribute="bottom" id="z8u-JS-q5R"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tj-8A-8wh">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tj-8A-8wh">
                     <rect key="frame" x="10" y="75" width="355" height="582"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="3hW-pY-sD7"/>
                     </connections>
                 </scrollView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hl5-CU-inX" customClass="BMCommonAddressInfoView" customModule="SwiftTest" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="2tj-8A-8wh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0iU-Ku-bPI"/>
                 <constraint firstItem="2tj-8A-8wh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="1Yp-Km-Seb"/>
+                <constraint firstAttribute="trailing" secondItem="hl5-CU-inX" secondAttribute="trailing" id="947-27-C9u"/>
                 <constraint firstAttribute="trailing" secondItem="Y0G-4K-q9j" secondAttribute="trailing" constant="10" id="Nzo-q0-yQH"/>
+                <constraint firstItem="hl5-CU-inX" firstAttribute="top" secondItem="Y0G-4K-q9j" secondAttribute="bottom" id="V7L-uJ-zQT"/>
                 <constraint firstItem="Y0G-4K-q9j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="aVb-f4-rhE"/>
                 <constraint firstAttribute="bottom" secondItem="2tj-8A-8wh" secondAttribute="bottom" constant="10" id="c4M-LM-BgU"/>
                 <constraint firstAttribute="trailing" secondItem="2tj-8A-8wh" secondAttribute="trailing" constant="10" id="cGD-Fm-GOX"/>
+                <constraint firstAttribute="bottom" secondItem="hl5-CU-inX" secondAttribute="bottom" id="cYL-xC-CAx"/>
                 <constraint firstItem="2tj-8A-8wh" firstAttribute="top" secondItem="Y0G-4K-q9j" secondAttribute="bottom" constant="10" id="iOA-be-T9T"/>
                 <constraint firstItem="Y0G-4K-q9j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="rlN-w4-JO3"/>
+                <constraint firstItem="hl5-CU-inX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="s8v-Oc-WdL"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="103.5"/>
         </view>
