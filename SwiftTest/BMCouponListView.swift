@@ -47,7 +47,7 @@ class BMCouponListView: UITableViewController,TBEmptyDataSetDelegate,TBEmptyData
         
         
         self.title = "优惠券"
-        self.tableView.backgroundColor = UIColor.colorWithHexString(hex: BMBacgroundColor)
+        self.tableView.backgroundColor = UIColor(hex: BMBacgroundColor)
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none  //去掉分割线
         self.tableView.rowHeight = 119
         self.tableView.tableFooterView = UIView()

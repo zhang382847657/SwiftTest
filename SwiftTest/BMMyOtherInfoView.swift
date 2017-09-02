@@ -13,6 +13,7 @@ class BMMyOtherInfoView: UIView {
     @IBOutlet weak var nativePlaceView: InforPickerView! //籍贯
     @IBOutlet weak var familyMembersView: InputView! //家庭成员
     @IBOutlet weak var houseAreaView: InputView! //房屋面积
+    @IBOutlet weak var foodHabitView: SelectView! //饮食偏好
     
 
     override func awakeFromNib() {
@@ -25,6 +26,10 @@ class BMMyOtherInfoView: UIView {
         
         self.houseAreaView.titile = "房屋面积"
         self.houseAreaView.unitText = "㎡"
+        
+        self.foodHabitView.title = "饮食偏好"
+        self.foodHabitView.dataSource = ["偏甜","偏咸","偏辣","清淡"]
+        
         
     }
     

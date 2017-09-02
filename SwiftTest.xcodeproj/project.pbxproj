@@ -123,6 +123,9 @@
 		638F10251F035C0B004251EA /* JTLoadMoreControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F10241F035C0B004251EA /* JTLoadMoreControl.swift */; };
 		638F102B1F0398AB004251EA /* BMWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F10291F0398AB004251EA /* BMWebViewController.swift */; };
 		638F102E1F03A518004251EA /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638F102D1F03A518004251EA /* PKHUD.framework */; };
+		6395255B1F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639525591F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.swift */; };
+		6395255C1F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6395255A1F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.xib */; };
+		6395255F1F5A5CFE00DA17C8 /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395255E1F5A5CFE00DA17C8 /* SelectView.swift */; };
 		6395BE2C1F4A81BD00AAD8D0 /* CatchCrash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395BE2B1F4A81BD00AAD8D0 /* CatchCrash.swift */; };
 		6395BE301F4A82A500AAD8D0 /* HandleCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BE2F1F4A82A500AAD8D0 /* HandleCrash.m */; };
 		6395BE391F4AB1EB00AAD8D0 /* BMVipCardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395BE381F4AB1EB00AAD8D0 /* BMVipCardDetailViewController.swift */; };
@@ -349,6 +352,9 @@
 		638F10261F035C42004251EA /* JTLoadMoreControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTLoadMoreControl.h; sourceTree = "<group>"; };
 		638F10291F0398AB004251EA /* BMWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMWebViewController.swift; sourceTree = "<group>"; };
 		638F102D1F03A518004251EA /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftTest-dmbmwckjgrvcykccrwbkrasjrzkg/Build/Products/Debug-iphonesimulator/PKHUD/PKHUD.framework"; sourceTree = "<group>"; };
+		639525591F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCommonAddressInfoCell.swift; sourceTree = "<group>"; };
+		6395255A1F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMCommonAddressInfoCell.xib; sourceTree = "<group>"; };
+		6395255E1F5A5CFE00DA17C8 /* SelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
 		6395BE2B1F4A81BD00AAD8D0 /* CatchCrash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatchCrash.swift; sourceTree = "<group>"; };
 		6395BE2D1F4A826A00AAD8D0 /* CatchCrash-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CatchCrash-Bridging-Header.h"; sourceTree = "<group>"; };
 		6395BE2E1F4A82A500AAD8D0 /* HandleCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleCrash.h; sourceTree = "<group>"; };
@@ -538,6 +544,7 @@
 		63015C111EFBAB9500A9C8AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6395255D1F5A5CC600DA17C8 /* 单多选 */,
 				63C4B1B81F56ACC3009167BC /* InforPickerView */,
 				63C4B1B71F56AC46009167BC /* 数据选择器 */,
 				6374D4191F540BC4007272A9 /* InputView */,
@@ -773,6 +780,8 @@
 			isa = PBXGroup;
 			children = (
 				6301F5DA1F5944C10014D1EA /* BMCommonAddressInfoView.swift */,
+				639525591F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.swift */,
+				6395255A1F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.xib */,
 			);
 			name = "常用地址";
 			sourceTree = "<group>";
@@ -1004,6 +1013,14 @@
 				638F10261F035C42004251EA /* JTLoadMoreControl.h */,
 			);
 			name = JTLoadMoreControl;
+			sourceTree = "<group>";
+		};
+		6395255D1F5A5CC600DA17C8 /* 单多选 */ = {
+			isa = PBXGroup;
+			children = (
+				6395255E1F5A5CFE00DA17C8 /* SelectView.swift */,
+			);
+			name = "单多选";
 			sourceTree = "<group>";
 		};
 		6395BE2A1F4A81A500AAD8D0 /* 异常捕捉 */ = {
@@ -1617,6 +1634,7 @@
 				6359B0931EF1074700D6DF5E /* LaunchScreen.storyboard in Resources */,
 				6378C2411F4D2DF100405943 /* BMOrderCell.xib in Resources */,
 				6378C1831F32BAAD0070E81F /* BMShopRecommendCommentView.xib in Resources */,
+				6395255C1F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.xib in Resources */,
 				638EE9701F4EA21500D0F34C /* BMAfterSaleAuntView.xib in Resources */,
 				6378C1871F32BDCF0070E81F /* BMShopCommentView.xib in Resources */,
 				634C271E1F39B5ED00D1043D /* BMAuntCerCell.xib in Resources */,
@@ -1800,6 +1818,7 @@
 				63A7E8651F4FF0F800AF68FB /* BMOrderCancelHeaderView.swift in Sources */,
 				6395BE301F4A82A500AAD8D0 /* HandleCrash.m in Sources */,
 				63C4B1BA1F56AD10009167BC /* InforPickerView.swift in Sources */,
+				6395255F1F5A5CFE00DA17C8 /* SelectView.swift in Sources */,
 				6374D41B1F540BE2007272A9 /* InputView.swift in Sources */,
 				6359B0891EF1074700D6DF5E /* AppDelegate.swift in Sources */,
 				6397B6E11F1F5F3500C77BDC /* BMHotServiceCellView.swift in Sources */,
@@ -1843,6 +1862,7 @@
 				63DD17961F2F0EDA00ED3AB6 /* BMPhoneLoginView.swift in Sources */,
 				63B826D81F35611700F7C5A1 /* BMAuntBasicCellView.swift in Sources */,
 				6397B6DC1F1F5ED300C77BDC /* BMFriendsBargainView.swift in Sources */,
+				6395255B1F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.swift in Sources */,
 				638F10251F035C0B004251EA /* JTLoadMoreControl.swift in Sources */,
 				638EE96E1F4EA20B00D0F34C /* BMAfterSaleAuntView.swift in Sources */,
 				6301F5DB1F5944C10014D1EA /* BMCommonAddressInfoView.swift in Sources */,

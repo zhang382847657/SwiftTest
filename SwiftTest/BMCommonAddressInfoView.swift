@@ -31,6 +31,10 @@ class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,
         self.loadUI() //加载布局
     }
     
+    deinit {
+        self.tableView.dg_removePullToRefresh() //移除头部刷新视图
+    }
+    
     
     //MARK: 加载布局
     private func loadUI(){
@@ -54,14 +58,18 @@ class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,
         
         /////////////UITableView/////////////////
         self.tableView = UITableView(frame: CGRect.zero, style: .plain)
-        self.tableView.backgroundColor = UIColor.clear
+        self.tableView.backgroundColor = UIColor(hex: BMBacgroundColor)
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.emptyDataSetDelegate = self  //设置空数据的代理
         self.tableView.emptyDataSetDataSource = self  //设置空数据的数据源
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tableView.rowHeight = 80
+        self.tableView.separatorInset = UIEdgeInsets.zero
+        self.tableView.layoutMargins = UIEdgeInsets.zero
+        self.tableView.cellLayoutMarginsFollowReadableWidth = false
+        self.tableView.register(UINib(nibName: "BMCommonAddressInfoCell", bundle: nil), forCellReuseIdentifier: "BMCommonAddressInfoCell")
+        self.tableView.rowHeight = 70
         self.tableView.tableFooterView = UIView()
+        
         ///////////显示头部刷新视图//////////////////
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
         loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
@@ -80,6 +88,8 @@ class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,
             make.bottom.equalTo(self.addAddressBtn.snp.top).offset(-10)
         }
         
+        self.loadData() //加载数据
+        
         
     }
     
@@ -89,21 +99,26 @@ class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,
         //////////////请求所有商品类目///////////////////
         let url = "\(BMHOST)/cuser/queryAddressList"
         let params = ["":""]
-        NetworkRequest.sharedInstance.getRequest(urlString: url , params: params , success: { value in
+        
+        NetworkRequest.sharedInstance.postRequest(urlString: url, params: params, isLogin: true, success: { (value) in
             
             self.tableView.dg_stopLoading()  //停止刷新动画
             self.dataList = value["dataList"].array
             self.tableView.reloadData()  //刷新数据源
             
-        }) { error in
+        }) { (error) in
             
-    
+            
         }
         
     }
     
     
     //MARK: UITabelView - DataSource
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if let dataList = self.dataList{
             return dataList.count
@@ -113,9 +128,28 @@ class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,
     
   
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier:"cell")!
-        cell.textLabel?.text = "aaa"
+        let cell:BMCommonAddressInfoCell = tableView.dequeueReusableCell(withIdentifier: "BMCommonAddressInfoCell", for: indexPath) as! BMCommonAddressInfoCell
+        cell.updateWithAddress(address: self.dataList![indexPath.row])
         return cell
+    }
+    
+    //MARK: UITabelView - Delegate
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell:BMCommonAddressInfoCell = tableView.cellForRow(at: indexPath) as! BMCommonAddressInfoCell
+        cell.rightWidthConstraint.constant = 110
+        cell.leftLeadingConstraint.constant = -110
+        UIView.animate(withDuration: 0.3) {
+            cell.layoutIfNeeded()
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell:BMCommonAddressInfoCell = tableView.cellForRow(at: indexPath) as! BMCommonAddressInfoCell
+        cell.rightWidthConstraint.constant = 0
+        cell.leftLeadingConstraint.constant = 0
+        UIView.animate(withDuration: 0.3) {
+            cell.layoutIfNeeded()
+        }
     }
     
     

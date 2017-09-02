@@ -53,3 +53,21 @@ func timeFormattingWithStamp(timeStamp:Int,format:String) -> String{
     return dformatter.string(from: date as Date)
    
 }
+
+// MARK: UIColor转换成UIImage
+/**
+ *  UIColor转换趁成UIImage
+ *  @params color 颜色
+ *  return : UIImage
+ */
+func createImageWithColor(color:UIColor) -> UIImage?
+{
+    let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+    UIGraphicsBeginImageContext(rect.size)
+    let context = UIGraphicsGetCurrentContext()
+    context?.setFillColor(color.cgColor)
+    context?.fill(rect)
+    let theImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return theImage
+}

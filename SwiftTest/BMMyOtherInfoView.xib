@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BMMyOtherInfoView" customModule="SwiftTest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="321" height="135"/>
+            <rect key="frame" x="0.0" y="0.0" width="321" height="226"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1QR-nV-6zc" customClass="InforPickerView" customModule="SwiftTest" customModuleProvider="target">
@@ -33,31 +33,39 @@
                     <rect key="frame" x="0.0" y="90" width="321" height="45"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="45" id="XFh-p0-nnI"/>
+                        <constraint firstAttribute="height" constant="45" id="whc-5V-qsa"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDy-Jd-oxb" customClass="SelectView" customModule="SwiftTest" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="140" width="321" height="86"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="1QR-nV-6zc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3vy-gu-8xB"/>
-                <constraint firstItem="cGn-dy-FS3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4vj-TK-bQT"/>
                 <constraint firstItem="1BH-Ji-S7t" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9At-qH-5Wn"/>
                 <constraint firstItem="1BH-Ji-S7t" firstAttribute="top" secondItem="1QR-nV-6zc" secondAttribute="bottom" id="AZq-xW-M42"/>
-                <constraint firstAttribute="trailing" secondItem="cGn-dy-FS3" secondAttribute="trailing" id="G0q-RR-LN2"/>
+                <constraint firstAttribute="trailing" secondItem="cGn-dy-FS3" secondAttribute="trailing" id="C6R-PT-Cf9"/>
+                <constraint firstItem="rDy-Jd-oxb" firstAttribute="top" secondItem="cGn-dy-FS3" secondAttribute="bottom" constant="5" id="DZJ-Xq-4Zh"/>
+                <constraint firstItem="cGn-dy-FS3" firstAttribute="top" secondItem="1BH-Ji-S7t" secondAttribute="bottom" id="Gyx-fk-Zm4"/>
+                <constraint firstItem="rDy-Jd-oxb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Krn-cu-0IE"/>
                 <constraint firstAttribute="trailing" secondItem="1QR-nV-6zc" secondAttribute="trailing" id="PZH-4l-gGA"/>
                 <constraint firstAttribute="trailing" secondItem="1BH-Ji-S7t" secondAttribute="trailing" id="gUF-o6-cJo"/>
-                <constraint firstAttribute="bottom" secondItem="cGn-dy-FS3" secondAttribute="bottom" id="lfr-0b-aZ9"/>
-                <constraint firstItem="cGn-dy-FS3" firstAttribute="top" secondItem="1BH-Ji-S7t" secondAttribute="bottom" id="r77-8D-dK7"/>
+                <constraint firstItem="cGn-dy-FS3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jzW-rB-Ugm"/>
+                <constraint firstAttribute="trailing" secondItem="rDy-Jd-oxb" secondAttribute="trailing" id="kCG-MB-pNy"/>
+                <constraint firstAttribute="bottom" secondItem="rDy-Jd-oxb" secondAttribute="bottom" id="mis-tV-CQV"/>
                 <constraint firstItem="1QR-nV-6zc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zgi-kX-VPV"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="familyMembersView" destination="1BH-Ji-S7t" id="4K7-Qn-tqy"/>
+                <outlet property="foodHabitView" destination="rDy-Jd-oxb" id="eaV-5P-HpN"/>
                 <outlet property="houseAreaView" destination="cGn-dy-FS3" id="phI-gf-kyV"/>
                 <outlet property="nativePlaceView" destination="1QR-nV-6zc" id="BcI-FS-af5"/>
             </connections>
-            <point key="canvasLocation" x="-16.5" y="-206.5"/>
+            <point key="canvasLocation" x="-16.5" y="-161"/>
         </view>
     </objects>
 </document>
