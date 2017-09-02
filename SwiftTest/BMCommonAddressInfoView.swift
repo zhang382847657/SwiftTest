@@ -166,5 +166,10 @@ class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,
 
     //新增地址点击事件
     func addAddressClick(sender: UIButton) {
+        
+        let myInfoVC:BMMyInfoViewController = self.getViewController() as! BMMyInfoViewController
+        
+        let editAddressVC:BMEditCommonAddressViewController = BMEditCommonAddressViewController()
+        myInfoVC.navigationController?.pushViewController(editAddressVC, animated: true)
     }
 }
