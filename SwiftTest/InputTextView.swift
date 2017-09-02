@@ -11,7 +11,7 @@ import UIKit
 class InputTextView: UIView, UITextViewDelegate {
     
     var textView:UITextView!
-    var label:UILabel!
+    private var label:UILabel!
     private var _totalNum:Int = 140  //总字数  默认140
     var totalNum:Int  { //总字数  对外暴露的属性
         
@@ -24,6 +24,11 @@ class InputTextView: UIView, UITextViewDelegate {
             self.label.text = "0/\(newValue)"
         }
         
+    }
+    var placeholder:String = "请输入" {
+        didSet{
+            self.textView.placeholderText = placeholder
+        }
     }
     
 
@@ -43,7 +48,8 @@ class InputTextView: UIView, UITextViewDelegate {
         self.textView = UITextView(frame: CGRect.zero)
         self.textView.textColor = UIColor.colorWithHexString(hex: BMSubTitleColor)
         self.textView.font = UIFont.systemFont(ofSize: BMSubTitleFontSize)
-        self.textView.placeholderText = "请输入"
+        self.textView.placeholderText = self.placeholder
+        self.textView.shouldHidePlaceholderText = false
         self.textView.delegate = self
         self.addSubview(self.textView)
         

@@ -126,6 +126,8 @@
 		6395255B1F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639525591F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.swift */; };
 		6395255C1F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6395255A1F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.xib */; };
 		6395255F1F5A5CFE00DA17C8 /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395255E1F5A5CFE00DA17C8 /* SelectView.swift */; };
+		639525631F5AB07B00DA17C8 /* BMEditCommonAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639525611F5AB07B00DA17C8 /* BMEditCommonAddressViewController.swift */; };
+		639525641F5AB07B00DA17C8 /* BMEditCommonAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639525621F5AB07B00DA17C8 /* BMEditCommonAddressViewController.xib */; };
 		6395BE2C1F4A81BD00AAD8D0 /* CatchCrash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395BE2B1F4A81BD00AAD8D0 /* CatchCrash.swift */; };
 		6395BE301F4A82A500AAD8D0 /* HandleCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BE2F1F4A82A500AAD8D0 /* HandleCrash.m */; };
 		6395BE391F4AB1EB00AAD8D0 /* BMVipCardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395BE381F4AB1EB00AAD8D0 /* BMVipCardDetailViewController.swift */; };
@@ -355,6 +357,8 @@
 		639525591F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCommonAddressInfoCell.swift; sourceTree = "<group>"; };
 		6395255A1F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMCommonAddressInfoCell.xib; sourceTree = "<group>"; };
 		6395255E1F5A5CFE00DA17C8 /* SelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
+		639525611F5AB07B00DA17C8 /* BMEditCommonAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMEditCommonAddressViewController.swift; sourceTree = "<group>"; };
+		639525621F5AB07B00DA17C8 /* BMEditCommonAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMEditCommonAddressViewController.xib; sourceTree = "<group>"; };
 		6395BE2B1F4A81BD00AAD8D0 /* CatchCrash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatchCrash.swift; sourceTree = "<group>"; };
 		6395BE2D1F4A826A00AAD8D0 /* CatchCrash-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CatchCrash-Bridging-Header.h"; sourceTree = "<group>"; };
 		6395BE2E1F4A82A500AAD8D0 /* HandleCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleCrash.h; sourceTree = "<group>"; };
@@ -782,6 +786,7 @@
 				6301F5DA1F5944C10014D1EA /* BMCommonAddressInfoView.swift */,
 				639525591F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.swift */,
 				6395255A1F5A4DEC00DA17C8 /* BMCommonAddressInfoCell.xib */,
+				639525601F5AB03C00DA17C8 /* 添加/编辑常用地址 */,
 			);
 			name = "常用地址";
 			sourceTree = "<group>";
@@ -1021,6 +1026,15 @@
 				6395255E1F5A5CFE00DA17C8 /* SelectView.swift */,
 			);
 			name = "单多选";
+			sourceTree = "<group>";
+		};
+		639525601F5AB03C00DA17C8 /* 添加/编辑常用地址 */ = {
+			isa = PBXGroup;
+			children = (
+				639525611F5AB07B00DA17C8 /* BMEditCommonAddressViewController.swift */,
+				639525621F5AB07B00DA17C8 /* BMEditCommonAddressViewController.xib */,
+			);
+			name = "添加/编辑常用地址";
 			sourceTree = "<group>";
 		};
 		6395BE2A1F4A81A500AAD8D0 /* 异常捕捉 */ = {
@@ -1668,6 +1682,7 @@
 				6346B8621F31D10900721963 /* BMShopToolsView.xib in Resources */,
 				63D5ECC11F442DFA0011C064 /* BMCouponDetailView.xib in Resources */,
 				634C27281F39C2C100D1043D /* BMAuntCerHeaderView.xib in Resources */,
+				639525641F5AB07B00DA17C8 /* BMEditCommonAddressViewController.xib in Resources */,
 				6388BCD31F3465DB00165D3A /* BMAuntServiceTypeView.xib in Resources */,
 				6397B6E21F1F5F3500C77BDC /* BMHotServiceCellView.xib in Resources */,
 				63D815421F41975C00B331B4 /* BMCouponCell.xib in Resources */,
@@ -1767,6 +1782,7 @@
 				6383306B1F3BF4EE00F48CF6 /* BMCardsViewController.swift in Sources */,
 				6397B6F51F1F5FBA00C77BDC /* BMProductTypeView.swift in Sources */,
 				6383306E1F3BFD3E00F48CF6 /* BMCardsCell.swift in Sources */,
+				639525631F5AB07B00DA17C8 /* BMEditCommonAddressViewController.swift in Sources */,
 				6346B8601F31D0FE00721963 /* BMShopToolsView.swift in Sources */,
 				63015C2B1EFBC58900A9C8AC /* BMBaseNavigationController.swift in Sources */,
 				63015C151EFBABE600A9C8AC /* UIColor+Extension.swift in Sources */,

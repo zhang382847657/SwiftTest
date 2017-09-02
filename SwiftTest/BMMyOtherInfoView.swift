@@ -14,7 +14,8 @@ class BMMyOtherInfoView: UIView {
     @IBOutlet weak var familyMembersView: InputView! //家庭成员
     @IBOutlet weak var houseAreaView: InputView! //房屋面积
     @IBOutlet weak var foodHabitView: SelectView! //饮食偏好
-    
+    @IBOutlet weak var petInfoView: SelectView! //宠物情况
+    @IBOutlet weak var remarkView: InputTextView! //备注
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +30,14 @@ class BMMyOtherInfoView: UIView {
         
         self.foodHabitView.title = "饮食偏好"
         self.foodHabitView.dataSource = ["偏甜","偏咸","偏辣","清淡"]
+        self.foodHabitView.checboxDefaultValue = ["清淡","偏咸"]
         
+        self.petInfoView.title = "宠物情况"
+        self.petInfoView.dataSource = ["猫","小型犬","大型犬"]
+        self.petInfoView.checboxDefaultValue = ["猫"]
+        
+        self.remarkView.placeholder = "请输入备注"
+        self.remarkView.totalNum = 140
         
     }
     
@@ -39,6 +47,7 @@ class BMMyOtherInfoView: UIView {
         self.nativePlaceView.addBorderLayer(color: UIColor(hex:BMBorderColor), size: BMBorderSize, boderType: BorderType.bottom)
         self.familyMembersView.addBorderLayer(color: UIColor(hex:BMBorderColor), size: BMBorderSize, boderType: BorderType.bottom)
         
-        
+        self.remarkView.textView.layer.borderColor = UIColor(hex: BMBorderColor).cgColor
+        self.remarkView.textView.layer.borderWidth = BMBorderSize
     }
 }
