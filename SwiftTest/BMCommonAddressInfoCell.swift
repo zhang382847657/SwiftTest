@@ -22,8 +22,10 @@ class BMCommonAddressInfoCell: UITableViewCell {
     @IBOutlet weak var leftLeadingConstraint: NSLayoutConstraint! //左侧视图距离左侧距离约束
     
     
+    var addressId:String! //地址Id
+    
     typealias EditClosure = () -> Void //编辑闭包类型
-    typealias DeleteClosure = () -> Void //删除闭包类型
+    typealias DeleteClosure = (_ addressId:String) -> Void //删除闭包类型
     var editClosure: EditClosure! //声明编辑闭包属性
     var deleteClosure: DeleteClosure! //声明删除闭包属性
     
@@ -42,6 +44,8 @@ class BMCommonAddressInfoCell: UITableViewCell {
     
     //更新内容视图
     func updateWithAddress(address:JSON){
+        
+        self.addressId = address["addressId"].stringValue
         let phone:String? = address["phone"].string
         let name:String? = address["name"].string
         let province:String? = address["province"].string
@@ -85,7 +89,7 @@ class BMCommonAddressInfoCell: UITableViewCell {
     //删除点击事件
     @IBAction func deleteClick(_ sender: UIButton) {
         if let deleteClosure = self.deleteClosure {
-            deleteClosure()
+            deleteClosure(self.addressId)
         }
     }
     

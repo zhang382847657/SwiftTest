@@ -174,7 +174,10 @@ class BMOrderBottomView: UIView {
     
     //评价、查看评价点击事件
     func evaluateClick(sender:UIButton){
-        
+        let vc:BMOrderListViewController = self.getViewController() as! BMOrderListViewController
+        let evaluateVC:BMEvaluateViewController = BMEvaluateViewController(tradeNo: "")
+        evaluateVC.hidesBottomBarWhenPushed = true
+        vc.navigationController?.pushViewController(evaluateVC, animated: true)
     }
     
     //查看合同点击事件
@@ -189,7 +192,6 @@ class BMOrderBottomView: UIView {
     
     }
 
-    
     
     override func layoutSubviews() {
         super.layoutSubviews()

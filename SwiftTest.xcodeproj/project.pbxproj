@@ -17,6 +17,7 @@
 		6301F5D71F5910250014D1EA /* BMMyOtherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301F5D61F5910250014D1EA /* BMMyOtherInfoView.swift */; };
 		6301F5D91F59102D0014D1EA /* BMMyOtherInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6301F5D81F59102D0014D1EA /* BMMyOtherInfoView.xib */; };
 		6301F5DB1F5944C10014D1EA /* BMCommonAddressInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301F5DA1F5944C10014D1EA /* BMCommonAddressInfoView.swift */; };
+		63356C221F6FBD5000D33923 /* BMEvaluateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C211F6FBD5000D33923 /* BMEvaluateViewController.swift */; };
 		633704921F2195EC00F769B4 /* BMBaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633704911F2195EC00F769B4 /* BMBaseTabBarController.swift */; };
 		633704981F219DC600F769B4 /* BMTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633704971F219DC600F769B4 /* BMTools.swift */; };
 		6337049A1F219F1000F769B4 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633704991F219F1000F769B4 /* UILabel+Extension.swift */; };
@@ -242,6 +243,7 @@
 		6301F5D61F5910250014D1EA /* BMMyOtherInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMMyOtherInfoView.swift; sourceTree = "<group>"; };
 		6301F5D81F59102D0014D1EA /* BMMyOtherInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMMyOtherInfoView.xib; sourceTree = "<group>"; };
 		6301F5DA1F5944C10014D1EA /* BMCommonAddressInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCommonAddressInfoView.swift; sourceTree = "<group>"; };
+		63356C211F6FBD5000D33923 /* BMEvaluateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMEvaluateViewController.swift; sourceTree = "<group>"; };
 		633704911F2195EC00F769B4 /* BMBaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMBaseTabBarController.swift; sourceTree = "<group>"; };
 		633704971F219DC600F769B4 /* BMTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMTools.swift; sourceTree = "<group>"; };
 		633704991F219F1000F769B4 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -597,6 +599,14 @@
 				63015C171EFBAFF000A9C8AC /* BMNetworkTools.swift */,
 			);
 			name = NetWork;
+			sourceTree = "<group>";
+		};
+		63356C201F6FBCEC00D33923 /* 评价 */ = {
+			isa = PBXGroup;
+			children = (
+				63356C211F6FBD5000D33923 /* BMEvaluateViewController.swift */,
+			);
+			name = "评价";
 			sourceTree = "<group>";
 		};
 		633704951F219D2000F769B4 /* 数据校验 */ = {
@@ -1077,6 +1087,7 @@
 		6397B6C61F1F5D3100C77BDC /* Section具体 */ = {
 			isa = PBXGroup;
 			children = (
+				63356C201F6FBCEC00D33923 /* 评价 */,
 				6388BCBC1F3428C800165D3A /* 阿姨 */,
 				63A950FF1F2B21260052F6C6 /* 登录/注册 */,
 				6397B6CB1F1F5D7400C77BDC /* 商品 */,
@@ -1841,6 +1852,7 @@
 				638D7AEF1F00E1F300A15311 /* UIImageView+Extension.swift in Sources */,
 				63015C101EFBA9E100A9C8AC /* AppMacro.swift in Sources */,
 				634C271A1F39940400D1043D /* BMAuntCerListView.swift in Sources */,
+				63356C221F6FBD5000D33923 /* BMEvaluateViewController.swift in Sources */,
 				6384693F1F3D8D060014DA82 /* BMCardElaborate.swift in Sources */,
 				6388BCC51F345C3B00165D3A /* BMAuntDetailViewController.swift in Sources */,
 				63A7E8651F4FF0F800AF68FB /* BMOrderCancelHeaderView.swift in Sources */,

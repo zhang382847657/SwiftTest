@@ -14,10 +14,12 @@ import SwiftyJSON
 class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,TBEmptyDataSetDelegate,TBEmptyDataSetDataSource {
 
 
-    var tableView:UITableView! //tableView
-    var addAddressBtn:UIButton! //新增地址按钮
-    var dataList:Array<JSON>?  //数据源
-    var alertController:UIAlertController! //提示框
+    private var tableView:UITableView! //tableView
+    private var addAddressBtn:UIButton! //新增地址按钮
+    private var dataList:Array<JSON>?  //数据源
+    private var alertController:UIAlertController! //提示框
+    private var addressId:String! //要删除的地址Id
+    private var indexPath:IndexPath! //要删除的地址所在indexPath
     
     
     override init(frame: CGRect) {
@@ -99,6 +101,7 @@ class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,
         })
         let okAction = UIAlertAction(title: "确定", style: .destructive, handler: {
             (action: UIAlertAction) -> Void in //确定操作
+            self.deleteAddress(addressId: self.addressId, indexPath: self.indexPath)
             self.alertController.dismiss(animated: true, completion: nil)
         })
         self.alertController.addAction(cancelAction)
@@ -124,7 +127,6 @@ class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,
             
             
         }
-        
     }
     
     
@@ -153,12 +155,12 @@ class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,
         }
         
         cell.deleteClosure = { //删除回调
-            () -> Void in
+            (addressId:String) -> Void in
             
+            self.addressId = addressId
+            self.indexPath = indexPath
             let vc:BMMyInfoViewController =  self.getViewController() as! BMMyInfoViewController
             vc.present(self.alertController, animated: true, completion: nil)
-            
-            
         }
         return cell
     }
@@ -194,12 +196,29 @@ class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,
     }
     
 
-    //新增地址点击事件
+    // MARK: 新增地址点击事件
     func addAddressClick(sender: UIButton) {
         
         let myInfoVC:BMMyInfoViewController = self.getViewController() as! BMMyInfoViewController
         
         let editAddressVC:BMEditCommonAddressViewController = BMEditCommonAddressViewController()
         myInfoVC.navigationController?.pushViewController(editAddressVC, animated: true)
+    }
+    
+    // MARK: 删除地址
+    func deleteAddress(addressId:String, indexPath:IndexPath){
+
+        let url = "\(BMHOST)/cuser/deleteAddress"
+        let params = ["addressId":addressId]
+        
+        NetworkRequest.sharedInstance.postRequest(urlString: url, params: params, isLogin: true, success: { (value) in
+            
+            self.dataList!.remove(at: indexPath.row) //先删除数组对应的元素
+            self.tableView.deleteRows(at: [indexPath], with: .left)
+            
+        }) { (error) in
+            
+            
+        }
     }
 }
