@@ -11,13 +11,13 @@
 
 import UIKit
 
-class InputView: UIView {
+class InputView: UIView,UITextFieldDelegate {
     
 
     
-    var leftTitleLabel:UILabel!  //左侧标题label
-    var rightTextField:UITextField!  //右侧输入框
-    var rightUnitLabel:UILabel!  //右侧单位label
+    private var leftTitleLabel:UILabel!  //左侧标题label
+    private var rightTextField:UITextField!  //右侧输入框
+    private var rightUnitLabel:UILabel!  //右侧单位label
     
     
     var titile:String = ""{  //左侧标题
@@ -40,6 +40,11 @@ class InputView: UIView {
             self.rightUnitLabel.text = unitText
         }
     }
+
+    //MARK: 得到最终的文本框的值
+    func getValueText() -> String?{
+        return self.rightTextField.text
+    }
     
 
     override init(frame: CGRect) {
@@ -54,6 +59,11 @@ class InputView: UIView {
         self.loadUI()
     }
     
+    //MARK: 带参数的初始化
+    //params titile 左侧标题
+    //params placeholder 右侧输入框提示词
+    //params valueText 右侧输入框默认值
+    //params unitText 右侧输入框后面显示的单位
     init(title:String, placeholder:String?, valueText:String?,unitText:String?) {
         
         self.titile = title
@@ -62,12 +72,12 @@ class InputView: UIView {
         self.unitText = unitText
         
         super.init(frame: CGRect.zero)
+        
+        self.loadUI() //加载布局
     }
     
     
-    /**
-     *  加载布局
-     */
+    //MARK: 加载布局
     private func loadUI(){
         
         /////////////左侧标题/////////////
@@ -97,6 +107,7 @@ class InputView: UIView {
         /////////////右侧输入框///////////
         self.rightTextField = UITextField(frame: CGRect.zero)
         self.rightTextField.text = self.valueText
+        self.rightTextField.delegate = self
         self.rightTextField.placeholder = self.placeholder
         self.rightTextField.textColor = UIColor(hex: BMTitleColor)
         self.rightTextField.textAlignment = .right

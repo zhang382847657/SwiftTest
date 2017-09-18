@@ -161,7 +161,7 @@ class BMOrderCell: UITableViewCell {
             }
         }
         
-        self.bottomView.updateWithShowPay(showCancel: canCancel, showAunt: showAunt, showContract: showContract, showEvaluate: showEvaluate, showPay: canPay, evaluateState: product["evaluateState"].int, tradeNo:product["tradeNo"].stringValue)
+        self.bottomView.updateWithShowPay(showCancel: canCancel, showAunt: showAunt, showContract: showContract, showEvaluate: showEvaluate, showPay: canPay, evaluateState: product["evaluateState"].int, tradeNo:product["tradeNo"].stringValue, flowStatus:flowStatus!)
         
     }
     

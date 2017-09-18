@@ -46,8 +46,5 @@ class BMMyOtherInfoView: UIView {
         
         self.nativePlaceView.addBorderLayer(color: UIColor(hex:BMBorderColor), size: BMBorderSize, boderType: BorderType.bottom)
         self.familyMembersView.addBorderLayer(color: UIColor(hex:BMBorderColor), size: BMBorderSize, boderType: BorderType.bottom)
-        
-        self.remarkView.textView.layer.borderColor = UIColor(hex: BMBorderColor).cgColor
-        self.remarkView.textView.layer.borderWidth = BMBorderSize
     }
 }

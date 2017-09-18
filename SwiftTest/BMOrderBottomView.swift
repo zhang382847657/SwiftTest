@@ -16,7 +16,8 @@ class BMOrderBottomView: UIView {
     var showContractBtn:UIButton! //查看合同按钮
     var evaluateBtn:UIButton! //评价、查看评价按钮
     var payBtn:UIButton!  //付款按钮
-    var tradeNo:String = "" //订单编号
+    var tradeNo:String = ""  //订单编号
+    var flowStatus:String = "" //订单状态
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -91,9 +92,10 @@ class BMOrderBottomView: UIView {
      * @params showEvaluate 是否显示评价
      * @params evaluateState 评价状态  1已评价  0未评价
      * @params tradeNo 订单编号
+     * @params flowStatus 订单状态
      */
     func updateWithShowPay(showCancel:Bool,showAunt:Bool,showContract:Bool,
-                           showEvaluate:Bool,showPay:Bool,evaluateState:Int?,tradeNo:String){
+                           showEvaluate:Bool,showPay:Bool,evaluateState:Int?,tradeNo:String, flowStatus:String){
         
         self.tradeNo = tradeNo
         
@@ -163,6 +165,11 @@ class BMOrderBottomView: UIView {
     //查看阿姨点击事件
     func auntClick(sender:UIButton){
         
+        let vc:BMOrderListViewController = self.getViewController() as! BMOrderListViewController
+       
+        let auntListVC:BMOrderServicesAuntListViewController = BMOrderServicesAuntListViewController(tradeNo: self.tradeNo, flowStatus: self.flowStatus)
+        auntListVC.hidesBottomBarWhenPushed = true
+        vc.navigationController?.pushViewController(auntListVC, animated: true)
     }
     
     //评价、查看评价点击事件

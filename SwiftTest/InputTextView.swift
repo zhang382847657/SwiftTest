@@ -10,25 +10,33 @@ import UIKit
 
 class InputTextView: UIView, UITextViewDelegate {
     
-    var textView:UITextView!
+    private var textView:UITextView!
     private var label:UILabel!
     private var _totalNum:Int = 140  //总字数  默认140
     var totalNum:Int  { //总字数  对外暴露的属性
-        
         get {
             return self._totalNum
         }
-        
         set {
             self._totalNum = newValue
             self.label.text = "0/\(newValue)"
         }
-        
     }
     var placeholder:String = "请输入" {
         didSet{
             self.textView.placeholderText = placeholder
         }
+    }
+    
+    var valueText:String? = nil{
+        didSet{
+            self.textView.text = valueText
+        }
+    }
+    
+    //MARK: 得到最终的文本框的值
+    func getValueText() -> String?{
+        return self.textView.text
     }
     
 

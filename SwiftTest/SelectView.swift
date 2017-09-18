@@ -239,7 +239,7 @@ class SelectButtonView: UIView {
                     make.top.left.equalTo(self)
                     
                     if self.dataSource.count < 4{
-                        make.width.equalTo(85)
+                        make.width.equalTo(80)
                     }
                 }
                 

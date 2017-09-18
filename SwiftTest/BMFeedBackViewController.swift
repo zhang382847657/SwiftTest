@@ -34,22 +34,27 @@ class BMFeedBackViewController: UIViewController {
     @IBAction func submitClick(_ sender: UIButton) {
         
         
-        HUD.show(.progress)
-        
-        let content:String = self.inputTextView.textView.text//输入内容
-        
-        let url = "\(BMHOST)/common/feedback"
-        let params:Dictionary<String,Any> = ["appType":1,"duserCode":BMDUSERCODE,"content":content]
-        NetworkRequest.sharedInstance.getRequest(urlString: url , params: params , success: { value in
+        let content:String? = self.inputTextView.getValueText()//输入内容
+        if let content = content , content != ""{
             
-            HUD.flash(.success, delay: 1.0) { finished in
-                self.navigationController?.popViewController(animated: true)
+            HUD.show(.progress)
+            
+            let url = "\(BMHOST)/common/feedback"
+            let params:Dictionary<String,Any> = ["appType":1,"duserCode":BMDUSERCODE,"content":content]
+            NetworkRequest.sharedInstance.getRequest(urlString: url , params: params , success: { value in
+                
+                HUD.flash(.success, delay: 1.0) { finished in
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
+                
+            }) { error in
+                
+                HUD.hide()
             }
             
-            
-        }) { error in
-         
-            HUD.hide()
+        }else{
+            HUD.flash(.label("请输入内容"), delay: 1.0)
         }
         
     }

@@ -183,6 +183,7 @@
 		63B826D81F35611700F7C5A1 /* BMAuntBasicCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B826D71F35611700F7C5A1 /* BMAuntBasicCellView.swift */; };
 		63B826DA1F35612200F7C5A1 /* BMAuntBasicCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B826D91F35612200F7C5A1 /* BMAuntBasicCellView.xib */; };
 		63B826DD1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B826DC1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift */; };
+		63C455891F5D21F1005F3CA7 /* BMOrderServicesAuntListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C455881F5D21F1005F3CA7 /* BMOrderServicesAuntListViewController.swift */; };
 		63C4B1BA1F56AD10009167BC /* InforPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4B1B91F56AD10009167BC /* InforPickerView.swift */; };
 		63C4B1BC1F56D033009167BC /* BMPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4B1BB1F56D033009167BC /* BMPickerView.swift */; };
 		63D5ECBF1F442DEF0011C064 /* BMCouponDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D5ECBE1F442DEF0011C064 /* BMCouponDetailView.swift */; };
@@ -418,6 +419,7 @@
 		63B826D71F35611700F7C5A1 /* BMAuntBasicCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAuntBasicCellView.swift; sourceTree = "<group>"; };
 		63B826D91F35612200F7C5A1 /* BMAuntBasicCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMAuntBasicCellView.xib; sourceTree = "<group>"; };
 		63B826DC1F359B5900F7C5A1 /* BMAuntPicturesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMAuntPicturesScrollView.swift; sourceTree = "<group>"; };
+		63C455881F5D21F1005F3CA7 /* BMOrderServicesAuntListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMOrderServicesAuntListViewController.swift; sourceTree = "<group>"; };
 		63C4B1B91F56AD10009167BC /* InforPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InforPickerView.swift; sourceTree = "<group>"; };
 		63C4B1BB1F56D033009167BC /* BMPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMPickerView.swift; sourceTree = "<group>"; };
 		63D5ECBE1F442DEF0011C064 /* BMCouponDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCouponDetailView.swift; sourceTree = "<group>"; };
@@ -902,6 +904,7 @@
 				6388BCBF1F34463B00165D3A /* BMAuntListCell.swift */,
 				6388BCC01F34463B00165D3A /* BMAuntListCell.xib */,
 				6388BCC31F345C0800165D3A /* 阿姨详情 */,
+				63C455871F5CFFF9005F3CA7 /* 服务过该订单的阿姨列表页 */,
 			);
 			name = "阿姨";
 			sourceTree = "<group>";
@@ -1396,6 +1399,14 @@
 			name = "阿姨照片";
 			sourceTree = "<group>";
 		};
+		63C455871F5CFFF9005F3CA7 /* 服务过该订单的阿姨列表页 */ = {
+			isa = PBXGroup;
+			children = (
+				63C455881F5D21F1005F3CA7 /* BMOrderServicesAuntListViewController.swift */,
+			);
+			name = "服务过该订单的阿姨列表页";
+			sourceTree = "<group>";
+		};
 		63C4B1B71F56AC46009167BC /* 数据选择器 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1821,6 +1832,7 @@
 				63A811111F3AE6DF001A0707 /* BMFeedBackViewController.swift in Sources */,
 				63A951021F2B21F20052F6C6 /* BMLoginViewController.swift in Sources */,
 				634799061EFE3E8400ADC512 /* UIView+Extension.swift in Sources */,
+				63C455891F5D21F1005F3CA7 /* BMOrderServicesAuntListViewController.swift in Sources */,
 				6378C23C1F4D214B00405943 /* BMOrderListViewController.swift in Sources */,
 				63A7E85C1F4FD1FD00AF68FB /* BMOrderPayRecordView.swift in Sources */,
 				6397B6D51F1F5E6800C77BDC /* BMNearesStoreView.swift in Sources */,

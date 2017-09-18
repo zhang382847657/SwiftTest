@@ -21,6 +21,13 @@ class BMCommonAddressInfoCell: UITableViewCell {
     @IBOutlet weak var rightWidthConstraint: NSLayoutConstraint! //右侧编辑视图宽度约束
     @IBOutlet weak var leftLeadingConstraint: NSLayoutConstraint! //左侧视图距离左侧距离约束
     
+    
+    typealias EditClosure = () -> Void //编辑闭包类型
+    typealias DeleteClosure = () -> Void //删除闭包类型
+    var editClosure: EditClosure! //声明编辑闭包属性
+    var deleteClosure: DeleteClosure! //声明删除闭包属性
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -77,9 +84,15 @@ class BMCommonAddressInfoCell: UITableViewCell {
     
     //删除点击事件
     @IBAction func deleteClick(_ sender: UIButton) {
+        if let deleteClosure = self.deleteClosure {
+            deleteClosure()
+        }
     }
     
     //编辑点击事件
     @IBAction func editClick(_ sender: UIButton) {
+        if let editClosure = self.editClosure {
+            editClosure()
+        }
     }
 }

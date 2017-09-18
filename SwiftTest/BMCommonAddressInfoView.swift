@@ -17,6 +17,7 @@ class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,
     var tableView:UITableView! //tableView
     var addAddressBtn:UIButton! //新增地址按钮
     var dataList:Array<JSON>?  //数据源
+    var alertController:UIAlertController! //提示框
     
     
     override init(frame: CGRect) {
@@ -90,6 +91,19 @@ class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,
         
         self.loadData() //加载数据
         
+        ///////////设置提示框////////////////////
+        self.alertController = UIAlertController(title: "删除", message: "确定要删除该地址吗？", preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: {
+            (action: UIAlertAction) -> Void in //取消操作
+            self.alertController.dismiss(animated: true, completion: nil)
+        })
+        let okAction = UIAlertAction(title: "确定", style: .destructive, handler: {
+            (action: UIAlertAction) -> Void in //确定操作
+            self.alertController.dismiss(animated: true, completion: nil)
+        })
+        self.alertController.addAction(cancelAction)
+        self.alertController.addAction(okAction)
+        
         
     }
     
@@ -130,6 +144,22 @@ class BMCommonAddressInfoView: UIView,UITableViewDataSource,UITableViewDelegate,
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell:BMCommonAddressInfoCell = tableView.dequeueReusableCell(withIdentifier: "BMCommonAddressInfoCell", for: indexPath) as! BMCommonAddressInfoCell
         cell.updateWithAddress(address: self.dataList![indexPath.row])
+        cell.editClosure = { //编辑回调
+            () -> Void in
+            let myInfoVC:BMMyInfoViewController = self.getViewController() as! BMMyInfoViewController
+            
+            let editAddressVC:BMEditCommonAddressViewController = BMEditCommonAddressViewController(withCommonAddress: self.dataList![indexPath.row])
+            myInfoVC.navigationController?.pushViewController(editAddressVC, animated: true)
+        }
+        
+        cell.deleteClosure = { //删除回调
+            () -> Void in
+            
+            let vc:BMMyInfoViewController =  self.getViewController() as! BMMyInfoViewController
+            vc.present(self.alertController, animated: true, completion: nil)
+            
+            
+        }
         return cell
     }
     

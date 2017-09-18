@@ -161,7 +161,6 @@ class BMAuntListViewController: UITableViewController,TBEmptyDataSetDelegate,TBE
         return NSAttributedString(string: "暂无数据")
     }
     
-    // MARK: - 内部函数
     
     
     /**
