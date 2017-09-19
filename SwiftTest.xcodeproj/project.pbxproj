@@ -187,6 +187,9 @@
 		63C455891F5D21F1005F3CA7 /* BMOrderServicesAuntListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C455881F5D21F1005F3CA7 /* BMOrderServicesAuntListViewController.swift */; };
 		63C4B1BA1F56AD10009167BC /* InforPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4B1B91F56AD10009167BC /* InforPickerView.swift */; };
 		63C4B1BC1F56D033009167BC /* BMPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C4B1BB1F56D033009167BC /* BMPickerView.swift */; };
+		63CD14811F70B6A400AA76B1 /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD14801F70B6A400AA76B1 /* AddImageView.swift */; };
+		63CD14831F70E93A00AA76B1 /* Gallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63CD14821F70E93A00AA76B1 /* Gallery.framework */; };
+		63CD14851F70EA1A00AA76B1 /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63CD14841F70EA1A00AA76B1 /* SwiftyUserDefaults.framework */; };
 		63D5ECBF1F442DEF0011C064 /* BMCouponDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D5ECBE1F442DEF0011C064 /* BMCouponDetailView.swift */; };
 		63D5ECC11F442DFA0011C064 /* BMCouponDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D5ECC01F442DFA0011C064 /* BMCouponDetailView.xib */; };
 		63D815351F41389D00B331B4 /* BMCardUsageLogCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D815341F41389D00B331B4 /* BMCardUsageLogCellView.swift */; };
@@ -424,6 +427,9 @@
 		63C455881F5D21F1005F3CA7 /* BMOrderServicesAuntListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMOrderServicesAuntListViewController.swift; sourceTree = "<group>"; };
 		63C4B1B91F56AD10009167BC /* InforPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InforPickerView.swift; sourceTree = "<group>"; };
 		63C4B1BB1F56D033009167BC /* BMPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMPickerView.swift; sourceTree = "<group>"; };
+		63CD14801F70B6A400AA76B1 /* AddImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
+		63CD14821F70E93A00AA76B1 /* Gallery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gallery.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftTest-fgpblrjzczquxxhhesthbehoqagg/Build/Products/Debug-iphonesimulator/Gallery/Gallery.framework"; sourceTree = "<group>"; };
+		63CD14841F70EA1A00AA76B1 /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftTest-fgpblrjzczquxxhhesthbehoqagg/Build/Products/Debug-iphonesimulator/SwiftyUserDefaults/SwiftyUserDefaults.framework"; sourceTree = "<group>"; };
 		63D5ECBE1F442DEF0011C064 /* BMCouponDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCouponDetailView.swift; sourceTree = "<group>"; };
 		63D5ECC01F442DFA0011C064 /* BMCouponDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMCouponDetailView.xib; sourceTree = "<group>"; };
 		63D815341F41389D00B331B4 /* BMCardUsageLogCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCardUsageLogCellView.swift; sourceTree = "<group>"; };
@@ -454,6 +460,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63CD14851F70EA1A00AA76B1 /* SwiftyUserDefaults.framework in Frameworks */,
+				63CD14831F70E93A00AA76B1 /* Gallery.framework in Frameworks */,
 				63A8110A1F3ADF79001A0707 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				6388BCBB1F34179700165D3A /* SKPhotoBrowser.framework in Frameworks */,
 				638F102E1F03A518004251EA /* PKHUD.framework in Frameworks */,
@@ -552,6 +560,7 @@
 		63015C111EFBAB9500A9C8AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63CD147F1F70B51500AA76B1 /* 添加图片 */,
 				6395255D1F5A5CC600DA17C8 /* 单多选 */,
 				63C4B1B81F56ACC3009167BC /* InforPickerView */,
 				63C4B1B71F56AC46009167BC /* 数据选择器 */,
@@ -1434,6 +1443,14 @@
 			name = InforPickerView;
 			sourceTree = "<group>";
 		};
+		63CD147F1F70B51500AA76B1 /* 添加图片 */ = {
+			isa = PBXGroup;
+			children = (
+				63CD14801F70B6A400AA76B1 /* AddImageView.swift */,
+			);
+			name = "添加图片";
+			sourceTree = "<group>";
+		};
 		63D815381F416E9700B331B4 /* 优惠券 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1505,6 +1522,8 @@
 		E3FA39882CC02EC1B408F53D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63CD14841F70EA1A00AA76B1 /* SwiftyUserDefaults.framework */,
+				63CD14821F70E93A00AA76B1 /* Gallery.framework */,
 				63A811091F3ADF79001A0707 /* IQKeyboardManagerSwift.framework */,
 				6388BCBA1F34179700165D3A /* SKPhotoBrowser.framework */,
 				63A950F71F2B130F0052F6C6 /* Cache.framework */,
@@ -1831,6 +1850,7 @@
 				6397B6D11F1F5E4D00C77BDC /* BMHomePageViewController.swift in Sources */,
 				63A7E84B1F4FBF2100AF68FB /* BMOrderDetailViewController.swift in Sources */,
 				634C27261F39C2AF00D1043D /* BMAuntCerHeaderView.swift in Sources */,
+				63CD14811F70B6A400AA76B1 /* AddImageView.swift in Sources */,
 				6378C2451F4D5F4300405943 /* BMOrderNavigationController.swift in Sources */,
 				633704981F219DC600F769B4 /* BMTools.swift in Sources */,
 				6397B7001F1F62F400C77BDC /* BMProductViewController.swift in Sources */,

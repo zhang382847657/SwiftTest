@@ -16,6 +16,7 @@ pod 'PKHUD', '~> 4.0'  #HUD
 pod 'SwiftyUserDefaults'  #缓存
 pod 'SKPhotoBrowser' #图片浏览器
 pod 'IQKeyboardManagerSwift' #键盘遮挡
+pod 'Gallery' #图片选择器
 
 
 end

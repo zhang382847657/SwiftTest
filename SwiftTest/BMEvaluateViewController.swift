@@ -17,6 +17,7 @@ class BMEvaluateViewController: UIViewController {
     var titleLabel:UILabel! //标题
     var starView:BMGradeView! //打分视图
     var evaluateContentView:InputTextView! //评论内容视图
+    var addImageView:AddImageView! //添加图片视图
     
 
     override func viewDidLoad() {
@@ -24,7 +25,7 @@ class BMEvaluateViewController: UIViewController {
 
         self.title = "评价"
         self.view.backgroundColor = UIColor(hex: BMBacgroundColor)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "发表", style: .plain, target: self, action: #selector(sendClick))
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,7 +33,7 @@ class BMEvaluateViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: 初始化页面
+    //MARK: 初始化编辑页面
     /**
      * params tradeNo 订单编号
      */
@@ -41,7 +42,18 @@ class BMEvaluateViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         self.loadUI() //初始化页面布局
+        self.loadData() //加载网络数据
     }
+    
+    
+    //MARK: 初始化新增页面
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.loadUI() //初始化页面布局
+        self.addSumbitButton() //添加右上角发表按钮
+    }
+
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -90,7 +102,6 @@ class BMEvaluateViewController: UIViewController {
         centerView.snp.makeConstraints { (make) in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(10)
             make.left.right.equalTo(self.titleLabel)
-            make.bottom.equalTo(self.contentView)
         }
         
         ////////////打分星星视图/////////////////
@@ -116,7 +127,23 @@ class BMEvaluateViewController: UIViewController {
             make.bottom.equalTo(centerView).offset(-10)
         }
         
+        ///////////添加图片视图//////////////////
+        self.addImageView = AddImageView(maxCount: nil, rowCount: nil, marginOffset: nil, paddingOffset: nil, imageArray: nil)
+        self.contentView.addSubview(self.addImageView)
         
+        self.addImageView.snp.makeConstraints { (make) in
+            make.top.equalTo(centerView.snp.bottom).offset(10)
+            make.left.right.equalTo(centerView)
+            make.bottom.equalTo(self.contentView)
+        }
+        
+        
+    }
+    
+    
+    //MARK: 添加右上角发表按钮
+    private func addSumbitButton(){
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "发表", style: .plain, target: self, action: #selector(sendClick))
     }
     
     
@@ -130,6 +157,28 @@ class BMEvaluateViewController: UIViewController {
 
     //MARK: 加载网络数据
     private func loadData(){
+        
+        ////////////查询评价详情////////////
+        let url = "\(BMHOST)/c/evaluate/queryEvalList"
+        let params = ["duserCode":BMDUSERCODE,"tradeNo":self.tradeNo!]
+        NetworkRequest.sharedInstance.getRequest(urlString: url , params: params , success: { value in
+            
+            let dataList:Array? = value["dataList"].array
+            if let dataList = dataList{
+                let data = dataList[0]
+                let score:Int = data["score"].intValue
+                let remark:String = data["remark"].stringValue
+                
+                self.starView.setScore(score: score)
+                self.starView.isEdit = false //让打分视图不可编辑
+                self.evaluateContentView.valueText = remark
+                self.evaluateContentView.isEdit = false //让评论内容不可编辑
+                
+            }
+            
+        }) { error in
+            
+        }
         
     }
     

@@ -13,6 +13,13 @@ class InputTextView: UIView, UITextViewDelegate {
     private var textView:UITextView!
     private var label:UILabel!
     private var _totalNum:Int = 140  //总字数  默认140
+    
+    var isEdit:Bool = true { //是否可以编辑
+        didSet {
+            self.textView.isEditable = isEdit
+        }
+    }
+    
     var totalNum:Int  { //总字数  对外暴露的属性
         get {
             return self._totalNum
@@ -31,6 +38,7 @@ class InputTextView: UIView, UITextViewDelegate {
     var valueText:String? = nil{
         didSet{
             self.textView.text = valueText
+            self.countRemainWords() //计算剩余可用字数并更新底部文案
         }
     }
     
@@ -104,7 +112,13 @@ class InputTextView: UIView, UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView){
-        self.label.text = "\(textView.text.characters.count)/\(self._totalNum)"
+        self.countRemainWords() //计算剩余可用字数
+    }
+    
+    
+    //MARK: 计算剩余可用字数并更新底部文案
+    private func countRemainWords(){
+        self.label.text = "\(self.textView.text.characters.count)/\(self._totalNum)"
     }
 
 }
