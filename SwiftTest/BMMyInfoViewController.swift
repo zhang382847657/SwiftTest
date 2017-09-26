@@ -27,6 +27,7 @@ class BMMyInfoViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "我的信息"
+        self.scrollView.alwaysBounceVertical = true
         
 
         

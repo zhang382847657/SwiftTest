@@ -88,6 +88,10 @@ class BMOrderCell: UITableViewCell {
                     showContract = true
                 }
                 
+                if flowStatus == "complete" {
+                    showEvaluate = true
+                }
+                
                 if status != 9 && status != 8 { //订单未关闭
                     
                     switch flowStatus {

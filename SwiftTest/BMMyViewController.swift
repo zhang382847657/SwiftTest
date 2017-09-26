@@ -11,6 +11,7 @@ import PKHUD
 
 class BMMyViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var couponNumberLabel: UILabel!  //优惠券数量
     @IBOutlet weak var serviceAuntNumberLabel: UILabel!  //服务过的阿姨数量
@@ -32,6 +33,7 @@ class BMMyViewController: UIViewController {
         super.viewDidLoad()
 
         self.automaticallyAdjustsScrollViewInsets = false //这样可以防止scrollview没有置顶
+        self.scrollView.alwaysBounceVertical = true //永远有弹性效果
         self.initUI()
        
     }

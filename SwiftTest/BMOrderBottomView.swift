@@ -175,7 +175,8 @@ class BMOrderBottomView: UIView {
     //评价、查看评价点击事件
     func evaluateClick(sender:UIButton){
         let vc:BMOrderListViewController = self.getViewController() as! BMOrderListViewController
-        let evaluateVC:BMEvaluateViewController = sender.titleLabel!.text == "评价" ? BMEvaluateViewController() : BMEvaluateViewController(tradeNo: self.tradeNo)
+        
+        let evaluateVC:UIViewController = sender.titleLabel!.text == "评价" ? BMEvaluateViewController(tradeNo: self.tradeNo) : BMEvaluateRecordTableViewController(tradeNo: self.tradeNo)
         evaluateVC.hidesBottomBarWhenPushed = true
         vc.navigationController?.pushViewController(evaluateVC, animated: true)
     }

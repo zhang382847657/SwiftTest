@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class BMEvaluateViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class BMEvaluateViewController: UIViewController {
     var starView:BMGradeView! //打分视图
     var evaluateContentView:InputTextView! //评论内容视图
     var addImageView:AddImageView! //添加图片视图
+    var score:Int = 0 //星星打分的分数  默认0分
     
 
     override func viewDidLoad() {
@@ -25,6 +27,7 @@ class BMEvaluateViewController: UIViewController {
 
         self.title = "评价"
         self.view.backgroundColor = UIColor(hex: BMBacgroundColor)
+        self.scrollView.alwaysBounceVertical = true
         
     }
 
@@ -32,22 +35,15 @@ class BMEvaluateViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
-    //MARK: 初始化编辑页面
+    
+    //MARK: 初始化页面
     /**
      * params tradeNo 订单编号
      */
     init(tradeNo:String) {
         self.tradeNo = tradeNo
-        super.init(nibName: nil, bundle: nil)
-        
-        self.loadUI() //初始化页面布局
-        self.loadData() //加载网络数据
-    }
-    
-    
-    //MARK: 初始化新增页面
-    init() {
         super.init(nibName: nil, bundle: nil)
         
         self.loadUI() //初始化页面布局
@@ -107,6 +103,10 @@ class BMEvaluateViewController: UIViewController {
         ////////////打分星星视图/////////////////
         self.starView = BMGradeView(frame: CGRect.zero)
         self.starView.isEdit = true
+        self.starView.gradeClickClosure = { //打分回调
+            (score:Int) -> Void in
+                self.score = score //记录当前用户打分的分数
+        }
         centerView.addSubview(self.starView)
         
         self.starView.snp.makeConstraints { (make) in
@@ -154,37 +154,21 @@ class BMEvaluateViewController: UIViewController {
         self.evaluateContentView.layer.borderColor = UIColor(hex: BMBorderColor).cgColor
     }
     
-
-    //MARK: 加载网络数据
-    private func loadData(){
-        
-        ////////////查询评价详情////////////
-        let url = "\(BMHOST)/c/evaluate/queryEvalList"
-        let params = ["duserCode":BMDUSERCODE,"tradeNo":self.tradeNo!]
-        NetworkRequest.sharedInstance.getRequest(urlString: url , params: params , success: { value in
-            
-            let dataList:Array? = value["dataList"].array
-            if let dataList = dataList{
-                let data = dataList[0]
-                let score:Int = data["score"].intValue
-                let remark:String = data["remark"].stringValue
-                
-                self.starView.setScore(score: score)
-                self.starView.isEdit = false //让打分视图不可编辑
-                self.evaluateContentView.valueText = remark
-                self.evaluateContentView.isEdit = false //让评论内容不可编辑
-                
-            }
-            
-        }) { error in
-            
-        }
-        
-    }
-    
     
     //MARK: 发表评论点击事件
     func sendClick(){
+        
+        if self.score == 0{ //阿姨评分
+            HUD.flash(.label("请给阿姨个评分吧~"), delay: 1.0)
+            return
+        }
+        
+        let content:String? = self.evaluateContentView.getValueText()//评论内容
+        if content == nil || content == "" {
+            HUD.flash(.label("请写点什么吧~"), delay: 1.0)
+            return
+        }
+        
         
     }
 

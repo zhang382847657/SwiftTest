@@ -9,7 +9,7 @@
 import UIKit
 
 //点击星星闭包
-typealias GradeClickClosure = (_ scroe:Int) -> Void
+typealias GradeClickClosure = (_ score:Int) -> Void
 
 class BMGradeView: UIView {
     

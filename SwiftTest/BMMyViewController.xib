@@ -21,6 +21,7 @@
                 <outlet property="loginBtn" destination="5zI-p6-L9g" id="gd3-g0-h9U"/>
                 <outlet property="myInfoView" destination="sV2-Tk-LHp" id="89a-uz-IdD"/>
                 <outlet property="phoneLabel" destination="QdH-T4-txZ" id="zel-pS-vny"/>
+                <outlet property="scrollView" destination="dr5-cA-gOE" id="3QG-jU-TLb"/>
                 <outlet property="serviceAuntNumberLabel" destination="0eR-vx-xee" id="Xog-cK-0OQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

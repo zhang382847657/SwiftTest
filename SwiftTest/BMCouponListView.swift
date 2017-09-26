@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TBEmptyDataSet
 import DGElasticPullToRefresh
 import SwiftyJSON
 import PKHUD
@@ -16,7 +15,7 @@ enum CouponListFrom:NSInteger{  //优惠券是从哪个页面跳转过来的
     case me,order   //me  代表我的   order代表订单
 }
 
-class BMCouponListView: UITableViewController,TBEmptyDataSetDelegate,TBEmptyDataSetDataSource {
+class BMCouponListView: UITableViewController {
 
     
     var sourceFrom:CouponListFrom!  //判断是从哪个页面跳转过来的
@@ -52,8 +51,6 @@ class BMCouponListView: UITableViewController,TBEmptyDataSetDelegate,TBEmptyData
         self.tableView.rowHeight = 119
         self.tableView.tableFooterView = UIView()
         self.tableView.register(UINib(nibName: "BMCouponCell", bundle: nil), forCellReuseIdentifier: "BMCouponCell")
-        self.tableView.emptyDataSetDelegate = self  //设置空数据的代理
-        self.tableView.emptyDataSetDataSource = self  //设置空数据的数据源
         
         
         ///////////显示头部刷新视图//////////////////

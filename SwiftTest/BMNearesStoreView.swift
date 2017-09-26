@@ -139,6 +139,12 @@ class BMNearesStoreView: UIView {
         }
         
     }
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.headerView.addBorderLayer(color: UIColor(hex:BMBorderColor), size: BMBorderSize, boderType: BorderType.bottom)
+    }
 
 
 }
