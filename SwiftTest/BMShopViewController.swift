@@ -56,6 +56,10 @@ class BMShopViewController: UIViewController {
         self.scrollView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
+        if #available(iOS 11.0, *) {
+            /* 防止内容偏移20个像素 */
+            self.scrollView.contentInsetAdjustmentBehavior = .never
+        }
         
         //////////////内容视图//////////
         self.contentView = UIView(frame: CGRect.zero)

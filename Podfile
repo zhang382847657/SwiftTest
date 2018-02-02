@@ -17,6 +17,9 @@ pod 'SwiftyUserDefaults'  #缓存
 pod 'SKPhotoBrowser' #图片浏览器
 pod 'IQKeyboardManagerSwift' #键盘遮挡
 pod 'Gallery' #图片选择器
+pod 'AMap3DMap' #高德3D地图
+pod 'AMapLocation' #高德定位
+pod 'AMapSearch' #高德地图搜索功能
 
 
 end

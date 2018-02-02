@@ -32,7 +32,11 @@ class BMMyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.automaticallyAdjustsScrollViewInsets = false //这样可以防止scrollview没有置顶
+        if #available(iOS 11.0, *) {
+            /* 防止内容偏移20个像素 */
+            self.scrollView.contentInsetAdjustmentBehavior = .never
+        }
+
         self.scrollView.alwaysBounceVertical = true //永远有弹性效果
         self.initUI()
        

@@ -24,12 +24,22 @@ class BMHomePageViewController: UIViewController {
     var storeCardView:BMStoreCardRecommendView! //推荐超值储存卡
     var friendsBargainView:BMFriendsBargainView! //好友砍价
     var nearesStoreView:BMNearesStoreView! //最近门店
+    var gdSinglePosition:GDSinglePosition = GDSinglePosition.shared //单次定位
+    var userLocation:CLLocation? //用户定位
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.automaticallyAdjustsScrollViewInsets = false //这样可以防止scrollview没有置顶
         
+        ////////用户单次定位/////////
+       self.gdSinglePosition.getPosition(success: { (location) in
+            self.userLocation = location
+            self.loadNearesStore() //加载最近门店
+       }) { (error) in
+        
+        }
+    
         self.loadContentView() //加载内容视图
         self.loadData() //请求网络数据
 
@@ -62,6 +72,11 @@ class BMHomePageViewController: UIViewController {
         self.view.addSubview(self.scrollView)
         self.scrollView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
+        }
+        
+        if #available(iOS 11.0, *) {
+            /* 防止内容偏移20个像素 */
+            self.scrollView.contentInsetAdjustmentBehavior = .never
         }
         
         /////////最底层滚动视图的内容视图/////////
@@ -311,19 +326,27 @@ class BMHomePageViewController: UIViewController {
             
         }
         
+    }
+    
+    
+    //MARK: 加载最近的门店
+    private func loadNearesStore(){
         
-        //////////////请求最近门店///////////////////
-        let nearesStoreURL = "\(BMHOST)/custom/queryPUserList?duserCode=\(BMDUSERCODE)&longitude=\(118.7671100000)&latitude=\(31.9755600000)&pageSize=2&pageNum=0"
-        NetworkRequest.sharedInstance.getRequest(urlString: nearesStoreURL , params: params , success: { value in
-
-            self.nearesStoreView.updateUIWithNearesStores(nearesStores: value["dataList"])
-            
-        }) { error in
-            
-            
+        
+        if let userLocation = self.userLocation{
+            let params = ["":""]
+            let nearesStoreURL = "\(BMHOST)/custom/queryPUserList?duserCode=\(BMDUSERCODE)&longitude=\(userLocation.coordinate.longitude)&latitude=\(userLocation.coordinate.latitude)&pageSize=2&pageNum=0"
+            NetworkRequest.sharedInstance.getRequest(urlString: nearesStoreURL , params: params , success: { value in
+                
+                self.nearesStoreView.updateUIWithNearesStores(nearesStores: value["dataList"])
+                
+            }) { error in
+                
+                
+            }
+        }else{
+            dPrint(item: "用户定位失败，无法加载最近的门店")
         }
-        
-        
     }
     
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,6 +14,7 @@
                 <outlet property="companyNameLabel" destination="Xkg-2I-Jk2" id="hEA-UD-Iet"/>
                 <outlet property="contentScrollView" destination="iHj-M1-geE" id="eYO-ZR-7SX"/>
                 <outlet property="logoImageView" destination="kIj-Lx-PHb" id="bBo-E1-HAy"/>
+                <outlet property="scrollView" destination="kl7-UV-ybm" id="uO0-7n-h8M"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -50,7 +51,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHj-M1-geE">
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHj-M1-geE">
                                             <rect key="frame" x="0.0" y="150" width="277" height="218"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -104,6 +105,7 @@
                         </view>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="fub-sx-qYH" firstAttribute="height" secondItem="kl7-UV-ybm" secondAttribute="height" id="0Nt-ST-AFV"/>
                         <constraint firstItem="fub-sx-qYH" firstAttribute="leading" secondItem="kl7-UV-ybm" secondAttribute="leading" id="IJl-Zt-1qx"/>
                         <constraint firstItem="fub-sx-qYH" firstAttribute="top" secondItem="kl7-UV-ybm" secondAttribute="top" id="d7n-Kt-gsy"/>
                         <constraint firstItem="fub-sx-qYH" firstAttribute="width" secondItem="kl7-UV-ybm" secondAttribute="width" id="dGL-AL-4vW"/>

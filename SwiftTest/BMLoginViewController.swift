@@ -10,6 +10,7 @@ import UIKit
 
 class BMLoginViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var logoImageView: UIImageView! //家政公司图标
     @IBOutlet weak var companyNameLabel: UILabel!  //家政公司名称
     
@@ -21,6 +22,7 @@ class BMLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.scrollView.alwaysBounceVertical = true
         self.logoImageView.layer.masksToBounds = true
         self.logoImageView.layer.cornerRadius = logoImageView.bounds.size.height/2.0
         
@@ -41,34 +43,32 @@ class BMLoginViewController: UIViewController {
         
         ///////////内容视图///////////////
         self.contentView = UIView(frame: CGRect.zero)
-        self.contentView.backgroundColor = UIColor.red
         self.contentScrollView.addSubview(contentView)
         self.contentView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.contentScrollView)
             make.height.equalTo(self.contentScrollView.snp.height)
-          //  make.width.greaterThanOrEqualTo(0)
-            make.width.equalTo(600)
+            make.width.greaterThanOrEqualTo(0)
         }
         
-//        ////////////手机登录///////////////
-//        let phoneLoginView:BMPhoneLoginView = UIView.loadViewFromNib(nibName: "BMPhoneLoginView") as! BMPhoneLoginView
-//        self.contentView.addSubview(phoneLoginView)
-//        phoneLoginView.snp.makeConstraints { (make) in
-//            make.top.bottom.equalTo(self.contentView)
-//            make.left.equalTo(self.contentView)
-//            make.width.equalTo(self.contentScrollView.bounds.size)
-//        }
-//        
-//        ////////////密码登录///////////////
-//        let pwdLoginView:BMPhoneLoginView = UIView.loadViewFromNib(nibName: "BMPhoneLoginView") as! BMPhoneLoginView
-//        self.contentView.addSubview(pwdLoginView)
-//        
-//        pwdLoginView.snp.makeConstraints { (make) in
-//            make.top.bottom.equalTo(self.contentView)
-//            make.left.equalTo(phoneLoginView.snp.right)
-//            make.right.equalTo(self.contentView.snp.right)
-//            make.width.equalTo(self.contentScrollView.bounds.size)
-//        }
+        ////////////手机登录///////////////
+        let phoneLoginView:BMPhoneLoginView = UIView.loadViewFromNib(nibName: "BMPhoneLoginView") as! BMPhoneLoginView
+        self.contentView.addSubview(phoneLoginView)
+        phoneLoginView.snp.makeConstraints { (make) in
+            make.top.bottom.equalTo(self.contentView)
+            make.left.equalTo(self.contentView)
+            make.width.equalTo(self.contentScrollView.snp.width)
+        }
+        
+        ////////////密码登录///////////////
+        let pwdLoginView:BMPhoneLoginView = UIView.loadViewFromNib(nibName: "BMPhoneLoginView") as! BMPhoneLoginView
+        self.contentView.addSubview(pwdLoginView)
+        
+        pwdLoginView.snp.makeConstraints { (make) in
+            make.top.bottom.equalTo(self.contentView)
+            make.left.equalTo(phoneLoginView.snp.right)
+            make.right.equalTo(self.contentView.snp.right)
+            make.width.equalTo(self.contentScrollView.snp.width)
+        }
         
     }
     
@@ -114,6 +114,8 @@ class BMLoginViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         
     }
+
+    
 
     
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
+import PKHUD
 
 class BMPhoneLoginView: UIView {
 
@@ -36,6 +38,25 @@ class BMPhoneLoginView: UIView {
 
     }
     
+
+    //登录点击事件
+    @IBAction func loginClick(_ sender: UIButton) {
+        
+        let loginViewController:BMLoginViewController = self.getViewController() as! BMLoginViewController
+        
+        guard self.phoneTextField.text == nil else {
+            HUD.flash(.label("请输入手机号"), delay: 1.0)
+            return
+        }
+        
+        if Validate.phoneNum(self.phoneTextField.text!).isRight == false {
+            HUD.flash(.label("请输入正确的手机号"), delay: 1.0)
+            return
+        }
+        
+        
+        
+    }
     
     //密码登录
     @IBAction func pwdLoginClick(_ sender: UIButton) {
