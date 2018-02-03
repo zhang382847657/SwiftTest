@@ -7,20 +7,17 @@
 //
 
 import UIKit
+import React
 
 
 class RNViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let strUrl = "http://localhost:8081/index.ios.bundle?platform=ios&dev=true"
         
-        let jsCodeLocation = URL(string: strUrl)
-//        let rootView = RCTRootView(bundleURL: jsCodeLocation, moduleName: "arenaModule", initialProperties: nil, launchOptions: nil)
-//        
-//    
-//        view = rootView
+        let jsCodeLocation = RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index", fallbackResource: nil)
+        let rootView = RCTRootView(bundleURL: jsCodeLocation, moduleName: "SwiftTest", initialProperties: nil, launchOptions: nil)
+        view = rootView
 
     }
 

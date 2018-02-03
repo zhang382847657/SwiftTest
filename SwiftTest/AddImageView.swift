@@ -11,6 +11,18 @@ import Gallery
 
 class AddImageView: UIView, GalleryControllerDelegate {
     
+    //FIXME: 这个第三方升级到了swift4.0，里面逻辑变动，请重新尝试
+    func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
+
+    }
+    
+    func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) {
+    
+    }
+    
+    
+    
+    
     var addImageBtn:UIButton! //添加图片的按钮
     var cellWidth:CGFloat! //按钮宽度
     
@@ -180,6 +192,7 @@ class AddImageView: UIView, GalleryControllerDelegate {
     }
     
     //MARK: GalleryController-Delegate
+    
     func galleryController(_ controller: GalleryController, didSelectImages images: [UIImage]){
         
         if self.imageArray == nil{

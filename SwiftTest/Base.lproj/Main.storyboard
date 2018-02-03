@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="s5q-Cn-8UJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="s5q-Cn-8UJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +36,7 @@
                 <navigationController id="bTh-28-npi" customClass="BMBaseNavigationController" customModule="SwiftTest" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" image="home_grey" selectedImage="home_blue" id="1Ke-PO-85I"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5OO-ig-5Qf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -73,7 +73,7 @@
                 <navigationController id="moj-Cu-Aor" customClass="BMOrderNavigationController" customModule="SwiftTest" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="订单" image="order_grey" selectedImage="order_blue" id="GZk-bM-Xmf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qei-Lf-uiP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>
@@ -87,7 +87,7 @@
                 <navigationController id="N9o-Z3-5ld" customClass="BMBaseNavigationController" customModule="SwiftTest" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="门店" image="custom_service_grey" selectedImage="custom_service_blue" id="Ztc-RS-tsB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aex-9R-RGa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -123,7 +123,7 @@
                 <navigationController id="54i-l8-E0z" customClass="BMMeNavigationController" customModule="SwiftTest" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="user_grey" selectedImage="user_blue" id="T4d-wa-3U0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KPh-Uv-q5m">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>

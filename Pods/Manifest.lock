@@ -9,16 +9,64 @@ PODS:
     - AMapFoundation (~> 1.4)
   - AMapSearch (5.7.0):
     - AMapFoundation (~> 1.4)
+  - boost (1.59.0):
+    - boost/graph-includes (= 1.59.0)
+    - boost/math-includes (= 1.59.0)
+    - boost/numeric-includes (= 1.59.0)
+    - boost/pointer_cast-includes (= 1.59.0)
+    - boost/preprocessor-includes (= 1.59.0)
+    - boost/shared_ptr-includes (= 1.59.0)
+    - boost/string_algorithms-includes (= 1.59.0)
+  - boost/graph-includes (1.59.0)
+  - boost/math-includes (1.59.0)
+  - boost/numeric-includes (1.59.0)
+  - boost/pointer_cast-includes (1.59.0)
+  - boost/preprocessor-includes (1.59.0)
+  - boost/shared_ptr-includes (1.59.0)
+  - boost/string_algorithms-includes (1.59.0)
   - DGElasticPullToRefresh (1.1)
+  - DoubleConversion (1.1.5)
+  - Folly (2016.09.26.00):
+    - boost
+    - DoubleConversion
+    - GLog
   - Gallery (1.3.0)
+  - GLog (0.3.4)
   - IQKeyboardManagerSwift (5.0.7)
   - Kingfisher (4.6.1)
   - LLCycleScrollView (1.4.4):
     - Kingfisher
   - PKHUD (4.2.3)
+  - React/ART (0.52.2):
+    - React/Core
+  - React/BatchedBridge (0.52.2):
+    - React/Core
+    - React/cxxreact_legacy
   - React/Core (0.52.2):
     - yoga (= 0.52.2.React)
+  - React/CxxBridge (0.52.2):
+    - Folly (= 2016.09.26.00)
+    - React/Core
+    - React/cxxreact
+  - React/cxxreact (0.52.2):
+    - boost
+    - Folly (= 2016.09.26.00)
+    - React/jschelpers
+    - React/jsinspector
+  - React/cxxreact_legacy (0.52.2):
+    - React/jschelpers_legacy
+    - React/jsinspector_legacy
+  - React/DevSupport (0.52.2):
+    - React/Core
+    - React/RCTWebSocket
   - React/fishhook (0.52.2)
+  - React/jschelpers (0.52.2):
+    - Folly (= 2016.09.26.00)
+    - React/PrivateDatabase
+  - React/jschelpers_legacy (0.52.2)
+  - React/jsinspector (0.52.2)
+  - React/jsinspector_legacy (0.52.2)
+  - React/PrivateDatabase (0.52.2)
   - React/RCTActionSheet (0.52.2):
     - React/Core
   - React/RCTBlob (0.52.2):
@@ -42,6 +90,8 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - React/tvOS (0.52.2):
+    - React/Core
   - SKPhotoBrowser (4.0.1)
   - SnapKit (3.2.0)
   - SwiftyJSON (4.0.0)
@@ -56,11 +106,19 @@ DEPENDENCIES:
   - AMapLocation
   - AMapSearch
   - DGElasticPullToRefresh
-  - Gallery
+  - DoubleConversion (from `./node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
+  - Folly (from `./node_modules/react-native/third-party-podspecs/Folly.podspec`)
+  - Gallery (~> 1.3.0)
+  - GLog (from `./node_modules/react-native/third-party-podspecs/GLog.podspec`)
   - IQKeyboardManagerSwift
   - LLCycleScrollView
   - PKHUD (~> 4.0)
+  - React/ART (from `./node_modules/react-native`)
+  - React/BatchedBridge (from `./node_modules/react-native`)
   - React/Core (from `./node_modules/react-native`)
+  - React/CxxBridge (from `./node_modules/react-native`)
+  - React/DevSupport (from `./node_modules/react-native`)
+  - React/fishhook (from `./node_modules/react-native`)
   - React/RCTActionSheet (from `./node_modules/react-native`)
   - React/RCTGeolocation (from `./node_modules/react-native`)
   - React/RCTImage (from `./node_modules/react-native`)
@@ -70,6 +128,7 @@ DEPENDENCIES:
   - React/RCTText (from `./node_modules/react-native`)
   - React/RCTVibration (from `./node_modules/react-native`)
   - React/RCTWebSocket (from `./node_modules/react-native`)
+  - React/tvOS (from `./node_modules/react-native`)
   - SKPhotoBrowser (~> 4.0.0)
   - SnapKit (~> 3.2.0)
   - SwiftyJSON
@@ -78,6 +137,12 @@ DEPENDENCIES:
   - yoga (from `./node_modules/react-native/ReactCommon/yoga`)
 
 EXTERNAL SOURCES:
+  DoubleConversion:
+    :podspec: ./node_modules/react-native/third-party-podspecs/DoubleConversion.podspec
+  Folly:
+    :podspec: ./node_modules/react-native/third-party-podspecs/Folly.podspec
+  GLog:
+    :podspec: ./node_modules/react-native/third-party-podspecs/GLog.podspec
   React:
     :path: ./node_modules/react-native
   yoga:
@@ -90,8 +155,12 @@ SPEC CHECKSUMS:
   AMapFoundation: 973682cfe60b92efd73a8ef8f1144fa0fa8e1296
   AMapLocation: 55116a2c8956eab7550cbb56e989aa5cdcc424e3
   AMapSearch: 314f75e9ce282b53dbf66455efa416c39f12b5b1
+  boost: 30a15ffb6d9aa4646dd3caffc960753f4cb4ca4e
   DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
+  DoubleConversion: ebb6747c5b66026ad4f97b789c3ceac6f18e57a6
+  Folly: b7255b29f1d693c375d642d0f04f0592181156d9
   Gallery: 40220b942a34dfc9815ad06bffcd2025827b5e02
+  GLog: 3e4e4ae9746ce6bf6e9420c7fc1e08ad59c8ba1a
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   LLCycleScrollView: 7dcfb96bae6947b5de446a868e80ff0db2f047ae
@@ -104,6 +173,6 @@ SPEC CHECKSUMS:
   TBEmptyDataSet: 7383c353092f33dc572084cfa9182678a132dac7
   yoga: 18f5bf8fba4b4a31ca4b42ac931fce5537e1923c
 
-PODFILE CHECKSUM: d32d816d230ab4c362ddceba82ae8221e904d6ed
+PODFILE CHECKSUM: bde6faea9c40a95182b25a361c9c514dc077a5a3
 
 COCOAPODS: 1.4.0.beta.2

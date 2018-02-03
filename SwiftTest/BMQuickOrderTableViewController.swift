@@ -274,13 +274,18 @@ class BMQuickOrderTableViewController: UITableViewController,TBEmptyDataSetDeleg
      */
     func appointmentClick(){
 
-        self.present(self.alertController, animated: true, completion: {
-            
-            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer) in
-                
-                self.alertController.dismiss(animated: true, completion: nil)
-            }
-        })
+        //初始化到RN页面
+        let rnVC = RNViewController.init(nibName: nil, bundle: nil)
+        rnVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(rnVC, animated: true)
+        
+//        self.present(self.alertController, animated: true, completion: {
+//
+//            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer) in
+//
+//                self.alertController.dismiss(animated: true, completion: nil)
+//            }
+//        })
     }
 
 }
