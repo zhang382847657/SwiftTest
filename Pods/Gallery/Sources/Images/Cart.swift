@@ -9,16 +9,13 @@ protocol CartDelegate: class {
 
 public class Cart {
 
-  public static let shared = Cart()
-
   public var images: [Image] = []
-  fileprivate var lightBoxUIImages: [UIImage] = []
   public var video: Video?
   var delegates: NSHashTable<AnyObject> = NSHashTable.weakObjects()
 
   // MARK: - Initialization
 
-  fileprivate init() {
+  init() {
 
   }
 
@@ -64,29 +61,5 @@ public class Cart {
     video = nil
     images.removeAll()
     delegates.removeAllObjects()
-  }
-
-  // MARK: - UIImages
-
-  func UIImages() -> [UIImage] {
-    lightBoxUIImages = Fetcher.fetchImages(images.map({ $0.asset }))
-    return lightBoxUIImages
-  }
-
-  func reload(_ UIImages: [UIImage]) {
-    var changedImages: [Image] = []
-
-    lightBoxUIImages.filter {
-      return UIImages.contains($0)
-    }.flatMap {
-      return lightBoxUIImages.index(of: $0)
-    }.forEach { index in
-      if index < images.count {
-        changedImages.append(images[index])
-      }
-    }
-
-    lightBoxUIImages = []
-    reload(changedImages)
   }
 }

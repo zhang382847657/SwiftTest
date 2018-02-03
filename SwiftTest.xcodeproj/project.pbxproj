@@ -17,7 +17,9 @@
 		6301F5D71F5910250014D1EA /* BMMyOtherInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301F5D61F5910250014D1EA /* BMMyOtherInfoView.swift */; };
 		6301F5D91F59102D0014D1EA /* BMMyOtherInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6301F5D81F59102D0014D1EA /* BMMyOtherInfoView.xib */; };
 		6301F5DB1F5944C10014D1EA /* BMCommonAddressInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6301F5DA1F5944C10014D1EA /* BMCommonAddressInfoView.swift */; };
+		6312CF8220255CBF007BDA2C /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6312CF8120255CBF007BDA2C /* libstdc++.tbd */; };
 		631752C21F8B0F6300C5230D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631752C31F8B0F6300C5230D /* Kingfisher.framework */; };
+		632F8EF920245BAC0091F66A /* RNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632F8EF820245BAC0091F66A /* RNViewController.swift */; };
 		63356C221F6FBD5000D33923 /* BMEvaluateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63356C211F6FBD5000D33923 /* BMEvaluateViewController.swift */; };
 		633704921F2195EC00F769B4 /* BMBaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633704911F2195EC00F769B4 /* BMBaseTabBarController.swift */; };
 		633704981F219DC600F769B4 /* BMTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633704971F219DC600F769B4 /* BMTools.swift */; };
@@ -259,7 +261,11 @@
 		6301F5D61F5910250014D1EA /* BMMyOtherInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMMyOtherInfoView.swift; sourceTree = "<group>"; };
 		6301F5D81F59102D0014D1EA /* BMMyOtherInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BMMyOtherInfoView.xib; sourceTree = "<group>"; };
 		6301F5DA1F5944C10014D1EA /* BMCommonAddressInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMCommonAddressInfoView.swift; sourceTree = "<group>"; };
+		6312CF7E202558F8007BDA2C /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6312CF80202558FD007BDA2C /* React.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = React.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6312CF8120255CBF007BDA2C /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		631752C31F8B0F6300C5230D /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		632F8EF820245BAC0091F66A /* RNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNViewController.swift; sourceTree = "<group>"; };
 		63356C211F6FBD5000D33923 /* BMEvaluateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMEvaluateViewController.swift; sourceTree = "<group>"; };
 		633704911F2195EC00F769B4 /* BMBaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMBaseTabBarController.swift; sourceTree = "<group>"; };
 		633704971F219DC600F769B4 /* BMTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMTools.swift; sourceTree = "<group>"; };
@@ -491,6 +497,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6312CF8220255CBF007BDA2C /* libstdc++.tbd in Frameworks */,
 				631752C21F8B0F6300C5230D /* Kingfisher.framework in Frameworks */,
 				6367D7401F7B4E1A00716053 /* Security.framework in Frameworks */,
 				6367D73E1F7B4E1100716053 /* libstdc++.6.0.9.tbd in Frameworks */,
@@ -648,6 +655,14 @@
 				63015C171EFBAFF000A9C8AC /* BMNetworkTools.swift */,
 			);
 			name = NetWork;
+			sourceTree = "<group>";
+		};
+		632F8EF720245B260091F66A /* RN页面 */ = {
+			isa = PBXGroup;
+			children = (
+				632F8EF820245BAC0091F66A /* RNViewController.swift */,
+			);
+			path = "RN页面";
 			sourceTree = "<group>";
 		};
 		63356C201F6FBCEC00D33923 /* 评价 */ = {
@@ -1206,6 +1221,7 @@
 		6397B6C91F1F5D6100C77BDC /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				632F8EF720245B260091F66A /* RN页面 */,
 				6397B6D01F1F5E4D00C77BDC /* BMHomePageViewController.swift */,
 				6397B6F61F1F5FEF00C77BDC /* 商品类目 */,
 				6397B6DD1F1F5F2800C77BDC /* 热门服务 */,
@@ -1590,6 +1606,9 @@
 		E3FA39882CC02EC1B408F53D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6312CF8120255CBF007BDA2C /* libstdc++.tbd */,
+				6312CF80202558FD007BDA2C /* React.framework */,
+				6312CF7E202558F8007BDA2C /* yoga.framework */,
 				631752C31F8B0F6300C5230D /* Kingfisher.framework */,
 				6367D7471F7B4FA300716053 /* AMapSearchKit.framework */,
 				6367D7451F7B4F9B00716053 /* AMapLocationKit.framework */,
@@ -1699,7 +1718,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "张琳";
 				TargetAttributes = {
 					6359B0841EF1074700D6DF5E = {
@@ -1882,11 +1901,13 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LLCycleScrollView/LLCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/React/React.framework",
 				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/TBEmptyDataSet/TBEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/yoga/yoga.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1898,11 +1919,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TBEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1998,6 +2021,7 @@
 				6395255F1F5A5CFE00DA17C8 /* SelectView.swift in Sources */,
 				6367D74C1F7B740100716053 /* GDSinglePosition.swift in Sources */,
 				6374D41B1F540BE2007272A9 /* InputView.swift in Sources */,
+				632F8EF920245BAC0091F66A /* RNViewController.swift in Sources */,
 				6359B0891EF1074700D6DF5E /* AppDelegate.swift in Sources */,
 				6397B6E11F1F5F3500C77BDC /* BMHotServiceCellView.swift in Sources */,
 				6397B6ED1F1F5F9200C77BDC /* BMStoreCardRecommendView.swift in Sources */,
@@ -2110,7 +2134,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2118,7 +2144,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -2161,7 +2191,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2169,7 +2201,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -2218,6 +2254,7 @@
 					"$(PROJECT_DIR)/Pods/AMapLocation",
 					"$(PROJECT_DIR)/Pods/AMapSearch",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2257,6 +2294,7 @@
 					"$(PROJECT_DIR)/Pods/AMapLocation",
 					"$(PROJECT_DIR)/Pods/AMapSearch",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

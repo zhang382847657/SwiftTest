@@ -1,26 +1,53 @@
 PODS:
-  - Alamofire (4.4.0)
-  - AlamofireImage (3.2.0):
-    - Alamofire (~> 4.1)
-  - AMap3DMap (4.6.1):
-    - AMapFoundation (~> 1.3)
-  - AMapFoundation (1.3.3)
-  - AMapLocation (2.3.0):
-    - AMapFoundation (~> 1.3)
-  - AMapSearch (4.5.0):
-    - AMapFoundation (~> 1.2)
+  - Alamofire (4.6.0)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - AMap3DMap (5.7.0):
+    - AMapFoundation (~> 1.4)
+  - AMapFoundation (1.4.3)
+  - AMapLocation (2.6.0):
+    - AMapFoundation (~> 1.4)
+  - AMapSearch (5.7.0):
+    - AMapFoundation (~> 1.4)
   - DGElasticPullToRefresh (1.1)
-  - Gallery (1.0.0)
-  - IQKeyboardManagerSwift (4.0.8)
-  - Kingfisher (3.5.1)
-  - LLCycleScrollView (1.2.5):
+  - Gallery (1.3.0)
+  - IQKeyboardManagerSwift (5.0.7)
+  - Kingfisher (4.6.1)
+  - LLCycleScrollView (1.4.4):
     - Kingfisher
-  - PKHUD (4.2.0)
+  - PKHUD (4.2.3)
+  - React/Core (0.52.2):
+    - yoga (= 0.52.2.React)
+  - React/fishhook (0.52.2)
+  - React/RCTActionSheet (0.52.2):
+    - React/Core
+  - React/RCTBlob (0.52.2):
+    - React/Core
+  - React/RCTGeolocation (0.52.2):
+    - React/Core
+  - React/RCTImage (0.52.2):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTNetwork (0.52.2):
+    - React/Core
+  - React/RCTPushNotification (0.52.2):
+    - React/Core
+  - React/RCTSettings (0.52.2):
+    - React/Core
+  - React/RCTText (0.52.2):
+    - React/Core
+  - React/RCTVibration (0.52.2):
+    - React/Core
+  - React/RCTWebSocket (0.52.2):
+    - React/Core
+    - React/fishhook
+    - React/RCTBlob
   - SKPhotoBrowser (4.0.1)
   - SnapKit (3.2.0)
-  - SwiftyJSON (3.1.4)
-  - SwiftyUserDefaults (3.0.0)
-  - TBEmptyDataSet (2.5)
+  - SwiftyJSON (4.0.0)
+  - SwiftyUserDefaults (3.0.1)
+  - TBEmptyDataSet (2.6)
+  - yoga (0.52.2.React)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -33,31 +60,50 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - LLCycleScrollView
   - PKHUD (~> 4.0)
-  - SKPhotoBrowser
+  - React/Core (from `./node_modules/react-native`)
+  - React/RCTActionSheet (from `./node_modules/react-native`)
+  - React/RCTGeolocation (from `./node_modules/react-native`)
+  - React/RCTImage (from `./node_modules/react-native`)
+  - React/RCTNetwork (from `./node_modules/react-native`)
+  - React/RCTPushNotification (from `./node_modules/react-native`)
+  - React/RCTSettings (from `./node_modules/react-native`)
+  - React/RCTText (from `./node_modules/react-native`)
+  - React/RCTVibration (from `./node_modules/react-native`)
+  - React/RCTWebSocket (from `./node_modules/react-native`)
+  - SKPhotoBrowser (~> 4.0.0)
   - SnapKit (~> 3.2.0)
   - SwiftyJSON
   - SwiftyUserDefaults
   - TBEmptyDataSet
+  - yoga (from `./node_modules/react-native/ReactCommon/yoga`)
+
+EXTERNAL SOURCES:
+  React:
+    :path: ./node_modules/react-native
+  yoga:
+    :path: ./node_modules/react-native/ReactCommon/yoga
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  AMap3DMap: eb6656fb441ed7eb310b3c121032e947d4d649e5
-  AMapFoundation: c086329a1f19afec00e4c197863665235eb43dc2
-  AMapLocation: 5fb51fe0e35e68a899199651942e6234d6257d91
-  AMapSearch: 7a6ebc20a42e34a021b042b047f198082fc2fc30
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  AMap3DMap: 97afc57b88628237d916991ac31795eb7bde3f63
+  AMapFoundation: 973682cfe60b92efd73a8ef8f1144fa0fa8e1296
+  AMapLocation: 55116a2c8956eab7550cbb56e989aa5cdcc424e3
+  AMapSearch: 314f75e9ce282b53dbf66455efa416c39f12b5b1
   DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
-  Gallery: 001218dc39bb0cf62df18fa82af162a9d7abdc88
-  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
-  Kingfisher: 12eeffeef42ea45b68c5e5acfe8ba9005b713ab4
-  LLCycleScrollView: b5e61ca51863e8508a2d26d11093bd5520f7b655
-  PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
+  Gallery: 40220b942a34dfc9815ad06bffcd2025827b5e02
+  IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
+  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
+  LLCycleScrollView: 7dcfb96bae6947b5de446a868e80ff0db2f047ae
+  PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
+  React: 001655c2b9dfc2f55e8271c60098d4f4227fb1b3
   SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
-  TBEmptyDataSet: 4527a34cba692e29964b2a07d0ffc46b20946bca
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
+  TBEmptyDataSet: 7383c353092f33dc572084cfa9182678a132dac7
+  yoga: 18f5bf8fba4b4a31ca4b42ac931fce5537e1923c
 
-PODFILE CHECKSUM: d83488bcf6eda283bdda49c0a039098aeff13128
+PODFILE CHECKSUM: d32d816d230ab4c362ddceba82ae8221e904d6ed
 
 COCOAPODS: 1.4.0.beta.2

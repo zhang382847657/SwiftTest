@@ -22,17 +22,16 @@ typedef void (^AMapLocatingCompletionBlock)(CLLocation *location, AMapLocationRe
 
 #pragma mark - AMapLocationManager
 
-
-///MapLocationManager类。初始化之前请设置 AMapLocationServices 中的APIKey，否则将无法正常使用服务.
+///AMapLocationManager类。初始化之前请设置 AMapServices 中的apikey(例如：[AMapServices sharedServices].apiKey = @"您的key")，否则将无法正常使用服务.
 @interface AMapLocationManager : NSObject
 
 ///实现了 AMapLocationManagerDelegate 协议的类指针。
 @property (nonatomic, weak) id<AMapLocationManagerDelegate> delegate;
 
-///设定定位的最小更新距离。默认为 kCLDistanceFilterNone。
+///设定定位的最小更新距离。单位米，默认为 kCLDistanceFilterNone，表示只要检测到设备位置发生变化就会更新位置信息。
 @property(nonatomic, assign) CLLocationDistance distanceFilter;
 
-///设定定位精度。默认为 kCLLocationAccuracyBest。
+///设定期望的定位精度。单位米，默认为 kCLLocationAccuracyBest。定位服务会尽可能去获取满足desiredAccuracy的定位结果，但不保证一定会得到满足期望的结果。 \n注意：设置为kCLLocationAccuracyBest或kCLLocationAccuracyBestForNavigation时，单次定位会在达到locationTimeout设定的时间后，将时间内获取到的最高精度的定位结果返回。
 @property(nonatomic, assign) CLLocationAccuracy desiredAccuracy;
 
 ///指定定位是否会被系统自动暂停。默认为NO。
@@ -50,9 +49,35 @@ typedef void (^AMapLocatingCompletionBlock)(CLLocation *location, AMapLocationRe
 ///连续定位是否返回逆地理信息，默认NO。
 @property (nonatomic, assign) BOOL locatingWithReGeocode;
 
+// 逆地址语言类型，默认是AMapLocationRegionLanguageDefault
+@property (nonatomic, assign) AMapLocationReGeocodeLanguage reGeocodeLanguage;
+
 ///获取被监控的region集合。
 @property (nonatomic, readonly, copy) NSSet *monitoredRegions;
 
+///检测是否存在虚拟定位风险，默认为NO，不检测。 \n注意:设置为YES时，单次定位通过 AMapLocatingCompletionBlock 的error给出虚拟定位风险提示；连续定位通过 amapLocationManager:didFailWithError: 方法的error给出虚拟定位风险提示。error格式为error.domain==AMapLocationErrorDomain; error.code==AMapLocationErrorRiskOfFakeLocation;
+@property (nonatomic, assign) BOOL detectRiskOfFakeLocation;
+
+/**
+ *  @brief 设备是否支持方向识别
+ *  @return YES:设备支持方向识别 ; NO:设备不支持支持方向识别
+ */
++ (BOOL)headingAvailable;
+
+/**
+ *  @brief 开始获取设备朝向，如果设备支持方向识别，则会通过代理回调方法
+ */
+- (void)startUpdatingHeading;
+
+/**
+ *  @brief 停止获取设备朝向
+ */
+- (void)stopUpdatingHeading;
+
+/**
+ *  @brief 停止设备朝向校准显示
+ */
+- (void)dismissHeadingCalibrationDisplay;
 
 /**
  *  @brief 单次定位。如果当前正在连续定位，调用此方法将会失败，返回NO。\n该方法将会根据设定的 desiredAccuracy 去获取定位信息。如果获取的定位信息精确度低于 desiredAccuracy ，将会持续的等待定位信息，直到超时后通过completionBlock返回精度最高的定位信息。\n可以通过 stopUpdatingLocation 方法去取消正在进行的单次定位请求。
@@ -76,19 +101,19 @@ typedef void (^AMapLocatingCompletionBlock)(CLLocation *location, AMapLocationRe
  *  @brief 开始监控指定的region。如果已经存在相同identifier的region，则之前的region将会被移除。对 AMapLocationCircleRegion 类实例，将会优先监控radius小的region。
  *  @param region 要被监控的范围
  */
-- (void)startMonitoringForRegion:(AMapLocationRegion *)region;
+- (void)startMonitoringForRegion:(AMapLocationRegion *)region __attribute__((deprecated("请使用AMapGeoFenceManager")));
 
 /**
  *  @brief 停止监控指定的region
  *  @param region 要停止监控的范围
  */
-- (void)stopMonitoringForRegion:(AMapLocationRegion *)region;
+- (void)stopMonitoringForRegion:(AMapLocationRegion *)region __attribute__((deprecated("请使用AMapGeoFenceManager")));
 
 /**
  *  @brief 查询一个region的当前状态。查询结果通过amapLocationManager:didDetermineState:forRegion:回调返回
  *  @param region 要查询的region
  */
-- (void)requestStateForRegion:(AMapLocationRegion *)region;
+- (void)requestStateForRegion:(AMapLocationRegion *)region __attribute__((deprecated("请使用AMapGeoFenceManager")));
 
 @end
 
@@ -130,25 +155,39 @@ typedef void (^AMapLocatingCompletionBlock)(CLLocation *location, AMapLocationRe
 - (void)amapLocationManager:(AMapLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
 
 /**
+ *  @brief 是否显示设备朝向校准
+ *  @param manager 定位 AMapLocationManager 类。
+ *  @return 是否显示设备朝向校准
+ */
+- (BOOL)amapLocationManagerShouldDisplayHeadingCalibration:(AMapLocationManager *)manager;
+
+/**
+ *  @brief 设备方向改变时回调函数
+ *  @param manager 定位 AMapLocationManager 类。
+ *  @param newHeading 设备朝向。
+ */
+- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading;
+
+/**
  *  @brief 开始监控region回调函数
  *  @param manager 定位 AMapLocationManager 类。
  *  @param region 开始监控的region。
  */
-- (void)amapLocationManager:(AMapLocationManager *)manager didStartMonitoringForRegion:(AMapLocationRegion *)region;
+- (void)amapLocationManager:(AMapLocationManager *)manager didStartMonitoringForRegion:(AMapLocationRegion *)region __attribute__((deprecated("请使用AMapGeoFenceManager")));
 
 /**
  *  @brief 进入region回调函数
  *  @param manager 定位 AMapLocationManager 类。
  *  @param region 进入的region。
  */
-- (void)amapLocationManager:(AMapLocationManager *)manager didEnterRegion:(AMapLocationRegion *)region;
+- (void)amapLocationManager:(AMapLocationManager *)manager didEnterRegion:(AMapLocationRegion *)region __attribute__((deprecated("请使用AMapGeoFenceManager")));
 
 /**
  *  @brief 离开region回调函数
  *  @param manager 定位 AMapLocationManager 类。
  *  @param region 离开的region。
  */
-- (void)amapLocationManager:(AMapLocationManager *)manager didExitRegion:(AMapLocationRegion *)region;
+- (void)amapLocationManager:(AMapLocationManager *)manager didExitRegion:(AMapLocationRegion *)region __attribute__((deprecated("请使用AMapGeoFenceManager")));
 
 /**
  *  @brief 查询region状态回调函数
@@ -156,7 +195,7 @@ typedef void (^AMapLocatingCompletionBlock)(CLLocation *location, AMapLocationRe
  *  @param state 查询的region的状态。
  *  @param region 查询的region。
  */
-- (void)amapLocationManager:(AMapLocationManager *)manager didDetermineState:(AMapLocationRegionState)state forRegion:(AMapLocationRegion *)region;
+- (void)amapLocationManager:(AMapLocationManager *)manager didDetermineState:(AMapLocationRegionState)state forRegion:(AMapLocationRegion *)region __attribute__((deprecated("请使用AMapGeoFenceManager")));
 
 /**
  *  @brief 监控region失败回调函数
@@ -164,6 +203,6 @@ typedef void (^AMapLocatingCompletionBlock)(CLLocation *location, AMapLocationRe
  *  @param region 失败的region。
  *  @param error 错误信息，参考 AMapLocationErrorCode 。
  */
-- (void)amapLocationManager:(AMapLocationManager *)manager monitoringDidFailForRegion:(AMapLocationRegion *)region withError:(NSError *)error;
+- (void)amapLocationManager:(AMapLocationManager *)manager monitoringDidFailForRegion:(AMapLocationRegion *)region withError:(NSError *)error __attribute__((deprecated("请使用AMapGeoFenceManager")));
 
 @end

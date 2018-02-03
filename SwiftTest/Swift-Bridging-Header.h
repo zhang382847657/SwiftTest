@@ -14,6 +14,8 @@
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
+#import <React/RCTBundleURLProvider.h>
+#import <React/RCTRootView.h>
 #import "HandleCrash.h"
 
 #endif /* Swift_Bridging_Header_h */

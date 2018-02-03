@@ -4,6 +4,20 @@ platform :ios, '8.0'
 target ‘SwiftTest’ do
   # 如果是Swift项目,需添加"use_frameworks!"
   use_frameworks!
+  
+pod 'yoga' , :path => './node_modules/react-native/ReactCommon/yoga'
+pod 'React', :path => './node_modules/react-native', :subspecs => [
+  'Core',
+  'RCTActionSheet',
+  'RCTGeolocation',
+  'RCTImage',
+  'RCTNetwork',
+  'RCTPushNotification',
+  'RCTSettings',
+  'RCTText',
+  'RCTVibration',
+  'RCTWebSocket'
+]
 
 pod 'SwiftyJSON'  #JSon解析
 pod 'Alamofire', '~> 4.4'  #网络请求
@@ -14,7 +28,7 @@ pod 'TBEmptyDataSet'  #可以显示空的UITableView或者UICollectionView
 pod 'DGElasticPullToRefresh'  #刷新组件
 pod 'PKHUD', '~> 4.0'  #HUD
 pod 'SwiftyUserDefaults'  #缓存
-pod 'SKPhotoBrowser' #图片浏览器
+pod 'SKPhotoBrowser', '~> 4.0.0' #图片浏览器
 pod 'IQKeyboardManagerSwift' #键盘遮挡
 pod 'Gallery' #图片选择器
 pod 'AMap3DMap' #高德3D地图

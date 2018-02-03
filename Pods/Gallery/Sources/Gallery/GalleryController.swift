@@ -3,9 +3,9 @@ import AVFoundation
 
 public protocol GalleryControllerDelegate: class {
 
-  func galleryController(_ controller: GalleryController, didSelectImages images: [UIImage])
+  func galleryController(_ controller: GalleryController, didSelectImages images: [Image])
   func galleryController(_ controller: GalleryController, didSelectVideo video: Video)
-  func galleryController(_ controller: GalleryController, requestLightbox images: [UIImage])
+  func galleryController(_ controller: GalleryController, requestLightbox images: [Image])
   func galleryControllerDidCancel(_ controller: GalleryController)
 }
 
@@ -15,13 +15,20 @@ public class GalleryController: UIViewController, PermissionControllerDelegate {
   lazy var cameraController: CameraController = self.makeCameraController()
   lazy var videosController: VideosController = self.makeVideosController()
 
-  enum Page: Int {
-    case images, camera, videos
-  }
-
   lazy var pagesController: PagesController = self.makePagesController()
   lazy var permissionController: PermissionController = self.makePermissionController()
   public weak var delegate: GalleryControllerDelegate?
+  public let cart = Cart()
+
+  // MARK: - Init
+
+  public required init() {
+    super.init(nibName: nil, bundle: nil)
+  }
+
+  public required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
 
   // MARK: - Life cycle
 
@@ -30,26 +37,19 @@ public class GalleryController: UIViewController, PermissionControllerDelegate {
 
     setup()
 
-    if Permission.hasPermissions {
+    if Permission.hasNeededPermissions {
       showMain()
     } else {
       showPermissionView()
     }
   }
 
-  deinit {
-    Cart.shared.reset()
-  }
 
   public override var prefersStatusBarHidden : Bool {
     return true
   }
 
   // MARK: - Logic
-
-  public func reload(_ images: [UIImage]) {
-    Cart.shared.reload(images)
-  }
 
   func showMain() {
     g_addChildController(pagesController)
@@ -62,31 +62,50 @@ public class GalleryController: UIViewController, PermissionControllerDelegate {
   // MARK: - Child view controller
 
   func makeImagesController() -> ImagesController {
-    let controller = ImagesController()
+    let controller = ImagesController(cart: cart)
     controller.title = "Gallery.Images.Title".g_localize(fallback: "PHOTOS")
-    Cart.shared.add(delegate: controller)
 
     return controller
   }
 
   func makeCameraController() -> CameraController {
-    let controller = CameraController()
+    let controller = CameraController(cart: cart)
     controller.title = "Gallery.Camera.Title".g_localize(fallback: "CAMERA")
-    Cart.shared.add(delegate: controller)
 
     return controller
   }
 
   func makeVideosController() -> VideosController {
-    let controller = VideosController()
+    let controller = VideosController(cart: cart)
     controller.title = "Gallery.Videos.Title".g_localize(fallback: "VIDEOS")
 
     return controller
   }
 
   func makePagesController() -> PagesController {
-    let controller = PagesController(controllers: [imagesController, cameraController, videosController])
-    controller.selectedIndex = Page.camera.rawValue
+    var controllers: [UIViewController] = []
+    for tab in Config.tabsToShow {
+      if tab == .imageTab {
+        controllers.append(imagesController)
+      } else if tab == .cameraTab {
+        controllers.append(cameraController)
+      } else if tab == .videoTab {
+        controllers.append(videosController)
+      }
+    }
+    assert(!controllers.isEmpty, "Must specify at least one controller.")
+
+    let controller = PagesController(controllers: controllers)
+    if let initialTab = Config.initialTab {
+      assert(Config.tabsToShow.index(of: initialTab) != nil, "Must specify an initial tab that is in Config.tabsToShow.")
+      controller.selectedIndex = Config.tabsToShow.index(of: initialTab)!
+    } else {
+      if let cameraIndex = Config.tabsToShow.index(of: .cameraTab) {
+        controller.selectedIndex = cameraIndex
+      } else {
+        controller.selectedIndex = 0
+      }
+    }
 
     return controller
   }
@@ -109,19 +128,19 @@ public class GalleryController: UIViewController, PermissionControllerDelegate {
 
     EventHub.shared.doneWithImages = { [weak self] in
       if let strongSelf = self {
-        strongSelf.delegate?.galleryController(strongSelf, didSelectImages: Cart.shared.UIImages())
+        strongSelf.delegate?.galleryController(strongSelf, didSelectImages: strongSelf.cart.images)
       }
     }
 
     EventHub.shared.doneWithVideos = { [weak self] in
-      if let strongSelf = self, let video = Cart.shared.video {
+      if let strongSelf = self, let video = strongSelf.cart.video {
         strongSelf.delegate?.galleryController(strongSelf, didSelectVideo: video)
       }
     }
 
     EventHub.shared.stackViewTouched = { [weak self] in
       if let strongSelf = self {
-        strongSelf.delegate?.galleryController(strongSelf, requestLightbox: Cart.shared.UIImages())
+        strongSelf.delegate?.galleryController(strongSelf, requestLightbox: strongSelf.cart.images)
       }
     }
   }

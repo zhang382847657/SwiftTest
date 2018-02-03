@@ -15,7 +15,7 @@ class LLCycleScrollViewCell: UICollectionViewCell {
         didSet {
             titleLabel.text = "\(title)"
             
-            if title.characters.count > 0 {
+            if title.count > 0 {
                 titleBackView.isHidden = false
                 titleLabel.isHidden = false
             }else{
@@ -32,18 +32,43 @@ class LLCycleScrollViewCell: UICollectionViewCell {
         }
     }
     
+    // 标题字体
+    var titleFont: UIFont = UIFont.systemFont(ofSize: 15) {
+        didSet {
+            titleLabel.font = titleFont
+        }
+    }
+    
+    // 文本行数
+    var titleLines: NSInteger = 2 {
+        didSet {
+            titleLabel.numberOfLines = titleLines
+        }
+    }
+    
+    // 标题文本x轴间距
+    var titleLabelLeading: CGFloat = 15 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     
     // 标题背景色
     var titleBackViewBackgroundColor: UIColor = UIColor.black.withAlphaComponent(0.3) {
         didSet {
-            titleLabel.backgroundColor = titleBackViewBackgroundColor
+            titleBackView.backgroundColor = titleBackViewBackgroundColor
         }
     }
     
     var titleBackView: UIView!
     
     // 标题Label高度
-    var titleLabelHeight: CGFloat! = 56
+    var titleLabelHeight: CGFloat! = 56 {
+        didSet {
+            layoutSubviews()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -73,6 +98,7 @@ class LLCycleScrollViewCell: UICollectionViewCell {
     fileprivate func setupLabelBackView() {
         titleBackView = UIView.init()
         titleBackView.backgroundColor = titleBackViewBackgroundColor
+        titleBackView.isHidden = true
         self.contentView.addSubview(titleBackView)
     }
     
@@ -81,8 +107,8 @@ class LLCycleScrollViewCell: UICollectionViewCell {
         titleLabel = UILabel.init()
         titleLabel.isHidden = true
         titleLabel.textColor = titleLabelTextColor
-        titleLabel.numberOfLines = 2
-        titleLabel.font = UIFont.systemFont(ofSize: 15)
+        titleLabel.numberOfLines = titleLines
+        titleLabel.font = titleFont
         titleLabel.backgroundColor = UIColor.clear
         titleBackView.addSubview(titleLabel)
     }
@@ -93,6 +119,6 @@ class LLCycleScrollViewCell: UICollectionViewCell {
         
         imageView.frame = self.bounds
         titleBackView.frame = CGRect.init(x: 0, y: self.ll_h - titleLabelHeight, width: self.ll_w, height: titleLabelHeight)
-        titleLabel.frame = CGRect.init(x: 15, y: 0, width: self.ll_w - 20, height: titleLabelHeight)
+        titleLabel.frame = CGRect.init(x: titleLabelLeading, y: 0, width: self.ll_w - titleLabelLeading - 5, height: titleLabelHeight)
     }
 }

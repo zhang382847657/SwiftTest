@@ -18,10 +18,18 @@ typedef NS_ENUM(NSInteger, AMapGeoFenceRegionStatus)
     AMapGeoFenceRegionStatusStayed   = 3,       ///< 停留(在范围内超过10分钟)
 };
 
+typedef NS_ENUM(NSInteger, AMapGeoFenceRegionType)
+{
+    AMapGeoFenceRegionTypeCircle     = 0,       /// 圆形地理围栏
+    AMapGeoFenceRegionTypePolygon    = 1,       /// 多边形地理围栏
+    AMapGeoFenceRegionTypePOI        = 2,       /// 兴趣点（POI）地理围栏
+    AMapGeoFenceRegionTypeDistrict   = 3,       /// 行政区划地理围栏
+};
+
 #pragma mark - AMapGeoFenceRegion
 
 
-///地理围栏基类，不可直接使用。（since v2.3.0）
+///地理围栏基类，不可直接使用。（since 2.3.0）
 @interface AMapGeoFenceRegion : NSObject<NSCopying>
 
 
@@ -36,13 +44,19 @@ typedef NS_ENUM(NSInteger, AMapGeoFenceRegionStatus)
 ///坐标点和围栏的关系，比如用户的位置和围栏的关系
 @property (nonatomic, assign) AMapGeoFenceRegionStatus fenceStatus;
 
+///用户自定义ID，可为nil。
+@property (nonatomic, assign) AMapGeoFenceRegionType regionType;
+
+///缓存最近获取的定位信息，可能会存在延时，可为nil，会在获取定位时更新
+@property (nonatomic, copy) CLLocation *currentLocation;
+
 @end
 
 
 #pragma mark - AMapLocationCircleRegion
 
 
-///圆形地理围栏（since v2.3.0）
+///圆形地理围栏（since 2.3.0）
 @interface AMapGeoFenceCircleRegion : AMapGeoFenceRegion
 
 
@@ -59,7 +73,7 @@ typedef NS_ENUM(NSInteger, AMapGeoFenceRegionStatus)
 #pragma mark -AMapGeoFencePolygonRegion
 
 
-///多边形地理围栏（since v2.3.0）
+///多边形地理围栏（since 2.3.0）
 @interface AMapGeoFencePolygonRegion : AMapGeoFenceRegion
 
 
@@ -77,7 +91,7 @@ typedef NS_ENUM(NSInteger, AMapGeoFenceRegionStatus)
 #pragma mark -AMapGeoFencePOIRegion
 
 
-///兴趣点（POI）地理围栏（since v2.3.0）
+///兴趣点（POI）地理围栏（since 2.3.0）
 @interface AMapGeoFencePOIRegion : AMapGeoFenceCircleRegion
 
 
@@ -91,7 +105,7 @@ typedef NS_ENUM(NSInteger, AMapGeoFenceRegionStatus)
 #pragma mark -AMapGeoFenceDistrictRegion
 
 
-///行政区划地理围栏（since v2.3.0）
+///行政区划地理围栏（since 2.3.0）
 @interface AMapGeoFenceDistrictRegion : AMapGeoFenceRegion
 
 
